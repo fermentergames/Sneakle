@@ -117,3 +117,7 @@ function copyToClipboard(text) {
       console.error('Failed to copy: ', err);
     });
 }
+
+function get_window_host() {
+  return window.top.location.host;
+}

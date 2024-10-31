@@ -5,7 +5,7 @@ html_field(form, "email", "email", "Emailaddress", true, "", "test@example.com")
 html_field(form, "password", "password", "Password", true);
 html_submit(form, "submit", "Login", !form_is_loading, form_is_loading ? "loading" : "");
 if html_element_interaction(form)
-html_submit_login(form)
+html_submit_code(form)
 
 //Render a scrollable div containing a link and a sprite
 var scrollable = html_div(undefined, "scrollable", undefined, "scrollable");

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"html_submit_code",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"html_submit_code",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

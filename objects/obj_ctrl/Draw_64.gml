@@ -259,13 +259,22 @@ if global.show_input_prompt = 1 {
 	draw_set_alpha(1)
 	draw_set_color(c_white)
 	
+	//Render a div with fancy css
+	var form_container = html_div(undefined, "form-container","Forms","form-container");
+	
+	//close button
+	var closebtn = html_form(form_container, "closebtn-form");
+	html_submit(closebtn, "closebtn", "Back", !form_is_loading, form_is_loading ? "loading" : "");
+	if html_element_interaction(closebtn)
+	html_submit_closebtn()
+	
 	//Render a form
-	var form = html_form(undefined, "load-code");
+	var form = html_form(form_container, "load-code");
 	html_h3(form, "header", "Load Code")
 	html_field(form, "loadCode", "loadCode", "Enter Code Here", true, "", "");
 	html_submit(form, "submit", "Load", !form_is_loading, form_is_loading ? "loading" : "");
 	if html_element_interaction(form)
-	html_submit_login(form)
+	html_submit_code(form)
 	
 
 }
@@ -277,8 +286,17 @@ if global.show_export_prompt = 1 {
 	draw_set_alpha(1)
 	draw_set_color(c_white)
 	
+	//Render a div with fancy css
+	var form_container = html_div(undefined, "form-container","Forms","form-container");
+	
+	//close button
+	var closebtn = html_form(form_container, "closebtn-form");
+	html_submit(closebtn, "closebtn", "Back", !form_is_loading, form_is_loading ? "loading" : "");
+	if html_element_interaction(closebtn)
+	html_submit_closebtn()
+	
 	//Render a form
-	var form2 = html_form(undefined, "export-code");
+	var form2 = html_form(form_container, "export-code");
 	html_h3(form2, "header", "Export Code")
 	html_field(form2, "exportCode", "exportCode", "", true, "", string(global.current_copy_code));
 	html_submit(form2, "copycode", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
@@ -286,19 +304,22 @@ if global.show_export_prompt = 1 {
 	html_submit_export(form2)
 	
 	//Render a form
-	var form3 = html_form(undefined, "export-link");
+	var form3 = html_form(form_container, "export-link");
 	html_h3(form3, "header", "Export Link")
 	html_field(form3, "exportLink", "exportLink", "", true, "", string(global.current_copy_url));
 	html_submit(form3, "copylink", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
 	if html_element_interaction(form3)
 	html_submit_export_link(form3)
 	
-
 }
 
+
+
+if keyboard_check(vk_shift) {
 draw_set_alpha(0.3)
 draw_text_transformed(global.sw*0.5,global.sh*0.98,global.current_copy_code,0.07*_tscl,0.07*_tscl,0)
-	
+}
+
 draw_set_alpha(1)
 
 

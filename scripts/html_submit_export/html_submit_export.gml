@@ -18,7 +18,10 @@ function html_submit_export(argument0) {
 	global.show_export_prompt = 0
 	form_is_loading = false;
 	
+	
 	copyToClipboard(string(exportCode))
+	
+	show_message("copied code!\n"+string(exportCode))
 	//clipboard_set_text(string(exportCode));
 
 	ds_map_destroy(values)
