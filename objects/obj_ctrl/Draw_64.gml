@@ -1,6 +1,6 @@
 if (live_call()) return live_result;
 
-
+global.pr = 1
 var _pos_scl = global.pr //*(min(global.sw,720)/375)
 var _scl = (global.sw*global.pr/450)
 
@@ -35,7 +35,7 @@ draw_set_valign(fa_middle)
 //draw_set_color(make_color_hsv(160,150,150))
 draw_set_color(c_white)
 draw_set_alpha(0.3)
-draw_text_transformed(global.sw/2,25*_pos_scl,"s n e a k l e",0.18*_tscl,0.18*_tscl,0)
+draw_text_transformed(global.sw/2,25*_pos_scl,"s n e a k l e",0.22*_tscl,0.22*_tscl,0)
 //draw_text_transformed(global.sw/2,45*_pos_scl,global.cam_zoom,0.1*_tscl,0.1*_tscl,0)
 
 //draw_set_color(c_white)
@@ -59,18 +59,20 @@ if global.game_phase = 0 {
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	
-	draw_text_transformed(global.sw*0.2,global.sh*0.4,"CREATE\n4x4",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.4,"CREATE\n5x5",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.8,global.sh*0.4,"CREATE\n7x7",0.15*_tscl,0.15*_tscl,0)
-	
+	draw_text_transformed(global.sw*0.2,global.sh*0.6,"DAILY",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.6,"LOAD",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.8,global.sh*0.6,"HOW TO",0.15*_tscl,0.15*_tscl,0)
 	
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.2,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	
-	draw_text_transformed(global.sw*0.2,global.sh*0.6,"DAILY",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.6,"LOAD",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.8,global.sh*0.6,"HOW TO",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.2,global.sh*0.4,"CREATE\n4x4",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.4,"CREATE\n5x5",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.8,global.sh*0.4,"CREATE\n7x7",0.13*_tscl,0.13*_tscl,0)
+	
+	
+	
 	
 } else if global.game_phase = 1 {
 	
@@ -90,7 +92,7 @@ if global.game_phase = 0 {
 } else if global.game_phase = 2 {
 	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,60*_pos_scl,"drag to select your SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,80*_pos_scl,"drag to select your SECRET WORD",0.12*_tscl,0.12*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	draw_text_transformed(global.sw*0.15,global.sh-30*_pos_scl,"BACK",0.12*_tscl,0.12*_tscl,0)
@@ -118,6 +120,8 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.3)
 	
+	draw_set_font(fnt_main_r)
+	
 	if selected_word_length > 0 {
 		if selected_word_length <= 3 {
 			draw_text_transformed(global.sw/2,(global.sh*0.7)+(80*_pos_scl),"too short",0.15*_tscl,0.15*_tscl,0)
@@ -126,6 +130,7 @@ if global.game_phase = 0 {
 		}
 	}
 
+	draw_set_font(fnt_main)
 	draw_set_alpha(1)
 	
 	//draw_text_transformed(global.sw/2,global.sh*0.7,"selected word is:\n"+string(_letters_str)+"\nlength:"+string(selected_word_length),0.12*_tscl,0.12*_tscl,0)
@@ -135,7 +140,7 @@ if global.game_phase = 0 {
 } else if global.game_phase = 3 {
 	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,60*_pos_scl,"player 2 try to guess the SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,80*_pos_scl,"player 2 try to guess the SECRET WORD",0.12*_tscl,0.12*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	
@@ -163,7 +168,7 @@ if global.game_phase = 0 {
 	}
 	
 	draw_set_alpha(0.3)
-	
+	draw_set_font(fnt_main_r)
 	if selected_word_length > 0 {
 		if selected_word_length <= 3 {
 			draw_text_transformed(global.sw/2,global.sh*0.75,"too short",0.15*_tscl,0.15*_tscl,0)
@@ -175,7 +180,9 @@ if global.game_phase = 0 {
 	
 	draw_set_valign(fa_top)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,global.sh*0.8,string(guesses_count)+" guesses",0.12*_tscl,0.12*_tscl,0)
+	var _guesses_str = " guesses"
+	if guesses_count <= 1 {_guesses_str = " guess"}
+	draw_text_transformed(global.sw/2,global.sh*0.8,string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
 	for (var i = 1; i < array_length(guesses_list); ++i) {
@@ -194,7 +201,7 @@ if global.game_phase = 0 {
 } else if global.game_phase = 4 {
 	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,60*_pos_scl,"complete!",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,90*_pos_scl,"complete!",0.15*_tscl,0.15*_tscl,(0+(5*(sin(obj_ctrl.timey*0.06)))))
 	draw_set_font(fnt_main)
 	
 	
@@ -224,7 +231,9 @@ if global.game_phase = 0 {
 	draw_set_font(fnt_main_r)
 	
 	draw_set_alpha(0.3)
-	draw_text_transformed(global.sw/2,(global.sh*0.7)+(100*_pos_scl),string(guesses_count)+" guesses",0.12*_tscl,0.12*_tscl,0)
+	var _guesses_str = " guesses"
+	if guesses_count <= 1 {_guesses_str = " guess"}
+	draw_text_transformed(global.sw/2,(global.sh*0.7)+(100*_pos_scl),string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
 	for (var i = 1; i < array_length(guesses_list); ++i) {
@@ -252,14 +261,28 @@ if global.game_phase = 0 {
 draw_set_alpha(1)
 //draw_text_transformed(global.sw*0.1,25*_pos_scl,"phase "+string(global.game_phase),0.1*_tscl,0.1*_tscl,0)
 
-draw_text_transformed(global.sw*0.9,25*_pos_scl,"restart",0.1*_tscl,0.1*_tscl,0)
+//top menu
+draw_set_font(fnt_main)
+draw_set_alpha(0.6)
+
+if global.game_phase >= 1 {
+draw_text_transformed(global.sw*0.1,25*_pos_scl,"menu",0.12*_tscl,0.12*_tscl,0)
+}
 
 if global.game_phase >= 3 {
 	
-	draw_text_transformed(global.sw*0.1,25*_pos_scl,"share",0.1*_tscl,0.1*_tscl,0)
+	draw_set_alpha(0.6)
+	var _scl = 0.12
+	if global.game_phase >= 4 {
+		draw_set_alpha(0.8*(0.8+(0.4*(sin(obj_ctrl.timey*0.08)))))
+		_scl = 0.12*(1+(0.1*(sin(obj_ctrl.timey*0.08))))
+	}
+	
+	draw_text_transformed(global.sw*0.9,25*_pos_scl,"share",_scl*_tscl,_scl*_tscl,0)
 
 }
 
+draw_set_alpha(1)
 
 
 

@@ -1012,7 +1012,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730359639,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730361978,AllowStatistics:"True"	}
 }
 ;
 
@@ -8553,7 +8553,15 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 	{
 
 				{
-			changeQuery("loadBoard","","loadSecret","");
+			if(yyfequal(global.gmlis_browser,1))
+			{
+
+								{
+					changeQuery("loadBoard","","loadSecret","");
+				}
+				;
+			}
+			;
 			room_restart();
 		}
 		;
@@ -8571,12 +8579,28 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 	{
 
 				{
-			if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(40,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.7)))))
+			if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(40,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))))
 			{
 
 								{
-					changeQuery("loadBoard","","loadSecret","");
-					reloadPage();
+					if(yyfequal(global.gmlis_browser,1))
+					{
+
+												{
+							changeQuery("loadBoard","","loadSecret","");
+							reloadPage();
+						}
+						;
+					}
+					else 
+					{
+
+												{
+							room_restart();
+						}
+						;
+					}
+					;
 				}
 				;
 			}
@@ -8597,8 +8621,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									{
 
 																				{
-											global.gmlgame_grid_size=4;
-											global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+											global.gmlloadBoard="EXITBTSNOSEIDAHA";
+											global.gmlloadSecret="1-2-6-11-8-4";
 											gml_Script_scr_board_init(_inst,_other);
 										}
 										;
@@ -8609,9 +8633,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												global.gmlgame_grid_size=5;
-												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
-												gml_Script_scr_board_init(_inst,_other);
+												global.gmlshow_input_prompt=1;
 											}
 											;
 										}
@@ -8619,9 +8641,6 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												global.gmlgame_grid_size=7;
-												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
-												gml_Script_scr_board_init(_inst,_other);
 											}
 											;
 										}
@@ -8641,8 +8660,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												global.gmlloadBoard="EXITBTSNOSEIDAHA";
-												global.gmlloadSecret="1-2-6-11-8-4";
+												global.gmlgame_grid_size=4;
+												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 												gml_Script_scr_board_init(_inst,_other);
 											}
 											;
@@ -8653,7 +8672,9 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											{
 
 																								{
-													global.gmlshow_input_prompt=1;
+													global.gmlgame_grid_size=5;
+													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+													gml_Script_scr_board_init(_inst,_other);
 												}
 												;
 											}
@@ -8661,6 +8682,9 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											{
 
 																								{
+													global.gmlgame_grid_size=7;
+													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+													gml_Script_scr_board_init(_inst,_other);
 												}
 												;
 											}
@@ -8938,7 +8962,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 					{
 
 												{
-							if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))
+							if(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.7)))
 							{
 
 																{
@@ -9495,6 +9519,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 		return global.gmllive_result;
 	}
 	;
+	global.gmlpr=1;
 	var gml_pos_scl=global.gmlpr;
 	var gml_scl=yyfdivide(yyftime(__yy_gml_errCheck(global.gmlsw),__yy_gml_errCheck(global.gmlpr)),450);
 	var gml_tscl=clamp(yyftime(__yy_gml_errCheck(gml_scl),1),0.5,2);
@@ -9506,7 +9531,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	draw_set_valign(1);
 	draw_set_color(16777215);
 	draw_set_alpha(0.3);
-	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"s n e a k l e",yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"s n e a k l e",yyftime(0.22,__yy_gml_errCheck(gml_tscl)),yyftime(0.22,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_halign(1);
 	draw_set_alpha(1);
 	draw_set_color(16777215);
@@ -9518,15 +9543,15 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n4x4",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n5x5",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n7x7",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"DAILY",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"LOAD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"HOW TO",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n4x4",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n5x5",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n7x7",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 		}
 		;
 	}
@@ -9566,7 +9591,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 
 								{
 					draw_set_font(YYASSET_REF(0x06000000));
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(60,__yy_gml_errCheck(gml_pos_scl)),"drag to select your SECRET WORD",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(80,__yy_gml_errCheck(gml_pos_scl)),"drag to select your SECRET WORD",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
 					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"BACK",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					if(yyfequal(_inst.gmlready_for_phase3,1))
@@ -9597,6 +9622,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					draw_set_alpha(1);
 					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),string(gml_letters_str),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_alpha(0.3);
+					draw_set_font(YYASSET_REF(0x06000000));
 					if(yyfgreater(_inst.gmlselected_word_length,0))
 					{
 
@@ -9626,6 +9652,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						;
 					}
 					;
+					draw_set_font(YYASSET_REF(0x06000001));
 					draw_set_alpha(1);
 				}
 				;
@@ -9637,7 +9664,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 
 										{
 						draw_set_font(YYASSET_REF(0x06000000));
-						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(60,__yy_gml_errCheck(gml_pos_scl)),"player 2 try to guess the SECRET WORD",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(80,__yy_gml_errCheck(gml_pos_scl)),"player 2 try to guess the SECRET WORD",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 						draw_set_font(YYASSET_REF(0x06000001));
 						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"BACK",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 						if(yyfequal(_inst.gmlready_for_phase3,1))
@@ -9678,6 +9705,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						}
 						;
 						draw_set_alpha(0.3);
+						draw_set_font(YYASSET_REF(0x06000000));
 						if(yyfgreater(_inst.gmlselected_word_length,0))
 						{
 
@@ -9709,7 +9737,17 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						;
 						draw_set_valign(0);
 						draw_set_font(YYASSET_REF(0x06000000));
-						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count))," guesses"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						var gml_guesses_str=" guesses";
+						if(yyflessequal(_inst.gmlguesses_count,1))
+						{
+
+														{
+								gml_guesses_str=" guess";
+							}
+							;
+						}
+						;
+						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count)),__yy_gml_errCheck(string(gml_guesses_str))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 						var gml_guess_list_str="";
 						var gmli=1;
 						for(;yyfless(gmli,array_length(_inst.gmlguesses_list));(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
@@ -9742,7 +9780,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 
 												{
 							draw_set_font(YYASSET_REF(0x06000000));
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(60,__yy_gml_errCheck(gml_pos_scl)),"complete!",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"complete!",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyfplus(0,__yy_gml_errCheck(yyftime(5,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.06)))))));
 							draw_set_font(YYASSET_REF(0x06000001));
 							if(yyfequal(_inst.gmlready_for_phase3,1))
 							{
@@ -9770,7 +9808,17 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime((-10),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("\n",__yy_gml_errCheck(string(gml_letters_str))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_font(YYASSET_REF(0x06000000));
 							draw_set_alpha(0.3);
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(100,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count))," guesses"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+							var gml_guesses_str=" guesses";
+							if(yyflessequal(_inst.gmlguesses_count,1))
+							{
+
+																{
+									gml_guesses_str=" guess";
+								}
+								;
+							}
+							;
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(100,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count)),__yy_gml_errCheck(string(gml_guesses_str))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 							var gml_guess_list_str="";
 							var gmli=1;
 							for(;yyfless(gmli,array_length(_inst.gmlguesses_list));(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
@@ -9806,16 +9854,39 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	}
 	;
 	draw_set_alpha(1);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.9),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"restart",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
-	if(yyfgreaterequal(global.gmlgame_phase,3))
+	draw_set_font(YYASSET_REF(0x06000001));
+	draw_set_alpha(0.6);
+	if(yyfgreaterequal(global.gmlgame_phase,1))
 	{
 
 				{
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.1),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"share",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.1),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"menu",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 		}
 		;
 	}
 	;
+	if(yyfgreaterequal(global.gmlgame_phase,3))
+	{
+
+				{
+			draw_set_alpha(0.6);
+			var gml_scl=0.12;
+			if(yyfgreaterequal(global.gmlgame_phase,4))
+			{
+
+								{
+					draw_set_alpha(yyftime(0.8,__yy_gml_errCheck(yyfplus(0.8,__yy_gml_errCheck(yyftime(0.4,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.08)))))))));
+					gml_scl=yyftime(0.12,__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.1,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.08))))))));
+				}
+				;
+			}
+			;
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.9),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"share",yyftime(__yy_gml_errCheck(gml_scl),__yy_gml_errCheck(gml_tscl)),yyftime(__yy_gml_errCheck(gml_scl),__yy_gml_errCheck(gml_tscl)),0);
+		}
+		;
+	}
+	;
+	draw_set_alpha(1);
 	if(yyfgreater(_inst.gmlselected_word_length,0))
 	{
 
@@ -9930,7 +10001,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.31061491773),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.33768402705),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -11256,7 +11327,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 		}
 		;
 		_inst.image_alpha=1;
-		_inst.image_blend=make_color_hsv(lerp(gml_letter_hue,145,_inst.gmlam_selected_fd),lerp(60,180,_inst.gmlam_selected_fd),clamp(yyfplus(yyfplus(yyfplus(80,__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(_inst.gmlam_set_flash2)))),__yy_gml_errCheck(yyftime(180,__yy_gml_errCheck(_inst.gmlam_selected_flash2)))),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(_inst.gmlam_selected_fd)))),0,255));
+		_inst.image_blend=make_color_hsv(lerp(gml_letter_hue,145,_inst.gmlam_selected_fd),lerp(60,180,_inst.gmlam_selected_fd),clamp(yyfplus(yyfplus(yyfplus(80,__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(_inst.gmlam_set_flash2)))),__yy_gml_errCheck(yyftime(150,__yy_gml_errCheck(_inst.gmlam_selected_flash2)))),__yy_gml_errCheck(yyftime(60,__yy_gml_errCheck(_inst.gmlam_selected_fd)))),0,255));
 		_inst.gmlimage_blend_base=_inst.image_blend;
 		_inst.gmlborder_col=merge_color(_inst.image_blend,16777215,0.3);
 		_inst.gmlletter_col=16777215;
@@ -11275,8 +11346,6 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 		;
 		_inst.image_blend=merge_color(_inst.image_blend,make_color_hsv(100,255,210),yyftime(__yy_gml_errCheck(_inst.gmlam_clued_fd),0.7));
 		_inst.gmlletter_col=merge_color(_inst.gmlletter_col,make_color_hsv(70,0,255),yyftime(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_fd),0.9),__yy_gml_errCheck(yyfminus(1,__yy_gml_errCheck(_inst.gmlam_selected_fd)))));
-		_inst.gmlborder_col=merge_color(_inst.gmlborder_col,make_color_hsv(140,255,255),yyftime(__yy_gml_errCheck(_inst.gmlam_selected_fd),0.7));
-		_inst.gmlborder_col=merge_color(_inst.gmlborder_col,make_color_hsv(65,yyftime(255,__yy_gml_errCheck(yyfplus(0.5,__yy_gml_errCheck(yyftime(0.5,__yy_gml_errCheck(yyfminus(1,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))))),255),yyftime(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_fd),0.7),1));
 		_inst.depth=yyfminus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(_inst.y))),1000);
 		if(yyfgreaterequal(_inst.gmlam_dragging,1))
 		{

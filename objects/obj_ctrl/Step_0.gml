@@ -58,7 +58,9 @@ if global.game_phase = 2 {
 
 
 if keyboard_check_pressed(ord("R")) {
-	changeQuery("loadBoard","","loadSecret","")
+	if global.is_browser = 1 {
+		changeQuery("loadBoard","","loadSecret","")
+	}
 	room_restart()	
 }
 
@@ -74,17 +76,41 @@ if keyboard_check_pressed(vk_space) {
 
 if mouse_check_button_pressed(mb_left) {
 	
-	if device_mouse_y_to_gui(0)*global.pr < 40*global.pr && device_mouse_x_to_gui(0)*global.pr > global.sw*0.7 {
-		changeQuery("loadBoard","","loadSecret","")
-		reloadPage()
-		//room_restart()	
+	if device_mouse_y_to_gui(0)*global.pr < 40*global.pr && device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+		
+		if global.is_browser = 1 {
+			changeQuery("loadBoard","","loadSecret","")
+			reloadPage()
+		} else {
+			room_restart()	
+		}
 	}
 	
 	if global.game_phase = 0 {
 		
 		
 		if global.show_input_prompt = 0 {
+			
+			
 			if device_mouse_y_to_gui(0)*global.pr > global.sh*0.3 && device_mouse_y_to_gui(0)*global.pr < global.sh*0.5 {
+				
+				//load
+				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+					global.loadBoard = "EXITBTSNOSEIDAHA"
+					global.loadSecret = "1-2-6-11-8-4"
+					scr_board_init()
+				} else if device_mouse_x_to_gui(0)*global.pr > global.sw*0.3 && device_mouse_x_to_gui(0)*global.pr < global.sw*0.7 {
+					//show_question("paste load code:")
+				
+					//instance_create_layer(x,y,layer,obj_example_controller)
+					global.show_input_prompt = 1
+				
+				} else {
+					//
+				}
+			
+			} else if device_mouse_y_to_gui(0)*global.pr > global.sh*0.5 && device_mouse_y_to_gui(0)*global.pr < global.sh*0.7 {
+				
 				//create
 			
 				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
@@ -101,25 +127,11 @@ if mouse_check_button_pressed(mb_left) {
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
 					scr_board_init()
 				}
-			
-			} else if device_mouse_y_to_gui(0)*global.pr > global.sh*0.5 && device_mouse_y_to_gui(0)*global.pr < global.sh*0.7 {
 		
-				//load
-				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
-					global.loadBoard = "EXITBTSNOSEIDAHA"
-					global.loadSecret = "1-2-6-11-8-4"
-					scr_board_init()
-				} else if device_mouse_x_to_gui(0)*global.pr > global.sw*0.3 && device_mouse_x_to_gui(0)*global.pr < global.sw*0.7 {
-					//show_question("paste load code:")
 				
-					//instance_create_layer(x,y,layer,obj_example_controller)
-					global.show_input_prompt = 1
-				
-				} else {
-					//
-				}
 		
 			}
+			
 		}
 		
 		
@@ -262,9 +274,9 @@ if mouse_check_button_pressed(mb_left) {
 	}
 	
 	if global.game_phase >= 3 {
-		//back
+		//share
 		if device_mouse_y_to_gui(0)*global.pr < 50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
-			if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+			if device_mouse_x_to_gui(0)*global.pr > global.sw*0.7 {
 				global.show_export_prompt = 1	
 			}
 		}
