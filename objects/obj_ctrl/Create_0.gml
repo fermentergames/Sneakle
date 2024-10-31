@@ -7,6 +7,10 @@ draw_set_font(fnt_main)
 //	device_mouse_dbclick_enable(true);
 //}
 
+var _letter_hue = 170
+global.background_col = make_color_hsv(_letter_hue,20,10)
+var background = layer_background_get_id(layer_get_id("Background"));
+layer_background_blend(background, global.background_col)
 
 device_mouse_dbclick_enable(false);
 
@@ -33,6 +37,7 @@ global.show_export_prompt = 0
 global.current_copy_code = "ABCD_1-2-3-4"
 global.current_copy_url = "https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4"
 
+global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
 
 //am_screenshotting = 0
 //am_screenshotting_fd = 0
@@ -81,12 +86,16 @@ selected_word_array = 0
 selected_word_array_id = 0
 selected_word_latest_tile = -1
 selected_word_latest_tile_id = -1
+selected_word_not_in_dictionary = 0
+selected_word_is_valid = 0
 
 secret_word_length = 0
 secret_word_str = ""
 secret_word_array = 0
 
 guesses_count = 0
+guesses_list = 0
+guesses_list[1] = ""
 
 device_mouse_dbclick_enable(true)
 

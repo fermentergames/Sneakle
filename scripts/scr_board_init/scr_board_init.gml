@@ -165,6 +165,8 @@ if (live_call()) return live_result;
 	
 	if global.skip_create = 1 {
 		
+		global.am_creating_fd = 0 //skip the zoom
+		
 		for (var i = 1; i <= global.game_grid_size_sqr; ++i) {
 		with (global.tile_letter[i]) {
 				

@@ -49,7 +49,7 @@ if global.game_phase = 2 {
 		
 		ready_for_phase3 = 0
 		
-		if selected_word_length >= 4 {
+		if selected_word_is_valid >= 1 && selecting = 0 {//selected_word_length >= 4 && selected_word_not_in_dictionary = 0 {
 			ready_for_phase3 = 1
 		}
 	}
@@ -106,8 +106,8 @@ if mouse_check_button_pressed(mb_left) {
 		
 				//load
 				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
-					global.loadBoard = "THAINORAYMFUJCET"
-					global.loadSecret = "2-6-10-15"
+					global.loadBoard = "EXITBTSNOSEIDAHA"
+					global.loadSecret = "1-2-6-11-8-4"
 					scr_board_init()
 				} else if device_mouse_x_to_gui(0)*global.pr > global.sw*0.3 && device_mouse_x_to_gui(0)*global.pr < global.sw*0.7 {
 					//show_question("paste load code:")
@@ -187,6 +187,7 @@ if mouse_check_button_pressed(mb_left) {
 				
 				global.game_phase = 2	
 				selected_word_length = 0
+				selected_word_not_in_dictionary = 0
 				selected_word_str = ""
 			
 			}
@@ -329,10 +330,15 @@ if mouse_check_button_released(mb_left) {
 		
 		
 			var _valid_guess = 1
+			selected_word_not_in_dictionary = 0
+			selected_word_is_valid = 1
 			
 			if selected_word_length <= 3 {
 				_valid_guess = 0
+				selected_word_is_valid = 0
 			}
+			
+			
 			
 			if _valid_guess = 1 {
 
@@ -344,10 +350,28 @@ if mouse_check_button_released(mb_left) {
 				
 				show_debug_message("selected word is: "+string(selected_word_str))
 				show_debug_message("length: "+string(selected_word_length))
-		
+				
+
+				//show_debug_message(global.dictionary)
+				
+				var word = string_lower(selected_word_str)
+				if (global.dictionary.check(word)) {
+				    show_debug_message("\"" + word + "\" is a valid English word.");
+				} else {
+				    show_debug_message("\"" + word + "\" is not a valid English word.");
+					 _valid_guess = 0
+					 selected_word_not_in_dictionary = 1
+					 selected_word_is_valid = 0
+				}
+				
+			}
 			
-		
-		
+			if _valid_guess = 1 {
+				
+				
+				
+			
+
 				if global.game_phase = 3 {
 			
 					var _valid_guess = 1
@@ -359,6 +383,8 @@ if mouse_check_button_released(mb_left) {
 					if _valid_guess = 1 {
 						guesses_count += 1
 						show_debug_message("guesses_count: "+string(guesses_count))
+						
+						guesses_list[guesses_count] = string(selected_word_str)
 			
 						show_debug_message(selected_word_str)
 						show_debug_message(secret_word_str)

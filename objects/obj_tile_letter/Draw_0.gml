@@ -118,7 +118,7 @@ if 1=1 {
 
 		gpu_set_blendmode(bm_add)
 		//am_clued_won_fd glow
-		draw_sprite_ext(spr_sqr512,0,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*(1+(0.0*am_selected_fd)),image_yscale*(1+(0.0*am_selected_fd)),image_angle,image_blend,image_alpha*(am_clued_won_fd*(0.15+(0.15*(sin(obj_ctrl.timey*0.1))))))
+		draw_sprite_ext(spr_sqr512,0,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*(1+(0.0*am_selected_fd)),image_yscale*(1+(0.0*am_selected_fd)),image_angle,image_blend,image_alpha*(am_clued_won_fd*(0.15+(0.15*(sin(obj_ctrl.timey*0.07))))))
 	
 	}
 

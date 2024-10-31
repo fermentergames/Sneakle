@@ -1012,13 +1012,536 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730354533,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730359039,AllowStatistics:"True"	}
 }
 ;
 
 function gml_Room_rm_blank_Create(_inst,_other)
 {
 	gml_Script_live_room_start(_inst,_inst);
+}
+
+function gml_GlobalScript_GMDictionary_classes(_inst,_other)
+{
+	(_inst.gmlCheckWordDictionary=__yy_method(_inst,gml_Script_CheckWordDictionary));
+	(_inst.gmlPickWordDictionary=__yy_method(_inst,gml_Script_PickWordDictionary));
+}
+
+function gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes(_inst,_other,argument0)
+{
+
+		{
+		var gmln=0;
+		if(yyGetBool(is_string(argument0)))
+		{
+
+						{
+				var gmlf=file_text_open_read(argument0);
+				for(;!yyGetBool(file_text_eof(gmlf));file_text_readln(gmlf))
+				{
+
+										{
+						var gmlw=file_text_read_string(gmlf);
+						variable_struct_set(_inst.gmldata,gmlw,1);
+						(gmln=(gmln instanceof Long?gmln.add(1):++gmln),gmln);
+					}
+				}
+				;
+				file_text_close(gmlf);
+				_inst.gmlsize=yyfplus(_inst.gmlsize,gmln);
+			}
+			;
+		}
+		else 
+		{
+			if(yyGetBool(is_array(argument0)))
+			{
+
+								{
+					var gmlsourceSize=array_length(argument0);
+					var gmli=0;
+					for(;yyfless(gmli,gmlsourceSize);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+					{
+
+												{
+							gmln=yyfplus(gmln,(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,argument0[__yy_gml_array_check_index(gmli,argument0)])));
+						}
+					}
+					;
+				}
+				;
+			}
+			else 
+			{
+				if(yyGetBool(is_struct(argument0)))
+				{
+
+										{
+						var gmlsourceKeys=variable_struct_get_names(argument0);
+						var gmlsourceSize=array_length(gmlsourceKeys);
+						var gmli=0;
+						for(;yyfless(gmli,gmlsourceSize);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+						{
+
+														{
+								var gmlk=gmlsourceKeys[__yy_gml_array_check_index(gmli,gmlsourceKeys)];
+								if(yyGetBool(variable_struct_get(argument0,gmlk)))
+								{
+
+																		{
+										gmln=yyfplus(gmln,(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,gmlk)));
+									}
+									;
+								}
+								;
+							}
+						}
+						;
+					}
+					;
+				}
+				else 
+				{
+
+										{
+						show_error("Invalid type for source in CheckWordDictionary.load(source).",true);
+					}
+					;
+				}
+				;
+			}
+			;
+		}
+		;
+		return gmln;
+	}
+}
+
+function gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes(_inst,_other,argument0)
+{
+
+		{
+		if(yyGetBool(is_string(argument0)))
+		{
+
+						{
+				variable_struct_set(_inst.gmldata,argument0,1);
+				(_inst.gmlsize=(_inst.gmlsize instanceof Long?_inst.gmlsize.add(1):++_inst.gmlsize),_inst.gmlsize);
+				return 1;
+			}
+			;
+		}
+		else 
+		{
+			if(yyGetBool(is_array(argument0)))
+			{
+
+								{
+					var gmln=array_length(argument0);
+					var gmli=yyfminus(__yy_gml_errCheck(gmln),1);
+					for(;yyfgreaterequal(gmli,0);(gmli=(gmli instanceof Long?gmli.subtract(1):--gmli),gmli))
+					{
+
+												{
+							variable_struct_set(_inst.gmldata,array_get(argument0,gmli),1);
+						}
+					}
+					;
+					_inst.gmlsize=yyfplus(_inst.gmlsize,gmln);
+					return gmln;
+				}
+				;
+			}
+			;
+		}
+		;
+	}
+}
+
+function gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes(_inst,_other,argument0)
+{
+
+		{
+		if(yyflessequal(_inst.gmlsize,0))
+		{
+
+						{
+				throw __yy_gml_object_create(_inst,gml_Script_DictionaryTooSmallException,_inst,1);
+			}
+			;
+		}
+		;
+		return variable_struct_exists(_inst.gmldata,argument0);
+	}
+}
+
+function gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes";
+	}
+	if(gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.__type===undefined)
+	{
+		gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype);
+
+				{
+		}
+	}
+}
+
+function gml_Script_CheckWordDictionary(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script_CheckWordDictionary";
+	}
+	if(gml_Script_CheckWordDictionary.prototype.__type===undefined)
+	{
+		gml_Script_CheckWordDictionary.prototype.__type="gml_Script_CheckWordDictionary";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script_CheckWordDictionary.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				if(!global.gml_Script_CheckWordDictionary_prototype_yy_staticInitialiser)
+				{
+					gml_Script_CheckWordDictionary.prototype.gmlload=__yy_method(undefined,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes),gml_Script_CheckWordDictionary.prototype.gmladd=__yy_method(undefined,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes),gml_Script_CheckWordDictionary.prototype.gmlcheck=__yy_method(undefined,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes);
+				}
+				global.gml_Script_CheckWordDictionary_prototype_yy_staticInitialiser=true;
+				_inst.gmldata=__yy_gml_object_create(_inst,(global.gml___struct___0=__yy_method(_inst,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes)));
+				_inst.gmlsize=0;
+				if(yyfgreater(($$args.length-2),0))
+				{
+
+										{
+						(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,$$args[__yy_gml_array_check_index(2+(0),$$args)]));
+					}
+					;
+				}
+				;
+			}
+		}
+	}
+}
+
+function gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes(_inst,_other,argument0)
+{
+
+		{
+		var gmln=0;
+		if(yyGetBool(is_string(argument0)))
+		{
+
+						{
+				var gmlf=file_text_open_read(argument0);
+				for(;!yyGetBool(file_text_eof(gmlf));file_text_readln(gmlf))
+				{
+
+										{
+						var gmlw=file_text_read_string(gmlf);
+						array_push(_inst.gmldata,gmlw);
+						(gmln=(gmln instanceof Long?gmln.add(1):++gmln),gmln);
+					}
+				}
+				;
+				file_text_close(gmlf);
+				_inst.gmlsize=yyfplus(_inst.gmlsize,gmln);
+			}
+			;
+		}
+		else 
+		{
+			if(yyGetBool(is_array(argument0)))
+			{
+
+								{
+					var gmlsourceSize=array_length(argument0);
+					var gmli=0;
+					for(;yyfless(gmli,gmlsourceSize);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+					{
+
+												{
+							gmln=yyfplus(gmln,(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,argument0[__yy_gml_array_check_index(gmli,argument0)])));
+						}
+					}
+					;
+				}
+				;
+			}
+			else 
+			{
+				if(yyGetBool(is_struct(argument0)))
+				{
+
+										{
+						var gmlsourceKeys=variable_struct_get_names(argument0);
+						var gmlsourceSize=array_length(gmlsourceKeys);
+						var gmli=0;
+						for(;yyfless(gmli,gmlsourceSize);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+						{
+
+														{
+								var gmlk=gmlsourceKeys[__yy_gml_array_check_index(gmli,gmlsourceKeys)];
+								if(yyGetBool(variable_struct_get(argument0,gmlk)))
+								{
+
+																		{
+										gmln=yyfplus(gmln,(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,gmlk)));
+									}
+									;
+								}
+								;
+							}
+						}
+						;
+					}
+					;
+				}
+				else 
+				{
+
+										{
+						show_error("Invalid type for source in CheckWordDictionary.load(source).",true);
+					}
+					;
+				}
+				;
+			}
+			;
+		}
+		;
+		return gmln;
+	}
+}
+
+function gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes(_inst,_other,argument0)
+{
+
+		{
+		if(yyGetBool(is_string(argument0)))
+		{
+
+						{
+				array_push(_inst.gmldata,argument0);
+				(_inst.gmlsize=(_inst.gmlsize instanceof Long?_inst.gmlsize.add(1):++_inst.gmlsize),_inst.gmlsize);
+				return 1;
+			}
+			;
+		}
+		else 
+		{
+
+						{
+				var gmln=array_length(argument0);
+				array_copy(_inst.gmldata,_inst.gmlsize,argument0,0,gmln);
+				_inst.gmlsize=yyfplus(_inst.gmlsize,gmln);
+				return gmln;
+			}
+			;
+		}
+		;
+	}
+}
+
+function gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes(_inst,_other)
+{
+
+		{
+		if(yyflessequal(_inst.gmlsize,0))
+		{
+
+						{
+				throw __yy_gml_object_create(_inst,gml_Script_DictionaryTooSmallException,_inst,1);
+			}
+			;
+		}
+		;
+		return _inst.gmldata[__yy_gml_array_check_index(irandom(yyfminus(__yy_gml_errCheck(_inst.gmlsize),1)),_inst.gmldata)];
+	}
+}
+
+function gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes";
+	}
+	if(gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type===undefined)
+	{
+		gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype);
+
+				{
+		}
+	}
+}
+
+function gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes(_inst,_other,argument0,argument1)
+{
+
+		{
+		if(yyfequal(argument1,g_pBuiltIn.undefined))
+		{
+			argument1=false;
+		}
+		;
+	}
+
+		{
+		if(yyfless(_inst.gmlsize,argument0))
+		{
+
+						{
+				throw __yy_gml_object_create(_inst,gml_Script_DictionaryTooSmallException,_inst,argument0);
+			}
+			;
+		}
+		;
+		var gmlresult;
+		if(yyGetBool(argument1))
+		{
+
+						{
+				gmlresult=array_create(_inst.gmlsize);
+				array_copy(gmlresult,0,_inst.gmldata,0,_inst.gmlsize);
+				var gmli=yyfminus(__yy_gml_errCheck(_inst.gmlsize),1);
+				for(;yyfgreaterequal(gmli,1);(gmli=(gmli instanceof Long?gmli.subtract(1):--gmli),gmli))
+				{
+
+										{
+						var gmlj=irandom(gmli);
+						var gmltemp=gmlresult[__yy_gml_array_check_index(gmli,gmlresult)];
+						gmlresult=__yy_gml_array_check(gmlresult,3020819787);
+						gmlresult[__yy_gml_array_check_index_set(gmli)]=gmlresult[__yy_gml_array_check_index(gmlj,gmlresult)];
+						gmlresult[__yy_gml_array_check_index_set(gmlj)]=gmltemp;
+					}
+				}
+				;
+				array_resize(gmlresult,argument0);
+			}
+			;
+		}
+		else 
+		{
+
+						{
+				gmlresult=array_create(argument0);
+				var gmlseenWords=__yy_gml_object_create(_inst,(global.gml___struct___1=__yy_method(_inst,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes)));
+				var gmli=yyfminus(__yy_gml_errCheck(argument0),1);
+				for(;yyfgreaterequal(gmli,0);(gmli=(gmli instanceof Long?gmli.subtract(1):--gmli),gmli))
+				{
+
+										{
+						do 
+						{
+
+														{
+								var gmlpickedWord=_inst.gmldata[__yy_gml_array_check_index(irandom(yyfminus(__yy_gml_errCheck(_inst.gmlsize),1)),_inst.gmldata)];
+							}
+						}
+						while(!(!yyGetBool(variable_struct_exists(gmlseenWords,gmlpickedWord))));
+						variable_struct_set(gmlseenWords,gmlpickedWord,1);
+						gmlresult=__yy_gml_array_check(gmlresult,3020819787);
+						gmlresult[__yy_gml_array_check_index_set(gmli)]=gmlpickedWord;
+					}
+				}
+				;
+			}
+			;
+		}
+		;
+		return gmlresult;
+	}
+}
+
+function gml_Script_PickWordDictionary(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script_PickWordDictionary";
+	}
+	if(gml_Script_PickWordDictionary.prototype.__type===undefined)
+	{
+		gml_Script_PickWordDictionary.prototype.__type="gml_Script_PickWordDictionary";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script_PickWordDictionary.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				if(!global.gml_Script_PickWordDictionary_prototype_yy_staticInitialiser)
+				{
+					gml_Script_PickWordDictionary.prototype.gmlload=__yy_method(undefined,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes),gml_Script_PickWordDictionary.prototype.gmladd=__yy_method(undefined,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes),gml_Script_PickWordDictionary.prototype.gmlpick=__yy_method(undefined,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes),gml_Script_PickWordDictionary.prototype.gmlpickN=__yy_method(undefined,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes);
+				}
+				global.gml_Script_PickWordDictionary_prototype_yy_staticInitialiser=true;
+				_inst.gmldata=__yy_gml_array_create([]);
+				_inst.gmlsize=0;
+				if(yyfgreater(($$args.length-2),0))
+				{
+
+										{
+						(__temp__=_inst,__yyg_call_method(__temp__.gmlload)(__temp__,_other,$$args[__yy_gml_array_check_index(2+(0),$$args)]));
+					}
+					;
+				}
+				;
+			}
+		}
+	}
+}
+
+function gml_GlobalScript_GMDictionary_exceptions(_inst,_other)
+{
+	(_inst.gmlDictionaryTooSmallException=__yy_method(_inst,gml_Script_DictionaryTooSmallException));
+}
+
+function gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions(_inst,_other)
+{
+
+		{
+		return yyfplus(yyfplus(yyfplus(yyfplus("Attempting to query ",__yy_gml_errCheck(string(_inst.gmln)))," word(s) from a dictionary of size "),__yy_gml_errCheck(string(yyInst(_inst,_other,_inst.gmldictionary).gmlsize))),".");
+	}
+}
+
+function gml_Script_DictionaryTooSmallException(_inst,_other,argument0,argument1)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script_DictionaryTooSmallException";
+	}
+	if(gml_Script_DictionaryTooSmallException.prototype.__type===undefined)
+	{
+		gml_Script_DictionaryTooSmallException.prototype.__type="gml_Script_DictionaryTooSmallException";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script_DictionaryTooSmallException.prototype);
+
+				{
+			if(!global.gml_Script_DictionaryTooSmallException_prototype_yy_staticInitialiser)
+			{
+				gml_Script_DictionaryTooSmallException.prototype.gmltoString=__yy_method(undefined,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions);
+			}
+			global.gml_Script_DictionaryTooSmallException_prototype_yy_staticInitialiser=true;
+			_inst.gmldictionary=argument0;
+			_inst.gmln=argument1;
+		}
+	}
 }
 
 function gml_GlobalScript_GMLive_noDeactivate(_inst,_other)
@@ -7638,6 +8161,7 @@ function gml_Script_scr_board_init(_inst,_other)
 		{
 
 						{
+				global.gmlam_creating_fd=0;
 				var gmli=1;
 				for(;yyflessequal(gmli,global.gmlgame_grid_size_sqr);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
 				{
@@ -7852,6 +8376,10 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	}
 	;
 	draw_set_font(YYASSET_REF(0x06000001));
+	var gml_letter_hue=170;
+	global.gmlbackground_col=make_color_hsv(gml_letter_hue,20,10);
+	var gmlbackground=layer_background_get_id(layer_get_id("Background"));
+	layer_background_blend(gmlbackground,global.gmlbackground_col);
 	device_mouse_dbclick_enable(false);
 	global.gmlgrid_x_origin=0;
 	global.gmlgrid_y_origin=0;
@@ -7870,6 +8398,7 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlshow_export_prompt=0;
 	global.gmlcurrent_copy_code="ABCD_1-2-3-4";
 	global.gmlcurrent_copy_url="https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4";
+	global.gmldictionary=__yy_gml_object_create(_inst,gml_Script_CheckWordDictionary,yyfplus(__yy_gml_errCheck(g_pBuiltIn.working_directory),"dictionaries/full/full.txt"));
 	global.gmlis_browser=0;
 	if(yyfnotequal(g_pBuiltIn.get_os_browser(),(-1)))
 	{
@@ -7921,10 +8450,15 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	_inst.gmlselected_word_array_id=0;
 	_inst.gmlselected_word_latest_tile=(-1);
 	_inst.gmlselected_word_latest_tile_id=(-1);
+	_inst.gmlselected_word_not_in_dictionary=0;
+	_inst.gmlselected_word_is_valid=0;
 	_inst.gmlsecret_word_length=0;
 	_inst.gmlsecret_word_str="";
 	_inst.gmlsecret_word_array=0;
 	_inst.gmlguesses_count=0;
+	_inst.gmlguesses_list=0;
+	_inst.gmlguesses_list=__yy_gml_array_check(_inst.gmlguesses_list,1423110526);
+	_inst.gmlguesses_list[__yy_gml_array_check_index_set(1)]="";
 	device_mouse_dbclick_enable(true);
 	randomize();
 	_inst.gmlp_string=0;
@@ -7969,7 +8503,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-167);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-195);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -8000,7 +8534,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 						{
 				_inst.gmlready_for_phase3=0;
-				if(yyfgreaterequal(_inst.gmlselected_word_length,4))
+				if((yyGetBool(yyfgreaterequal(_inst.gmlselected_word_is_valid,1)))&&(yyGetBool(yyfequal(_inst.gmlselecting,0))))
 				{
 
 										{
@@ -8107,8 +8641,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												global.gmlloadBoard="THAINORAYMFUJCET";
-												global.gmlloadSecret="2-6-10-15";
+												global.gmlloadBoard="EXITBTSNOSEIDAHA";
+												global.gmlloadSecret="1-2-6-11-8-4";
 												gml_Script_scr_board_init(_inst,_other);
 											}
 											;
@@ -8246,6 +8780,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									;
 									global.gmlgame_phase=2;
 									_inst.gmlselected_word_length=0;
+									_inst.gmlselected_word_not_in_dictionary=0;
 									_inst.gmlselected_word_str="";
 								}
 								;
@@ -8513,11 +9048,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 												{
 							var gml_valid_guess=1;
+							_inst.gmlselected_word_not_in_dictionary=0;
+							_inst.gmlselected_word_is_valid=1;
 							if(yyflessequal(_inst.gmlselected_word_length,3))
 							{
 
 																{
 									gml_valid_guess=0;
+									_inst.gmlselected_word_is_valid=0;
 								}
 								;
 							}
@@ -8539,6 +9077,35 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									_inst.gmlselected_word_str=gml_letters_str;
 									show_debug_message(yyfplus("selected word is: ",__yy_gml_errCheck(string(_inst.gmlselected_word_str))));
 									show_debug_message(yyfplus("length: ",__yy_gml_errCheck(string(_inst.gmlselected_word_length))));
+									var gmlword=string_lower(_inst.gmlselected_word_str);
+									if(yyGetBool((__temp__=yyInst(_inst,_other,global.gmldictionary),__yyg_call_method(__temp__.gmlcheck)(__temp__,_other,gmlword))))
+									{
+
+																				{
+											show_debug_message(yyfplus(yyfplus("\"",__yy_gml_errCheck(gmlword)),"\" is a valid English word."));
+										}
+										;
+									}
+									else 
+									{
+
+																				{
+											show_debug_message(yyfplus(yyfplus("\"",__yy_gml_errCheck(gmlword)),"\" is not a valid English word."));
+											gml_valid_guess=0;
+											_inst.gmlselected_word_not_in_dictionary=1;
+											_inst.gmlselected_word_is_valid=0;
+										}
+										;
+									}
+									;
+								}
+								;
+							}
+							;
+							if(yyfequal(gml_valid_guess,1))
+							{
+
+																{
 									if(yyfequal(global.gmlgame_phase,3))
 									{
 
@@ -8559,6 +9126,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																								{
 													_inst.gmlguesses_count=yyfplus(_inst.gmlguesses_count,1);
 													show_debug_message(yyfplus("guesses_count: ",__yy_gml_errCheck(string(_inst.gmlguesses_count))));
+													_inst.gmlguesses_list=__yy_gml_array_check(_inst.gmlguesses_list,1423110526);
+													_inst.gmlguesses_list[__yy_gml_array_check_index_set(_inst.gmlguesses_count)]=string(_inst.gmlselected_word_str);
 													show_debug_message(_inst.gmlselected_word_str);
 													show_debug_message(_inst.gmlsecret_word_str);
 													if(yyfequal(_inst.gmlselected_word_str,_inst.gmlsecret_word_str))
@@ -8928,32 +9497,16 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	var gml_pos_scl=global.gmlpr;
 	var gml_scl=yyfdivide(yyftime(__yy_gml_errCheck(global.gmlsw),__yy_gml_errCheck(global.gmlpr)),450);
-	if(yyGetBool(keyboard_check(16)))
-	{
-
-				{
-		}
-		;
-	}
-	;
 	var gml_tscl=clamp(yyftime(__yy_gml_errCheck(gml_scl),1),0.5,2);
-	var gml_letter_hue=170;
-	global.gmlbackground_col=make_color_hsv(gml_letter_hue,20,10);
-	var gmlbackground=layer_background_get_id(layer_get_id("Background"));
-	layer_background_blend(gmlbackground,global.gmlbackground_col);
 	gpu_set_tex_filter(true);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 	draw_set_color(16777215);
 	draw_set_halign(1);
 	draw_set_valign(1);
-	draw_set_color(make_color_hsv(160,150,150));
 	draw_set_color(16777215);
 	draw_set_alpha(0.3);
-	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"s n e a k l e",yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),0);
-	draw_set_color(16777215);
-	draw_set_alpha(0.3);
-	draw_set_halign(0);
+	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"s n e a k l e",yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_halign(1);
 	draw_set_alpha(1);
 	draw_set_color(16777215);
@@ -9020,13 +9573,16 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					{
 
 												{
+							draw_set_alpha(1);
 							draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"CONFIRM SECRET WORD",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+							draw_set_alpha(0.3);
 						}
 						;
 					}
 					;
+					draw_set_alpha(0.3);
 					draw_set_font(YYASSET_REF(0x06000000));
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime((-40),__yy_gml_errCheck(gml_pos_scl)))),"your SECRET WORD is:",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(gml_pos_scl)))),"your SECRET WORD is:",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
 					var gml_letters_str="";
 					var gmll=0;
@@ -9038,7 +9594,39 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						}
 					}
 					;
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),string_lower(gml_letters_str),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_alpha(1);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),string(gml_letters_str),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_alpha(0.3);
+					if(yyfgreater(_inst.gmlselected_word_length,0))
+					{
+
+												{
+							if(yyflessequal(_inst.gmlselected_word_length,3))
+							{
+
+																{
+									draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(gml_pos_scl)))),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+								}
+								;
+							}
+							else 
+							{
+								if((yyGetBool(yyfgreaterequal(_inst.gmlselected_word_not_in_dictionary,1)))&&(yyGetBool(yyfequal(_inst.gmlselecting,0))))
+								{
+
+																		{
+										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(gml_pos_scl)))),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+									}
+									;
+								}
+								;
+							}
+							;
+						}
+						;
+					}
+					;
+					draw_set_alpha(1);
 				}
 				;
 			}
@@ -9084,22 +9672,66 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						{
 
 														{
-								draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),yyfplus(__yy_gml_errCheck(string_lower(gml_letters_str)),"?"),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),0);
+								draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),yyfplus(__yy_gml_errCheck(string(gml_letters_str)),"?"),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 							}
 							;
 						}
 						;
 						draw_set_alpha(0.3);
-						if((yyGetBool(yyfgreater(_inst.gmlselected_word_length,0)))&&(yyGetBool(yyflessequal(_inst.gmlselected_word_length,3))))
+						if(yyfgreater(_inst.gmlselected_word_length,0))
 						{
 
 														{
-								draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.75),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+								if(yyflessequal(_inst.gmlselected_word_length,3))
+								{
+
+																		{
+										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.75),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+									}
+									;
+								}
+								else 
+								{
+									if(yyfgreaterequal(_inst.gmlselected_word_not_in_dictionary,1))
+									{
+
+																				{
+											draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.75),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+										}
+										;
+									}
+									;
+								}
+								;
 							}
 							;
 						}
 						;
-						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.85),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count))," guesses"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_set_valign(0);
+						draw_set_font(YYASSET_REF(0x06000000));
+						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count))," guesses"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						var gml_guess_list_str="";
+						var gmli=1;
+						for(;yyfless(gmli,array_length(_inst.gmlguesses_list));(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+						{
+
+														{
+								gml_guess_list_str=yyfplus(gml_guess_list_str,_inst.gmlguesses_list[__yy_gml_array_check_index(gmli,_inst.gmlguesses_list)]);
+								if(yyfless(gmli,yyfminus(__yy_gml_errCheck(array_length(_inst.gmlguesses_list)),1)))
+								{
+
+																		{
+										gml_guess_list_str=yyfplus(gml_guess_list_str,", ");
+									}
+									;
+								}
+								;
+							}
+						}
+						;
+						draw_text_ext_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.8)),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),string(gml_guess_list_str),150,yyftime(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),10),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+						draw_set_valign(1);
+						draw_set_font(YYASSET_REF(0x06000001));
 					}
 					;
 				}
@@ -9130,11 +9762,37 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 								}
 							}
 							;
+							draw_set_valign(0);
 							draw_set_font(YYASSET_REF(0x06000000));
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),"SECRET WORD found!\n\n\n\n",yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),0);
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(yyfplus("\n\n\n\n",__yy_gml_errCheck(string(_inst.gmlguesses_count)))," guesses"),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),"SECRET WORD found!",yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_font(YYASSET_REF(0x06000001));
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(yyfplus("\n",__yy_gml_errCheck(string(gml_letters_str))),"\n\n\n"),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),0);
+							draw_set_alpha(1);
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime((-15),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("\n",__yy_gml_errCheck(string(gml_letters_str))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
+							draw_set_font(YYASSET_REF(0x06000000));
+							draw_set_alpha(0.3);
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(120,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count))," guesses"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+							var gml_guess_list_str="";
+							var gmli=1;
+							for(;yyfless(gmli,array_length(_inst.gmlguesses_list));(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+							{
+
+																{
+									gml_guess_list_str=yyfplus(gml_guess_list_str,_inst.gmlguesses_list[__yy_gml_array_check_index(gmli,_inst.gmlguesses_list)]);
+									if(yyfless(gmli,yyfminus(__yy_gml_errCheck(array_length(_inst.gmlguesses_list)),1)))
+									{
+
+																				{
+											gml_guess_list_str=yyfplus(gml_guess_list_str,", ");
+										}
+										;
+									}
+									;
+								}
+							}
+							;
+							draw_text_ext_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(145,__yy_gml_errCheck(gml_pos_scl)))),string(gml_guess_list_str),150,yyftime(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),10),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+							draw_set_valign(1);
+							draw_set_alpha(1);
 						}
 						;
 					}
@@ -9272,7 +9930,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.25152126128),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.30366712967),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -10679,7 +11337,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 
 						{
 				gpu_set_blendmode(1);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_won_fd),__yy_gml_errCheck(yyfplus(0.15,__yy_gml_errCheck(yyftime(0.15,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.1)))))))))));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_won_fd),__yy_gml_errCheck(yyfplus(0.15,__yy_gml_errCheck(yyftime(0.15,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.07)))))))))));
 			}
 			;
 		}
@@ -10804,6 +11462,8 @@ function compile_if_used()
 
 function gmlInitGlobal()
 {
+	global.gml___struct___0=0;
+	global.gml___struct___1=0;
 	global.gmlg_gml_token_constructors=0;
 	global.gmlg_gml_node_constructors=0;
 	global.gmlmq_gml_thread_scope=0;
@@ -10835,8 +11495,6 @@ function gmlInitGlobal()
 	global.gmlmt_gml_with_scope=0;
 	global.gmlmt_gml_type_ref=0;
 	global.gmlmt_vm_v2_GmlStructBase=0;
-	global.gml___struct___0=0;
-	global.gml___struct___1=0;
 	global.gml___struct___2=0;
 	global.gml___struct___3=0;
 	global.gml___struct___4=0;
@@ -10937,24 +11595,26 @@ function gmlInitGlobal()
 	global.gml___struct___99=0;
 	global.gml___struct___100=0;
 	global.gml___struct___101=0;
+	global.gml___struct___102=0;
+	global.gml___struct___103=0;
 	global.gmlgml_builder_build_line_is_stat=0;
 	global.gmlgml_builder_build_line_is_expr=0;
 	global.gmlcompile_gml_compile_args_get_simple_val=0;
 	global.gmlcompile_gml_compile_args_get_simple_kind=0;
 	global.gmlgml_func_name=0;
 	global.gmlgml_func_script_id=0;
-	global.gml___struct___102=0;
-	global.gmlgml_const_map=0;
-	global.gml___struct___103=0;
-	global.gmlgml_const_val=0;
 	global.gml___struct___104=0;
-	global.gmlgml_asset_index=0;
+	global.gmlgml_const_map=0;
 	global.gml___struct___105=0;
-	global.gmlgml_enum_map=0;
+	global.gmlgml_const_val=0;
 	global.gml___struct___106=0;
+	global.gmlgml_asset_index=0;
+	global.gml___struct___107=0;
+	global.gmlgml_enum_map=0;
+	global.gml___struct___108=0;
 	global.gmlcompile_groups_gml_compile_group_static_has_statics=0;
 	global.gmlgml_func_map=0;
-	global.gml___struct___107=0;
+	global.gml___struct___109=0;
 	global.gmlvm_value_gml_value_printer_print_refs=0;
 	global.gmlvm_value_gml_value_printer_print_num=0;
 	global.gmlgml_op_apply_fns=0;
@@ -10991,19 +11651,19 @@ function gmlInitGlobal()
 	global.gmlgml_program_seek_script=0;
 	global.gmlgml_std_StringBuf_buffer=0;
 	global.gmlgml_fast_field_getters=0;
-	global.gml___struct___108=0;
-	global.gmlgml_fast_field_setters=0;
-	global.gml___struct___109=0;
-	global.gmlapi_api_var_map=0;
 	global.gml___struct___110=0;
+	global.gmlgml_fast_field_setters=0;
+	global.gml___struct___111=0;
+	global.gmlapi_api_var_map=0;
+	global.gml___struct___112=0;
 	global.gmlast_gml_macro_proc_list=0;
 	global.gmlast_gml_macro_proc_map=0;
-	global.gml___struct___111=0;
+	global.gml___struct___113=0;
 	global.gmlast_gml_macro_proc_exclude_map=0;
-	global.gml___struct___112=0;
+	global.gml___struct___114=0;
 	global.gmlast_gml_macro_proc_next_exclude_list=0;
 	global.gmlast_gml_macro_proc_next_exclude_map=0;
-	global.gml___struct___113=0;
+	global.gml___struct___115=0;
 	global.gmlast_gml_node_def_info_array=0;
 	global.gmlast_gml_node_tools_ni_concat_pos_pos=0;
 	global.gmlgml_script_index_offset=0;
@@ -11047,7 +11707,7 @@ function gmlInitGlobal()
 	global.gmllive_last_warn_at=0;
 	global.gmllive_auto_call_data=0;
 	global.gmllive_async_http_1_found=0;
-	global.gml___struct___114=0;
+	global.gml___struct___116=0;
 	global.gmllive_async_http_1_acc=0;
 	global.gmllive_gmlive_patcher_error_text=0;
 	global.gmllive_shader_updated=0;
@@ -11072,11 +11732,11 @@ function gmlInitGlobal()
 	global.gmllive_init_attempts=0;
 	global.gmllive_directory=0;
 	global.gmllive_live_map=0;
-	global.gml___struct___115=0;
-	global.gmllive_live_enums=0;
-	global.gml___struct___116=0;
-	global.gmllive_live_macros=0;
 	global.gml___struct___117=0;
+	global.gmllive_live_enums=0;
+	global.gml___struct___118=0;
+	global.gmllive_live_macros=0;
+	global.gml___struct___119=0;
 	global.gmllive_live_globals=0;
 	global.gmllive_temp_path=0;
 	global.gmllive_log_script=0;
@@ -11110,7 +11770,9 @@ function gmlInitGlobal()
 	global.gmlvm_group_call_call_func_status=0;
 	global.gmlvm_v2_gml_thread_group_call_gml23_funcs=0;
 	global.gmlvm_group_op_funcs=0;
-	global.gml___struct___118=0;
+	global.gml___struct___120=0;
+	gml_GlobalScript_GMDictionary_classes(global,global);
+	gml_GlobalScript_GMDictionary_exceptions(global,global);
 	gml_GlobalScript_GMLive_noDeactivate(global,global);
 	gml_GlobalScript_GMLive_notOnce(global,global);
 	gml_GlobalScript_GMLive(global,global);
@@ -11277,132 +11939,166 @@ function gmlGameEndScripts()
 Tags=["@@constructor"];
 IDToTagList=[
 {
-	key:83986087,ids:[0]}
+	key:83986085,ids:[0]}
 ,
 {
-	key:83986121,ids:[0]}
+	key:83986091,ids:[0]}
 ,
 {
-	key:83986155,ids:[0]}
+	key:83986094,ids:[0]}
+,
+{
+	key:83986102,ids:[0]}
+,
+{
+	key:83986136,ids:[0]}
+,
+{
+	key:83986170,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
-JSON_game.Scripts=[gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
-const kgml_GlobalScript_GMLive_noDeactivate=100000;
-const kgml_Script_instance_deactivate_all_hook=100001;
-const kgml_Script_instance_deactivate_layer_hook=100002;
-const kgml_Script_instance_deactivate_object_hook=100003;
-const kgml_Script_instance_deactivate_region_hook=100004;
-const kgml_GlobalScript_GMLive_notOnce=100005;
-const kgml_GlobalScript_GMLive=100006;
-const kgml_Script_gml_macro=100007;
-const kgml_Script_sprite_set_live=100008;
-const kgml_Script_path_set_live=100009;
-const kgml_Script_animcurve_set_live=100010;
-const kgml_Script_file_set_live=100011;
-const kgml_Script_room_set_live=100012;
-const kgml_Script_room_goto_live=100013;
-const kgml_Script_live_call=100014;
-const kgml_Script_live_defcall=100015;
-const kgml_Script_live_call_ext=100016;
-const kgml_Script_live_defcall_ext=100017;
-const kgml_Script_live_auto_call_1=100018;
-const kgml_Script_live_auto_call_2=100019;
-const kgml_Script_live_async_http=100020;
-const kgml_Script_shader_set_live=100021;
-const kgml_Script_live_validate_scripts=100022;
-const kgml_Script_live_method=100023;
-const kgml_Script_live_method_get_self=100024;
-const kgml_Script_gml_thread_method_script=100025;
-const kgml_Script_live_update_script_impl=100026;
-const kgml_Script_live_constant_add=100027;
-const kgml_Script_live_constant_delete=100028;
-const kgml_Script_live_variable_add=100029;
-const kgml_Script_live_variable_delete=100030;
-const kgml_Script_live_function_add=100031;
-const kgml_Script_live_function_delete=100032;
-const kgml_Script_live_throw_error=100033;
-const kgml_Script_live_execute_string=100034;
-const kgml_Script_live_snippet_create=100035;
-const kgml_Script_live_snippet_destroy=100036;
-const kgml_Script_live_snippet_call=100037;
-const kgml_Script_live_update=100038;
-const kgml_Script_live_init=100039;
-const kgml_Script_live_room_start=100040;
-const kgml_Script_vm_v2_GmlStructBase=100041;
-const kgml_GlobalScript_GMLiveAPI_js=100042;
-const kgml_Script_live_preinit_js_dummy=100043;
-const kgml_GlobalScript_GMLiveAPI=100044;
-const kgml_Script_live_preinit_api=100045;
-const kgml_GlobalScript_html_elements_scripts=100046;
-const kgml_Script_html_init=100047;
-const kgml_Script_html_sync=100048;
-const kgml_Script_html_style=100049;
-const kgml_Script_html_cell=100050;
-const kgml_Script_html_button=100051;
-const kgml_Script_html_div=100052;
-const kgml_Script_html_field=100053;
-const kgml_Script_html_form=100054;
-const kgml_Script_html_h1=100055;
-const kgml_Script_html_h2=100056;
-const kgml_Script_html_h3=100057;
-const kgml_Script_html_icon=100058;
-const kgml_Script_html_image=100059;
-const kgml_Script_html_link=100060;
-const kgml_Script_html_p=100061;
-const kgml_Script_html_radio=100062;
-const kgml_Script_html_row=100063;
-const kgml_Script_html_span=100064;
-const kgml_Script_html_sprite=100065;
-const kgml_Script_html_submit=100066;
-const kgml_Script_html_table=100067;
-const kgml_Script_html_form_values=100068;
-const kgml_Script_html_element_hover=100069;
-const kgml_Script_html_element_interaction=100070;
-const kgml_Script_html_element_x=100071;
-const kgml_Script_html_element_y=100072;
-const kgml_Script_html_mouse_x=100073;
-const kgml_Script_html_mouse_y=100074;
-const kgml_Script_HtmlElement=100075;
-const kgml_Script_html_element=100076;
-const kgml_Script_html_element_by_id=100077;
-const kgml_Script_html_element_by_identifier=100078;
-const kgml_Script_html_element_cleanup=100079;
-const kgml_Script_html_element_cleanup_children=100080;
-const kgml_Script_html_element_id=100081;
-const kgml_Script_html_element_set_property=100082;
-const kgml_Script_html_element_sync=100083;
-const kgml_Script_html_form_add_values_from_children=100084;
-const kgml_Script_gmcallback_lose_focus=100085;
-const kgml_Script_gmcallback_on_input=100086;
-const kgml_Script_gmcallback_on_interaction=100087;
-const kgml_Script_gmcallback_on_mouseover=100088;
-const kgml_Script_gmcallback_on_mouseout=100089;
-const kgml_Script_gmcallback_set_focus=100090;
-const kgml_GlobalScript_html_submit_closebtn=100091;
-const kgml_Script_html_submit_closebtn=100092;
-const kgml_GlobalScript_html_submit_code=100093;
-const kgml_Script_html_submit_code=100094;
-const kgml_GlobalScript_html_submit_export_link=100095;
-const kgml_Script_html_submit_export_link=100096;
-const kgml_GlobalScript_html_submit_export=100097;
-const kgml_Script_html_submit_export=100098;
-const kgml_GlobalScript_INIT_HTML=100099;
-const kgml_GlobalScript_parse_query=100100;
-const kgml_Script_get_query=100101;
-const kgml_Script_parse_query=100102;
-const kgml_GlobalScript_scr_board_init=100103;
-const kgml_Script_scr_board_init=100104;
-const kgml_GlobalScript_scr_update_copy_code=100105;
-const kgml_Script_scr_update_copy_code=100106;
-const kgml_GlobalScript_scr_update_room_dimensions=100107;
-const kgml_Script_scr_update_room_dimensions=100108;
-const kgml_Script_browser_stretch_canvas=100109;
+JSON_game.ScriptNames=["gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
+JSON_game.Scripts=[gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
+const kgml_GlobalScript_GMDictionary_classes=100000;
+const kgml_Script_anon_706_CheckWordDictionary_GMDictionary_classes=100001;
+const kgml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes=100002;
+const kgml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes=100003;
+const kgml_Script____struct___0_CheckWordDictionary_GMDictionary_classes=100004;
+const kgml_Script_CheckWordDictionary=100005;
+const kgml_Script_anon_3141_PickWordDictionary_GMDictionary_classes=100006;
+const kgml_Script_anon_4195_PickWordDictionary_GMDictionary_classes=100007;
+const kgml_Script_anon_4530_PickWordDictionary_GMDictionary_classes=100008;
+const kgml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes=100009;
+const kgml_Script_anon_5084_PickWordDictionary_GMDictionary_classes=100010;
+const kgml_Script_PickWordDictionary=100011;
+const kgml_GlobalScript_GMDictionary_exceptions=100012;
+const kgml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions=100013;
+const kgml_Script_DictionaryTooSmallException=100014;
+const kgml_GlobalScript_GMLive_noDeactivate=100015;
+const kgml_Script_instance_deactivate_all_hook=100016;
+const kgml_Script_instance_deactivate_layer_hook=100017;
+const kgml_Script_instance_deactivate_object_hook=100018;
+const kgml_Script_instance_deactivate_region_hook=100019;
+const kgml_GlobalScript_GMLive_notOnce=100020;
+const kgml_GlobalScript_GMLive=100021;
+const kgml_Script_gml_macro=100022;
+const kgml_Script_sprite_set_live=100023;
+const kgml_Script_path_set_live=100024;
+const kgml_Script_animcurve_set_live=100025;
+const kgml_Script_file_set_live=100026;
+const kgml_Script_room_set_live=100027;
+const kgml_Script_room_goto_live=100028;
+const kgml_Script_live_call=100029;
+const kgml_Script_live_defcall=100030;
+const kgml_Script_live_call_ext=100031;
+const kgml_Script_live_defcall_ext=100032;
+const kgml_Script_live_auto_call_1=100033;
+const kgml_Script_live_auto_call_2=100034;
+const kgml_Script_live_async_http=100035;
+const kgml_Script_shader_set_live=100036;
+const kgml_Script_live_validate_scripts=100037;
+const kgml_Script_live_method=100038;
+const kgml_Script_live_method_get_self=100039;
+const kgml_Script_gml_thread_method_script=100040;
+const kgml_Script_live_update_script_impl=100041;
+const kgml_Script_live_constant_add=100042;
+const kgml_Script_live_constant_delete=100043;
+const kgml_Script_live_variable_add=100044;
+const kgml_Script_live_variable_delete=100045;
+const kgml_Script_live_function_add=100046;
+const kgml_Script_live_function_delete=100047;
+const kgml_Script_live_throw_error=100048;
+const kgml_Script_live_execute_string=100049;
+const kgml_Script_live_snippet_create=100050;
+const kgml_Script_live_snippet_destroy=100051;
+const kgml_Script_live_snippet_call=100052;
+const kgml_Script_live_update=100053;
+const kgml_Script_live_init=100054;
+const kgml_Script_live_room_start=100055;
+const kgml_Script_vm_v2_GmlStructBase=100056;
+const kgml_GlobalScript_GMLiveAPI_js=100057;
+const kgml_Script_live_preinit_js_dummy=100058;
+const kgml_GlobalScript_GMLiveAPI=100059;
+const kgml_Script_live_preinit_api=100060;
+const kgml_GlobalScript_html_elements_scripts=100061;
+const kgml_Script_html_init=100062;
+const kgml_Script_html_sync=100063;
+const kgml_Script_html_style=100064;
+const kgml_Script_html_cell=100065;
+const kgml_Script_html_button=100066;
+const kgml_Script_html_div=100067;
+const kgml_Script_html_field=100068;
+const kgml_Script_html_form=100069;
+const kgml_Script_html_h1=100070;
+const kgml_Script_html_h2=100071;
+const kgml_Script_html_h3=100072;
+const kgml_Script_html_icon=100073;
+const kgml_Script_html_image=100074;
+const kgml_Script_html_link=100075;
+const kgml_Script_html_p=100076;
+const kgml_Script_html_radio=100077;
+const kgml_Script_html_row=100078;
+const kgml_Script_html_span=100079;
+const kgml_Script_html_sprite=100080;
+const kgml_Script_html_submit=100081;
+const kgml_Script_html_table=100082;
+const kgml_Script_html_form_values=100083;
+const kgml_Script_html_element_hover=100084;
+const kgml_Script_html_element_interaction=100085;
+const kgml_Script_html_element_x=100086;
+const kgml_Script_html_element_y=100087;
+const kgml_Script_html_mouse_x=100088;
+const kgml_Script_html_mouse_y=100089;
+const kgml_Script_HtmlElement=100090;
+const kgml_Script_html_element=100091;
+const kgml_Script_html_element_by_id=100092;
+const kgml_Script_html_element_by_identifier=100093;
+const kgml_Script_html_element_cleanup=100094;
+const kgml_Script_html_element_cleanup_children=100095;
+const kgml_Script_html_element_id=100096;
+const kgml_Script_html_element_set_property=100097;
+const kgml_Script_html_element_sync=100098;
+const kgml_Script_html_form_add_values_from_children=100099;
+const kgml_Script_gmcallback_lose_focus=100100;
+const kgml_Script_gmcallback_on_input=100101;
+const kgml_Script_gmcallback_on_interaction=100102;
+const kgml_Script_gmcallback_on_mouseover=100103;
+const kgml_Script_gmcallback_on_mouseout=100104;
+const kgml_Script_gmcallback_set_focus=100105;
+const kgml_GlobalScript_html_submit_closebtn=100106;
+const kgml_Script_html_submit_closebtn=100107;
+const kgml_GlobalScript_html_submit_code=100108;
+const kgml_Script_html_submit_code=100109;
+const kgml_GlobalScript_html_submit_export_link=100110;
+const kgml_Script_html_submit_export_link=100111;
+const kgml_GlobalScript_html_submit_export=100112;
+const kgml_Script_html_submit_export=100113;
+const kgml_GlobalScript_INIT_HTML=100114;
+const kgml_GlobalScript_parse_query=100115;
+const kgml_Script_get_query=100116;
+const kgml_Script_parse_query=100117;
+const kgml_GlobalScript_scr_board_init=100118;
+const kgml_Script_scr_board_init=100119;
+const kgml_GlobalScript_scr_update_copy_code=100120;
+const kgml_Script_scr_update_copy_code=100121;
+const kgml_GlobalScript_scr_update_room_dimensions=100122;
+const kgml_Script_scr_update_room_dimensions=100123;
+const kgml_Script_browser_stretch_canvas=100124;
 var __yyg__SetImageIndexGML=
 function(frame)
 {
 	this.image_index=frame;
 }
 ;
+gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
+gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script_CheckWordDictionary.__yyg__is_constructor=true;
+gml_Script_CheckWordDictionary.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
+gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script_PickWordDictionary.__yyg__is_constructor=true;
+gml_Script_PickWordDictionary.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script_DictionaryTooSmallException.__yyg__is_constructor=true;
+gml_Script_DictionaryTooSmallException.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_gml_macro.__yyg__is_constructor=true;
 gml_Script_gml_macro.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_vm_v2_GmlStructBase.__yyg__is_constructor=true;
