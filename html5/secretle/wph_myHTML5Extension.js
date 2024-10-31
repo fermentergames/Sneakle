@@ -118,6 +118,12 @@ function copyToClipboard(text) {
     });
 }
 
+function getPathFromUrl(url) {
+  return url.split("?")[0];
+}
+
 function get_window_host() {
-  return window.top.location.host;
+  //return getPathFromUrl(window.location.href);
+	let urlwithoutquery = window.location.origin + window.location.pathname;
+	return urlwithoutquery;
 }
