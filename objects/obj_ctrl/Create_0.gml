@@ -31,6 +31,7 @@ global.show_input_prompt = 0
 global.show_export_prompt = 0
 
 global.current_copy_code = "ABCD_1-2-3-4"
+global.current_copy_url = "https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4"
 
 
 //am_screenshotting = 0

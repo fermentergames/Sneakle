@@ -1012,7 +1012,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730335709,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730336882,AllowStatistics:"True"	}
 }
 ;
 
@@ -7148,6 +7148,30 @@ function gml_Script_gmcallback_set_focus(_inst,_other)
 	}
 }
 
+function gml_GlobalScript_html_submit_export_link(_inst,_other,argument0)
+{
+	(_inst.gmlhtml_submit_export_link=__yy_method(_inst,gml_Script_html_submit_export_link));
+}
+
+function gml_Script_html_submit_export_link(_inst,_other,argument0)
+{
+
+		{
+		var gmlelement=argument0;
+		var gmlvalues=gml_Script_html_form_values(_inst,_other,gmlelement);
+		_inst.gmlexportLink=ds_map_find_value(gmlvalues,"exportLink");
+		_inst.gmlform_is_loading=true;
+		_inst.alarm=__yy_gml_array_check(_inst.alarm,1584050178);
+		_inst.alarm[__yy_gml_array_check_index_set(0)]=90;
+		show_debug_message("exporting link!");
+		show_debug_message(_inst.gmlexportLink);
+		global.gmlshow_export_prompt=0;
+		_inst.gmlform_is_loading=false;
+		copyToClipboard(string(_inst.gmlexportLink));
+		ds_map_destroy(gmlvalues);
+	}
+}
+
 function gml_GlobalScript_html_submit_export(_inst,_other,argument0)
 {
 	(_inst.gmlhtml_submit_export=__yy_method(_inst,gml_Script_html_submit_export));
@@ -7733,27 +7757,32 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 
 		{
 		global.gmlcurrent_copy_code="";
+		global.gmlcurrent_copy_url="https://fermentergames.github.io/Sneakle/?loadBoard=";
 		var gmll=1;
 		for(;yyflessequal(gmll,global.gmlgame_grid_size_sqr);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 		{
 
 						{
 				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
+				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
 			}
 		}
 		;
 		global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,"_");
+		global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,"&loadSecret=");
 		var gmll=0;
 		for(;yyfless(gmll,_inst.gmlsecret_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 		{
 
 						{
 				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
+				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
 				if(yyfless(gmll,yyfminus(__yy_gml_errCheck(_inst.gmlsecret_word_length),1)))
 				{
 
 										{
 						global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,"-");
+						global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,"-");
 					}
 					;
 				}
@@ -7763,6 +7792,8 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 		;
 		show_debug_message("global.current_copy_code:");
 		show_debug_message(global.gmlcurrent_copy_code);
+		show_debug_message("global.current_copy_url:");
+		show_debug_message(global.gmlcurrent_copy_url);
 	}
 }
 
@@ -7810,6 +7841,7 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlshow_input_prompt=0;
 	global.gmlshow_export_prompt=0;
 	global.gmlcurrent_copy_code="ABCD_1-2-3-4";
+	global.gmlcurrent_copy_url="https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4";
 	global.gmlis_browser=0;
 	if(yyfnotequal(g_pBuiltIn.get_os_browser(),(-1)))
 	{
@@ -7909,7 +7941,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-164);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-166);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -9166,10 +9198,19 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 			var gmlform2=gml_Script_html_form(_inst,_other,g_pBuiltIn.undefined,"export-code");
 			gml_Script_html_h3(_inst,_other,gmlform2,"header","Export Code");
 			gml_Script_html_field(_inst,_other,gmlform2,"exportCode","exportCode","",true,"",string(global.gmlcurrent_copy_code));
-			gml_Script_html_submit(_inst,_other,gmlform2,"submit","Copy",!yyGetBool(_inst.gmlform_is_loading),(yyGetBool(_inst.gmlform_is_loading)?"loading":""));
+			gml_Script_html_submit(_inst,_other,gmlform2,"copycode","Copy",!yyGetBool(_inst.gmlform_is_loading),(yyGetBool(_inst.gmlform_is_loading)?"loading":""));
 			if(yyGetBool(gml_Script_html_element_interaction(_inst,_other,gmlform2)))
 			{
 				gml_Script_html_submit_export(_inst,_other,gmlform2);
+			}
+			;
+			var gmlform3=gml_Script_html_form(_inst,_other,g_pBuiltIn.undefined,"export-link");
+			gml_Script_html_h3(_inst,_other,gmlform3,"header","Export Link");
+			gml_Script_html_field(_inst,_other,gmlform3,"exportLink","exportLink","",true,"",string(global.gmlcurrent_copy_url));
+			gml_Script_html_submit(_inst,_other,gmlform3,"copylink","Copy",!yyGetBool(_inst.gmlform_is_loading),(yyGetBool(_inst.gmlform_is_loading)?"loading":""));
+			if(yyGetBool(gml_Script_html_element_interaction(_inst,_other,gmlform3)))
+			{
+				gml_Script_html_submit_export_link(_inst,_other,gmlform3);
 			}
 			;
 		}
@@ -11021,6 +11062,7 @@ function gmlInitGlobal()
 	gml_GlobalScript_GMLiveAPI_js(global,global);
 	gml_GlobalScript_GMLiveAPI(global,global);
 	gml_GlobalScript_html_elements_scripts(global,global);
+	gml_GlobalScript_html_submit_export_link(global,global);
 	gml_GlobalScript_html_submit_export(global,global);
 	gml_GlobalScript_html_submit_login(global,global);
 	gml_GlobalScript_INIT_HTML(global,global);
@@ -11187,8 +11229,8 @@ IDToTagList=[
 {
 	key:83986155,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_html_submit_login","gml_Script_html_submit_login","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
-JSON_game.Scripts=[gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_html_submit_login,gml_Script_html_submit_login,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
+JSON_game.ScriptNames=["gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_html_submit_login","gml_Script_html_submit_login","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
+JSON_game.Scripts=[gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_html_submit_login,gml_Script_html_submit_login,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
 const kgml_GlobalScript_GMLive_noDeactivate=100000;
 const kgml_Script_instance_deactivate_all_hook=100001;
 const kgml_Script_instance_deactivate_layer_hook=100002;
@@ -11280,21 +11322,23 @@ const kgml_Script_gmcallback_on_interaction=100087;
 const kgml_Script_gmcallback_on_mouseover=100088;
 const kgml_Script_gmcallback_on_mouseout=100089;
 const kgml_Script_gmcallback_set_focus=100090;
-const kgml_GlobalScript_html_submit_export=100091;
-const kgml_Script_html_submit_export=100092;
-const kgml_GlobalScript_html_submit_login=100093;
-const kgml_Script_html_submit_login=100094;
-const kgml_GlobalScript_INIT_HTML=100095;
-const kgml_GlobalScript_parse_query=100096;
-const kgml_Script_get_query=100097;
-const kgml_Script_parse_query=100098;
-const kgml_GlobalScript_scr_board_init=100099;
-const kgml_Script_scr_board_init=100100;
-const kgml_GlobalScript_scr_update_copy_code=100101;
-const kgml_Script_scr_update_copy_code=100102;
-const kgml_GlobalScript_scr_update_room_dimensions=100103;
-const kgml_Script_scr_update_room_dimensions=100104;
-const kgml_Script_browser_stretch_canvas=100105;
+const kgml_GlobalScript_html_submit_export_link=100091;
+const kgml_Script_html_submit_export_link=100092;
+const kgml_GlobalScript_html_submit_export=100093;
+const kgml_Script_html_submit_export=100094;
+const kgml_GlobalScript_html_submit_login=100095;
+const kgml_Script_html_submit_login=100096;
+const kgml_GlobalScript_INIT_HTML=100097;
+const kgml_GlobalScript_parse_query=100098;
+const kgml_Script_get_query=100099;
+const kgml_Script_parse_query=100100;
+const kgml_GlobalScript_scr_board_init=100101;
+const kgml_Script_scr_board_init=100102;
+const kgml_GlobalScript_scr_update_copy_code=100103;
+const kgml_Script_scr_update_copy_code=100104;
+const kgml_GlobalScript_scr_update_room_dimensions=100105;
+const kgml_Script_scr_update_room_dimensions=100106;
+const kgml_Script_browser_stretch_canvas=100107;
 var __yyg__SetImageIndexGML=
 function(frame)
 {

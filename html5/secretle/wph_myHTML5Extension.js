@@ -106,9 +106,14 @@ function useParentLoadSecretQueryString() {
 
 
 
-function copyToClipboard(string) {
-
-	let custom_code = document.querySelector(".exportCode").select();
-	document.execCommand('copy'); 
-    
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      // Optional: Display a success message
+      console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+      // Optional: Handle errors
+      console.error('Failed to copy: ', err);
+    });
 }

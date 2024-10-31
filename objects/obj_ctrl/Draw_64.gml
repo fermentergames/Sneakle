@@ -281,9 +281,17 @@ if global.show_export_prompt = 1 {
 	var form2 = html_form(undefined, "export-code");
 	html_h3(form2, "header", "Export Code")
 	html_field(form2, "exportCode", "exportCode", "", true, "", string(global.current_copy_code));
-	html_submit(form2, "submit", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
+	html_submit(form2, "copycode", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
 	if html_element_interaction(form2)
 	html_submit_export(form2)
+	
+	//Render a form
+	var form3 = html_form(undefined, "export-link");
+	html_h3(form3, "header", "Export Link")
+	html_field(form3, "exportLink", "exportLink", "", true, "", string(global.current_copy_url));
+	html_submit(form3, "copylink", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
+	if html_element_interaction(form3)
+	html_submit_export_link(form3)
 	
 
 }

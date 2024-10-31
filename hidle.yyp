@@ -68,6 +68,7 @@
     {"id":{"name":"GMLiveAPI_js","path":"scripts/GMLiveAPI_js/GMLiveAPI_js.yy",},},
     {"id":{"name":"GMLiveAPI","path":"scripts/GMLiveAPI/GMLiveAPI.yy",},},
     {"id":{"name":"html_elements_scripts","path":"scripts/html_elements_scripts/html_elements_scripts.yy",},},
+    {"id":{"name":"html_submit_export_link","path":"scripts/html_submit_export_link/html_submit_export_link.yy",},},
     {"id":{"name":"html_submit_export","path":"scripts/html_submit_export/html_submit_export.yy",},},
     {"id":{"name":"html_submit_login","path":"scripts/html_submit_login/html_submit_login.yy",},},
     {"id":{"name":"INIT_HTML","path":"scripts/INIT_HTML/INIT_HTML.yy",},},

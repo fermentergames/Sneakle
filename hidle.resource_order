@@ -35,6 +35,7 @@
     {"name":"GMLiveAPI_js","order":5,"path":"scripts/GMLiveAPI_js/GMLiveAPI_js.yy",},
     {"name":"GMLiveAPI","order":4,"path":"scripts/GMLiveAPI/GMLiveAPI.yy",},
     {"name":"html_elements_scripts","order":4,"path":"scripts/html_elements_scripts/html_elements_scripts.yy",},
+    {"name":"html_submit_export_link","order":7,"path":"scripts/html_submit_export_link/html_submit_export_link.yy",},
     {"name":"html_submit_export","order":5,"path":"scripts/html_submit_export/html_submit_export.yy",},
     {"name":"html_submit_login","order":3,"path":"scripts/html_submit_login/html_submit_login.yy",},
     {"name":"INIT_HTML","order":4,"path":"scripts/INIT_HTML/INIT_HTML.yy",},
