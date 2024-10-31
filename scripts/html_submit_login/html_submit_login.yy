@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"html_submit_login",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"html_submit_login",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

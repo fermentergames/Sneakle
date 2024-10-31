@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"html_elements_scripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"html_elements_scripts",
+  "parent":{
+    "name":"Extensions",
+    "path":"folders/Extensions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
