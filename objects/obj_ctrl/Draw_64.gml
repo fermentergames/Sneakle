@@ -188,7 +188,7 @@ if global.game_phase = 0 {
 	draw_set_valign(fa_top)
 	draw_set_font(fnt_main_r)
 	var _guesses_str = " guesses"
-	if guesses_count <= 1 {_guesses_str = " guess"}
+	if guesses_count = 1 {_guesses_str = " guess"}
 	draw_text_transformed(global.sw/2,global.sh*0.8,string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
@@ -239,7 +239,7 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.3)
 	var _guesses_str = " guesses"
-	if guesses_count <= 1 {_guesses_str = " guess"}
+	if guesses_count = 1 {_guesses_str = " guess"}
 	draw_text_transformed(global.sw/2,(global.sh*0.7)+(100*_pos_scl),string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
