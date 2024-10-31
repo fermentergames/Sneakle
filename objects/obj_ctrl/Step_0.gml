@@ -76,7 +76,8 @@ if keyboard_check_pressed(vk_space) {
 
 if mouse_check_button_pressed(mb_left) {
 	
-	if device_mouse_y_to_gui(0)*global.pr < 40*global.pr && device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+	
+	if device_mouse_y_to_gui(0)*global.pr < 50*global.pr && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 		
 		if global.is_browser = 1 {
 			changeQuery("loadBoard","","loadSecret","")
@@ -92,14 +93,14 @@ if mouse_check_button_pressed(mb_left) {
 		if global.show_input_prompt = 0 {
 			
 			
-			if device_mouse_y_to_gui(0)*global.pr > global.sh*0.3 && device_mouse_y_to_gui(0)*global.pr < global.sh*0.5 {
+			if device_mouse_y_to_gui(0)*global.pr > display_get_gui_height()*0.3 && device_mouse_y_to_gui(0)*global.pr < display_get_gui_height()*0.5 {
 				
 				//load
-				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 					global.loadBoard = "EXITBTSNOSEIDAHA"
 					global.loadSecret = "1-2-6-11-8-4"
 					scr_board_init()
-				} else if device_mouse_x_to_gui(0)*global.pr > global.sw*0.3 && device_mouse_x_to_gui(0)*global.pr < global.sw*0.7 {
+				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					//show_question("paste load code:")
 				
 					//instance_create_layer(x,y,layer,obj_example_controller)
@@ -109,16 +110,16 @@ if mouse_check_button_pressed(mb_left) {
 					//
 				}
 			
-			} else if device_mouse_y_to_gui(0)*global.pr > global.sh*0.5 && device_mouse_y_to_gui(0)*global.pr < global.sh*0.7 {
+			} else if device_mouse_y_to_gui(0)*global.pr > display_get_gui_height()*0.5 && device_mouse_y_to_gui(0)*global.pr < display_get_gui_height()*0.7 {
 				
 				//create
 			
-				if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 					global.game_grid_size = 4
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
 					scr_board_init()
 				
-				} else if device_mouse_x_to_gui(0)*global.pr > global.sw*0.3 && device_mouse_x_to_gui(0)*global.pr < global.sw*0.7 {
+				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					global.game_grid_size = 5
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
 					scr_board_init()
@@ -209,7 +210,7 @@ if mouse_check_button_pressed(mb_left) {
 		
 		//back
 		if device_mouse_y_to_gui(0)*global.pr > global.sh-50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
-			if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+			if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 				global.game_phase = 1
 				selected_word_length = 0
 				selected_word_str = ""	
@@ -217,7 +218,7 @@ if mouse_check_button_pressed(mb_left) {
 					am_part_of_secret_word = 0	
 				}
 			}
-			if device_mouse_x_to_gui(0)*global.pr > global.sw*0.6 && ready_for_phase3 = 1 {
+			if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.6 && ready_for_phase3 = 1 {
 				//proceed, lock in word
 				
 				secret_word_length = selected_word_length
@@ -254,7 +255,7 @@ if mouse_check_button_pressed(mb_left) {
 		
 		//back
 		if device_mouse_y_to_gui(0)*global.pr > global.sh-50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
-			if device_mouse_x_to_gui(0)*global.pr < global.sw*0.3 {
+			if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 				global.game_phase = 2
 				with (obj_tile_letter) {
 					am_exed = 0
@@ -276,7 +277,7 @@ if mouse_check_button_pressed(mb_left) {
 	if global.game_phase >= 3 {
 		//share
 		if device_mouse_y_to_gui(0)*global.pr < 50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
-			if device_mouse_x_to_gui(0)*global.pr > global.sw*0.7 {
+			if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.7 {
 				global.show_export_prompt = 1	
 			}
 		}

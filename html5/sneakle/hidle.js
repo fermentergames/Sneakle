@@ -1012,7 +1012,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730361978,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:1,DisplayName:"sneakle",UseFBExtension:false,tm:1730362630,AllowStatistics:"True"	}
 }
 ;
 
@@ -8579,7 +8579,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 	{
 
 				{
-			if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(40,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))))
+			if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(50,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))))
 			{
 
 								{
@@ -8613,11 +8613,11 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 					{
 
 												{
-							if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsh),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsh),0.5)))))
+							if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.5)))))
 							{
 
 																{
-									if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))
+									if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))
 									{
 
 																				{
@@ -8629,7 +8629,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									}
 									else 
 									{
-										if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.7)))))
+										if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.7)))))
 										{
 
 																						{
@@ -8652,11 +8652,11 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							}
 							else 
 							{
-								if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsh),0.5))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsh),0.7)))))
+								if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.5))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.7)))))
 								{
 
 																		{
-										if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))
+										if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))
 										{
 
 																						{
@@ -8668,7 +8668,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										}
 										else 
 										{
-											if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.7)))))
+											if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.7)))))
 											{
 
 																								{
@@ -8827,7 +8827,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 						{
 
 														{
-								if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))
+								if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))
 								{
 
 																		{
@@ -8852,7 +8852,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									;
 								}
 								;
-								if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.6))))&&(yyGetBool(yyfequal(_inst.gmlready_for_phase3,1))))
+								if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.6))))&&(yyGetBool(yyfequal(_inst.gmlready_for_phase3,1))))
 								{
 
 																		{
@@ -8914,7 +8914,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							{
 
 																{
-									if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.3)))
+									if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))
 									{
 
 																				{
@@ -8962,7 +8962,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 					{
 
 												{
-							if(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(global.gmlsw),0.7)))
+							if(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.7)))
 							{
 
 																{
@@ -9519,7 +9519,6 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 		return global.gmllive_result;
 	}
 	;
-	global.gmlpr=1;
 	var gml_pos_scl=global.gmlpr;
 	var gml_scl=yyfdivide(yyftime(__yy_gml_errCheck(global.gmlsw),__yy_gml_errCheck(global.gmlpr)),450);
 	var gml_tscl=clamp(yyftime(__yy_gml_errCheck(gml_scl),1),0.5,2);
@@ -9540,18 +9539,22 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	{
 
 				{
+			draw_set_alpha(0.6);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"DAILY",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"LOAD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"HOW TO",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.03);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"DAILY",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"LOAD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_set_alpha(0.2);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"HOW TO",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_set_alpha(0.6);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n4x4",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n5x5",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"CREATE\n7x7",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n4x4",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n5x5",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n7x7",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_set_alpha(0.3);
 		}
 		;
 	}
@@ -10001,7 +10004,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.33768402705),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.345227441234),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }

@@ -1,6 +1,6 @@
 if (live_call()) return live_result;
 
-global.pr = 1
+//global.pr = 1
 var _pos_scl = global.pr //*(min(global.sw,720)/375)
 var _scl = (global.sw*global.pr/450)
 
@@ -55,24 +55,31 @@ draw_set_alpha(0.3)
 
 if global.game_phase = 0 {
 	
+	draw_set_alpha(0.6)
+	
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.2,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.03)
 	
-	draw_text_transformed(global.sw*0.2,global.sh*0.6,"DAILY",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.6,"LOAD",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.8,global.sh*0.6,"HOW TO",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.2,global.sh*0.4,"DAILY",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.4,"LOAD",0.15*_tscl,0.15*_tscl,0)
+	
+	draw_set_alpha(0.2)
+	
+	draw_text_transformed(global.sw*0.8,global.sh*0.4,"HOW TO",0.15*_tscl,0.15*_tscl,0)
+	
+	draw_set_alpha(0.6)
 	
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.2,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	
-	draw_text_transformed(global.sw*0.2,global.sh*0.4,"CREATE\n4x4",0.13*_tscl,0.13*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.4,"CREATE\n5x5",0.13*_tscl,0.13*_tscl,0)
-	draw_text_transformed(global.sw*0.8,global.sh*0.4,"CREATE\n7x7",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.2,global.sh*0.6,"CREATE\n4x4",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.6,"CREATE\n5x5",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.8,global.sh*0.6,"CREATE\n7x7",0.13*_tscl,0.13*_tscl,0)
 	
 	
-	
+	draw_set_alpha(0.3)
 	
 } else if global.game_phase = 1 {
 	
