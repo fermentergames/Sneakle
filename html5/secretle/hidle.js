@@ -1012,7 +1012,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730341495,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730342364,AllowStatistics:"True"	}
 }
 ;
 
@@ -7228,7 +7228,7 @@ function gml_Script_html_submit_export_link(_inst,_other,argument0)
 		show_debug_message(_inst.gmlexportLink);
 		global.gmlshow_export_prompt=0;
 		_inst.gmlform_is_loading=false;
-		clipboard_set_text(string(_inst.gmlexportLink));
+		copyToClipboard(string(_inst.gmlexportLink));
 		show_message(yyfplus("copied link!\n",__yy_gml_errCheck(string(_inst.gmlexportLink))));
 		ds_map_destroy(gmlvalues);
 	}
@@ -7253,7 +7253,7 @@ function gml_Script_html_submit_export(_inst,_other,argument0)
 		show_debug_message(_inst.gmlexportCode);
 		global.gmlshow_export_prompt=0;
 		_inst.gmlform_is_loading=false;
-		clipboard_set_text(string(_inst.gmlexportCode));
+		copyToClipboard(string(_inst.gmlexportCode));
 		show_message(yyfplus("copied code!\n",__yy_gml_errCheck(string(_inst.gmlexportCode))));
 		ds_map_destroy(gmlvalues);
 	}
