@@ -76,7 +76,8 @@ if mouse_check_button_pressed(mb_left) {
 	
 	if device_mouse_y_to_gui(0)*global.pr < 40*global.pr && device_mouse_x_to_gui(0)*global.pr > global.sw*0.7 {
 		changeQuery("loadBoard","","loadSecret","")
-		room_restart()	
+		reloadPage()
+		//room_restart()	
 	}
 	
 	if global.game_phase = 0 {
