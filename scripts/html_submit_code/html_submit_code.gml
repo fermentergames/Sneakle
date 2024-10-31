@@ -29,6 +29,7 @@ function html_submit_code(argument0) {
 		returnStr[1] = string_copy(loadCode, underscorePos+1, string_length(loadCode) - underscorePos + 1);
 
 		changeQuery("loadBoard",string(returnStr[0]),"loadSecret",returnStr[1])
+		reloadPage()
 
 	} else {
 		show_message("code invalid")

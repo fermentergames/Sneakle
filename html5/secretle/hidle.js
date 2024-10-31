@@ -1012,7 +1012,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730345506,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"secretle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:0,DisplayName:"secretle",UseFBExtension:false,tm:1730354028,AllowStatistics:"True"	}
 }
 ;
 
@@ -7191,6 +7191,7 @@ function gml_Script_html_submit_code(_inst,_other,argument0)
 				gmlreturnStr[__yy_gml_array_check_index_set(0)]=string_delete(_inst.gmlloadCode,gmlunderscorePos,yyfplus(yyfminus(__yy_gml_errCheck(string_length(_inst.gmlloadCode)),__yy_gml_errCheck(gmlunderscorePos)),1));
 				gmlreturnStr[__yy_gml_array_check_index_set(1)]=string_copy(_inst.gmlloadCode,yyfplus(__yy_gml_errCheck(gmlunderscorePos),1),yyfplus(yyfminus(__yy_gml_errCheck(string_length(_inst.gmlloadCode)),__yy_gml_errCheck(gmlunderscorePos)),1));
 				changeQuery("loadBoard",string(gmlreturnStr[__yy_gml_array_check_index(0,gmlreturnStr)]),"loadSecret",gmlreturnStr[__yy_gml_array_check_index(1,gmlreturnStr)]);
+				reloadPage();
 			}
 			;
 		}
@@ -7436,6 +7437,7 @@ function gml_Script_scr_board_init(_inst,_other)
 					}
 				}
 				;
+				var gml_grid_sz=global.gmlgame_grid_size;
 
 								{
 					var gml_letters_have_Q=0;
@@ -7776,6 +7778,10 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 		show_debug_message(get_window_host());
 		global.gmlcurrent_copy_url=string(get_window_host());
 		global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,"?loadBoard=");
+		var gmlqueryStr=0;
+		gmlqueryStr=__yy_gml_array_check(gmlqueryStr,2405952497);
+		gmlqueryStr[__yy_gml_array_check_index_set(0)]="";
+		gmlqueryStr[__yy_gml_array_check_index_set(1)]="";
 		var gmll=1;
 		for(;yyflessequal(gmll,global.gmlgame_grid_size_sqr);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 		{
@@ -7783,6 +7789,7 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 						{
 				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
 				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
+				gmlqueryStr[__yy_gml_array_check_index_set(0)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(0)],global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
 			}
 		}
 		;
@@ -7795,12 +7802,14 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 						{
 				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
 				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
+				gmlqueryStr[__yy_gml_array_check_index_set(1)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(1)],string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
 				if(yyfless(gmll,yyfminus(__yy_gml_errCheck(_inst.gmlsecret_word_length),1)))
 				{
 
 										{
 						global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,"-");
 						global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,"-");
+						gmlqueryStr[__yy_gml_array_check_index_set(1)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(1)],"-");
 					}
 					;
 				}
@@ -7812,6 +7821,7 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 		show_debug_message(global.gmlcurrent_copy_code);
 		show_debug_message("global.current_copy_url:");
 		show_debug_message(global.gmlcurrent_copy_url);
+		changeQuery("loadBoard",string(gmlqueryStr[__yy_gml_array_check_index(0,gmlqueryStr)]),"loadSecret",gmlqueryStr[__yy_gml_array_check_index(1,gmlqueryStr)]);
 	}
 }
 
@@ -7959,7 +7969,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-166);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-167);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -8019,7 +8029,6 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 	{
 
 				{
-			__yyg_call_method(_inst.gmluseParentQueryString)(_inst,_other);
 		}
 		;
 	}
@@ -9263,7 +9272,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.147039557356),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(15,__yy_gml_errCheck(gml_pos_scl)))),date_datetime_string(45596.24566946685),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }

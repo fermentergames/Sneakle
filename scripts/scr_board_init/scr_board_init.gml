@@ -46,6 +46,8 @@ if (live_call()) return live_result;
 		for (var l = 1; l <= 144; ++l) {
 			//show_debug_message(global.letters[l])
 		}
+		
+		var _grid_sz = global.game_grid_size
 	
 	
 		if 1=1 { //ensure Q has U

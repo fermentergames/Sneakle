@@ -8,12 +8,20 @@ function scr_update_copy_code(){
 	global.current_copy_url = string(get_window_host())
 	global.current_copy_url += "?loadBoard="
 	
+	var queryStr = 0
+	queryStr[0] = ""
+	queryStr[1] = ""
+	
+
 	
 	for (var l = 1; l <= global.game_grid_size_sqr; ++l) {
 		global.current_copy_code += global.letters[l]
 		global.current_copy_url += global.letters[l]
+		queryStr[0] += global.letters[l]
 		//show_debug_message(global.letters[l])
 	}
+	
+
 	
 	global.current_copy_code += "_"
 	global.current_copy_url += "&loadSecret="
@@ -21,12 +29,18 @@ function scr_update_copy_code(){
 	for (var l = 0; l < secret_word_length; ++l) {
 		global.current_copy_code += string(secret_word_array[l])
 		global.current_copy_url += string(secret_word_array[l])
+		queryStr[1] += string(secret_word_array[l])
 		
 		if l < secret_word_length-1 {
 			global.current_copy_code += "-"
 			global.current_copy_url += "-"
+			queryStr[1] += "-"
 		}
+		
+		
 	}
+	
+
 	
 	show_debug_message("global.current_copy_code:")
 	show_debug_message(global.current_copy_code)
@@ -34,9 +48,13 @@ function scr_update_copy_code(){
 	show_debug_message("global.current_copy_url:")
 	show_debug_message(global.current_copy_url)
 	
+
+	
+	changeQuery("loadBoard",string(queryStr[0]),"loadSecret",queryStr[1])
+	
+
 	
 	/////////////////////////////////////////
-	//now do the url
 	
 	
 

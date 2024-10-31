@@ -27,6 +27,7 @@
         {"$GMExtensionFunction":"","%Name":"useParentLoadSecretQueryString","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"useParentLoadSecretQueryString","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"copyToClipboard","argCount":0,"args":[1,],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"copyToClipboard","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"get_window_host","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"get_window_host","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
+        {"$GMExtensionFunction":"","%Name":"reloadPage","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"reloadPage","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
       ],"init":"","kind":5,"name":"","order":[
         {"name":"showElemID","path":"extensions/myHTML5Extension/myHTML5Extension.yy",},
         {"name":"hideElemID","path":"extensions/myHTML5Extension/myHTML5Extension.yy",},
