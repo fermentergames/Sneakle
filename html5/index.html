@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Custom PreHead code is injected here -->
+    
+
+    <head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta charset="utf-8"/>
+
+        <!--
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/9c177a67c1.js" crossorigin="anonymous"></script>
+        -->
+
+        <!-- Builtin injector for disabling cache -->
+        <meta http-equiv="pragma" content="no-cache"/>
+
+        <!-- Set the title bar of the page -->
+        <title>secretle</title>
+
+        <!-- Custom PreStyle code is injected here -->
+        
+
+        <!-- Set the background colour of the document -->
+        <style>
+            body {
+              background: #000000;
+              color:#cccccc;
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+              -webkit-touch-callout: none; /* Safari */
+              -webkit-user-select: none; /* Chrome */     
+              -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; 
+              font-family: 'Poppins', sans-serif;
+              font-weight: 400;
+              overflow: hidden;
+            }
+            canvas {
+              image-rendering: optimizeSpeed;
+              -webkit-interpolation-mode: nearest-neighbor;
+              -ms-touch-action: none;
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+            }
+            :-webkit-full-screen #canvas {
+                 width: 100%;
+                 height: 100%;
+            }
+            div.gm4html5_div_class
+            {
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+              height: 100vh;
+              overflow: hidden;
+            }
+            /* START - Login Dialog Box */
+            div.gm4html5_login
+            {
+                 padding: 20px;
+                 position: absolute;
+                 border: solid 2px #000000;
+                 background-color: #404040;
+                 color:#00ff00;
+                 border-radius: 15px;
+                 box-shadow: #101010 20px 20px 40px;
+            }
+            div.gm4html5_cancel_button
+            {
+                 float: right;
+            }
+            div.gm4html5_login_button
+            {
+                 float: left;
+            }
+            div.gm4html5_login_header
+            {
+                 text-align: center;
+            }
+            /* END - Login Dialog Box */
+            :-webkit-full-screen {
+               width: 100%;
+               height: 100%;
+            }
+
+
+            select,   textarea, input, form button,  input[type="text"],   input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] { 
+                font-size: 20px;
+            }
+
+            canvas#shareablecanv {
+                border: 5px solid yellow;
+                width: calc(100vw - 10px);
+            }
+
+            div#img-out {
+                visibility: hidden;
+                display: none;
+                /* height: 0; */
+            }
+
+            button {
+              font-weight: 400;
+            }
+
+            div#gamemaker_image {
+                width: 100%!important;
+                max-width: 240px!important;
+                height: 40px!important;
+                position: absolute;
+                /* position: relative; */
+                /* z-index: 9999; */
+                top: initial!important;
+                left: initial!important;
+                right: calc(50% - 120px)!important;
+                bottom: 45px!important;
+                background-color: rgb(104 81 232 / 45%);
+                background: linear-gradient(110deg, rgba(255,64,64,0.3) 0%, rgba(255,128,0,0.30172699376156453) 50%, rgba(255,255,64,0.3) 100%);
+                border-radius: 50px;
+                border: 2px solid rgb(255 255 255 / 45%)!important;
+                animation-name: hueloop;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: normal;
+                animation-timing-function: linear;
+                opacity: 0.8;
+            }
+
+            div#gamemaker_image button {
+                width: 100%!important;
+                height: 100%!important;
+                opacity: 0!important;
+                cursor: pointer;
+            }
+
+            div#gamemaker_image::before {
+              content: "CONSIDER DONATING? ♥";
+              content: "♡ DONATE TO SUPPORT";
+              color: white;
+              opacity: 0.8;
+              display: block;
+              width: 100%;
+              height: 100%;
+              /* margin-top: 12px; */
+              font-size: 14px;
+              text-align: center;
+              font-weight: 400;
+              pointer-events: none;
+              position: absolute;
+              display: grid;
+              align-content: center;
+              justify-content: center;
+            }
+
+            @keyframes hueloop {
+              0% {
+                filter: hue-rotate(0deg);
+              }
+              100% {
+                filter: hue-rotate(360deg);
+              }
+            }
+
+
+            button.btnShowHide {
+                width: 100%!important;
+                max-width: 240px!important;
+                height: 40px!important;
+                position: absolute;
+                /* position: relative; */
+                /* z-index: 9999; */
+                top: initial!important;
+                left: initial!important;
+                /* right: calc(50% - 120px)!important; */
+                bottom: 5px!important;
+                background-color: rgb(104 81 232 / 45%)!important;
+                border-radius: 50px;
+                border: 2px solid rgb(255 255 255 / 45%)!important;
+                position: absolute;
+                color: #FFF;
+                cursor: pointer;
+            }
+
+            .button {
+                appearance: auto;
+                writing-mode: horizontal-tb !important;
+                text-rendering: auto;
+                color: white;
+                letter-spacing: normal;
+                word-spacing: normal;
+                line-height: normal;
+                text-transform: none;
+                text-indent: 0px;
+                text-shadow: none;
+                display: inline-block;
+                text-align: center;
+                align-items: flex-start;
+                cursor: default;
+                box-sizing: border-box;
+                background-color: black;
+                margin: 0em;
+                padding: 1px 6px;
+                border-width: 2px;
+                border-style: outset;
+                border-color: white;
+                border-image: initial;
+                text-decoration: none;
+            }
+
+            .button.shareButton {
+              border-radius: 50px;
+              background-color: rgb(104 81 232 / 45%)!important;
+              border: 2px solid rgb(255 255 255 / 45%)!important;
+              color: rgb(255 255 255 / 100%)!important;
+              box-shadow: 0 4px 0 0 rgb(0 0 0 / 20%);
+              font-size: 14px;
+              text-align: center;
+              text-transform: uppercase;
+              cursor: pointer;
+              opacity: 0.8;
+              transition: opacity border 0.2s;
+            }
+
+            .button#shareButton {
+              border-radius: 50px;
+              background-color: rgb(104 81 232 / 45%)!important;
+              border: 2px solid rgb(255 255 255 / 45%)!important;
+              color: rgb(255 255 255 / 100%)!important;
+              box-shadow: 0 4px 0 0 rgb(0 0 0 / 20%);
+              font-size: 14px;
+              text-align: center;
+              text-transform: uppercase;
+              cursor: pointer;
+            }
+
+            .button#copyButton {
+              border-radius: 50px;
+              background-color: rgb(104 81 232 / 45%)!important;
+              border: 2px solid rgb(255 255 255 / 45%)!important;
+              color: rgb(255 255 255 / 100%)!important;
+              box-shadow: 0 4px 0 0 rgb(0 0 0 / 20%);
+              font-size: 13px;
+              text-align: center;
+              text-transform: uppercase;
+              cursor: pointer;
+            }
+
+            .button.donateButton {
+              background-color: rgb(104 81 232 / 45%)!important;
+              background: linear-gradient(110deg, rgba(255,64,64,0.45) 0%, rgba(255,128,0,0.45) 50%, rgba(255,255,64,0.45) 100%);
+              border-radius: 50px;
+              border: 2px solid rgb(255 255 255 / 45%)!important;
+              color: rgb(255 255 255 / 100%)!important;
+              box-shadow: 0 4px 0 0 rgb(0 0 0 / 20%);
+              font-size: 14px;
+              text-align: center;
+              text-transform: uppercase;
+              cursor: pointer;
+              animation-name: hueloop;
+              animation-duration: 5s;
+              animation-iteration-count: infinite;
+              animation-direction: normal;
+              animation-timing-function: linear;
+              /*opacity: 1;*/
+              transition: opacity border 0.2s;
+            }
+
+            div#postGameTop {
+                width: calc(100vw - 20px)!important;
+                height: 40px!important;
+                margin: 0 10px;
+                margin-top: -200px;
+                position: absolute;
+                top: 60px!important;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                pointer-events: none;
+                transition: margin-top 0.7s;
+                transition-property: margin-top;
+                transition-duration: 0.7s;
+                transition-timing-function: cubic-bezier(0, 0.55, 0.25, 1);
+                transition-delay: 0s;
+            }
+
+            div#postGameTop.reveal {
+                margin-top: 0px;
+            }
+
+            .button.topButton {
+                width: 100%!important;
+                max-width: 120px!important;
+                height: 40px!important;
+                margin: 0 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                pointer-events: auto;
+                opacity: 0.8;
+                transition: opacity border 0.2s;
+            }
+
+            .topButton i {
+                padding-right: 4px;
+            }
+
+            div#socialBottom {
+                width: calc(100vw - 20px)!important;
+                height: 40px!important;
+                margin: 0 10px;
+                margin-bottom: -200px;
+                position: absolute;
+                bottom: 45px!important;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                pointer-events: none;
+                transition: margin-bottom 0.7s;
+                transition-property: margin-bottom, opacity;
+                transition-duration: 0.7s;
+                transition-timing-function: cubic-bezier(0, 0.55, 0.25, 1), cubic-bezier(0.83, 0.02, 0.58, 1);
+                transition-delay: 0s;
+            }
+
+            div#socialBottom.reveal {
+                margin-bottom: 0px;
+            }
+
+            .button.socialButton {
+              max-width: 40px!important;
+            }
+
+            .topButton.socialButton i {
+              padding-right: 0;
+            }
+
+            .socialBottom .button.donateButton {
+              max-width: 114px!important;
+            }
+
+            .socialBottom .button {
+                margin: 0 2px;
+            }
+
+            .button.topButton:hover, .button.topButton:active {
+                opacity: 1;
+                /*transform: scale(1.1);*/
+                /*font-size: calc(14px*(1/1.1));*/
+                /*font-size: 16px;*/
+                border: 3px solid rgb(255 255 255 / 60%)!important;
+            }
+
+
+
+        </style>
+
+        <!-- Custom PostStyle code is injected here -->
+        
+
+        <!-- Builtin injector for injecting flurry analytics code -->
+        
+    </head>
+
+    <!-- Custom PostHead code is injected here -->
+    
+
+    <!-- Custom PreBody code is injected here -->
+    
+
+    <body>
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
+            
+            <!-- Builtin injector for splash screen -->
+            
+
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas" >
+                <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+        </div>
+
+        <!-- Run the game code -->
+        <script type="text/javascript" src="secretle/hidle.js?cachebust=217724350"></script>
+
+        <!-- Builtin injector for injecting runner path -->
+        
+
+        <script>window.onload = GameMaker_Init;</script>
+
+        <!-- Builtin injector for injecting google analytics code -->
+        
+
+    </body>
+
+    <!-- Custom PostBody code is injected here -->
+    
+</html>
