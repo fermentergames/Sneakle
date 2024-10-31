@@ -185,7 +185,7 @@ if global.game_phase = 0 {
 		}
 	}
 	
-	draw_text_ext_transformed(global.sw/2,(global.sh*0.8)+(30*_pos_scl),string(_guess_list_str),150,global.sw*0.5*10,0.1*_tscl,0.1*_tscl,0)
+	draw_text_ext_transformed(global.sw/2,(global.sh*0.8)+(30*_pos_scl),string(_guess_list_str),150,global.sw*0.45*10,0.1*_tscl,0.1*_tscl,0)
 	
 	
 	draw_set_valign(fa_middle)
@@ -219,12 +219,12 @@ if global.game_phase = 0 {
 
 	draw_set_font(fnt_main)
 	draw_set_alpha(1)
-	draw_text_transformed(global.sw/2,(global.sh*0.7)+(-15*_pos_scl),"\n"+string(_letters_str),0.3*_tscl,0.3*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*0.7)+(-10*_pos_scl),"\n"+string(_letters_str),0.3*_tscl,0.3*_tscl,0)
 	
 	draw_set_font(fnt_main_r)
 	
 	draw_set_alpha(0.3)
-	draw_text_transformed(global.sw/2,(global.sh*0.7)+(120*_pos_scl),string(guesses_count)+" guesses",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*0.7)+(100*_pos_scl),string(guesses_count)+" guesses",0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
 	for (var i = 1; i < array_length(guesses_list); ++i) {
@@ -234,7 +234,7 @@ if global.game_phase = 0 {
 		}
 	}
 	
-	draw_text_ext_transformed(global.sw/2,(global.sh*0.7)+(145*_pos_scl),string(_guess_list_str),150,global.sw*0.5*10,0.1*_tscl,0.1*_tscl,0)
+	draw_text_ext_transformed(global.sw/2,(global.sh*0.7)+(125*_pos_scl),string(_guess_list_str),150,global.sw*0.45*10,0.1*_tscl,0.1*_tscl,0)
 	
 	draw_set_valign(fa_middle)
 	draw_set_alpha(1)
