@@ -22,7 +22,7 @@ function html_submit_export_link(argument0) {
 	
 	
 	//clipboard_set_text(string(exportLink));
-	show_message("copied link!\n"+string(exportLink))
+	//show_message("copied link!\n"+string(exportLink))
 	
 	ds_map_destroy(values)
 

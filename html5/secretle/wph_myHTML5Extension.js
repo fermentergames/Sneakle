@@ -106,17 +106,22 @@ function useParentLoadSecretQueryString() {
 
 
 
+
 function copyToClipboard(text) {
-  navigator.clipboard.writeText(text)
-    .then(() => {
-      // Optional: Display a success message
-      console.log('Text copied to clipboard');
-    })
-    .catch(err => {
-      // Optional: Handle errors
-      console.error('Failed to copy: ', err);
-    });
+
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        alert("successfully copied");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
+
 }
+
+
+
 
 function getPathFromUrl(url) {
   return url.split("?")[0];

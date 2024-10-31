@@ -23,7 +23,7 @@ function html_submit_export(argument0) {
 	
 	
 	//clipboard_set_text(string(exportCode));
-	show_message("copied code!\n"+string(exportCode))
+	//show_message("copied code!\n"+string(exportCode))
 	
 	ds_map_destroy(values)
 
