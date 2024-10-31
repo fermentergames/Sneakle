@@ -18,11 +18,12 @@ function html_submit_export_link(argument0) {
 	global.show_export_prompt = 0
 	form_is_loading = false;
 	
-	copyToClipboard(string(exportLink))
+	//copyToClipboard(string(exportLink))
 	
+	
+	clipboard_set_text(string(exportLink));
 	show_message("copied link!\n"+string(exportLink))
-	//clipboard_set_text(string(exportCode));
-
+	
 	ds_map_destroy(values)
 
 }

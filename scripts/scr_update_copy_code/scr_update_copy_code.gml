@@ -6,7 +6,7 @@ function scr_update_copy_code(){
 	show_debug_message("get_window_host()")
 	show_debug_message(get_window_host())
 	global.current_copy_url = string(get_window_host())
-	global.current_copy_url += "/?loadBoard="
+	global.current_copy_url += "?loadBoard="
 	
 	
 	for (var l = 1; l <= global.game_grid_size_sqr; ++l) {
