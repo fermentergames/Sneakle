@@ -117,7 +117,7 @@ function copyToClipboard(string) {
 
   if (navigator.canShare) {
     navigator.share({
-      title: "Page Title",
+      title: "Sneakle",
       text: string,
       url: window.location.href,
     });
