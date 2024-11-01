@@ -278,7 +278,7 @@ if mouse_check_button_pressed(mb_left) {
 				scr_update_copy_code()
 				
 				var _event_struct = { //
-				   screen_name: "PuzzleCreated",
+				   screen_name: "CREATE_"+string(global.game_grid_size)+"_"+string(global.current_copy_code),
 				};
 				GoogHit("screen_view",_event_struct)
 				

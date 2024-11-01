@@ -1015,7 +1015,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730449043,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730449547,AllowStatistics:"True"	}
 }
 ;
 
@@ -8772,7 +8772,7 @@ function gml_Script_scr_board_init(_inst,_other)
 						;
 						show_debug_message(yyfplus("SECRET WORD SET FROM LOAD: ",__yy_gml_errCheck(string(gml_letters_str))));
 						gml_Script_scr_update_copy_code(_inst,_other);
-						var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___125=__yy_method(_inst,gml_Script____struct___125_scr_board_init_scr_board_init)),yyfplus("LOAD_",__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
+						var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___125=__yy_method(_inst,gml_Script____struct___125_scr_board_init_scr_board_init)),yyfplus(yyfplus(yyfplus("LOAD_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
 						gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 						global.gmlgame_phase=3;
 						_inst.gmljust_phase_changed=1;
@@ -8972,7 +8972,17 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	_inst.gmlp_string=0;
 	gml_Script_get_query(_inst,_other);
 	_inst.gmlform_is_loading=false;
-	var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___126=__yy_method(_inst,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0)));
+	var gml_gamestart_str="GameStart";
+	if((yyGetBool(yyfnotequal(global.gmlloadBoard,"")))&&(yyGetBool(yyfnotequal(global.gmlloadSecret,""))))
+	{
+
+				{
+			gml_gamestart_str="GameStart_GonnaLoad";
+		}
+		;
+	}
+	;
+	var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___126=__yy_method(_inst,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0)),string(gml_gamestart_str));
 	gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 }
 
@@ -8991,7 +9001,11 @@ function gml_Script____struct___126_gml_Object_obj_ctrl_Create_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0.prototype);
 
 				{
-			_inst.gmlscreen_name="GameStart";
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
 		}
 	}
 }
@@ -9033,7 +9047,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-219);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-221);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -9431,7 +9445,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										;
 										show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
 										gml_Script_scr_update_copy_code(_inst,_other);
-										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)));
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
 										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 										global.gmlshow_export_prompt=1;
 										global.gmlgame_phase=3;
@@ -10079,7 +10093,11 @@ function gml_Script____struct___132_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="PuzzleCreated";
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
 		}
 	}
 }
@@ -10710,7 +10728,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45597.345380530205)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45597.351217911666)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
