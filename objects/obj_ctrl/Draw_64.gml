@@ -394,12 +394,12 @@ if global.show_export_prompt = 1 {
 
 if keyboard_check(vk_shift) {
 draw_set_alpha(0.3)
-draw_text_transformed(global.sw*0.5,(global.sh*1)-(30*_pos_scl),global.current_copy_code,0.07*_tscl,0.07*_tscl,0)
+draw_text_transformed(global.sw*0.5,(global.sh*1)-(40*_pos_scl),global.current_copy_code,0.07*_tscl,0.07*_tscl,0)
 }
 
 draw_set_font(fnt_main_r)
 draw_set_alpha(0.2)
-draw_text_transformed(global.sw*0.5,(global.sh*1)-(15*_pos_scl),date_datetime_string(GM_build_date),0.07*_tscl,0.07*_tscl,0)
+draw_text_transformed(global.sw*0.5,(global.sh*1)-(25*_pos_scl),date_datetime_string(GM_build_date)+"\n<3 @fermentergames",0.07*_tscl,0.07*_tscl,0)
 draw_set_font(fnt_main)
 
 draw_set_alpha(1)

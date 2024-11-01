@@ -97,8 +97,12 @@ if mouse_check_button_pressed(mb_left) {
 				
 				//load
 				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
-					global.loadBoard = "EXITBTSNOSEIDAHA"
-					global.loadSecret = "1-2-6-11-8-4"
+					//global.loadBoard = "EXITBTSNOSEIDAHA"
+					//global.loadSecret = "1-2-6-11-8-4"
+					
+					global.loadBoard = "IYEIORAOABEANEAEPCINMALNI"
+					global.loadSecret = "17-23-22-18-14-10-5"
+					
 					scr_board_init()
 				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					//show_question("paste load code:")
@@ -244,6 +248,8 @@ if mouse_check_button_pressed(mb_left) {
 				show_debug_message("SECRET WORD CHOSEN: "+string(_letters_str))
 				
 				scr_update_copy_code()
+				
+				global.show_export_prompt = 1
 				
 				global.game_phase = 3
 				just_phase_changed = 1
