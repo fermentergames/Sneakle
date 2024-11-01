@@ -778,6 +778,9 @@ var JSON_game=
 		pName:"obj_ctrl",spriteIndex:-1,visible:true,parent:-100,CreateEvent:gml_Object_obj_ctrl_Create_0,StepNormalEvent:gml_Object_obj_ctrl_Step_0,UserEvent0:gml_Object_obj_ctrl_Other_10,DrawGUI:gml_Object_obj_ctrl_Draw_64,DrawEvent:gml_Object_obj_ctrl_Draw_0,DrawEventEnd:gml_Object_obj_ctrl_Draw_73,DrawGUIEnd:gml_Object_obj_ctrl_Draw_75,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
+		pName:"obj_ctrlp",spriteIndex:-1,visible:true,persistent:true,parent:-100,WebAsyncEvent:gml_Object_obj_ctrlp_Other_62,TriggerEvents:[],CollisionEvents:[]	}
+	,
+	{
 		pName:"obj_example_controller",spriteIndex:-1,visible:true,parent:-100,CreateEvent:gml_Object_obj_example_controller_Create_0,ObjAlarm0:gml_Object_obj_example_controller_Alarm_0,DrawEvent:gml_Object_obj_example_controller_Draw_0,DrawGUIEnd:gml_Object_obj_example_controller_Draw_75,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
@@ -1012,13 +1015,224 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",UseFBExtension:false,tm:1730444089,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730446962,AllowStatistics:"True"	}
 }
 ;
 
 function gml_Room_rm_blank_Create(_inst,_other)
 {
 	gml_Script_live_room_start(_inst,_inst);
+}
+
+function gml_GlobalScript___GoogConfig(_inst,_other)
+{
+}
+
+function gml_GlobalScript___GoogSystem(_inst,_other)
+{
+	gml_Script___GoogTrace(_inst,_other,"Welcome to Google Analytics Measuremenet Protocol (v4), implemented by Juju Adams! This is version 1.0.1, 2024-08-13");
+	global.gml__GoogClientID=g_pBuiltIn.undefined;
+	global.gml__GoogUserID=g_pBuiltIn.undefined;
+	global.gml__GoogUserProperties=__yy_gml_object_create(_inst,(global.gml___struct___0=__yy_method(_inst,gml_Script____struct___0)));
+	global.gml__GoogHTTPResponseMap=ds_map_create();
+	global.gml__GoogFirstRequestTime=g_pBuiltIn.undefined;
+	global.gml__GoogUsingAsyncEvent=g_pBuiltIn.undefined;
+	global.gml__GoogURL="https://www.google-analytics.com/mp/collect?measurement_id=G-QXT06CTHEX&api_secret=q8lTlR_1T_a0BwwpLGXqLA";
+	global.gml__GoogHeaderMap=ds_map_create();
+	ds_map_set(global.gml__GoogHeaderMap,"Content-Type","application/json");
+	global.gml__GoogXORShift32State=floor(yyfplus(yyfplus(__yy_gml_errCheck(yyftime(1000000,__yy_gml_errCheck(date_current_datetime()))),__yy_gml_errCheck(display_mouse_get_x())),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(display_get_width()),__yy_gml_errCheck(display_mouse_get_y())))));
+	var gml_generateClientID=true;
+	if(yyGetBool(file_exists("google_analytics_cache.json")))
+	{
+
+				{
+			gml_Script___GoogTrace(_inst,_other,"Found persistent cache, trying to load");
+			try
+			{
+
+								{
+					var gml_buffer=buffer_load("google_analytics_cache.json");
+					var gml_string=buffer_read(gml_buffer,11);
+					var gml_json=json_parse(gml_string);
+					gml_Script_GoogClientIDForce(_inst,_other,yyInst(_inst,_other,gml_json).gmlclientID);
+					gml_Script___GoogTrace(_inst,_other,"Persistent cache loaded successfully");
+					gml_generateClientID=false;
+				}
+			}
+			catch(gml_)
+			{
+				gml_=__yy__processException(gml_);
+
+								{
+					gml_Script___GoogTrace(_inst,_other,"Warning! Persistent cache failed to load, generating a new client ID");
+				}
+			}
+			;
+		}
+		;
+	}
+	else 
+	{
+
+				{
+			gml_Script___GoogTrace(_inst,_other,"No persistent cache found, generating a new client ID");
+		}
+		;
+	}
+	;
+	if(yyGetBool(gml_generateClientID))
+	{
+
+				{
+			gml_Script_GoogClientIDForce(_inst,_other,gml_Script___GoogGenerateUUID4String(_inst,_other,true));
+			var gml_string=json_stringify(__yy_gml_object_create(_inst,(global.gml___struct___1=__yy_method(_inst,gml_Script____struct___1)),gml_Script_GoogClientIDGet(_inst,_other)));
+			var gml_buffer=buffer_create(string_byte_length(gml_string),0,1);
+			buffer_write(gml_buffer,13,gml_string);
+			buffer_save(gml_buffer,"google_analytics_cache.json");
+			buffer_delete(gml_buffer);
+			gml_Script___GoogTrace(_inst,_other,"Persistent cache saved to disk");
+		}
+		;
+	}
+	;
+	if(yyfequal(global.gml__GoogUserID,g_pBuiltIn.undefined))
+	{
+		gml_Script_GoogUserIDForce(_inst,_other,md5_string_utf8(global.gml__GoogClientID));
+	}
+	;
+	(_inst.gml__GoogUnixTimeMicroseconds=__yy_method(_inst,gml_Script___GoogUnixTimeMicroseconds));
+	(_inst.gml__GoogGenerateUUID4String=__yy_method(_inst,gml_Script___GoogGenerateUUID4String));
+	(_inst.gml__GoogXORShift32Random=__yy_method(_inst,gml_Script___GoogXORShift32Random));
+	(_inst.gml__GoogXORShift32Choose=__yy_method(_inst,gml_Script___GoogXORShift32Choose));
+	(_inst.gml__GoogTrace=__yy_method(_inst,gml_Script___GoogTrace));
+}
+
+function gml_Script____struct___0(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___0";
+	}
+	if(gml_Script____struct___0.prototype.__type===undefined)
+	{
+		gml_Script____struct___0.prototype.__type="gml_Script____struct___0";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___0.prototype);
+
+				{
+		}
+	}
+}
+
+function gml_Script____struct___1(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___1";
+	}
+	if(gml_Script____struct___1.prototype.__type===undefined)
+	{
+		gml_Script____struct___1.prototype.__type="gml_Script____struct___1";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___1.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlclientID=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
+		}
+	}
+}
+
+function gml_Script___GoogUnixTimeMicroseconds(_inst,_other)
+{
+
+		{
+		return floor(yyftime(1000000,__yy_gml_errCheck(date_second_span(25569,date_current_datetime()))));
+	}
+}
+
+function gml_Script___GoogGenerateUUID4String(_inst,_other,argument0)
+{
+
+		{
+		if(yyfequal(argument0,g_pBuiltIn.undefined))
+		{
+			argument0=false;
+		}
+		;
+	}
+
+		{
+		var gml_UUID=md5_string_utf8(yyfplus(yyfplus(__yy_gml_errCheck(string(g_pBuiltIn.get_current_time())),__yy_gml_errCheck(string(date_current_datetime()))),__yy_gml_errCheck(string(gml_Script___GoogXORShift32Random(_inst,_other,1000000)))));
+		gml_UUID=string_set_byte_at(gml_UUID,13,52);
+		gml_UUID=string_set_byte_at(gml_UUID,17,ord(gml_Script___GoogXORShift32Choose(_inst,_other,"8","9","a","b")));
+		if(yyGetBool(argument0))
+		{
+
+						{
+				gml_UUID=yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(string_copy(gml_UUID,1,8)),"-"),__yy_gml_errCheck(string_copy(gml_UUID,9,4))),"-"),__yy_gml_errCheck(string_copy(gml_UUID,13,4))),"-"),__yy_gml_errCheck(string_copy(gml_UUID,17,4))),"-"),__yy_gml_errCheck(string_copy(gml_UUID,21,12)));
+			}
+			;
+		}
+		;
+		return gml_UUID;
+	}
+}
+
+function gml_Script___GoogXORShift32Random(_inst,_other,argument0)
+{
+
+		{
+		var gml_state=global.gml__GoogXORShift32State;
+		gml_state=yyfbitxor(gml_state,yyfbitshiftleft(__yy_gml_errCheck(gml_state),13));
+		gml_state=yyfbitxor(gml_state,yyfbitshiftright(__yy_gml_errCheck(gml_state),17));
+		gml_state=yyfbitxor(gml_state,yyfbitshiftleft(__yy_gml_errCheck(gml_state),5));
+		global.gml__GoogXORShift32State=gml_state;
+		return yyfdivide(yyftime(__yy_gml_errCheck(argument0),__yy_gml_errCheck(abs(gml_state))),9.223372036854776E+18);
+	}
+}
+
+function gml_Script___GoogXORShift32Choose(_inst,_other)
+{
+
+		{
+		var $$args=Array.prototype.slice.call(arguments);
+
+				{
+			return $$args[__yy_gml_array_check_index(2+(floor(gml_Script___GoogXORShift32Random(_inst,_other,($$args.length-2)))),$$args)];
+		}
+	}
+}
+
+function gml_Script___GoogTrace(_inst,_other)
+{
+
+		{
+		var $$args=Array.prototype.slice.call(arguments);
+
+				{
+			var gml_string="Google Analytics: ";
+			var gml_i=0;
+			for(var __yy__v0=0,__yy__v1=yyGetInt32(($$args.length-2));__yy__v0<__yy__v1;__yy__v0++)
+			{
+
+								{
+					gml_string=yyfplus(gml_string,$$args[__yy_gml_array_check_index(2+(gml_i),$$args)]);
+					(gml_i=(gml_i instanceof Long?gml_i.add(1):++gml_i),gml_i);
+				}
+			}
+			;
+			show_debug_message(gml_string);
+			return gml_string;
+		}
+	}
 }
 
 function gml_GlobalScript_GMDictionary_classes(_inst,_other)
@@ -1175,19 +1389,19 @@ function gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes(_inst,_ot
 	}
 }
 
-function gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes(_inst,_other)
+function gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes(_inst,_other)
 {
 	if(_inst.__yyIsGMLObject)
 	{
-		_inst.__type="gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes";
+		_inst.__type="gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes";
 	}
-	if(gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.__type===undefined)
+	if(gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes.prototype.__type===undefined)
 	{
-		gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes";
+		gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes";
 	}
 
 		{
-		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype);
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes.prototype);
 
 				{
 		}
@@ -1217,7 +1431,7 @@ function gml_Script_CheckWordDictionary(_inst,_other)
 					gml_Script_CheckWordDictionary.prototype.gmlload=__yy_method(undefined,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes),gml_Script_CheckWordDictionary.prototype.gmladd=__yy_method(undefined,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes),gml_Script_CheckWordDictionary.prototype.gmlcheck=__yy_method(undefined,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes);
 				}
 				global.gml_Script_CheckWordDictionary_prototype_yy_staticInitialiser=true;
-				_inst.gmldata=__yy_gml_object_create(_inst,(global.gml___struct___0=__yy_method(_inst,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes)));
+				_inst.gmldata=__yy_gml_object_create(_inst,(global.gml___struct___2=__yy_method(_inst,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes)));
 				_inst.gmlsize=0;
 				if(yyfgreater(($$args.length-2),0))
 				{
@@ -1369,19 +1583,19 @@ function gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes(_inst,_oth
 	}
 }
 
-function gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes(_inst,_other)
+function gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes(_inst,_other)
 {
 	if(_inst.__yyIsGMLObject)
 	{
-		_inst.__type="gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes";
+		_inst.__type="gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes";
 	}
-	if(gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type===undefined)
+	if(gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type===undefined)
 	{
-		gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes";
+		gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.__type="gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes";
 	}
 
 		{
-		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype);
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes.prototype);
 
 				{
 		}
@@ -1438,7 +1652,7 @@ function gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes(_inst,_oth
 
 						{
 				gmlresult=array_create(argument0);
-				var gmlseenWords=__yy_gml_object_create(_inst,(global.gml___struct___1=__yy_method(_inst,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes)));
+				var gmlseenWords=__yy_gml_object_create(_inst,(global.gml___struct___3=__yy_method(_inst,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes)));
 				var gmli=yyfminus(__yy_gml_errCheck(argument0),1);
 				for(;yyfgreaterequal(gmli,0);(gmli=(gmli instanceof Long?gmli.subtract(1):--gmli),gmli))
 				{
@@ -1557,7 +1771,7 @@ function gml_Script_instance_deactivate_all_hook(_inst,_other,argument0)
 
 		{
 		instance_deactivate_all(_inst,argument0);
-		instance_activate_object(_inst,YYASSET_REF(0x00000003));
+		instance_activate_object(_inst,YYASSET_REF(0x00000004));
 	}
 }
 
@@ -1566,7 +1780,7 @@ function gml_Script_instance_deactivate_layer_hook(_inst,_other,argument0)
 
 		{
 		instance_deactivate_layer(_inst,argument0);
-		instance_activate_object(_inst,YYASSET_REF(0x00000003));
+		instance_activate_object(_inst,YYASSET_REF(0x00000004));
 	}
 }
 
@@ -1575,7 +1789,7 @@ function gml_Script_instance_deactivate_object_hook(_inst,_other,argument0)
 
 		{
 		instance_deactivate_object(_inst,argument0);
-		instance_activate_object(_inst,YYASSET_REF(0x00000003));
+		instance_activate_object(_inst,YYASSET_REF(0x00000004));
 	}
 }
 
@@ -1584,7 +1798,7 @@ function gml_Script_instance_deactivate_region_hook(_inst,_other,argument0,argum
 
 		{
 		instance_deactivate_region(_inst,argument0,argument1,argument2,argument3,argument4,argument5);
-		instance_activate_object(_inst,YYASSET_REF(0x00000003));
+		instance_activate_object(_inst,YYASSET_REF(0x00000004));
 	}
 }
 
@@ -6751,6 +6965,265 @@ function gml_Script_live_preinit_api(_inst,_other)
 	}
 }
 
+function gml_GlobalScript_GoogAsyncHTTPEvent(_inst,_other)
+{
+	(_inst.gmlGoogAsyncHTTPEvent=__yy_method(_inst,gml_Script_GoogAsyncHTTPEvent));
+}
+
+function gml_Script_GoogAsyncHTTPEvent(_inst,_other)
+{
+
+		{
+		var gml_id=ds_map_find_value(g_pBuiltIn.get_async_load(),"id");
+		if(yyGetBool(ds_map_exists(global.gml__GoogHTTPResponseMap,gml_id)))
+		{
+
+						{
+				if(yyfequal(ds_map_find_value(g_pBuiltIn.get_async_load(),"status"),1))
+				{
+
+										{
+						return;
+					}
+					;
+				}
+				;
+				if(yyfequal(global.gml__GoogUsingAsyncEvent,g_pBuiltIn.undefined))
+				{
+
+										{
+						gml_Script___GoogTrace(_inst,_other,"Confirmed use of GoogAsyncHTTPEvent()");
+						global.gml__GoogUsingAsyncEvent=true;
+					}
+					;
+				}
+				;
+				if((yyGetBool(yyfnotequal(ds_map_find_value(g_pBuiltIn.get_async_load(),"http_status"),g_pBuiltIn.undefined)))&&(yyGetBool(yyfequal(floor(yyfdivide(__yy_gml_errCheck(real(ds_map_find_value(g_pBuiltIn.get_async_load(),"http_status"))),100)),2))))
+				{
+
+										{
+
+												{
+							gml_Script___GoogTrace(_inst,_other,"HTTP request successful (",ds_map_find_value(global.gml__GoogHTTPResponseMap,gml_id),")");
+						}
+						;
+					}
+					;
+				}
+				else 
+				{
+
+										{
+						gml_Script___GoogTrace(_inst,_other,"Warning! HTTP request failed, check your event name and parameters (",ds_map_find_value(global.gml__GoogHTTPResponseMap,gml_id),")");
+					}
+					;
+				}
+				;
+				ds_map_delete(global.gml__GoogHTTPResponseMap,gml_id);
+			}
+			;
+		}
+		;
+	}
+}
+
+function gml_GlobalScript_GoogClientIDForce(_inst,_other)
+{
+	(_inst.gmlGoogClientIDForce=__yy_method(_inst,gml_Script_GoogClientIDForce));
+}
+
+function gml_Script_GoogClientIDForce(_inst,_other,argument0)
+{
+
+		{
+		if(yyfnotequal(argument0,global.gml__GoogClientID))
+		{
+
+						{
+				global.gml__GoogClientID=string(argument0);
+				gml_Script___GoogTrace(_inst,_other,"Set client ID to \"",global.gml__GoogClientID,"\"");
+			}
+			;
+		}
+		;
+	}
+}
+
+function gml_GlobalScript_GoogClientIDGet(_inst,_other)
+{
+	(_inst.gmlGoogClientIDGet=__yy_method(_inst,gml_Script_GoogClientIDGet));
+}
+
+function gml_Script_GoogClientIDGet(_inst,_other)
+{
+
+		{
+		return global.gml__GoogClientID;
+	}
+}
+
+function gml_GlobalScript_GoogHit(_inst,_other)
+{
+	(_inst.gmlGoogHit=__yy_method(_inst,gml_Script_GoogHit));
+}
+
+function gml_Script____struct___123_GoogHit_GoogHit(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___123@GoogHit@GoogHit";
+	}
+	if(gml_Script____struct___123_GoogHit_GoogHit.prototype.__type===undefined)
+	{
+		gml_Script____struct___123_GoogHit_GoogHit.prototype.__type="gml_Script____struct___123@GoogHit@GoogHit";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___123_GoogHit_GoogHit.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlname=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+				_inst.gmlparams=$$args[__yy_gml_array_check_index(2+(1),$$args)];
+			}
+		}
+	}
+}
+
+function gml_Script____struct___124_GoogHit_GoogHit(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___124@GoogHit@GoogHit";
+	}
+	if(gml_Script____struct___124_GoogHit_GoogHit.prototype.__type===undefined)
+	{
+		gml_Script____struct___124_GoogHit_GoogHit.prototype.__type="gml_Script____struct___124@GoogHit@GoogHit";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___124_GoogHit_GoogHit.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlclient_id=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+				_inst.gmluser_id=$$args[__yy_gml_array_check_index(2+(1),$$args)];
+				_inst.gmluser_properties=$$args[__yy_gml_array_check_index(2+(2),$$args)];
+				_inst.gmlnon_personalized_ads=true;
+				_inst.gmltimestamp_micros=$$args[__yy_gml_array_check_index(2+(3),$$args)];
+				_inst.gmlevents=$$args[__yy_gml_array_check_index(2+(4),$$args)];
+			}
+		}
+	}
+}
+
+function gml_Script_GoogHit(_inst,_other)
+{
+
+		{
+		var $$args=Array.prototype.slice.call(arguments);
+
+				{
+			var gml_eventArray=array_create(yyfdiv(__yy_gml_errCheck(($$args.length-2)),2));
+			var gml_i=0;
+			for(var __yy__v2=0,__yy__v3=yyGetInt32(yyfdiv(__yy_gml_errCheck(($$args.length-2)),2));__yy__v2<__yy__v3;__yy__v2++)
+			{
+
+								{
+					gml_eventArray=__yy_gml_array_check(gml_eventArray,1807990326);
+					gml_eventArray[__yy_gml_array_check_index_set(gml_i)]=__yy_gml_object_create(_inst,(global.gml___struct___123=__yy_method(_inst,gml_Script____struct___123_GoogHit_GoogHit)),$$args[__yy_gml_array_check_index(2+(yyftime(2,__yy_gml_errCheck(gml_i))),$$args)],$$args[__yy_gml_array_check_index(2+(yyfplus(__yy_gml_errCheck(yyftime(2,__yy_gml_errCheck(gml_i))),1)),$$args)]);
+					(gml_i=(gml_i instanceof Long?gml_i.add(1):++gml_i),gml_i);
+				}
+			}
+			;
+			var gml_data=__yy_gml_object_create(_inst,(global.gml___struct___124=__yy_method(_inst,gml_Script____struct___124_GoogHit_GoogHit)),global.gml__GoogClientID,global.gml__GoogUserID,global.gml__GoogUserProperties,gml_Script___GoogUnixTimeMicroseconds(_inst,_other),gml_eventArray);
+			var gml_string=json_stringify(gml_data);
+			var gml_id=http_post_string(global.gml__GoogURL,gml_string);
+			gml_Script___GoogTrace(_inst,_other,"Sent HTTP request for event \"",gml_string,"\"");
+			if(yyfequal(global.gml__GoogFirstRequestTime,g_pBuiltIn.undefined))
+			{
+				global.gml__GoogFirstRequestTime=g_pBuiltIn.get_current_time();
+			}
+			;
+			if((yyGetBool(yyfequal(global.gml__GoogUsingAsyncEvent,g_pBuiltIn.undefined)))&&(yyGetBool(yyfgreater(yyfminus(__yy_gml_errCheck(g_pBuiltIn.get_current_time()),__yy_gml_errCheck(global.gml__GoogFirstRequestTime)),30000))))
+			{
+
+								{
+					if(yyGetBool(os_is_network_connected(false)))
+					{
+
+												{
+							gml_Script___GoogTrace(_inst,_other,"Warning! No async HTTP event handled, make sure GoogAsyncHTTPEvent() is being called in a persistent object");
+							global.gml__GoogUsingAsyncEvent=false;
+							ds_map_clear(global.gml__GoogHTTPResponseMap);
+						}
+						;
+					}
+					else 
+					{
+
+												{
+							global.gml__GoogFirstRequestTime=g_pBuiltIn.undefined;
+						}
+						;
+					}
+					;
+				}
+				;
+			}
+			;
+			if((yyGetBool(yyfequal(global.gml__GoogUsingAsyncEvent,g_pBuiltIn.undefined)))||(yyGetBool(global.gml__GoogUsingAsyncEvent)))
+			{
+
+								{
+					ds_map_set(global.gml__GoogHTTPResponseMap,gml_id,gml_string);
+				}
+				;
+			}
+			;
+		}
+	}
+}
+
+function gml_GlobalScript_GoogUserIDForce(_inst,_other)
+{
+	(_inst.gmlGoogUserIDForce=__yy_method(_inst,gml_Script_GoogUserIDForce));
+}
+
+function gml_Script_GoogUserIDForce(_inst,_other,argument0)
+{
+
+		{
+		if(yyfnotequal(argument0,global.gml__GoogUserID))
+		{
+
+						{
+				global.gml__GoogUserID=string(argument0);
+				gml_Script___GoogTrace(_inst,_other,"Set user ID to \"",global.gml__GoogUserID,"\"");
+			}
+			;
+		}
+		;
+	}
+}
+
+function gml_GlobalScript_GoogUserIDGet(_inst,_other)
+{
+	(_inst.gmlGoogUserIDGet=__yy_method(_inst,gml_Script_GoogUserIDGet));
+}
+
+function gml_Script_GoogUserIDGet(_inst,_other)
+{
+
+		{
+		return global.gml__GoogUserID;
+	}
+}
+
 function gml_GlobalScript_html_elements_scripts(_inst,_other)
 {
 	(_inst.gmlhtml_init=__yy_method(_inst,gml_Script_html_init));
@@ -8050,14 +8523,14 @@ function gml_Script_scr_board_init(_inst,_other)
 		;
 
 				{
-			var __yy__v0=GetWithArray(YYASSET_REF(0x00000001));
-			for(var __yy__v1 in __yy__v0)
+			var __yy__v4=GetWithArray(YYASSET_REF(0x00000001));
+			for(var __yy__v5 in __yy__v4)
 			{
-				if(!__yy__v0.hasOwnProperty(__yy__v1))continue;
-				var __yy__v2=__yy__v0[__yy__v1];
+				if(!__yy__v4.hasOwnProperty(__yy__v5))continue;
+				var __yy__v6=__yy__v4[__yy__v5];
 
 								{
-					event_user(__yy__v2,_inst,0);
+					event_user(__yy__v6,_inst,0);
 				}
 			}
 		}
@@ -8088,18 +8561,18 @@ function gml_Script_scr_board_init(_inst,_other)
 										{
 
 												{
-							var __yy__v3=GetWithArray(instance_create_layer(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_x),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(gmli)))),yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_y),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(gmlo)))),layer_get_id("lyr_1"),YYASSET_REF(0x00000006)));
-							for(var __yy__v4 in __yy__v3)
+							var __yy__v7=GetWithArray(instance_create_layer(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_x),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(gmli)))),yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_y),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(gml_tile_pad))),__yy_gml_errCheck(gmlo)))),layer_get_id("lyr_1"),YYASSET_REF(0x00000007)));
+							for(var __yy__v8 in __yy__v7)
 							{
-								if(!__yy__v3.hasOwnProperty(__yy__v4))continue;
-								var __yy__v5=__yy__v3[__yy__v4];
+								if(!__yy__v7.hasOwnProperty(__yy__v8))continue;
+								var __yy__v9=__yy__v7[__yy__v8];
 
 																{
-									__yy__v5.gmltile_id=yyfplus(__yy_gml_errCheck(gmli),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfminus(__yy_gml_errCheck(gmlo),1)),__yy_gml_errCheck(global.gmlgame_grid_size))));
-									__yy__v5.gmltile_col=gmli;
-									__yy__v5.gmltile_row=gmlo;
+									__yy__v9.gmltile_id=yyfplus(__yy_gml_errCheck(gmli),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfminus(__yy_gml_errCheck(gmlo),1)),__yy_gml_errCheck(global.gmlgame_grid_size))));
+									__yy__v9.gmltile_col=gmli;
+									__yy__v9.gmltile_row=gmlo;
 									global.gmltile_space=__yy_gml_array_check(global.gmltile_space,2916798043);
-									global.gmltile_space[__yy_gml_array_check_index_set(__yy__v5.gmltile_id)]=__yy__v5.id;
+									global.gmltile_space[__yy_gml_array_check_index_set(__yy__v9.gmltile_id)]=__yy__v9.id;
 								}
 							}
 						}
@@ -8132,21 +8605,21 @@ function gml_Script_scr_board_init(_inst,_other)
 										{
 
 												{
-							var __yy__v6=GetWithArray(instance_create_layer(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_x),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(gmli)))),__yy_gml_errCheck(yyfplus((-10),__yy_gml_errCheck(random(20))))),yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_y),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(gmlo)))),__yy_gml_errCheck(yyfplus((-10),__yy_gml_errCheck(random(20))))),layer_get_id("lyr_2"),YYASSET_REF(0x00000005)));
-							for(var __yy__v7 in __yy__v6)
+							var __yy__v10=GetWithArray(instance_create_layer(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_x),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(gmli)))),__yy_gml_errCheck(yyfplus((-10),__yy_gml_errCheck(random(20))))),yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(gml_grid_y),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(yyfplus((-0.5),__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_grid_sz))),2))))))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(gml_tile_sz),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_pad),__yy_gml_errCheck(gml_tile_pad_mult))))),__yy_gml_errCheck(gmlo)))),__yy_gml_errCheck(yyfplus((-10),__yy_gml_errCheck(random(20))))),layer_get_id("lyr_2"),YYASSET_REF(0x00000006)));
+							for(var __yy__v11 in __yy__v10)
 							{
-								if(!__yy__v6.hasOwnProperty(__yy__v7))continue;
-								var __yy__v8=__yy__v6[__yy__v7];
+								if(!__yy__v10.hasOwnProperty(__yy__v11))continue;
+								var __yy__v12=__yy__v10[__yy__v11];
 
 																{
-									__yy__v8.gmltile_id=yyfplus(__yy_gml_errCheck(gmli),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfminus(__yy_gml_errCheck(gmlo),1)),__yy_gml_errCheck(global.gmlgame_grid_size))));
-									__yy__v8.gmltile_col=gmli;
-									__yy__v8.gmltile_row=gmlo;
+									__yy__v12.gmltile_id=yyfplus(__yy_gml_errCheck(gmli),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(yyfminus(__yy_gml_errCheck(gmlo),1)),__yy_gml_errCheck(global.gmlgame_grid_size))));
+									__yy__v12.gmltile_col=gmli;
+									__yy__v12.gmltile_row=gmlo;
 									global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
-									global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v8.gmltile_id)]=__yy__v8.id;
-									__yy__v8.gmlspawn_slam=yyfplus(yyfplus(2,__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v8.gmltile_col)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size)))))),__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v8.gmltile_row)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size))))));
-									__yy__v8.image_angle=yyfplus((-20),__yy_gml_errCheck(random(40)));
-									__yy__v8.gmlmy_letter_str=global.gmlletters[__yy_gml_array_check_index(__yy__v8.gmltile_id,global.gmlletters)];
+									global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v12.gmltile_id)]=__yy__v12.id;
+									__yy__v12.gmlspawn_slam=yyfplus(yyfplus(2,__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v12.gmltile_col)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size)))))),__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v12.gmltile_row)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size))))));
+									__yy__v12.image_angle=yyfplus((-20),__yy_gml_errCheck(random(40)));
+									__yy__v12.gmlmy_letter_str=global.gmlletters[__yy_gml_array_check_index(__yy__v12.gmltile_id,global.gmlletters)];
 								}
 							}
 						}
@@ -8169,19 +8642,19 @@ function gml_Script_scr_board_init(_inst,_other)
 										{
 
 												{
-							var __yy__v9=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
-							for(var __yy__v10 in __yy__v9)
+							var __yy__v13=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
+							for(var __yy__v14 in __yy__v13)
 							{
-								if(!__yy__v9.hasOwnProperty(__yy__v10))continue;
-								var __yy__v11=__yy__v9[__yy__v10];
+								if(!__yy__v13.hasOwnProperty(__yy__v14))continue;
+								var __yy__v15=__yy__v13[__yy__v14];
 
 																{
-									__yy__v11.gmltarg_id=global.gmltile_space[__yy_gml_array_check_index(__yy__v11.gmltile_id,global.gmltile_space)];
-									__yy__v11.gmlx_targ=yyInst(_inst,_other,__yy__v11.gmltarg_id).x;
-									__yy__v11.gmly_targ=yyInst(_inst,_other,__yy__v11.gmltarg_id).y;
-									__yy__v11.gmlam_set=1;
-									__yy__v11.gmlprev_targ_id=__yy__v11.gmltarg_id;
-									__yy__v11.gmlam_set_flash=1;
+									__yy__v15.gmltarg_id=global.gmltile_space[__yy_gml_array_check_index(__yy__v15.gmltile_id,global.gmltile_space)];
+									__yy__v15.gmlx_targ=yyInst(_inst,_other,__yy__v15.gmltarg_id).x;
+									__yy__v15.gmly_targ=yyInst(_inst,_other,__yy__v15.gmltarg_id).y;
+									__yy__v15.gmlam_set=1;
+									__yy__v15.gmlprev_targ_id=__yy__v15.gmltarg_id;
+									__yy__v15.gmlam_set_flash=1;
 								}
 							}
 						}
@@ -8218,20 +8691,20 @@ function gml_Script_scr_board_init(_inst,_other)
 								_inst.gmlsecret_word_array[__yy_gml_array_check_index_set(gmli)]=real(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmli,_inst.gmlsecret_word_array)]);
 
 																{
-									var __yy__v12=GetWithArray(YYASSET_REF(0x00000005));
-									for(var __yy__v13 in __yy__v12)
+									var __yy__v16=GetWithArray(YYASSET_REF(0x00000006));
+									for(var __yy__v17 in __yy__v16)
 									{
-										if(!__yy__v12.hasOwnProperty(__yy__v13))continue;
-										var __yy__v14=__yy__v12[__yy__v13];
+										if(!__yy__v16.hasOwnProperty(__yy__v17))continue;
+										var __yy__v18=__yy__v16[__yy__v17];
 
 																				{
-											if(yyfequal(__yy__v14.gmltile_id,_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmli,_inst.gmlsecret_word_array)]))
+											if(yyfequal(__yy__v18.gmltile_id,_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmli,_inst.gmlsecret_word_array)]))
 											{
 
 																								{
 													_inst.gmlsecret_word_array_id=__yy_gml_array_check(_inst.gmlsecret_word_array_id,2987592634);
-													_inst.gmlsecret_word_array_id[__yy_gml_array_check_index_set(gmli)]=__yy__v14.id;
-													_inst.gmlsecret_word_str=yyfplus(_inst.gmlsecret_word_str,string(__yy__v14.gmlmy_letter_str));
+													_inst.gmlsecret_word_array_id[__yy_gml_array_check_index_set(gmli)]=__yy__v18.id;
+													_inst.gmlsecret_word_str=yyfplus(_inst.gmlsecret_word_str,string(__yy__v18.gmlmy_letter_str));
 												}
 												;
 											}
@@ -8250,15 +8723,15 @@ function gml_Script_scr_board_init(_inst,_other)
 						_inst.gmlselected_word_array=0;
 
 												{
-							var __yy__v15=GetWithArray(YYASSET_REF(0x00000005));
-							for(var __yy__v16 in __yy__v15)
+							var __yy__v19=GetWithArray(YYASSET_REF(0x00000006));
+							for(var __yy__v20 in __yy__v19)
 							{
-								if(!__yy__v15.hasOwnProperty(__yy__v16))continue;
-								var __yy__v17=__yy__v15[__yy__v16];
+								if(!__yy__v19.hasOwnProperty(__yy__v20))continue;
+								var __yy__v21=__yy__v19[__yy__v20];
 
 																{
-									__yy__v17.gmlam_exed=0;
-									__yy__v17.gmlam_clued=0;
+									__yy__v21.gmlam_exed=0;
+									__yy__v21.gmlam_clued=0;
 								}
 							}
 						}
@@ -8424,15 +8897,24 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	{
 
 				{
-			if(!yyGetBool(instance_exists(YYASSET_REF(0x00000003))))
+			if(!yyGetBool(instance_exists(YYASSET_REF(0x00000004))))
 			{
 
 								{
-					instance_create_layer(_inst.x,_inst.y,_inst.layer,YYASSET_REF(0x00000003));
+					instance_create_layer(_inst.x,_inst.y,_inst.layer,YYASSET_REF(0x00000004));
 				}
 				;
 			}
 			;
+		}
+		;
+	}
+	;
+	if(!yyGetBool(instance_exists(YYASSET_REF(0x00000002))))
+	{
+
+				{
+			instance_create_layer(_inst.x,_inst.y,_inst.layer,YYASSET_REF(0x00000002));
 		}
 		;
 	}
@@ -8464,6 +8946,7 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	_inst.gmlp_string=0;
 	gml_Script_get_query(_inst,_other);
 	_inst.gmlform_is_loading=false;
+	gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","MainMenu"]));
 }
 
 function gml_Object_obj_ctrl_Step_0(_inst,_other)
@@ -8503,7 +8986,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-195);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-215);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -8623,6 +9106,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																				{
 											global.gmlloadBoard="IYEIORAOABEANEAEPCINMALNI";
 											global.gmlloadSecret="17-23-22-18-14-10-5";
+											gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","DailyFromMainMenu"]));
 											gml_Script_scr_board_init(_inst,_other);
 										}
 										;
@@ -8633,6 +9117,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
+												gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","LoadFromMainMenu"]));
 												global.gmlshow_input_prompt=1;
 											}
 											;
@@ -8662,6 +9147,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																						{
 												global.gmlgame_grid_size=4;
 												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+												gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","Create4"]));
 												gml_Script_scr_board_init(_inst,_other);
 											}
 											;
@@ -8674,6 +9160,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																								{
 													global.gmlgame_grid_size=5;
 													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+													gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","Create5"]));
 													gml_Script_scr_board_init(_inst,_other);
 												}
 												;
@@ -8684,6 +9171,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																								{
 													global.gmlgame_grid_size=7;
 													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+													gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","Create7"]));
 													gml_Script_scr_board_init(_inst,_other);
 												}
 												;
@@ -8709,7 +9197,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 			{
 
 								{
-					if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000005),true,true)))))
+					if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000006),true,true)))))
 					{
 
 												{
@@ -8730,20 +9218,20 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																								{
 
 																										{
-														var __yy__v18=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
-														for(var __yy__v19 in __yy__v18)
+														var __yy__v22=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
+														for(var __yy__v23 in __yy__v22)
 														{
-															if(!__yy__v18.hasOwnProperty(__yy__v19))continue;
-															var __yy__v20=__yy__v18[__yy__v19];
+															if(!__yy__v22.hasOwnProperty(__yy__v23))continue;
+															var __yy__v24=__yy__v22[__yy__v23];
 
 																														{
-																__yy__v20.gmltarg_id=yyInst(_inst,_other,gml_empty_tile[__yy_gml_array_check_index(gml_empty_tile_count,gml_empty_tile)]).id;
+																__yy__v24.gmltarg_id=yyInst(_inst,_other,gml_empty_tile[__yy_gml_array_check_index(gml_empty_tile_count,gml_empty_tile)]).id;
 																gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-																__yy__v20.gmlx_targ=yyInst(_inst,_other,__yy__v20.gmltarg_id).x;
-																__yy__v20.gmly_targ=yyInst(_inst,_other,__yy__v20.gmltarg_id).y;
-																__yy__v20.gmlam_set=1;
-																__yy__v20.gmlprev_targ_id=__yy__v20.gmltarg_id;
-																__yy__v20.gmlam_set_flash=1;
+																__yy__v24.gmlx_targ=yyInst(_inst,_other,__yy__v24.gmltarg_id).x;
+																__yy__v24.gmly_targ=yyInst(_inst,_other,__yy__v24.gmltarg_id).y;
+																__yy__v24.gmlam_set=1;
+																__yy__v24.gmlprev_targ_id=__yy__v24.gmltarg_id;
+																__yy__v24.gmlam_set_flash=1;
 															}
 														}
 													}
@@ -8769,24 +9257,24 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																				{
 
 																						{
-												var __yy__v21=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
-												for(var __yy__v22 in __yy__v21)
+												var __yy__v25=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
+												for(var __yy__v26 in __yy__v25)
 												{
-													if(!__yy__v21.hasOwnProperty(__yy__v22))continue;
-													var __yy__v23=__yy__v21[__yy__v22];
+													if(!__yy__v25.hasOwnProperty(__yy__v26))continue;
+													var __yy__v27=__yy__v25[__yy__v26];
 
 																										{
-														if(yyfgreaterequal(__yy__v23.gmlam_set,1))
+														if(yyfgreaterequal(__yy__v27.gmlam_set,1))
 														{
 
 																														{
-																if((yyGetBool(instance_exists(__yy__v23.gmltarg_id)))&&(yyGetBool(yyfnotequal(__yy__v23.gmltarg_id,(-1)))))
+																if((yyGetBool(instance_exists(__yy__v27.gmltarg_id)))&&(yyGetBool(yyfnotequal(__yy__v27.gmltarg_id,(-1)))))
 																{
 
 																																		{
-																		__yy__v23.gmltile_id=yyInst(_inst,_other,__yy__v23.gmltarg_id).gmltile_id;
+																		__yy__v27.gmltile_id=yyInst(_inst,_other,__yy__v27.gmltarg_id).gmltile_id;
 																		global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-																		global.gmlletters[__yy_gml_array_check_index_set(__yy__v23.gmltile_id)]=__yy__v23.gmlmy_letter_str;
+																		global.gmlletters[__yy_gml_array_check_index_set(__yy__v27.gmltile_id)]=__yy__v27.gmlmy_letter_str;
 																	}
 																	;
 																}
@@ -8823,7 +9311,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 				{
 
 										{
-						if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000005),true,true)))))
+						if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000006),true,true)))))
 						{
 
 														{
@@ -8836,14 +9324,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										_inst.gmlselected_word_str="";
 
 																				{
-											var __yy__v24=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v25 in __yy__v24)
+											var __yy__v28=GetWithArray(YYASSET_REF(0x00000006));
+											for(var __yy__v29 in __yy__v28)
 											{
-												if(!__yy__v24.hasOwnProperty(__yy__v25))continue;
-												var __yy__v26=__yy__v24[__yy__v25];
+												if(!__yy__v28.hasOwnProperty(__yy__v29))continue;
+												var __yy__v30=__yy__v28[__yy__v29];
 
 																								{
-													__yy__v26.gmlam_part_of_secret_word=0;
+													__yy__v30.gmlam_part_of_secret_word=0;
 												}
 											}
 										}
@@ -8866,15 +9354,15 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										_inst.gmlselected_word_array=0;
 
 																				{
-											var __yy__v27=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v28 in __yy__v27)
+											var __yy__v31=GetWithArray(YYASSET_REF(0x00000006));
+											for(var __yy__v32 in __yy__v31)
 											{
-												if(!__yy__v27.hasOwnProperty(__yy__v28))continue;
-												var __yy__v29=__yy__v27[__yy__v28];
+												if(!__yy__v31.hasOwnProperty(__yy__v32))continue;
+												var __yy__v33=__yy__v31[__yy__v32];
 
 																								{
-													__yy__v29.gmlam_exed=0;
-													__yy__v29.gmlam_clued=0;
+													__yy__v33.gmlam_exed=0;
+													__yy__v33.gmlam_clued=0;
 												}
 											}
 										}
@@ -8891,6 +9379,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										;
 										show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
 										gml_Script_scr_update_copy_code(_inst,_other);
+										gml_Script_GoogHit(_inst,_other,"screen_view",__yy_gml_array_create(["screen_name","PuzzleCreated"]));
 										global.gmlshow_export_prompt=1;
 										global.gmlgame_phase=3;
 										_inst.gmljust_phase_changed=1;
@@ -8911,7 +9400,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 					{
 
 												{
-							if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000005),true,true)))))
+							if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(50,__yy_gml_errCheck(global.gmlpr)))))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000006),true,true)))))
 							{
 
 																{
@@ -8922,15 +9411,15 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											global.gmlgame_phase=2;
 
 																						{
-												var __yy__v30=GetWithArray(YYASSET_REF(0x00000005));
-												for(var __yy__v31 in __yy__v30)
+												var __yy__v34=GetWithArray(YYASSET_REF(0x00000006));
+												for(var __yy__v35 in __yy__v34)
 												{
-													if(!__yy__v30.hasOwnProperty(__yy__v31))continue;
-													var __yy__v32=__yy__v30[__yy__v31];
+													if(!__yy__v34.hasOwnProperty(__yy__v35))continue;
+													var __yy__v36=__yy__v34[__yy__v35];
 
 																										{
-														__yy__v32.gmlam_exed=0;
-														__yy__v32.gmlam_clued=0;
+														__yy__v36.gmlam_exed=0;
+														__yy__v36.gmlam_clued=0;
 													}
 												}
 											}
@@ -8959,7 +9448,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 			{
 
 								{
-					if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(50,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000005),true,true)))))
+					if((yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(50,__yy_gml_errCheck(global.gmlpr)))))&&(yyGetBool(!yyGetBool(collision_point(_inst,g_pBuiltIn.get_mouse_x(),g_pBuiltIn.get_mouse_y(),YYASSET_REF(0x00000006),true,true)))))
 					{
 
 												{
@@ -8968,6 +9457,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																{
 									global.gmlshow_export_prompt=1;
+									gml_Script_GoogHit(_inst,_other,"share",__yy_gml_array_create(["method","FromPuzzle"]));
 								}
 								;
 							}
@@ -9016,26 +9506,26 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							_inst.gmlselected_word_latest_tile_id=(-1);
 
 														{
-								var __yy__v33=GetWithArray(YYASSET_REF(0x00000005));
-								for(var __yy__v34 in __yy__v33)
+								var __yy__v37=GetWithArray(YYASSET_REF(0x00000006));
+								for(var __yy__v38 in __yy__v37)
 								{
-									if(!__yy__v33.hasOwnProperty(__yy__v34))continue;
-									var __yy__v35=__yy__v33[__yy__v34];
+									if(!__yy__v37.hasOwnProperty(__yy__v38))continue;
+									var __yy__v39=__yy__v37[__yy__v38];
 
 																		{
-										if(yyfgreaterequal(__yy__v35.gmlam_selected,1))
+										if(yyfgreaterequal(__yy__v39.gmlam_selected,1))
 										{
 
 																						{
-												__yy__v35.gmlam_selected=0;
-												__yy__v35.gmlam_selected_start=0;
-												__yy__v35.gmlam_selected_end=0;
-												__yy__v35.gmlam_selected_num=0;
+												__yy__v39.gmlam_selected=0;
+												__yy__v39.gmlam_selected_start=0;
+												__yy__v39.gmlam_selected_end=0;
+												__yy__v39.gmlam_selected_num=0;
 												if(yyfequal(global.gmlgame_phase,2))
 												{
 
 																										{
-														__yy__v35.gmlam_part_of_secret_word=1;
+														__yy__v39.gmlam_part_of_secret_word=1;
 													}
 													;
 												}
@@ -9161,13 +9651,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																												{
 															show_debug_message("match!");
 															global.gmlgame_phase=4;
+															gml_Script_GoogHit(_inst,_other,"post_score",__yy_gml_array_create(["score",_inst.gmlguesses_count]));
 
 																														{
-																var __yy__v36=GetWithArray(YYASSET_REF(0x00000005));
-																for(var __yy__v37 in __yy__v36)
+																var __yy__v40=GetWithArray(YYASSET_REF(0x00000006));
+																for(var __yy__v41 in __yy__v40)
 																{
-																	if(!__yy__v36.hasOwnProperty(__yy__v37))continue;
-																	var __yy__v38=__yy__v36[__yy__v37];
+																	if(!__yy__v40.hasOwnProperty(__yy__v41))continue;
+																	var __yy__v42=__yy__v40[__yy__v41];
 
 																																		{
 
@@ -9177,14 +9668,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																			{
 
 																																								{
-																					if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v38.gmltile_id))
+																					if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v42.gmltile_id))
 																					{
 
 																																												{
-																							__yy__v38.gmlam_clued=1;
-																							__yy__v38.gmlam_clued_flash=1;
-																							__yy__v38.gmlam_clued_won=1;
-																							__yy__v38.gmlam_exed=0;
+																							__yy__v42.gmlam_clued=1;
+																							__yy__v42.gmlam_clued_flash=1;
+																							__yy__v42.gmlam_clued_won=1;
+																							__yy__v42.gmlam_exed=0;
 																						}
 																						;
 																					}
@@ -9192,11 +9683,11 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																				}
 																			}
 																			;
-																			if(yyfequal(__yy__v38.gmlam_clued,0))
+																			if(yyfequal(__yy__v42.gmlam_clued,0))
 																			{
 
 																																								{
-																					__yy__v38.gmlam_samelettered=0;
+																					__yy__v42.gmlam_samelettered=0;
 																				}
 																				;
 																			}
@@ -9219,14 +9710,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																show_debug_message("no match!");
 
 																																{
-																	var __yy__v39=GetWithArray(YYASSET_REF(0x00000005));
-																	for(var __yy__v40 in __yy__v39)
+																	var __yy__v43=GetWithArray(YYASSET_REF(0x00000006));
+																	for(var __yy__v44 in __yy__v43)
 																	{
-																		if(!__yy__v39.hasOwnProperty(__yy__v40))continue;
-																		var __yy__v41=__yy__v39[__yy__v40];
+																		if(!__yy__v43.hasOwnProperty(__yy__v44))continue;
+																		var __yy__v45=__yy__v43[__yy__v44];
 
 																																				{
-																			if(yyfequal(__yy__v41.gmlam_selected,1))
+																			if(yyfequal(__yy__v45.gmlam_selected,1))
 																			{
 
 																																								{
@@ -9235,7 +9726,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																					{
 
 																																												{
-																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v41.gmltile_id))
+																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v45.gmltile_id))
 																							{
 
 																																																{
@@ -9246,12 +9737,12 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																							{
 
 																																																{
-																									__yy__v41.gmlam_exed=1;
-																									if(yyfequal(global.gmlletters[__yy_gml_array_check_index(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],global.gmlletters)],__yy__v41.gmlmy_letter_str))
+																									__yy__v45.gmlam_exed=1;
+																									if(yyfequal(global.gmlletters[__yy_gml_array_check_index(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],global.gmlletters)],__yy__v45.gmlmy_letter_str))
 																									{
 
 																																																				{
-																											__yy__v41.gmlam_samelettered=1;
+																											__yy__v45.gmlam_samelettered=1;
 																										}
 																										;
 																									}
@@ -9268,21 +9759,21 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																					{
 
 																																												{
-																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v41.gmltile_id))
+																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v45.gmltile_id))
 																							{
 
 																																																{
-																									if(yyflessequal(__yy__v41.gmlam_clued,0))
+																									if(yyflessequal(__yy__v45.gmlam_clued,0))
 																									{
 
 																																																				{
-																											__yy__v41.gmlam_clued=1;
-																											__yy__v41.gmlam_clued_flash=1;
+																											__yy__v45.gmlam_clued=1;
+																											__yy__v45.gmlam_clued_flash=1;
 																										}
 																										;
 																									}
 																									;
-																									__yy__v41.gmlam_exed=0;
+																									__yy__v45.gmlam_exed=0;
 																								}
 																								;
 																							}
@@ -9329,26 +9820,26 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							_inst.gmlselected_word_latest_tile_id=(-1);
 
 														{
-								var __yy__v42=GetWithArray(YYASSET_REF(0x00000005));
-								for(var __yy__v43 in __yy__v42)
+								var __yy__v46=GetWithArray(YYASSET_REF(0x00000006));
+								for(var __yy__v47 in __yy__v46)
 								{
-									if(!__yy__v42.hasOwnProperty(__yy__v43))continue;
-									var __yy__v44=__yy__v42[__yy__v43];
+									if(!__yy__v46.hasOwnProperty(__yy__v47))continue;
+									var __yy__v48=__yy__v46[__yy__v47];
 
 																		{
-										if(yyfgreaterequal(__yy__v44.gmlam_selected,1))
+										if(yyfgreaterequal(__yy__v48.gmlam_selected,1))
 										{
 
 																						{
-												__yy__v44.gmlam_selected=0;
-												__yy__v44.gmlam_selected_start=0;
-												__yy__v44.gmlam_selected_end=0;
-												__yy__v44.gmlam_selected_num=0;
+												__yy__v48.gmlam_selected=0;
+												__yy__v48.gmlam_selected_start=0;
+												__yy__v48.gmlam_selected_end=0;
+												__yy__v48.gmlam_selected_num=0;
 												if((yyGetBool(yyfequal(global.gmlgame_phase,2)))&&(yyGetBool(yyfequal(gml_valid_guess,1))))
 												{
 
 																										{
-														__yy__v44.gmlam_part_of_secret_word=1;
+														__yy__v48.gmlam_part_of_secret_word=1;
 													}
 													;
 												}
@@ -10000,7 +10491,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45597.28804014383)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45597.32129660626)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -10089,35 +10580,35 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 	gpu_set_blendmode(0);
 
 		{
-		var __yy__v45=GetWithArray(YYASSET_REF(0x00000005));
-		for(var __yy__v46 in __yy__v45)
+		var __yy__v49=GetWithArray(YYASSET_REF(0x00000006));
+		for(var __yy__v50 in __yy__v49)
 		{
-			if(!__yy__v45.hasOwnProperty(__yy__v46))continue;
-			var __yy__v47=__yy__v45[__yy__v46];
+			if(!__yy__v49.hasOwnProperty(__yy__v50))continue;
+			var __yy__v51=__yy__v49[__yy__v50];
 
 						{
 				var gml_tile_ht=0;
-				var gml_spawn_slam=yyftime(__yy_gml_errCheck(sqr(__yy__v47.gmlspawn_slam)),(-1000));
+				var gml_spawn_slam=yyftime(__yy_gml_errCheck(sqr(__yy__v51.gmlspawn_slam)),(-1000));
 				if(yyfgreaterequal(global.gmlgame_phase,2))
 				{
 
 										{
-						draw_set_alpha(lerp(0.6,1,clamp(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v47.gmlam_selected_fd),__yy_gml_errCheck(__yy__v47.gmlam_clued_fd)),__yy_gml_errCheck(__yy__v47.gmlam_part_of_secret_word_fd)),__yy_gml_errCheck(yyftime(1,__yy_gml_errCheck(__yy__v47.gmlam_exed_fd)))),0,1)));
-						draw_set_color(__yy__v47.gmlletter_col);
-						draw_set_color(merge_color(__yy__v47.gmlletter_col,16777215,__yy__v47.gmlam_selected_fd));
+						draw_set_alpha(lerp(0.6,1,clamp(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v51.gmlam_selected_fd),__yy_gml_errCheck(__yy__v51.gmlam_clued_fd)),__yy_gml_errCheck(__yy__v51.gmlam_part_of_secret_word_fd)),__yy_gml_errCheck(yyftime(1,__yy_gml_errCheck(__yy__v51.gmlam_exed_fd)))),0,1)));
+						draw_set_color(__yy__v51.gmlletter_col);
+						draw_set_color(merge_color(__yy__v51.gmlletter_col,16777215,__yy__v51.gmlam_selected_fd));
 						var gml_text_offset_y=-0;
-						var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(__yy__v47.gmlscl));
-						draw_text_transformed(yyfplus(__yy_gml_errCheck(__yy__v47.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v47.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v47.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v47.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v47.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v47.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(__yy__v47.gmlmy_letter_str),gml_text_scl,gml_text_scl,__yy__v47.image_angle);
+						var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(__yy__v51.gmlscl));
+						draw_text_transformed(yyfplus(__yy_gml_errCheck(__yy__v51.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v51.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v51.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v51.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v51.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v51.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(__yy__v51.gmlmy_letter_str),gml_text_scl,gml_text_scl,__yy__v51.image_angle);
 						draw_set_color(16777215);
 					}
 					;
 				}
 				;
-				if(yyfgreater(__yy__v47.gmlam_set_flash,0))
+				if(yyfgreater(__yy__v51.gmlam_set_flash,0))
 				{
 
 										{
-						draw_sprite_ext(__yy__v47,YYASSET_REF(0x01000002),1,yyfplus(__yy_gml_errCheck(__yy__v47.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v47.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v47.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v47.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v47.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v47.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v47.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v47.gmlam_set_flash))))),__yy__v47.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v47.image_alpha),2),__yy_gml_errCheck(__yy__v47.gmlam_set_flash)));
+						draw_sprite_ext(__yy__v51,YYASSET_REF(0x01000002),1,yyfplus(__yy_gml_errCheck(__yy__v51.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v51.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v51.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v51.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v51.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v51.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v51.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v51.gmlam_set_flash))))),__yy__v51.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v51.image_alpha),2),__yy_gml_errCheck(__yy__v51.gmlam_set_flash)));
 					}
 					;
 				}
@@ -10131,6 +10622,11 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 function gml_Object_obj_ctrl_Draw_75(_inst,_other)
 {
 	gml_Script_html_sync(_inst,_other);
+}
+
+function gml_Object_obj_ctrlp_Other_62(_inst,_other)
+{
+	gml_Script_GoogAsyncHTTPEvent(_inst,_other);
 }
 
 function gml_Object_obj_example_controller_Create_0(_inst,_other)
@@ -10186,11 +10682,11 @@ function gml_Object_obj_example_controller_Draw_75(_inst,_other)
 
 function gml_Object_obj_gmlive_Create_0(_inst,_other)
 {
-	if(yyfgreater(instance_number(YYASSET_REF(0x00000003)),1))
+	if(yyfgreater(instance_number(YYASSET_REF(0x00000004)),1))
 	{
 
 				{
-			var gmlfirst=instance_find(YYASSET_REF(0x00000003),0);
+			var gmlfirst=instance_find(YYASSET_REF(0x00000004),0);
 			if(yyfnotequal(_inst.id,gmlfirst))
 			{
 
@@ -10308,7 +10804,7 @@ function gml_Object_obj_tile_letter_bkup_Step_0(_inst,_other)
 	{
 
 				{
-			var gml_conflicting_tile=collision_circle(_inst,_inst.x,_inst.y,yyftime(50,__yy_gml_errCheck(_inst.gmlscl)),YYASSET_REF(0x00000005),true,true);
+			var gml_conflicting_tile=collision_circle(_inst,_inst.x,_inst.y,yyftime(50,__yy_gml_errCheck(_inst.gmlscl)),YYASSET_REF(0x00000006),true,true);
 			if(yyfnotequal(gml_conflicting_tile,(-4)))
 			{
 
@@ -10499,34 +10995,34 @@ function gml_Object_obj_tile_letter_bkup_Mouse_56(_inst,_other)
 				{
 			_inst.gmlam_dragging=0;
 			_inst.gmlprev_targ_id=_inst.gmltarg_id;
-			_inst.gmltarg_id=instance_nearest(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000006));
+			_inst.gmltarg_id=instance_nearest(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000007));
 			if(yyflessequal(point_distance(_inst.x,_inst.y,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y),40))
 			{
 
 								{
-					var gml_conflicting_tile=collision_point(_inst,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y,YYASSET_REF(0x00000005),true,true);
+					var gml_conflicting_tile=collision_point(_inst,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y,YYASSET_REF(0x00000006),true,true);
 					if(yyfnotequal(gml_conflicting_tile,(-4)))
 					{
 
 												{
 
 														{
-								var __yy__v48=GetWithArray(gml_conflicting_tile);
-								for(var __yy__v49 in __yy__v48)
+								var __yy__v52=GetWithArray(gml_conflicting_tile);
+								for(var __yy__v53 in __yy__v52)
 								{
-									if(!__yy__v48.hasOwnProperty(__yy__v49))continue;
-									var __yy__v50=__yy__v48[__yy__v49];
+									if(!__yy__v52.hasOwnProperty(__yy__v53))continue;
+									var __yy__v54=__yy__v52[__yy__v53];
 
 																		{
 										if(yyfequal(_inst.gmlam_set,1))
 										{
 
 																						{
-												__yy__v50.gmlam_set=1;
-												__yy__v50.gmltarg_id=_inst.gmlprev_targ_id;
-												__yy__v50.gmlprev_targ_id=__yy__v50.gmltarg_id;
-												__yy__v50.gmlx_targ=yyInst(_inst,_other,__yy__v50.gmltarg_id).x;
-												__yy__v50.gmly_targ=yyInst(_inst,_other,__yy__v50.gmltarg_id).y;
+												__yy__v54.gmlam_set=1;
+												__yy__v54.gmltarg_id=_inst.gmlprev_targ_id;
+												__yy__v54.gmlprev_targ_id=__yy__v54.gmltarg_id;
+												__yy__v54.gmlx_targ=yyInst(_inst,_other,__yy__v54.gmltarg_id).x;
+												__yy__v54.gmly_targ=yyInst(_inst,_other,__yy__v54.gmltarg_id).y;
 											}
 											;
 										}
@@ -10534,11 +11030,11 @@ function gml_Object_obj_tile_letter_bkup_Mouse_56(_inst,_other)
 										{
 
 																						{
-												__yy__v50.gmlam_set=0;
-												__yy__v50.gmltarg_id=__yy__v50;
-												__yy__v50.gmlprev_targ_id=__yy__v50;
-												__yy__v50.gmlx_targ=__yy__v50.xstart;
-												__yy__v50.gmly_targ=__yy__v50.ystart;
+												__yy__v54.gmlam_set=0;
+												__yy__v54.gmltarg_id=__yy__v54;
+												__yy__v54.gmlprev_targ_id=__yy__v54;
+												__yy__v54.gmlx_targ=__yy__v54.xstart;
+												__yy__v54.gmly_targ=__yy__v54.ystart;
 											}
 											;
 										}
@@ -10637,19 +11133,19 @@ function gml_Object_obj_tile_letter_bkup_Mouse_0(_inst,_other)
 																		{
 
 																				{
-											var __yy__v51=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v52 in __yy__v51)
+											var __yy__v55=GetWithArray(YYASSET_REF(0x00000006));
+											for(var __yy__v56 in __yy__v55)
 											{
-												if(!__yy__v51.hasOwnProperty(__yy__v52))continue;
-												var __yy__v53=__yy__v51[__yy__v52];
+												if(!__yy__v55.hasOwnProperty(__yy__v56))continue;
+												var __yy__v57=__yy__v55[__yy__v56];
 
 																								{
-													if(yyfgreater(__yy__v53.gmlam_selected_num,_inst.gmlam_selected_num))
+													if(yyfgreater(__yy__v57.gmlam_selected_num,_inst.gmlam_selected_num))
 													{
 
 																												{
-															__yy__v53.gmlam_selected=0;
-															__yy__v53.gmlam_selected_num=0;
+															__yy__v57.gmlam_selected=0;
+															__yy__v57.gmlam_selected_num=0;
 														}
 														;
 													}
@@ -10871,7 +11367,7 @@ function gml_Object_obj_tile_letter_Step_0(_inst,_other)
 	{
 
 				{
-			var gml_conflicting_tile=collision_circle(_inst,_inst.x,_inst.y,yyftime(50,__yy_gml_errCheck(_inst.gmlscl)),YYASSET_REF(0x00000005),true,true);
+			var gml_conflicting_tile=collision_circle(_inst,_inst.x,_inst.y,yyftime(50,__yy_gml_errCheck(_inst.gmlscl)),YYASSET_REF(0x00000006),true,true);
 			if(yyfnotequal(gml_conflicting_tile,(-4)))
 			{
 
@@ -11043,14 +11539,14 @@ function gml_Object_obj_tile_letter_Mouse_4(_inst,_other)
 				{
 
 						{
-				var __yy__v54=GetWithArray(YYASSET_REF(0x00000005));
-				for(var __yy__v55 in __yy__v54)
+				var __yy__v58=GetWithArray(YYASSET_REF(0x00000006));
+				for(var __yy__v59 in __yy__v58)
 				{
-					if(!__yy__v54.hasOwnProperty(__yy__v55))continue;
-					var __yy__v56=__yy__v54[__yy__v55];
+					if(!__yy__v58.hasOwnProperty(__yy__v59))continue;
+					var __yy__v60=__yy__v58[__yy__v59];
 
 										{
-						__yy__v56.gmlam_part_of_secret_word=0;
+						__yy__v60.gmlam_part_of_secret_word=0;
 					}
 				}
 			}
@@ -11100,34 +11596,34 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 				{
 			_inst.gmlam_dragging=0;
 			_inst.gmlprev_targ_id=_inst.gmltarg_id;
-			_inst.gmltarg_id=instance_nearest(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000006));
+			_inst.gmltarg_id=instance_nearest(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000007));
 			if(yyflessequal(point_distance(_inst.x,_inst.y,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y),40))
 			{
 
 								{
-					var gml_conflicting_tile=collision_point(_inst,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y,YYASSET_REF(0x00000005),true,true);
+					var gml_conflicting_tile=collision_point(_inst,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y,YYASSET_REF(0x00000006),true,true);
 					if(yyfnotequal(gml_conflicting_tile,(-4)))
 					{
 
 												{
 
 														{
-								var __yy__v57=GetWithArray(gml_conflicting_tile);
-								for(var __yy__v58 in __yy__v57)
+								var __yy__v61=GetWithArray(gml_conflicting_tile);
+								for(var __yy__v62 in __yy__v61)
 								{
-									if(!__yy__v57.hasOwnProperty(__yy__v58))continue;
-									var __yy__v59=__yy__v57[__yy__v58];
+									if(!__yy__v61.hasOwnProperty(__yy__v62))continue;
+									var __yy__v63=__yy__v61[__yy__v62];
 
 																		{
 										if(yyfequal(_inst.gmlam_set,1))
 										{
 
 																						{
-												__yy__v59.gmlam_set=1;
-												__yy__v59.gmltarg_id=_inst.gmlprev_targ_id;
-												__yy__v59.gmlprev_targ_id=__yy__v59.gmltarg_id;
-												__yy__v59.gmlx_targ=yyInst(_inst,_other,__yy__v59.gmltarg_id).x;
-												__yy__v59.gmly_targ=yyInst(_inst,_other,__yy__v59.gmltarg_id).y;
+												__yy__v63.gmlam_set=1;
+												__yy__v63.gmltarg_id=_inst.gmlprev_targ_id;
+												__yy__v63.gmlprev_targ_id=__yy__v63.gmltarg_id;
+												__yy__v63.gmlx_targ=yyInst(_inst,_other,__yy__v63.gmltarg_id).x;
+												__yy__v63.gmly_targ=yyInst(_inst,_other,__yy__v63.gmltarg_id).y;
 											}
 											;
 										}
@@ -11135,11 +11631,11 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 										{
 
 																						{
-												__yy__v59.gmlam_set=0;
-												__yy__v59.gmltarg_id=__yy__v59;
-												__yy__v59.gmlprev_targ_id=__yy__v59;
-												__yy__v59.gmlx_targ=__yy__v59.xstart;
-												__yy__v59.gmly_targ=__yy__v59.ystart;
+												__yy__v63.gmlam_set=0;
+												__yy__v63.gmltarg_id=__yy__v63;
+												__yy__v63.gmlprev_targ_id=__yy__v63;
+												__yy__v63.gmlx_targ=__yy__v63.xstart;
+												__yy__v63.gmly_targ=__yy__v63.ystart;
 											}
 											;
 										}
@@ -11240,19 +11736,19 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 																		{
 
 																				{
-											var __yy__v60=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v61 in __yy__v60)
+											var __yy__v64=GetWithArray(YYASSET_REF(0x00000006));
+											for(var __yy__v65 in __yy__v64)
 											{
-												if(!__yy__v60.hasOwnProperty(__yy__v61))continue;
-												var __yy__v62=__yy__v60[__yy__v61];
+												if(!__yy__v64.hasOwnProperty(__yy__v65))continue;
+												var __yy__v66=__yy__v64[__yy__v65];
 
 																								{
-													if(yyfgreater(__yy__v62.gmlam_selected_num,_inst.gmlam_selected_num))
+													if(yyfgreater(__yy__v66.gmlam_selected_num,_inst.gmlam_selected_num))
 													{
 
 																												{
-															__yy__v62.gmlam_selected=0;
-															__yy__v62.gmlam_selected_num=0;
+															__yy__v66.gmlam_selected=0;
+															__yy__v66.gmlam_selected_num=0;
 														}
 														;
 													}
@@ -11465,7 +11961,7 @@ function gml_Object_obj_tile_space_Step_0(_inst,_other)
 	}
 	;
 	_inst.gmltile_filled=0;
-	var gml_col_tile=collision_point(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000005),true,true);
+	var gml_col_tile=collision_point(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000006),true,true);
 	if(yyfnotequal(gml_col_tile,(-4)))
 	{
 
@@ -11533,6 +12029,8 @@ function gmlInitGlobal()
 {
 	global.gml___struct___0=0;
 	global.gml___struct___1=0;
+	global.gml___struct___2=0;
+	global.gml___struct___3=0;
 	global.gmlg_gml_token_constructors=0;
 	global.gmlg_gml_node_constructors=0;
 	global.gmlmq_gml_thread_scope=0;
@@ -11564,8 +12062,6 @@ function gmlInitGlobal()
 	global.gmlmt_gml_with_scope=0;
 	global.gmlmt_gml_type_ref=0;
 	global.gmlmt_vm_v2_GmlStructBase=0;
-	global.gml___struct___2=0;
-	global.gml___struct___3=0;
 	global.gml___struct___4=0;
 	global.gml___struct___5=0;
 	global.gml___struct___6=0;
@@ -11666,24 +12162,26 @@ function gmlInitGlobal()
 	global.gml___struct___101=0;
 	global.gml___struct___102=0;
 	global.gml___struct___103=0;
+	global.gml___struct___104=0;
+	global.gml___struct___105=0;
 	global.gmlgml_builder_build_line_is_stat=0;
 	global.gmlgml_builder_build_line_is_expr=0;
 	global.gmlcompile_gml_compile_args_get_simple_val=0;
 	global.gmlcompile_gml_compile_args_get_simple_kind=0;
 	global.gmlgml_func_name=0;
 	global.gmlgml_func_script_id=0;
-	global.gml___struct___104=0;
-	global.gmlgml_const_map=0;
-	global.gml___struct___105=0;
-	global.gmlgml_const_val=0;
 	global.gml___struct___106=0;
-	global.gmlgml_asset_index=0;
+	global.gmlgml_const_map=0;
 	global.gml___struct___107=0;
-	global.gmlgml_enum_map=0;
+	global.gmlgml_const_val=0;
 	global.gml___struct___108=0;
+	global.gmlgml_asset_index=0;
+	global.gml___struct___109=0;
+	global.gmlgml_enum_map=0;
+	global.gml___struct___110=0;
 	global.gmlcompile_groups_gml_compile_group_static_has_statics=0;
 	global.gmlgml_func_map=0;
-	global.gml___struct___109=0;
+	global.gml___struct___111=0;
 	global.gmlvm_value_gml_value_printer_print_refs=0;
 	global.gmlvm_value_gml_value_printer_print_num=0;
 	global.gmlgml_op_apply_fns=0;
@@ -11720,19 +12218,19 @@ function gmlInitGlobal()
 	global.gmlgml_program_seek_script=0;
 	global.gmlgml_std_StringBuf_buffer=0;
 	global.gmlgml_fast_field_getters=0;
-	global.gml___struct___110=0;
-	global.gmlgml_fast_field_setters=0;
-	global.gml___struct___111=0;
-	global.gmlapi_api_var_map=0;
 	global.gml___struct___112=0;
+	global.gmlgml_fast_field_setters=0;
+	global.gml___struct___113=0;
+	global.gmlapi_api_var_map=0;
+	global.gml___struct___114=0;
 	global.gmlast_gml_macro_proc_list=0;
 	global.gmlast_gml_macro_proc_map=0;
-	global.gml___struct___113=0;
+	global.gml___struct___115=0;
 	global.gmlast_gml_macro_proc_exclude_map=0;
-	global.gml___struct___114=0;
+	global.gml___struct___116=0;
 	global.gmlast_gml_macro_proc_next_exclude_list=0;
 	global.gmlast_gml_macro_proc_next_exclude_map=0;
-	global.gml___struct___115=0;
+	global.gml___struct___117=0;
 	global.gmlast_gml_node_def_info_array=0;
 	global.gmlast_gml_node_tools_ni_concat_pos_pos=0;
 	global.gmlgml_script_index_offset=0;
@@ -11776,7 +12274,7 @@ function gmlInitGlobal()
 	global.gmllive_last_warn_at=0;
 	global.gmllive_auto_call_data=0;
 	global.gmllive_async_http_1_found=0;
-	global.gml___struct___116=0;
+	global.gml___struct___118=0;
 	global.gmllive_async_http_1_acc=0;
 	global.gmllive_gmlive_patcher_error_text=0;
 	global.gmllive_shader_updated=0;
@@ -11801,11 +12299,11 @@ function gmlInitGlobal()
 	global.gmllive_init_attempts=0;
 	global.gmllive_directory=0;
 	global.gmllive_live_map=0;
-	global.gml___struct___117=0;
-	global.gmllive_live_enums=0;
-	global.gml___struct___118=0;
-	global.gmllive_live_macros=0;
 	global.gml___struct___119=0;
+	global.gmllive_live_enums=0;
+	global.gml___struct___120=0;
+	global.gmllive_live_macros=0;
+	global.gml___struct___121=0;
 	global.gmllive_live_globals=0;
 	global.gmllive_temp_path=0;
 	global.gmllive_log_script=0;
@@ -11839,7 +12337,11 @@ function gmlInitGlobal()
 	global.gmlvm_group_call_call_func_status=0;
 	global.gmlvm_v2_gml_thread_group_call_gml23_funcs=0;
 	global.gmlvm_group_op_funcs=0;
-	global.gml___struct___120=0;
+	global.gml___struct___122=0;
+	global.gml___struct___123=0;
+	global.gml___struct___124=0;
+	gml_GlobalScript___GoogConfig(global,global);
+	gml_GlobalScript___GoogSystem(global,global);
 	gml_GlobalScript_GMDictionary_classes(global,global);
 	gml_GlobalScript_GMDictionary_exceptions(global,global);
 	gml_GlobalScript_GMLive_noDeactivate(global,global);
@@ -11847,6 +12349,12 @@ function gmlInitGlobal()
 	gml_GlobalScript_GMLive(global,global);
 	gml_GlobalScript_GMLiveAPI_js(global,global);
 	gml_GlobalScript_GMLiveAPI(global,global);
+	gml_GlobalScript_GoogAsyncHTTPEvent(global,global);
+	gml_GlobalScript_GoogClientIDForce(global,global);
+	gml_GlobalScript_GoogClientIDGet(global,global);
+	gml_GlobalScript_GoogHit(global,global);
+	gml_GlobalScript_GoogUserIDForce(global,global);
+	gml_GlobalScript_GoogUserIDGet(global,global);
 	gml_GlobalScript_html_elements_scripts(global,global);
 	gml_GlobalScript_html_submit_closebtn(global,global);
 	gml_GlobalScript_html_submit_code(global,global);
@@ -12008,162 +12516,189 @@ function gmlGameEndScripts()
 Tags=["@@constructor"];
 IDToTagList=[
 {
-	key:83986085,ids:[0]}
-,
-{
-	key:83986091,ids:[0]}
-,
-{
 	key:83986094,ids:[0]}
 ,
 {
-	key:83986102,ids:[0]}
+	key:83986100,ids:[0]}
 ,
 {
-	key:83986136,ids:[0]}
+	key:83986103,ids:[0]}
 ,
 {
-	key:83986170,ids:[0]}
+	key:83986111,ids:[0]}
+,
+{
+	key:83986145,ids:[0]}
+,
+{
+	key:83986193,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___0@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___1@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
-JSON_game.Scripts=[gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
-const kgml_GlobalScript_GMDictionary_classes=100000;
-const kgml_Script_anon_706_CheckWordDictionary_GMDictionary_classes=100001;
-const kgml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes=100002;
-const kgml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes=100003;
-const kgml_Script____struct___0_CheckWordDictionary_GMDictionary_classes=100004;
-const kgml_Script_CheckWordDictionary=100005;
-const kgml_Script_anon_3141_PickWordDictionary_GMDictionary_classes=100006;
-const kgml_Script_anon_4195_PickWordDictionary_GMDictionary_classes=100007;
-const kgml_Script_anon_4530_PickWordDictionary_GMDictionary_classes=100008;
-const kgml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes=100009;
-const kgml_Script_anon_5084_PickWordDictionary_GMDictionary_classes=100010;
-const kgml_Script_PickWordDictionary=100011;
-const kgml_GlobalScript_GMDictionary_exceptions=100012;
-const kgml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions=100013;
-const kgml_Script_DictionaryTooSmallException=100014;
-const kgml_GlobalScript_GMLive_noDeactivate=100015;
-const kgml_Script_instance_deactivate_all_hook=100016;
-const kgml_Script_instance_deactivate_layer_hook=100017;
-const kgml_Script_instance_deactivate_object_hook=100018;
-const kgml_Script_instance_deactivate_region_hook=100019;
-const kgml_GlobalScript_GMLive_notOnce=100020;
-const kgml_GlobalScript_GMLive=100021;
-const kgml_Script_gml_macro=100022;
-const kgml_Script_sprite_set_live=100023;
-const kgml_Script_path_set_live=100024;
-const kgml_Script_animcurve_set_live=100025;
-const kgml_Script_file_set_live=100026;
-const kgml_Script_room_set_live=100027;
-const kgml_Script_room_goto_live=100028;
-const kgml_Script_live_call=100029;
-const kgml_Script_live_defcall=100030;
-const kgml_Script_live_call_ext=100031;
-const kgml_Script_live_defcall_ext=100032;
-const kgml_Script_live_auto_call_1=100033;
-const kgml_Script_live_auto_call_2=100034;
-const kgml_Script_live_async_http=100035;
-const kgml_Script_shader_set_live=100036;
-const kgml_Script_live_validate_scripts=100037;
-const kgml_Script_live_method=100038;
-const kgml_Script_live_method_get_self=100039;
-const kgml_Script_gml_thread_method_script=100040;
-const kgml_Script_live_update_script_impl=100041;
-const kgml_Script_live_constant_add=100042;
-const kgml_Script_live_constant_delete=100043;
-const kgml_Script_live_variable_add=100044;
-const kgml_Script_live_variable_delete=100045;
-const kgml_Script_live_function_add=100046;
-const kgml_Script_live_function_delete=100047;
-const kgml_Script_live_throw_error=100048;
-const kgml_Script_live_execute_string=100049;
-const kgml_Script_live_snippet_create=100050;
-const kgml_Script_live_snippet_destroy=100051;
-const kgml_Script_live_snippet_call=100052;
-const kgml_Script_live_update=100053;
-const kgml_Script_live_init=100054;
-const kgml_Script_live_room_start=100055;
-const kgml_Script_vm_v2_GmlStructBase=100056;
-const kgml_GlobalScript_GMLiveAPI_js=100057;
-const kgml_Script_live_preinit_js_dummy=100058;
-const kgml_GlobalScript_GMLiveAPI=100059;
-const kgml_Script_live_preinit_api=100060;
-const kgml_GlobalScript_html_elements_scripts=100061;
-const kgml_Script_html_init=100062;
-const kgml_Script_html_sync=100063;
-const kgml_Script_html_style=100064;
-const kgml_Script_html_cell=100065;
-const kgml_Script_html_button=100066;
-const kgml_Script_html_div=100067;
-const kgml_Script_html_field=100068;
-const kgml_Script_html_form=100069;
-const kgml_Script_html_h1=100070;
-const kgml_Script_html_h2=100071;
-const kgml_Script_html_h3=100072;
-const kgml_Script_html_icon=100073;
-const kgml_Script_html_image=100074;
-const kgml_Script_html_link=100075;
-const kgml_Script_html_p=100076;
-const kgml_Script_html_radio=100077;
-const kgml_Script_html_row=100078;
-const kgml_Script_html_span=100079;
-const kgml_Script_html_sprite=100080;
-const kgml_Script_html_submit=100081;
-const kgml_Script_html_table=100082;
-const kgml_Script_html_form_values=100083;
-const kgml_Script_html_element_hover=100084;
-const kgml_Script_html_element_interaction=100085;
-const kgml_Script_html_element_x=100086;
-const kgml_Script_html_element_y=100087;
-const kgml_Script_html_mouse_x=100088;
-const kgml_Script_html_mouse_y=100089;
-const kgml_Script_HtmlElement=100090;
-const kgml_Script_html_element=100091;
-const kgml_Script_html_element_by_id=100092;
-const kgml_Script_html_element_by_identifier=100093;
-const kgml_Script_html_element_cleanup=100094;
-const kgml_Script_html_element_cleanup_children=100095;
-const kgml_Script_html_element_id=100096;
-const kgml_Script_html_element_set_property=100097;
-const kgml_Script_html_element_sync=100098;
-const kgml_Script_html_form_add_values_from_children=100099;
-const kgml_Script_gmcallback_lose_focus=100100;
-const kgml_Script_gmcallback_on_input=100101;
-const kgml_Script_gmcallback_on_interaction=100102;
-const kgml_Script_gmcallback_on_mouseover=100103;
-const kgml_Script_gmcallback_on_mouseout=100104;
-const kgml_Script_gmcallback_set_focus=100105;
-const kgml_GlobalScript_html_submit_closebtn=100106;
-const kgml_Script_html_submit_closebtn=100107;
-const kgml_GlobalScript_html_submit_code=100108;
-const kgml_Script_html_submit_code=100109;
-const kgml_GlobalScript_html_submit_export_link=100110;
-const kgml_Script_html_submit_export_link=100111;
-const kgml_GlobalScript_html_submit_export=100112;
-const kgml_Script_html_submit_export=100113;
-const kgml_GlobalScript_INIT_HTML=100114;
-const kgml_GlobalScript_parse_query=100115;
-const kgml_Script_get_query=100116;
-const kgml_Script_parse_query=100117;
-const kgml_GlobalScript_scr_board_init=100118;
-const kgml_Script_scr_board_init=100119;
-const kgml_GlobalScript_scr_update_copy_code=100120;
-const kgml_Script_scr_update_copy_code=100121;
-const kgml_GlobalScript_scr_update_room_dimensions=100122;
-const kgml_Script_scr_update_room_dimensions=100123;
-const kgml_Script_browser_stretch_canvas=100124;
+JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_Script_browser_stretch_canvas"];
+JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_Script_browser_stretch_canvas];
+const kgml_GlobalScript___GoogConfig=100000;
+const kgml_GlobalScript___GoogSystem=100001;
+const kgml_Script____struct___0=100002;
+const kgml_Script____struct___1=100003;
+const kgml_Script___GoogUnixTimeMicroseconds=100004;
+const kgml_Script___GoogGenerateUUID4String=100005;
+const kgml_Script___GoogXORShift32Random=100006;
+const kgml_Script___GoogXORShift32Choose=100007;
+const kgml_Script___GoogTrace=100008;
+const kgml_GlobalScript_GMDictionary_classes=100009;
+const kgml_Script_anon_706_CheckWordDictionary_GMDictionary_classes=100010;
+const kgml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes=100011;
+const kgml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes=100012;
+const kgml_Script____struct___2_CheckWordDictionary_GMDictionary_classes=100013;
+const kgml_Script_CheckWordDictionary=100014;
+const kgml_Script_anon_3141_PickWordDictionary_GMDictionary_classes=100015;
+const kgml_Script_anon_4195_PickWordDictionary_GMDictionary_classes=100016;
+const kgml_Script_anon_4530_PickWordDictionary_GMDictionary_classes=100017;
+const kgml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes=100018;
+const kgml_Script_anon_5084_PickWordDictionary_GMDictionary_classes=100019;
+const kgml_Script_PickWordDictionary=100020;
+const kgml_GlobalScript_GMDictionary_exceptions=100021;
+const kgml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions=100022;
+const kgml_Script_DictionaryTooSmallException=100023;
+const kgml_GlobalScript_GMLive_noDeactivate=100024;
+const kgml_Script_instance_deactivate_all_hook=100025;
+const kgml_Script_instance_deactivate_layer_hook=100026;
+const kgml_Script_instance_deactivate_object_hook=100027;
+const kgml_Script_instance_deactivate_region_hook=100028;
+const kgml_GlobalScript_GMLive_notOnce=100029;
+const kgml_GlobalScript_GMLive=100030;
+const kgml_Script_gml_macro=100031;
+const kgml_Script_sprite_set_live=100032;
+const kgml_Script_path_set_live=100033;
+const kgml_Script_animcurve_set_live=100034;
+const kgml_Script_file_set_live=100035;
+const kgml_Script_room_set_live=100036;
+const kgml_Script_room_goto_live=100037;
+const kgml_Script_live_call=100038;
+const kgml_Script_live_defcall=100039;
+const kgml_Script_live_call_ext=100040;
+const kgml_Script_live_defcall_ext=100041;
+const kgml_Script_live_auto_call_1=100042;
+const kgml_Script_live_auto_call_2=100043;
+const kgml_Script_live_async_http=100044;
+const kgml_Script_shader_set_live=100045;
+const kgml_Script_live_validate_scripts=100046;
+const kgml_Script_live_method=100047;
+const kgml_Script_live_method_get_self=100048;
+const kgml_Script_gml_thread_method_script=100049;
+const kgml_Script_live_update_script_impl=100050;
+const kgml_Script_live_constant_add=100051;
+const kgml_Script_live_constant_delete=100052;
+const kgml_Script_live_variable_add=100053;
+const kgml_Script_live_variable_delete=100054;
+const kgml_Script_live_function_add=100055;
+const kgml_Script_live_function_delete=100056;
+const kgml_Script_live_throw_error=100057;
+const kgml_Script_live_execute_string=100058;
+const kgml_Script_live_snippet_create=100059;
+const kgml_Script_live_snippet_destroy=100060;
+const kgml_Script_live_snippet_call=100061;
+const kgml_Script_live_update=100062;
+const kgml_Script_live_init=100063;
+const kgml_Script_live_room_start=100064;
+const kgml_Script_vm_v2_GmlStructBase=100065;
+const kgml_GlobalScript_GMLiveAPI_js=100066;
+const kgml_Script_live_preinit_js_dummy=100067;
+const kgml_GlobalScript_GMLiveAPI=100068;
+const kgml_Script_live_preinit_api=100069;
+const kgml_GlobalScript_GoogAsyncHTTPEvent=100070;
+const kgml_Script_GoogAsyncHTTPEvent=100071;
+const kgml_GlobalScript_GoogClientIDForce=100072;
+const kgml_Script_GoogClientIDForce=100073;
+const kgml_GlobalScript_GoogClientIDGet=100074;
+const kgml_Script_GoogClientIDGet=100075;
+const kgml_GlobalScript_GoogHit=100076;
+const kgml_Script____struct___123_GoogHit_GoogHit=100077;
+const kgml_Script____struct___124_GoogHit_GoogHit=100078;
+const kgml_Script_GoogHit=100079;
+const kgml_GlobalScript_GoogUserIDForce=100080;
+const kgml_Script_GoogUserIDForce=100081;
+const kgml_GlobalScript_GoogUserIDGet=100082;
+const kgml_Script_GoogUserIDGet=100083;
+const kgml_GlobalScript_html_elements_scripts=100084;
+const kgml_Script_html_init=100085;
+const kgml_Script_html_sync=100086;
+const kgml_Script_html_style=100087;
+const kgml_Script_html_cell=100088;
+const kgml_Script_html_button=100089;
+const kgml_Script_html_div=100090;
+const kgml_Script_html_field=100091;
+const kgml_Script_html_form=100092;
+const kgml_Script_html_h1=100093;
+const kgml_Script_html_h2=100094;
+const kgml_Script_html_h3=100095;
+const kgml_Script_html_icon=100096;
+const kgml_Script_html_image=100097;
+const kgml_Script_html_link=100098;
+const kgml_Script_html_p=100099;
+const kgml_Script_html_radio=100100;
+const kgml_Script_html_row=100101;
+const kgml_Script_html_span=100102;
+const kgml_Script_html_sprite=100103;
+const kgml_Script_html_submit=100104;
+const kgml_Script_html_table=100105;
+const kgml_Script_html_form_values=100106;
+const kgml_Script_html_element_hover=100107;
+const kgml_Script_html_element_interaction=100108;
+const kgml_Script_html_element_x=100109;
+const kgml_Script_html_element_y=100110;
+const kgml_Script_html_mouse_x=100111;
+const kgml_Script_html_mouse_y=100112;
+const kgml_Script_HtmlElement=100113;
+const kgml_Script_html_element=100114;
+const kgml_Script_html_element_by_id=100115;
+const kgml_Script_html_element_by_identifier=100116;
+const kgml_Script_html_element_cleanup=100117;
+const kgml_Script_html_element_cleanup_children=100118;
+const kgml_Script_html_element_id=100119;
+const kgml_Script_html_element_set_property=100120;
+const kgml_Script_html_element_sync=100121;
+const kgml_Script_html_form_add_values_from_children=100122;
+const kgml_Script_gmcallback_lose_focus=100123;
+const kgml_Script_gmcallback_on_input=100124;
+const kgml_Script_gmcallback_on_interaction=100125;
+const kgml_Script_gmcallback_on_mouseover=100126;
+const kgml_Script_gmcallback_on_mouseout=100127;
+const kgml_Script_gmcallback_set_focus=100128;
+const kgml_GlobalScript_html_submit_closebtn=100129;
+const kgml_Script_html_submit_closebtn=100130;
+const kgml_GlobalScript_html_submit_code=100131;
+const kgml_Script_html_submit_code=100132;
+const kgml_GlobalScript_html_submit_export_link=100133;
+const kgml_Script_html_submit_export_link=100134;
+const kgml_GlobalScript_html_submit_export=100135;
+const kgml_Script_html_submit_export=100136;
+const kgml_GlobalScript_INIT_HTML=100137;
+const kgml_GlobalScript_parse_query=100138;
+const kgml_Script_get_query=100139;
+const kgml_Script_parse_query=100140;
+const kgml_GlobalScript_scr_board_init=100141;
+const kgml_Script_scr_board_init=100142;
+const kgml_GlobalScript_scr_update_copy_code=100143;
+const kgml_Script_scr_update_copy_code=100144;
+const kgml_GlobalScript_scr_update_room_dimensions=100145;
+const kgml_Script_scr_update_room_dimensions=100146;
+const kgml_Script_browser_stretch_canvas=100147;
 var __yyg__SetImageIndexGML=
 function(frame)
 {
 	this.image_index=frame;
 }
 ;
-gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
-gml_Script____struct___0_CheckWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___0.__yyg__is_constructor=true;
+gml_Script____struct___0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___1.__yyg__is_constructor=true;
+gml_Script____struct___1.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
+gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_CheckWordDictionary.__yyg__is_constructor=true;
 gml_Script_CheckWordDictionary.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
-gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
-gml_Script____struct___1_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes.__yyg__is_constructor=true;
+gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_PickWordDictionary.__yyg__is_constructor=true;
 gml_Script_PickWordDictionary.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_DictionaryTooSmallException.__yyg__is_constructor=true;
@@ -12172,6 +12707,10 @@ gml_Script_gml_macro.__yyg__is_constructor=true;
 gml_Script_gml_macro.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_vm_v2_GmlStructBase.__yyg__is_constructor=true;
 gml_Script_vm_v2_GmlStructBase.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___123_GoogHit_GoogHit.__yyg__is_constructor=true;
+gml_Script____struct___123_GoogHit_GoogHit.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___124_GoogHit_GoogHit.__yyg__is_constructor=true;
+gml_Script____struct___124_GoogHit_GoogHit.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script_HtmlElement.__yyg__is_constructor=true;
 gml_Script_HtmlElement.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 var g_instance_names=

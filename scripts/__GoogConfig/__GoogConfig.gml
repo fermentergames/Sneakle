@@ -1,12 +1,12 @@
 //The API secret for your property
 //This is set up in the admin section of the Google Analytics backend
 //https://developers.google.com/analytics/devguides/collection/protocol/ga4/
-#macro GOOG_API_SECRET  ""
+#macro GOOG_API_SECRET  "q8lTlR_1T_a0BwwpLGXqLA"
 
 //The measurement ID that's generataed for your property
 //This can be found in the admin section of the Google Analytics backend
 //https://support.google.com/analytics/answer/9539598
-#macro GOOG_MEASUREMENT_ID  ""
+#macro GOOG_MEASUREMENT_ID  "G-QXT06CTHEX"
 
 //Name of the file on disk to store the client ID so that it persists between sessions
 //A client ID is automatically generated for the user when this library is run for the first time

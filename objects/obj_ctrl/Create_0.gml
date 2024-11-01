@@ -68,6 +68,11 @@ if global.is_browser = 1 {
 	}
 }
 
+if !instance_exists(obj_ctrlp) {
+	instance_create_layer(x,y,layer,obj_ctrlp)
+}
+
+
 timey = 0
 
 global.game_phase = 0
@@ -131,6 +136,8 @@ form_is_loading = false;
 
 // To use this extension, you need to call #html_init() and optionally #html_style() during initialisation, 
 // and #html_sync() in an draw GUI end event
+
+GoogHit("screen_view",["screen_name","MainMenu"])
 
 
 

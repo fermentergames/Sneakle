@@ -95,19 +95,26 @@ if mouse_check_button_pressed(mb_left) {
 			
 			if device_mouse_y_to_gui(0)*global.pr > display_get_gui_height()*0.3 && device_mouse_y_to_gui(0)*global.pr < display_get_gui_height()*0.5 {
 				
-				//load
+				
 				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
+					//load daily
+					
 					//global.loadBoard = "EXITBTSNOSEIDAHA"
 					//global.loadSecret = "1-2-6-11-8-4"
 					
 					global.loadBoard = "IYEIORAOABEANEAEPCINMALNI"
 					global.loadSecret = "17-23-22-18-14-10-5"
 					
+					GoogHit("screen_view",["screen_name","DailyFromMainMenu"])
 					scr_board_init()
+					
+					
 				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
+					//load
 					//show_question("paste load code:")
 				
 					//instance_create_layer(x,y,layer,obj_example_controller)
+					GoogHit("screen_view",["screen_name","LoadFromMainMenu"])
 					global.show_input_prompt = 1
 				
 				} else {
@@ -121,15 +128,18 @@ if mouse_check_button_pressed(mb_left) {
 				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 					global.game_grid_size = 4
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
+					GoogHit("screen_view",["screen_name","Create4"])
 					scr_board_init()
 				
 				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					global.game_grid_size = 5
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
+					GoogHit("screen_view",["screen_name","Create5"])
 					scr_board_init()
 				} else {
 					global.game_grid_size = 7
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
+					GoogHit("screen_view",["screen_name","Create7"])
 					scr_board_init()
 				}
 		
@@ -249,6 +259,8 @@ if mouse_check_button_pressed(mb_left) {
 				
 				scr_update_copy_code()
 				
+				GoogHit("screen_view",["screen_name","PuzzleCreated"])
+				
 				global.show_export_prompt = 1
 				
 				global.game_phase = 3
@@ -285,6 +297,7 @@ if mouse_check_button_pressed(mb_left) {
 		if device_mouse_y_to_gui(0)*global.pr < 50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
 			if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.7 {
 				global.show_export_prompt = 1	
+				GoogHit("share",["method","FromPuzzle"])
 			}
 		}
 	}
@@ -411,6 +424,8 @@ if mouse_check_button_released(mb_left) {
 						if selected_word_str = secret_word_str {
 							show_debug_message("match!")
 							global.game_phase = 4
+							
+							GoogHit("post_score",["score",guesses_count])
 				
 							with (obj_tile_letter) {
 								if 1 = 1 {

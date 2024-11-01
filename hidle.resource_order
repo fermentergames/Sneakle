@@ -28,6 +28,7 @@
     {"name":"myHTML5Extension","order":5,"path":"extensions/myHTML5Extension/myHTML5Extension.yy",},
     {"name":"fnt_main_r","order":1,"path":"fonts/fnt_main_r/fnt_main_r.yy",},
     {"name":"obj_blank","order":3,"path":"objects/obj_blank/obj_blank.yy",},
+    {"name":"obj_ctrlp","order":7,"path":"objects/obj_ctrlp/obj_ctrlp.yy",},
     {"name":"obj_example_controller","order":6,"path":"objects/obj_example_controller/obj_example_controller.yy",},
     {"name":"obj_gmlive","order":4,"path":"objects/obj_gmlive/obj_gmlive.yy",},
     {"name":"obj_tile_letter_bkup","order":5,"path":"objects/obj_tile_letter_bkup/obj_tile_letter_bkup.yy",},
