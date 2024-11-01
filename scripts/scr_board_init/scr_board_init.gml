@@ -243,6 +243,10 @@ if (live_call()) return live_result;
 			
 			scr_update_copy_code()
 			
+			var _event_struct = { //
+				screen_name: "LOAD_"+string(global.current_copy_code),
+			};
+			GoogHit("screen_view",_event_struct)
 			
 				
 			global.game_phase = 3

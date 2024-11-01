@@ -105,7 +105,13 @@ if mouse_check_button_pressed(mb_left) {
 					global.loadBoard = "IYEIORAOABEANEAEPCINMALNI"
 					global.loadSecret = "17-23-22-18-14-10-5"
 					
-					GoogHit("screen_view",["screen_name","DailyFromMainMenu"])
+					var _event_struct = { //
+				      screen_name: "DailyFromMainMenu",
+				   };
+					GoogHit("screen_view",_event_struct)
+					
+					
+					
 					scr_board_init()
 					
 					
@@ -114,7 +120,10 @@ if mouse_check_button_pressed(mb_left) {
 					//show_question("paste load code:")
 				
 					//instance_create_layer(x,y,layer,obj_example_controller)
-					GoogHit("screen_view",["screen_name","LoadFromMainMenu"])
+					var _event_struct = { //
+				      screen_name: "LoadFromMainMenu",
+				   };
+					GoogHit("screen_view",_event_struct)
 					global.show_input_prompt = 1
 				
 				} else {
@@ -128,18 +137,27 @@ if mouse_check_button_pressed(mb_left) {
 				if device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.3 {
 					global.game_grid_size = 4
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
-					GoogHit("screen_view",["screen_name","Create4"])
+					var _event_struct = { //
+				      screen_name: "Create4",
+				   };
+					GoogHit("screen_view",_event_struct)
 					scr_board_init()
 				
 				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					global.game_grid_size = 5
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
-					GoogHit("screen_view",["screen_name","Create5"])
+					var _event_struct = { //
+				      screen_name: "Create5",
+				   };
+					GoogHit("screen_view",_event_struct)
 					scr_board_init()
 				} else {
 					global.game_grid_size = 7
 					global.game_grid_size_sqr = sqr(global.game_grid_size)
-					GoogHit("screen_view",["screen_name","Create7"])
+					var _event_struct = { //
+				      screen_name: "Create7",
+				   };
+					GoogHit("screen_view",_event_struct)
 					scr_board_init()
 				}
 		
@@ -259,7 +277,10 @@ if mouse_check_button_pressed(mb_left) {
 				
 				scr_update_copy_code()
 				
-				GoogHit("screen_view",["screen_name","PuzzleCreated"])
+				var _event_struct = { //
+				   screen_name: "PuzzleCreated",
+				};
+				GoogHit("screen_view",_event_struct)
 				
 				global.show_export_prompt = 1
 				
@@ -297,7 +318,11 @@ if mouse_check_button_pressed(mb_left) {
 		if device_mouse_y_to_gui(0)*global.pr < 50*global.pr && !collision_point(mouse_x,mouse_y,obj_tile_letter,true,true) {
 			if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.7 {
 				global.show_export_prompt = 1	
-				GoogHit("share",["method","FromPuzzle"])
+
+				var _event_struct = { //
+				   content_type: "SharePuzzleLink",
+				};
+				GoogHit("share",_event_struct)
 			}
 		}
 	}
@@ -424,8 +449,12 @@ if mouse_check_button_released(mb_left) {
 						if selected_word_str = secret_word_str {
 							show_debug_message("match!")
 							global.game_phase = 4
+
 							
-							GoogHit("post_score",["score",guesses_count])
+							var _event_struct = { //
+							   level: guesses_count,
+							};
+							GoogHit("post_score",_event_struct)
 				
 							with (obj_tile_letter) {
 								if 1 = 1 {

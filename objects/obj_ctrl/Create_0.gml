@@ -137,8 +137,10 @@ form_is_loading = false;
 // To use this extension, you need to call #html_init() and optionally #html_style() during initialisation, 
 // and #html_sync() in an draw GUI end event
 
-GoogHit("screen_view",["screen_name","MainMenu"])
 
-
+var _event_struct = { //
+	screen_name: "GameStart",
+};
+GoogHit("screen_view",_event_struct)
 
 
