@@ -1,8 +1,12 @@
 if (live_call()) return live_result;
 
-//global.pr = 1
+//global.pr = 3
 var _pos_scl = global.pr //*(min(global.sw,720)/375)
-var _scl = (global.sw*global.pr/450)
+var _scl = (global.sw/450)
+
+if global.is_landscape = 1 {
+	_scl = (global.sh/800)
+}
 
 //if keyboard_check(vk_shift) {
 //	//_scl = 2
@@ -19,8 +23,10 @@ var _scl = (global.sw*global.pr/450)
 	
 //}
 
-var _tscl = clamp(_scl*1,0.5,2)//0.5
+var _tscl = clamp(_scl*1,0.5*global.pr,2*global.pr)//0.5
 //show_debug_message(_tscl)
+
+
 
 
 gpu_set_tex_filter(true)
@@ -36,7 +42,7 @@ draw_set_valign(fa_middle)
 draw_set_color(c_white)
 draw_set_alpha(0.3)
 draw_text_transformed(global.sw/2,25*_pos_scl,"s n e a k l e",0.22*_tscl,0.22*_tscl,0)
-//draw_text_transformed(global.sw/2,45*_pos_scl,global.cam_zoom,0.1*_tscl,0.1*_tscl,0)
+draw_text_transformed(global.sw/2,45*_pos_scl,_tscl,0.1*_tscl,0.1*_tscl,0)
 
 //draw_set_color(c_white)
 //draw_set_alpha(0.3)

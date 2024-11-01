@@ -26,20 +26,23 @@ global.sh = rh
 //global.sw_s = global.sw*global.pr
 //global.sh_s = global.sh*global.pr
 
-if global.sw >= global.sh {
-	global.is_landscape = 1
-	//show_debug_message("AHHH")
-} else {
-	global.is_landscape = 0	
-	//show_debug_message("OKAY")
-}
+//if global.sw >= global.sh {
+//	global.is_landscape = 1
+//	//show_debug_message("AHHH")
+//} else {
+//	global.is_landscape = 0	
+//	//show_debug_message("OKAY")
+//}
+
+global.is_landscape = 0	//reset
 
 // update room/view size:
 
 var _tile_sz_and_pad = global.tile_size+global.pad_size
 
 global.cam_zoom = (((_tile_sz_and_pad*global.game_grid_size)+90)/w)*1.5
-if global.sw >= global.sh*0.6 {
+if global.sw >= global.sh*0.65 {
+	global.is_landscape = 1
 	global.cam_zoom = (((_tile_sz_and_pad*global.game_grid_size)+50)/h)*2.8
 }
 
