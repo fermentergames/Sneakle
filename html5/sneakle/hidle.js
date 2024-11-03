@@ -1015,7 +1015,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730449547,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:3,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730614164,AllowStatistics:"True"	}
 }
 ;
 
@@ -8225,7 +8225,7 @@ function gml_Script_html_submit_export_link(_inst,_other,argument0)
 		show_debug_message(_inst.gmlexportLink);
 		global.gmlshow_export_prompt=0;
 		_inst.gmlform_is_loading=false;
-		copyToClipboard(string(_inst.gmlexportLink));
+		copyToClipboard(yyfplus("Can you find the hidden word? ",__yy_gml_errCheck(string(_inst.gmlexportLink))));
 		ds_map_destroy(gmlvalues);
 	}
 }
@@ -10254,7 +10254,6 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	draw_set_color(16777215);
 	draw_set_alpha(0.3);
 	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),"s n e a k l e",yyftime(0.22,__yy_gml_errCheck(gml_tscl)),yyftime(0.22,__yy_gml_errCheck(gml_tscl)),0);
-	draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(45,__yy_gml_errCheck(gml_pos_scl)),gml_tscl,yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_halign(1);
 	draw_set_alpha(1);
 	draw_set_color(16777215);
@@ -10694,15 +10693,6 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				gml_Script_html_submit_closebtn(_inst,_other);
 			}
 			;
-			var gmlform2=gml_Script_html_form(_inst,_other,gmlform_container,"export-code");
-			gml_Script_html_h3(_inst,_other,gmlform2,"header","Export Code");
-			gml_Script_html_field(_inst,_other,gmlform2,"exportCode","exportCode","",true,"",string(global.gmlcurrent_copy_code));
-			gml_Script_html_submit(_inst,_other,gmlform2,"copycode","Copy",!yyGetBool(_inst.gmlform_is_loading),(yyGetBool(_inst.gmlform_is_loading)?"loading":""));
-			if(yyGetBool(gml_Script_html_element_interaction(_inst,_other,gmlform2)))
-			{
-				gml_Script_html_submit_export(_inst,_other,gmlform2);
-			}
-			;
 			var gmlform3=gml_Script_html_form(_inst,_other,gmlform_container,"export-link");
 			gml_Script_html_h3(_inst,_other,gmlform3,"header","Export Link");
 			gml_Script_html_field(_inst,_other,gmlform3,"exportLink","exportLink","",true,"",string(global.gmlcurrent_copy_url));
@@ -10728,7 +10718,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(0.2);
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45597.351217911666)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(25,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(__yy_gml_errCheck(date_datetime_string(45599.25650708505)),"\n<3 @fermentergames"),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),yyftime(0.07,__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
