@@ -117,6 +117,11 @@ if mouse_check_button_pressed(mb_left) {
 					global.loadBoard = "IYEIORAOABEANEAEPCINMALNI"
 					global.loadSecret = "17-23-22-18-14-10-5"
 					
+					//https://fermentergames.github.io/sneakle/?loadBoard=DARKNESSHELLFIRE&loadSecret=8-11-10-5-1-6-3
+					
+					global.loadBoard = "DARKNESSHELLFIRE"
+					global.loadSecret = "8-11-10-5-1-6-3"
+					
 					var _event_struct = { //
 				      screen_name: "DailyFromMainMenu",
 				   };
