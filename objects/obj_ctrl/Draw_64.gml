@@ -61,24 +61,24 @@ draw_set_alpha(0.3)
 
 if global.game_phase = 0 {
 	
-	draw_set_alpha(0.6)
+	draw_set_alpha(0.7)
 	
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.2,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.03)
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.2,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,make_color_hsv(145,180,140),1)
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.5,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.02)
 	
 	draw_text_transformed(global.sw*0.2,global.sh*0.4,"DAILY",0.15*_tscl,0.15*_tscl,0)
 	draw_text_transformed(global.sw*0.5,global.sh*0.4,"LOAD",0.15*_tscl,0.15*_tscl,0)
 	
-	draw_set_alpha(0.2)
+	draw_set_alpha(0.1)
 	
-	draw_text_transformed(global.sw*0.8,global.sh*0.4,"HOW TO",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.8,global.sh*0.4,"HOW TO",0.13*_tscl,0.13*_tscl,0)
 	
-	draw_set_alpha(0.6)
+	draw_set_alpha(0.7)
 	
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.2,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.5,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512,2,global.sw*0.8,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.2,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.5,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.8,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
 	
 	draw_text_transformed(global.sw*0.2,global.sh*0.6,"CREATE\n4x4",0.13*_tscl,0.13*_tscl,0)
 	draw_text_transformed(global.sw*0.5,global.sh*0.6,"CREATE\n5x5",0.13*_tscl,0.13*_tscl,0)
@@ -89,36 +89,57 @@ if global.game_phase = 0 {
 	
 } else if global.game_phase = 1 {
 	
+	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,60*_pos_scl,"fill in the grid with your SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,90*_pos_scl,"drag to rearrange the letters",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
+	draw_set_alpha(0.7)
+	
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.3,global.sh-70*_pos_scl,0.3*_tscl,0.08*_tscl,0,c_white,0.06)
+	draw_text_transformed(global.sw*0.3,global.sh-70*_pos_scl,"NEW LETTERS",0.12*_tscl,0.12*_tscl,0)
+	
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.7,global.sh-70*_pos_scl,0.3*_tscl,0.08*_tscl,0,c_white,0.06)
+	draw_text_transformed(global.sw*0.7,global.sh-70*_pos_scl,"TYPE LETTERS",0.12*_tscl,0.12*_tscl,0)
 	
 	if ready_for_phase2 = 0 {
-		draw_text_transformed(global.sw/2,global.sh-30*_pos_scl,"AUTOFILL",0.12*_tscl,0.12*_tscl,0)
+		draw_sprite_ext(spr_sqr512,0,global.sw/2,global.sh-130*_pos_scl,0.3*_tscl,0.08*_tscl,0,c_white,0.06)
+		draw_text_transformed(global.sw/2,global.sh-130*_pos_scl,"AUTOFILL",0.12*_tscl,0.12*_tscl,0)
 	} else {
-		draw_text_transformed(global.sw/2,global.sh-30*_pos_scl,"CONFIRM GRID",0.12*_tscl,0.12*_tscl,0)
+		
+		
+		draw_sprite_ext(spr_sqr512,0,global.sw/2,global.sh-150*_pos_scl,0.65*_tscl,0.14*_tscl,0,c_white,0.06)
+		
+
+			draw_set_alpha(0.7+(-0.6*dragging_fd))
+			draw_text_transformed(global.sw/2,global.sh-150*_pos_scl,"CONFIRM GRID",0.2*_tscl,0.2*_tscl,0)
+		
+		
+		draw_set_alpha(0.7)
 	}
 	
 	
 	
 } else if global.game_phase = 2 {
 	
+	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,80*_pos_scl,"drag to select your SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,90*_pos_scl,"swipe to select your SECRET WORD",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.15,global.sh-30*_pos_scl,0.2*_tscl,0.08*_tscl,0,c_white,0.06)
 	draw_text_transformed(global.sw*0.15,global.sh-30*_pos_scl,"BACK",0.12*_tscl,0.12*_tscl,0)
 	
 	if ready_for_phase3 = 1 {
 		draw_set_alpha(1)
-		draw_text_transformed(global.sw*0.7,global.sh-30*_pos_scl,"CONFIRM SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+		draw_sprite_ext(spr_sqr512,0,global.sw/2,(global.sh*1)+(-110*_pos_scl),0.65*_tscl,0.15*_tscl,0,c_white,0.06)
+		draw_text_transformed(global.sw/2,(global.sh*1)+(-110*_pos_scl),"CONFIRM SECRET WORD?",0.15*_tscl,0.15*_tscl,0)
 		draw_set_alpha(0.3)
 	}
 	
 	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,(global.sh*0.7)+(0*_pos_scl),"your SECRET WORD is:",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*1)+(-240*_pos_scl),"your SECRET WORD is",0.12*_tscl,0.12*_tscl,0)
 	draw_set_font(fnt_main)
 
 	
@@ -127,9 +148,13 @@ if global.game_phase = 0 {
 		_letters_str += global.letters[selected_word_array[l]]
 	}
 	
-	draw_set_alpha(1)
+	draw_set_alpha(0.3)
 	
-	draw_text_transformed(global.sw/2,(global.sh*0.7)+(40*_pos_scl),string(_letters_str),0.3*_tscl,0.3*_tscl,0)
+	if selected_word_length >= 4 {
+		draw_set_alpha(0.7)
+	}
+	
+	draw_text_transformed(global.sw/2,(global.sh*1)+(-200*_pos_scl),string(_letters_str),0.3*_tscl,0.3*_tscl,0)
 	
 	draw_set_alpha(0.3)
 	
@@ -137,9 +162,11 @@ if global.game_phase = 0 {
 	
 	if selected_word_length > 0 {
 		if selected_word_length <= 3 {
-			draw_text_transformed(global.sw/2,(global.sh*0.7)+(80*_pos_scl),"too short",0.15*_tscl,0.15*_tscl,0)
-		} else if selected_word_not_in_dictionary >= 1 && selecting = 0 {
-			draw_text_transformed(global.sw/2,(global.sh*0.7)+(80*_pos_scl),"not a valid word",0.15*_tscl,0.15*_tscl,0)
+			draw_text_transformed(global.sw/2,(global.sh*1)+(-140*_pos_scl),"too short",0.15*_tscl,0.15*_tscl,0)
+		} else if selected_word_not_in_dictionary >= 1 {
+			draw_text_transformed(global.sw/2,(global.sh*1)+(-140*_pos_scl),"not a valid word",0.15*_tscl,0.15*_tscl,0)
+		} else {
+			//draw_text_transformed(global.sw/2,(global.sh*0.7)+(80*_pos_scl),selected_word_not_in_dictionary,0.15*_tscl,0.15*_tscl,0)
 		}
 	}
 
@@ -152,13 +179,15 @@ if global.game_phase = 0 {
 	
 } else if global.game_phase = 3 {
 	
+	draw_set_alpha(0.3)
+	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,80*_pos_scl,"player 2 try to guess the SECRET WORD",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,90*_pos_scl,"can you guess the SECRET WORD?",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	
 	
-	draw_text_transformed(global.sw*0.15,global.sh-30*_pos_scl,"BACK",0.12*_tscl,0.12*_tscl,0)
+	//draw_text_transformed(global.sw*0.15,global.sh-30*_pos_scl,"BACK",0.12*_tscl,0.12*_tscl,0)
 	
 	if ready_for_phase3 = 1 {
 	//draw_text_transformed(global.sw*0.7,global.sh-30,"CONFIRM SECRET WORD",0.12*_tscl,0.12*_tscl,0)
@@ -214,7 +243,7 @@ if global.game_phase = 0 {
 } else if global.game_phase = 4 {
 	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,90*_pos_scl,"complete!",0.15*_tscl,0.15*_tscl,(0+(5*(sin(obj_ctrl.timey*0.06)))))
+	draw_text_transformed(global.sw/2,(global.sh*0.1)+(30*_pos_scl),"complete!",0.15*_tscl,0.15*_tscl,(0+(5*(sin(obj_ctrl.timey*0.06)))))
 	draw_set_font(fnt_main)
 	
 	
@@ -285,13 +314,15 @@ draw_text_transformed(global.sw*0.1,25*_pos_scl,"menu",0.12*_tscl,0.12*_tscl,0)
 if global.game_phase >= 3 {
 	
 	draw_set_alpha(0.6)
-	var _scl = 0.12
+	var _sscl = 0.12
 	if global.game_phase >= 4 {
 		draw_set_alpha(0.8*(0.8+(0.4*(sin(obj_ctrl.timey*0.08)))))
-		_scl = 0.12*(1+(0.1*(sin(obj_ctrl.timey*0.08))))
+		_sscl = 0.12*(1+(0.1*(sin(obj_ctrl.timey*0.08))))
+		
+		draw_sprite_ext(spr_sqr512,0,global.sw*0.9,25*_pos_scl,1.2*_sscl*_tscl,0.6*_sscl*_tscl,0,make_color_hsv(100,255,210),draw_get_alpha()*1.2)
 	}
 	
-	draw_text_transformed(global.sw*0.9,25*_pos_scl,"share",_scl*_tscl,_scl*_tscl,0)
+	draw_text_transformed(global.sw*0.9,25*_pos_scl,"share",_sscl*_tscl,_sscl*_tscl,0)
 
 }
 
@@ -403,9 +434,14 @@ draw_set_alpha(0.3)
 draw_text_transformed(global.sw*0.5,(global.sh*1)-(40*_pos_scl),global.current_copy_code,0.07*_tscl,0.07*_tscl,0)
 }
 
+var _version_scl = 1
+if global.game_phase <= 0 {
+	_version_scl = 1.5
+}
+
 draw_set_font(fnt_main_r)
-draw_set_alpha(0.2)
-draw_text_transformed(global.sw*0.5,(global.sh*1)-(25*_pos_scl),date_datetime_string(GM_build_date)+"\n<3 @fermentergames",0.07*_tscl,0.07*_tscl,0)
+draw_set_alpha(0.2*_version_scl)
+draw_text_transformed(global.sw*0.5,(global.sh*1)-(25*_version_scl*_pos_scl),"<3 @FermenterGames\n"+date_datetime_string(GM_build_date),0.07*_version_scl*_tscl,0.07*_version_scl*_tscl,0)
 draw_set_font(fnt_main)
 
 draw_set_alpha(1)

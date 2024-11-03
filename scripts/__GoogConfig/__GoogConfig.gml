@@ -15,4 +15,4 @@
 
 //Set this to <true> to see more information about what events this library is sending
 //This is verbose output and likely not useful in production builds
-#macro GOOG_DEBUG  true
+#macro GOOG_DEBUG  false

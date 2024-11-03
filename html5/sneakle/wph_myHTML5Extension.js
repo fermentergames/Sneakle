@@ -58,7 +58,8 @@ function changeQuery(key1,value1,key2,value2) {
 	  url.searchParams.set(key1, value1)
 	  url.searchParams.set(key2, value2)
 	  //location.assign(url);
-	  history.pushState(null, '', url);
+	  //history.pushState(null, '', url);
+	  history.replaceState(null, '', url);
 	}
 
 }
@@ -118,8 +119,8 @@ function copyToClipboard(string) {
   if (navigator.canShare) {
     navigator.share({
       //title: "Sneakle",
-      text: string,
-      //url: window.location.href,
+      //text: string,
+      url: window.location.href,
     });
   } else {
     //functionality for desktop
@@ -139,4 +140,8 @@ function get_window_host() {
   //return getPathFromUrl(window.location.href);
 	let urlwithoutquery = window.location.origin + window.location.pathname;
 	return urlwithoutquery;
+}
+
+function focus_window() {
+	window.focus();
 }

@@ -6,6 +6,9 @@ if (live_call()) return live_result;
 if global.game_phase = 1 {
 	am_dragging = 1
 	am_dragging_flash = 1
+	
+	obj_ctrl.dragging = 1
+	
 }
 
 if global.game_phase = 2 || global.game_phase = 3 {

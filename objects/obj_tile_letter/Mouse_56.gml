@@ -9,6 +9,9 @@ if am_dragging >= 1 {
 	
 	prev_targ_id = targ_id
 	targ_id = instance_nearest(x,y,obj_tile_space)
+	tile_id = targ_id.tile_id
+	
+	obj_ctrl.dragging = 0
 	
 	if point_distance(x,y,targ_id.x,targ_id.y) <= 40 {
 	
@@ -25,6 +28,8 @@ if am_dragging >= 1 {
 					prev_targ_id = targ_id
 					x_targ = targ_id.x
 					y_targ = targ_id.y
+					
+					tile_id = targ_id.tile_id
 					
 					
 				} else { //conflict with a tile that hasn't been set yet, so just reset

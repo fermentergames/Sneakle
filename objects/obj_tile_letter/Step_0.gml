@@ -137,7 +137,22 @@ if am_set = 0 || am_dragging = 1 {
 	var _ang_targ = (x-x_targ)*1
 	image_angle -= angle_difference(image_angle,_ang_targ)*0.06*clamp(am_dragging_fd+am_being_pushed,0,1)
 } else {
-	image_angle -= angle_difference(image_angle,0)*0.3
+	var _tile_ang = 0//+(2*global.am_creating_fd2*(sin((-1*tile_id)+(obj_ctrl.timey*0.1))))
+	image_angle -= angle_difference(image_angle,_tile_ang)*0.3
 }
 
+
+if tile_going_to_replace > 0 {
+tile_going_to_replace -= 0.1 //reset
+}
+
+if am_dragging = 1 {
+var _col_tile = collision_point(x,y,obj_tile_letter,true,true)
+	
+if _col_tile != noone {
+	if _col_tile.am_set = 1 && _col_tile.am_dragging = 0 {
+		_col_tile.tile_going_to_replace = 1	
+	}
+}
+}
 

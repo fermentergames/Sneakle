@@ -1,4 +1,4 @@
-/// @param element
+///
 function html_submit_closebtn() {
 	
 	global.show_input_prompt = 0

@@ -32,10 +32,20 @@ function html_submit_code(argument0) {
 		reloadPage()
 
 	} else {
-		show_message("code invalid")
-		changeQuery("loadBoard","","loadSecret","")
 		
-		html_submit_closebtn()
+		loadCode = string_letters(loadCode)
+		if string_length(loadCode) > 0 {
+			changeQuery("loadBoard",string(loadCode),"loadSecret","")
+			reloadPage()
+		} else {
+			changeQuery("loadBoard","","loadSecret","")
+			html_submit_closebtn()
+		}
+		
+		
+		
+		
+		
 	}
 
 

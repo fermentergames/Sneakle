@@ -13,7 +13,7 @@ if (live_call()) return live_result;
 		show_debug_message("query string array created")
 		show_debug_message(p_string)
 		
-		if global.loadBoard != "" && global.loadSecret != "" {
+		if global.loadBoard != "" {//&& global.loadSecret != "" {
 			scr_board_init()
 		}
 		

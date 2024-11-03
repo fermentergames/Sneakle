@@ -18,7 +18,7 @@ if 1=1 {
 
 
 	image_alpha = 1
-	image_blend = make_color_hsv(lerp(_letter_hue,145,am_selected_fd),lerp(60,180,am_selected_fd),clamp(80+(80*am_set_flash2)+(150*am_selected_flash2)+(60*am_selected_fd),0,255))
+	image_blend = make_color_hsv(lerp(_letter_hue,145,am_selected_fd),lerp(60,180,am_selected_fd),clamp(80+(80*am_set_flash2)+(150*am_selected_flash2)+(60*am_selected_fd)+(20*am_dragging_fd)+(-20*tile_going_to_replace),0,255))
 	image_blend_base = image_blend
 	border_col = merge_color(image_blend,c_white,0.3)
 	letter_col = c_white//merge_color(image_blend,c_white,0.7)
@@ -72,7 +72,7 @@ if 1=1 {
 	
 	if shad_fd > 0 {
 	//shadow
-	draw_sprite_ext(spr_sqr512,_tile_shape,x+lengthdir_x(_shad_ht*shad_fd,image_angle-90),y+lengthdir_y(_shad_ht*shad_fd,image_angle-90),image_xscale*(1+(0.2*shad_fd)),image_yscale*(1+(0.2*shad_fd)),image_angle,c_black,0.3*shad_fd)
+	draw_sprite_ext(spr_sqr512,3,x+lengthdir_x(_shad_ht*shad_fd,image_angle-90),y+lengthdir_y(_shad_ht*shad_fd,image_angle-90),image_xscale*(1+(0.2*shad_fd)),image_yscale*(1+(0.2*shad_fd)),image_angle,c_black,0.3*shad_fd)
 	}
 
 	//bottom edge
@@ -82,9 +82,17 @@ if 1=1 {
 	////flash on set
 	//draw_sprite_ext(spr_sqr512,1,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*2*sqr(1-am_set_flash),image_yscale*2*sqr(1-am_set_flash),image_angle,make_color_hsv(38,0,255),image_alpha*2*am_set_flash)
 	//}
+	var _tile_scl = 1//+(-0.05*global.am_creating_fd2)
+	
 	
 	//main tile
-	draw_sprite_ext(spr_sqr512,_tile_shape,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*1.00,image_yscale*1.00,image_angle,image_blend,image_alpha)
+	draw_sprite_ext(spr_sqr512,_tile_shape,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*_tile_scl,image_yscale*_tile_scl,image_angle,image_blend,image_alpha)
+
+	_tile_scl = 1+(-0.05*shad_fd)
+	//draggable
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,x+lengthdir_x(-_tile_ht,image_angle-90),y+lengthdir_y(-_tile_ht,image_angle-90)+_spawn_slam,image_xscale*_tile_scl,image_yscale*_tile_scl,image_angle,merge_color(image_blend,global.background_col,0.2),1*global.am_creating_fd2)
+
+	
 
 	if am_selected_flash2 > 0 {
 	gpu_set_blendmode(bm_add)
@@ -141,20 +149,24 @@ if 1=1 {
 	//.transform(2.5*scl,2.5*scl,image_angle)
 	//.draw(x+lengthdir_x(-4+(50*scl),image_angle-90),y+lengthdir_y(-4+(50*scl),image_angle-90)+_spawn_slam)
 
-	if global.game_phase < 2 {
+	if global.game_phase < 2 { //drawn in obj_ctrl's draw end once set
 
-	draw_set_alpha(lerp(0.6,1,clamp(am_selected_fd+am_clued_fd+am_part_of_secret_word_fd+(1*am_exed_fd),0,1)))
-	draw_set_color(letter_col)//merge_color(letter_col,c_white,am_selected_fd))
-	draw_set_color(merge_color(letter_col,c_white,am_selected_fd))
+		draw_set_alpha(lerp(0.6,1,clamp(am_selected_fd+am_clued_fd+am_part_of_secret_word_fd+(1*am_exed_fd),0,1)))
+		draw_set_color(letter_col)//merge_color(letter_col,c_white,am_selected_fd))
+		draw_set_color(merge_color(letter_col,c_white,am_selected_fd))
 
-	var _text_offset_y = -0//20
-	var _text_scl = 2.2*scl //20
+		var _text_offset_y = -0//20
+		var _text_scl = 2.2*scl //20
 
-	draw_text_transformed(x+lengthdir_x(-_tile_ht+(_text_offset_y*scl),image_angle-90),y+lengthdir_y(-_tile_ht+(_text_offset_y*scl),image_angle-90)+_spawn_slam,string_upper(my_letter_str),_text_scl,_text_scl,image_angle)
+		draw_text_transformed(x+lengthdir_x(-_tile_ht+(_text_offset_y*scl),image_angle-90),y+lengthdir_y(-_tile_ht+(_text_offset_y*scl),image_angle-90)+_spawn_slam,string_upper(my_letter_str),_text_scl,_text_scl,image_angle)
 
+		
+	}
+	
+	//var _text_offset_y = -0//20
+	//var _text_scl = 2.2*scl //20
 	//draw_text_transformed(x+lengthdir_x(-_tile_ht+(_text_offset_y*scl),image_angle-90),y+lengthdir_y(-_tile_ht+(_text_offset_y*scl),image_angle-90)+_spawn_slam+24,tile_id,_text_scl*0.2,_text_scl*0.2,image_angle)
 
-	}
 
 	draw_set_color(c_white)
 

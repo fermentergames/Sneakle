@@ -25,8 +25,8 @@ if selected_word_length >= 2 {
 for (var l = 1; l < selected_word_length; ++l) {
 	//
 	
-	var _line_hue = color_get_hue(selected_word_array_id[l-1].image_blend)
-	var _line_sat = color_get_saturation(selected_word_array_id[l-1].image_blend)
+	//var _line_hue = color_get_hue(selected_word_array_id[l-1].image_blend)
+	//var _line_sat = color_get_saturation(selected_word_array_id[l-1].image_blend)
 			_line_col = merge_color(selected_word_array_id[l-1].image_blend,make_color_hsv(_line_hue,lerp(_line_sat,255,0.5),255*(selected_word_array_id[l].am_selected_fd)),0.0+(selected_word_array_id[l].am_selected_fd*0.6)+(selected_word_array_id[l].am_selected_flash2*0.3))
 	var _line_hue = color_get_hue(selected_word_array_id[l].image_blend)
 	var _line_sat = color_get_saturation(selected_word_array_id[l].image_blend)
@@ -42,6 +42,12 @@ for (var l = 1; l < selected_word_length; ++l) {
 	
 	var _lx2 = lerp(selected_word_array_id[l-1].x,selected_word_array_id[l].x,_l_fd)
 	var _ly2 = lerp(selected_word_array_id[l-1].y,selected_word_array_id[l].y,_l_fd)
+	
+	//if global.game_phase = 2 && selecting = 0 {
+	//	var _line_col3 = merge_color(selected_word_array_id[l].image_blend,c_white,0.15)
+
+	//	draw_line_width_color(_lx1,_ly1,_lx2,_ly2,20,_line_col3,_line_col3)
+	//}
 	
 	draw_line_width_color(_lx1,_ly1,_lx2,_ly2,16,_line_col,_line_col2)
 	//draw_circle(_lx2,_ly2,8,0)

@@ -23,6 +23,9 @@ global.cam_zoom = 1
 global.cam_zoom_fd = 1
 
 global.am_creating_fd = 1
+global.am_creating_fd2 = 1
+
+global.am_creating = 0
 
 global.game_grid_size = 4
 global.game_grid_size_sqr = sqr(global.game_grid_size)
@@ -38,6 +41,8 @@ global.current_copy_code = "ABCD_1-2-3-4"
 global.current_copy_url = "https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4"
 
 global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
+
+
 
 //am_screenshotting = 0
 //am_screenshotting_fd = 0
@@ -83,6 +88,8 @@ ready_for_phase2_fd = 0
 
 ready_for_phase3 = 0
 
+dragging = 0
+dragging_fd = 0
 selecting = 0
 
 selected_word_length = 0
@@ -102,7 +109,7 @@ guesses_count = 0
 guesses_list = 0
 guesses_list[1] = ""
 
-device_mouse_dbclick_enable(true)
+
 
 randomize()
 

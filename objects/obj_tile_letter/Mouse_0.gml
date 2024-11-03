@@ -20,6 +20,12 @@ if global.game_phase = 2 || global.game_phase = 3 {
 				obj_ctrl.selected_word_latest_tile_id = id
 				obj_ctrl.selected_word_array[obj_ctrl.selected_word_length-1] = tile_id
 				obj_ctrl.selected_word_array_id[obj_ctrl.selected_word_length-1] = id
+				
+				with (obj_ctrl) {
+					scr_validate_word()
+				}
+				
+				
 			}
 		
 		} else if am_selected = 1 && obj_ctrl.selected_word_latest_tile_id != id {
@@ -57,6 +63,11 @@ if global.game_phase = 2 || global.game_phase = 3 {
 				obj_ctrl.selected_word_latest_tile_id = id
 				obj_ctrl.selected_word_array[obj_ctrl.selected_word_length-1] = tile_id
 				obj_ctrl.selected_word_array_id[obj_ctrl.selected_word_length-1] = id
+				
+				with (obj_ctrl) {
+					scr_validate_word()
+				}
+				
 			}
 		}
 	}
