@@ -25,16 +25,26 @@ function html_submit_code(argument0) {
 
 	if (underscorePos != 0) {
 		
-		returnStr[0] = string_delete(loadCode, underscorePos, string_length(loadCode) - underscorePos + 1);
+		returnStr[0] = string_upper(string_delete(loadCode, underscorePos, string_length(loadCode) - underscorePos + 1));
 		returnStr[1] = string_copy(loadCode, underscorePos+1, string_length(loadCode) - underscorePos + 1);
+
+		var sqrd_l = sqr(floor(sqrt(string_length(returnStr[0]))))
+		returnStr[0] = string_copy(returnStr[0], 1, sqrd_l);
 
 		changeQuery("loadBoard",string(returnStr[0]),"loadSecret",returnStr[1])
 		reloadPage()
 
 	} else {
 		
-		loadCode = string_letters(loadCode)
+		loadCode = string_upper(string_letters(loadCode))
+		
+		
+		
 		if string_length(loadCode) > 0 {
+			
+			var sqrd_l = sqr(floor(sqrt(string_length(loadCode))))
+			loadCode = string_copy(loadCode, 1, sqrd_l);
+			
 			changeQuery("loadBoard",string(loadCode),"loadSecret","")
 			reloadPage()
 		} else {

@@ -976,7 +976,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730626660,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730627349,AllowStatistics:"True"	}
 }
 ;
 
@@ -8150,8 +8150,10 @@ function gml_Script_html_submit_code(_inst,_other,argument0)
 
 						{
 				gmlreturnStr=__yy_gml_array_check(gmlreturnStr,2098757503);
-				gmlreturnStr[__yy_gml_array_check_index_set(0)]=string_delete(_inst.gmlloadCode,gmlunderscorePos,yyfplus(yyfminus(__yy_gml_errCheck(string_length(_inst.gmlloadCode)),__yy_gml_errCheck(gmlunderscorePos)),1));
+				gmlreturnStr[__yy_gml_array_check_index_set(0)]=string_upper(string_delete(_inst.gmlloadCode,gmlunderscorePos,yyfplus(yyfminus(__yy_gml_errCheck(string_length(_inst.gmlloadCode)),__yy_gml_errCheck(gmlunderscorePos)),1)));
 				gmlreturnStr[__yy_gml_array_check_index_set(1)]=string_copy(_inst.gmlloadCode,yyfplus(__yy_gml_errCheck(gmlunderscorePos),1),yyfplus(yyfminus(__yy_gml_errCheck(string_length(_inst.gmlloadCode)),__yy_gml_errCheck(gmlunderscorePos)),1));
+				var gmlsqrd_l=sqr(floor(sqrt(string_length(gmlreturnStr[__yy_gml_array_check_index(0,gmlreturnStr)]))));
+				gmlreturnStr[__yy_gml_array_check_index_set(0)]=string_copy(gmlreturnStr[__yy_gml_array_check_index(0,gmlreturnStr)],1,gmlsqrd_l);
 				changeQuery("loadBoard",string(gmlreturnStr[__yy_gml_array_check_index(0,gmlreturnStr)]),"loadSecret",gmlreturnStr[__yy_gml_array_check_index(1,gmlreturnStr)]);
 				reloadPage();
 			}
@@ -8161,11 +8163,13 @@ function gml_Script_html_submit_code(_inst,_other,argument0)
 		{
 
 						{
-				_inst.gmlloadCode=string_letters(_inst.gmlloadCode);
+				_inst.gmlloadCode=string_upper(string_letters(_inst.gmlloadCode));
 				if(yyfgreater(string_length(_inst.gmlloadCode),0))
 				{
 
 										{
+						var gmlsqrd_l=sqr(floor(sqrt(string_length(_inst.gmlloadCode))));
+						_inst.gmlloadCode=string_copy(_inst.gmlloadCode,1,gmlsqrd_l);
 						changeQuery("loadBoard",string(_inst.gmlloadCode),"loadSecret","");
 						reloadPage();
 					}
@@ -9133,7 +9137,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-231);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-232);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -10931,7 +10935,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(yyftime(0.2,__yy_gml_errCheck(gml_version_scl)));
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45599.40113731754))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45599.409118798416))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }

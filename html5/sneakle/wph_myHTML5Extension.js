@@ -58,8 +58,8 @@ function changeQuery(key1,value1,key2,value2) {
 	  url.searchParams.set(key1, value1)
 	  url.searchParams.set(key2, value2)
 	  //location.assign(url);
-	  //history.pushState(null, '', url);
-	  history.replaceState(null, '', url);
+	  history.pushState(null, '', url);
+	  //history.replaceState(null, '', url);
 	}
 
 }
