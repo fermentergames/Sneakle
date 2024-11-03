@@ -117,9 +117,9 @@ function copyToClipboard(string) {
 
   if (navigator.canShare) {
     navigator.share({
-      title: "Sneakle",
+      //title: "Sneakle",
       text: string,
-      url: window.location.href,
+      //url: window.location.href,
     });
   } else {
     //functionality for desktop

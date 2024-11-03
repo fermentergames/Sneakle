@@ -18,7 +18,7 @@ function html_submit_export_link(argument0) {
 	global.show_export_prompt = 0
 	form_is_loading = false;
 	
-	copyToClipboard(string(exportLink))
+	copyToClipboard("Can you find the hidden word? "+string(exportLink))
 	
 	
 	//clipboard_set_text(string(exportLink));

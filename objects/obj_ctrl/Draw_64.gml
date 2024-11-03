@@ -42,7 +42,7 @@ draw_set_valign(fa_middle)
 draw_set_color(c_white)
 draw_set_alpha(0.3)
 draw_text_transformed(global.sw/2,25*_pos_scl,"s n e a k l e",0.22*_tscl,0.22*_tscl,0)
-draw_text_transformed(global.sw/2,45*_pos_scl,_tscl,0.1*_tscl,0.1*_tscl,0)
+//draw_text_transformed(global.sw/2,45*_pos_scl,_tscl,0.1*_tscl,0.1*_tscl,0)
 
 //draw_set_color(c_white)
 //draw_set_alpha(0.3)
@@ -379,12 +379,12 @@ if global.show_export_prompt = 1 {
 	html_submit_closebtn()
 	
 	//Render a form
-	var form2 = html_form(form_container, "export-code");
-	html_h3(form2, "header", "Export Code")
-	html_field(form2, "exportCode", "exportCode", "", true, "", string(global.current_copy_code));
-	html_submit(form2, "copycode", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
-	if html_element_interaction(form2)
-	html_submit_export(form2)
+	//var form2 = html_form(form_container, "export-code");
+	//html_h3(form2, "header", "Export Code")
+	//html_field(form2, "exportCode", "exportCode", "", true, "", string(global.current_copy_code));
+	//html_submit(form2, "copycode", "Copy", !form_is_loading, form_is_loading ? "loading" : "");
+	//if html_element_interaction(form2)
+	//html_submit_export(form2)
 	
 	//Render a form
 	var form3 = html_form(form_container, "export-link");
