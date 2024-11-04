@@ -997,7 +997,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730704993,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730722173,AllowStatistics:"True"	}
 }
 ;
 
@@ -8161,7 +8161,7 @@ function gml_Script_html_submit_code(_inst,_other,argument0)
 		_inst.gmlloadCode=ds_map_find_value(gmlvalues,"loadCode");
 		_inst.gmlform_is_loading=true;
 		_inst.alarm=__yy_gml_array_check(_inst.alarm,1584050178);
-		_inst.alarm[__yy_gml_array_check_index_set(0)]=90;
+		_inst.alarm[__yy_gml_array_check_index_set(1)]=90;
 		show_debug_message("SUBMITTED!");
 		show_debug_message(_inst.gmlloadCode);
 		global.gmlshow_input_prompt=0;
@@ -8230,7 +8230,7 @@ function gml_Script_html_submit_export_link(_inst,_other,argument0)
 		_inst.gmlexportLink=ds_map_find_value(gmlvalues,"exportLink");
 		_inst.gmlform_is_loading=true;
 		_inst.alarm=__yy_gml_array_check(_inst.alarm,1584050178);
-		_inst.alarm[__yy_gml_array_check_index_set(0)]=90;
+		_inst.alarm[__yy_gml_array_check_index_set(1)]=90;
 		show_debug_message("exporting link!");
 		show_debug_message(_inst.gmlexportLink);
 		global.gmlshow_export_prompt=0;
@@ -8254,7 +8254,7 @@ function gml_Script_html_submit_export(_inst,_other,argument0)
 		_inst.gmlexportCode=ds_map_find_value(gmlvalues,"exportCode");
 		_inst.gmlform_is_loading=true;
 		_inst.alarm=__yy_gml_array_check(_inst.alarm,1584050178);
-		_inst.alarm[__yy_gml_array_check_index_set(0)]=90;
+		_inst.alarm[__yy_gml_array_check_index_set(1)]=90;
 		show_debug_message("exporting!");
 		show_debug_message(_inst.gmlexportCode);
 		global.gmlshow_export_prompt=0;
@@ -8439,34 +8439,34 @@ function gml_Script_scr_board_init(_inst,_other)
 		}
 		;
 		show_debug_message("scr_board_init");
+		global.gmlletters_grid=0;
 		if(yyfequal(global.gmlloadBoard,""))
 		{
 
 						{
 				global.gmlletter_set_default="AAAAAAAAAAAAABBBCCCDDDDDDEEEEEEEEEEEEEEEEEEFFFGGGGHHHIIIIIIIIIIIIJJKKLLLLLMMMNNNNNNNNOOOOOOOOOOOPPPQQRRRRRRRRRSSSSSSTTTTTTTTTUUUUUUVVVWWWXXYYYZZ";
-				var gmll=1;
-				for(;yyflessequal(gmll,string_length(global.gmlletter_set_default));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+				var gmll=0;
+				for(;yyflessequal(gmll,yyfminus(__yy_gml_errCheck(string_length(global.gmlletter_set_default)),1));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 				{
 
 										{
-						global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-						global.gmlletters[__yy_gml_array_check_index_set(gmll)]=string_char_at(global.gmlletter_set_default,gmll);
+						global.gmlletters_bag=__yy_gml_array_check(global.gmlletters_bag,1612340189);
+						global.gmlletters_bag[__yy_gml_array_check_index_set(gmll)]=string_char_at(global.gmlletter_set_default,gmll);
 					}
 				}
 				;
-				global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-				global.gmlletters[__yy_gml_array_check_index_set(0)]="R";
-				global.gmlletters=array_shuffle(global.gmlletters);
+				global.gmlletters_bag=array_shuffle(global.gmlletters_bag);
 				global.gmlskip_create=1;
 				global.gmlgame_phase=1;
-				var gmll=1;
-				for(;yyflessequal(gmll,144);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+				var gmll=0;
+				for(;yyflessequal(gmll,yyfminus(__yy_gml_errCheck(string_length(global.gmlletter_set_default)),1));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 				{
 
 										{
 					}
 				}
 				;
+				show_debug_message(global.gmlletters_bag);
 				var gml_grid_sz=global.gmlgame_grid_size;
 
 								{
@@ -8477,7 +8477,7 @@ function gml_Script_scr_board_init(_inst,_other)
 					{
 
 												{
-							if(yyfequal(global.gmlletters[__yy_gml_array_check_index(gmli,global.gmlletters)],"U"))
+							if(yyfequal(global.gmlletters_bag[__yy_gml_array_check_index(gmli,global.gmlletters_bag)],"U"))
 							{
 
 																{
@@ -8487,7 +8487,7 @@ function gml_Script_scr_board_init(_inst,_other)
 							}
 							else 
 							{
-								if(yyfequal(global.gmlletters[__yy_gml_array_check_index(gmli,global.gmlletters)],"Q"))
+								if(yyfequal(global.gmlletters_bag[__yy_gml_array_check_index(gmli,global.gmlletters_bag)],"Q"))
 								{
 
 																		{
@@ -8509,8 +8509,8 @@ function gml_Script_scr_board_init(_inst,_other)
 							{
 
 																{
-									global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-									global.gmlletters[__yy_gml_array_check_index_set(yyfplus(__yy_gml_errCheck(gml_letters_have_Q),1))]="U";
+									global.gmlletters_bag=__yy_gml_array_check(global.gmlletters_bag,1612340189);
+									global.gmlletters_bag[__yy_gml_array_check_index_set(yyfplus(__yy_gml_errCheck(gml_letters_have_Q),1))]="U";
 								}
 								;
 							}
@@ -8518,8 +8518,8 @@ function gml_Script_scr_board_init(_inst,_other)
 							{
 
 																{
-									global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-									global.gmlletters[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(gml_letters_have_Q),1))]="U";
+									global.gmlletters_bag=__yy_gml_array_check(global.gmlletters_bag,1612340189);
+									global.gmlletters_bag[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(gml_letters_have_Q),1))]="U";
 								}
 								;
 							}
@@ -8543,8 +8543,8 @@ function gml_Script_scr_board_init(_inst,_other)
 				{
 
 										{
-						global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-						global.gmlletters[__yy_gml_array_check_index_set(gmll)]=string_char_at(global.gmlletter_set,gmll);
+						global.gmlletters_bag=__yy_gml_array_check(global.gmlletters_bag,1612340189);
+						global.gmlletters_bag[__yy_gml_array_check_index_set(gmll)]=string_char_at(global.gmlletter_set,gmll);
 					}
 				}
 				;
@@ -8653,7 +8653,43 @@ function gml_Script_scr_board_init(_inst,_other)
 									global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v12.gmltile_id)]=__yy__v12.id;
 									__yy__v12.gmlspawn_slam=yyfplus(yyfplus(2,__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v12.gmltile_col)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size)))))),__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v12.gmltile_row)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size))))));
 									__yy__v12.image_angle=yyfplus((-20),__yy_gml_errCheck(random(40)));
-									__yy__v12.gmlmy_letter_str=global.gmlletters[__yy_gml_array_check_index(__yy__v12.gmltile_id,global.gmlletters)];
+									if(yyfnotequal(global.gmlloadBoard,""))
+									{
+
+																				{
+											__yy__v12.gmlmy_letter_str=string_upper(global.gmlletters_bag[__yy_gml_array_check_index(__yy__v12.gmltile_id,global.gmlletters_bag)]);
+										}
+										;
+									}
+									else 
+									{
+
+																				{
+											__yy__v12.gmlmy_letter_str=array_shift(global.gmlletters_bag);
+											array_push(global.gmlletters_bag,__yy__v12.gmlmy_letter_str);
+										}
+										;
+									}
+									;
+									var gmll=1;
+									for(;yyflessequal(gmll,array_length(global.gmlletter_data));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+									{
+
+																				{
+											show_debug_message(yyfplus(yyfplus(__yy_gml_errCheck(string(gmll)),": "),__yy_gml_errCheck(string(__yy__v12.gmlmy_letter_str))));
+											if(yyfequal(__yy__v12.gmlmy_letter_str,global.gmlletter_data[__yy_gml_array_check_index(gmll,global.gmlletter_data)][__yy_gml_array_check_index(1,global.gmlletter_data[~~gmll])]))
+											{
+
+																								{
+													__yy__v12.gmlmy_letter_num=gmll;
+													gmll=array_length(global.gmlletter_data);
+												}
+												;
+											}
+											;
+										}
+									}
+									;
 								}
 							}
 						}
@@ -8689,6 +8725,8 @@ function gml_Script_scr_board_init(_inst,_other)
 									__yy__v15.gmlam_set=1;
 									__yy__v15.gmlprev_targ_id=__yy__v15.gmltarg_id;
 									__yy__v15.gmlam_set_flash=1;
+									global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+									global.gmlletters_grid[__yy_gml_array_check_index_set(gmli)]=__yy__v15.gmlmy_letter_str;
 								}
 							}
 						}
@@ -8789,7 +8827,7 @@ function gml_Script_scr_board_init(_inst,_other)
 								{
 
 																		{
-										gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)],global.gmlletters)]);
+										gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)],global.gmlletters_grid)]);
 									}
 								}
 								;
@@ -8811,6 +8849,102 @@ function gml_Script_scr_board_init(_inst,_other)
 			;
 		}
 		;
+	}
+}
+
+function gml_GlobalScript_scr_letter_data_init(_inst,_other)
+{
+	(_inst.gmlscr_letter_data_init=__yy_method(_inst,gml_Script_scr_letter_data_init));
+}
+
+function gml_Script_scr_letter_data_init(_inst,_other)
+{
+
+		{
+		if(yyGetBool(gml_Script_live_call(_inst,_other)))
+		{
+			return global.gmllive_result;
+		}
+		;
+		global.gmlletter_data=__yy_gml_array_check(global.gmlletter_data,1523942701);
+		global.gmlletter_data[__yy_gml_array_check_index_chain(1,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="A";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(1,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(1,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(2,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="B";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(2,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=3;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(2,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(3,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="C";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(3,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=3;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(3,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(4,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="D";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(4,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=2;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(4,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(5,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="E";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(5,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(5,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(6,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="F";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(6,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=4;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(6,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(7,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="G";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(7,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=2;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(7,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(8,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="H";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(8,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=4;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(8,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(9,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="I";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(9,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(9,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(10,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="J";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(10,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=8;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(10,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(11,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="K";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(11,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=5;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(11,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(12,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="L";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(12,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(12,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(13,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="M";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(13,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=3;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(13,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(14,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="N";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(14,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(14,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(15,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="O";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(15,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(15,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(16,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="P";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(16,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=3;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(16,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(17,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="Q";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(17,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=10;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(17,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(18,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="R";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(18,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(18,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(19,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="S";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(19,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(19,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(20,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="T";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(20,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(20,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(21,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="U";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(21,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(21,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=1;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(22,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="V";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(22,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=4;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(22,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(23,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="W";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(23,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=4;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(23,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(24,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="X";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(24,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=8;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(24,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(25,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="Y";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(25,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=4;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(25,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(26,global.gmlletter_data)][__yy_gml_array_check_index_set(1)]="Z";
+		global.gmlletter_data[__yy_gml_array_check_index_chain(26,global.gmlletter_data)][__yy_gml_array_check_index_set(2)]=10;
+		global.gmlletter_data[__yy_gml_array_check_index_chain(26,global.gmlletter_data)][__yy_gml_array_check_index_set(3)]=0;
 	}
 }
 
@@ -8837,9 +8971,10 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 		{
 
 						{
-				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
-				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
-				gmlqueryStr[__yy_gml_array_check_index_set(0)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(0)],global.gmlletters[__yy_gml_array_check_index(gmll,global.gmlletters)]);
+				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,global.gmlletters_grid[__yy_gml_array_check_index(gmll,global.gmlletters_grid)]);
+				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,global.gmlletters_grid[__yy_gml_array_check_index(gmll,global.gmlletters_grid)]);
+				gmlqueryStr[__yy_gml_array_check_index_set(0)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(0)],global.gmlletters_grid[__yy_gml_array_check_index(gmll,global.gmlletters_grid)]);
+				show_debug_message(global.gmlletters_grid[__yy_gml_array_check_index(gmll,global.gmlletters_grid)]);
 			}
 		}
 		;
@@ -8906,6 +9041,7 @@ function gml_Script_scr_validate_word(_inst,_other)
 		var gml_valid_guess=1;
 		_inst.gmlselected_word_not_in_dictionary=0;
 		_inst.gmlselected_word_is_valid=1;
+		_inst.gmlselected_word_base_points=0;
 		if(yyflessequal(_inst.gmlselected_word_length,3))
 		{
 
@@ -8926,13 +9062,15 @@ function gml_Script_scr_validate_word(_inst,_other)
 				{
 
 										{
-						gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters)]);
+						gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters_grid)]);
+						_inst.gmlselected_word_base_points=yyfplus(_inst.gmlselected_word_base_points,global.gmlletter_data[__yy_gml_array_check_index(yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array_id)]).gmlmy_letter_num,global.gmlletter_data)][__yy_gml_array_check_index(2,global.gmlletter_data[~~yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array_id)]).gmlmy_letter_num])]);
 					}
 				}
 				;
 				_inst.gmlselected_word_str=gml_letters_str;
 				show_debug_message(yyfplus("selected word is: ",__yy_gml_errCheck(string(_inst.gmlselected_word_str))));
 				show_debug_message(yyfplus("length: ",__yy_gml_errCheck(string(_inst.gmlselected_word_length))));
+				show_debug_message(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus("points: ",__yy_gml_errCheck(string(_inst.gmlselected_word_base_points)))," x "),__yy_gml_errCheck(string(_inst.gmlselected_word_length)))," = "),__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(_inst.gmlselected_word_base_points),__yy_gml_errCheck(_inst.gmlselected_word_length))))));
 				var gmlword=string_lower(_inst.gmlselected_word_str);
 				if(yyGetBool((__temp__=yyInst(_inst,_other,global.gmldictionary),__yyg_call_method(__temp__.gmlcheck)(__temp__,_other,gmlword))))
 				{
@@ -8950,10 +9088,19 @@ function gml_Script_scr_validate_word(_inst,_other)
 						gml_valid_guess=0;
 						_inst.gmlselected_word_not_in_dictionary=1;
 						_inst.gmlselected_word_is_valid=0;
+						_inst.gmlselected_word_base_points=0;
 					}
 					;
 				}
 				;
+			}
+			;
+		}
+		;
+		if(yyfequal(gml_valid_guess,1))
+		{
+
+						{
 			}
 			;
 		}
@@ -8986,9 +9133,13 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlsh=g_pBuiltIn.get_browser_height();
 	global.gmlcam_zoom=1;
 	global.gmlcam_zoom_fd=1;
+	global.gmlletters_grid="";
+	global.gmlletters_bag="";
 	global.gmlam_creating_fd=1;
 	global.gmlam_creating_fd2=1;
 	global.gmlam_creating=0;
+	global.gmlgame_mode=1;
+	global.gmlpoints_total=0;
 	global.gmlgame_grid_size=4;
 	global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 	global.gmltile_size=64;
@@ -9003,6 +9154,7 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlcurrent_copy_code="ABCD_1-2-3-4";
 	global.gmlcurrent_copy_url="https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4";
 	global.gmldictionary=__yy_gml_object_create(_inst,gml_Script_CheckWordDictionary,yyfplus(__yy_gml_errCheck(g_pBuiltIn.working_directory),"dictionaries/full/full.txt"));
+	gml_Script_scr_letter_data_init(_inst,_other);
 	global.gmlis_browser=0;
 	if(yyfnotequal(g_pBuiltIn.get_os_browser(),(-1)))
 	{
@@ -9067,6 +9219,7 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	_inst.gmlselected_word_latest_tile_id=(-1);
 	_inst.gmlselected_word_not_in_dictionary=0;
 	_inst.gmlselected_word_is_valid=0;
+	_inst.gmlselected_word_base_points=0;
 	_inst.gmlsecret_word_length=0;
 	_inst.gmlsecret_word_str="";
 	_inst.gmlsecret_word_array=0;
@@ -9146,6 +9299,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 	}
 	;
 	var gml_tscl=clamp(yyftime(__yy_gml_errCheck(gml_scl),1),yyftime(0.5,__yy_gml_errCheck(global.gmlpr)),yyftime(2,__yy_gml_errCheck(global.gmlpr)));
+	gml_Script_scr_letter_data_init(_inst,_other);
 	if(yyfgreater(global.gmlgame_phase,0))
 	{
 
@@ -9161,11 +9315,28 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 				{
 
 										{
-						if(yyfequal(yyInst(_inst,_other,global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]).gmlam_set,0))
+						if(yyGetBool(instance_exists(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)])))
+						{
+
+														{
+								if(yyfequal(yyInst(_inst,_other,global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]).gmlam_set,0))
+								{
+
+																		{
+										gml_unplaced_tile_count=yyfplus(gml_unplaced_tile_count,1);
+									}
+									;
+								}
+								;
+							}
+							;
+						}
+						else 
 						{
 
 														{
 								gml_unplaced_tile_count=yyfplus(gml_unplaced_tile_count,1);
+								show_debug_message(yyfplus(yyfplus("global.tile_letter[",__yy_gml_errCheck(string(gmli))),"] missing"));
 							}
 							;
 						}
@@ -9519,8 +9690,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																																						{
 																				__yy__v27.gmltile_id=yyInst(_inst,_other,__yy__v27.gmltarg_id).gmltile_id;
-																				global.gmlletters=__yy_gml_array_check(global.gmlletters,4179315574);
-																				global.gmlletters[__yy_gml_array_check_index_set(__yy__v27.gmltile_id)]=__yy__v27.gmlmy_letter_str;
+																				global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+																				global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v27.gmltile_id)]=__yy__v27.gmlmy_letter_str;
 																			}
 																			;
 																		}
@@ -9542,6 +9713,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											_inst.gmlselected_word_not_in_dictionary=0;
 											_inst.gmlselected_word_is_valid=0;
 											_inst.gmlselected_word_str="";
+											_inst.gmlselected_word_array=0;
+											_inst.gmlselected_word_array_id=0;
 											_inst.gmlready_for_phase3=0;
 										}
 										;
@@ -9552,7 +9725,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							}
 							else 
 							{
-								if(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.3)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfminus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.3)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))))))
+								if((yyGetBool(yyfequal(global.gmlgame_mode,1)))&&(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.3)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfminus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.3)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl))))))))
 								{
 
 																		{
@@ -9620,7 +9793,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 								}
 								else 
 								{
-									if(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.7)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfminus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.7)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))))))
+									if((yyGetBool(yyfequal(global.gmlgame_mode,1)))&&(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.7)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfminus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.7)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-70),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl))))))))
 									{
 
 																				{
@@ -9628,6 +9801,34 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)));
 											gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 											global.gmlshow_input_prompt=1;
+										}
+										;
+									}
+									else 
+									{
+										if(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.5)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfminus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-10),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsw),0.5)),__yy_gml_errCheck(yyftime(76.8,__yy_gml_errCheck(gml_tscl)))),yyfplus(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime((-10),__yy_gml_errCheck(global.gmlpr))))),__yy_gml_errCheck(yyftime(20.48,__yy_gml_errCheck(gml_tscl)))))))
+										{
+
+																						{
+												if(yyfequal(global.gmlgame_mode,1))
+												{
+
+																										{
+														global.gmlgame_mode=2;
+													}
+													;
+												}
+												else 
+												{
+
+																										{
+														global.gmlgame_mode=1;
+													}
+													;
+												}
+												;
+											}
+											;
 										}
 										;
 									}
@@ -9653,47 +9854,36 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 						{
 
 														{
-								_inst.gmlsecret_word_length=_inst.gmlselected_word_length;
-								_inst.gmlsecret_word_str=_inst.gmlselected_word_str;
-								_inst.gmlsecret_word_array=_inst.gmlselected_word_array;
-								_inst.gmlsecret_word_array_id=_inst.gmlselected_word_array_id;
-								_inst.gmlguesses_count=0;
-								_inst.gmlselected_word_length=0;
-								_inst.gmlselected_word_str="";
-								_inst.gmlselected_word_array=0;
+								if((yyGetBool(yyfequal(global.gmlgame_mode,1)))&&(yyGetBool(yyfgreaterequal(_inst.gmlselected_word_is_valid,1))))
+								{
 
-																{
-									var __yy__v37=GetWithArray(YYASSET_REF(0x00000005));
-									for(var __yy__v38 in __yy__v37)
-									{
-										if(!__yy__v37.hasOwnProperty(__yy__v38))continue;
-										var __yy__v39=__yy__v37[__yy__v38];
+																		{
+										_inst.gmlsecret_word_length=_inst.gmlselected_word_length;
+										_inst.gmlsecret_word_str=_inst.gmlselected_word_str;
+										_inst.gmlsecret_word_array=_inst.gmlselected_word_array;
+										_inst.gmlsecret_word_array_id=_inst.gmlselected_word_array_id;
+										_inst.gmlguesses_count=0;
+										_inst.gmlselected_word_length=0;
+										_inst.gmlselected_word_str="";
+										_inst.gmlselected_word_array=0;
 
 																				{
-											__yy__v39.gmlam_exed=0;
-											__yy__v39.gmlam_clued=0;
+											var __yy__v37=GetWithArray(YYASSET_REF(0x00000005));
+											for(var __yy__v38 in __yy__v37)
+											{
+												if(!__yy__v37.hasOwnProperty(__yy__v38))continue;
+												var __yy__v39=__yy__v37[__yy__v38];
+
+																								{
+													__yy__v39.gmlam_exed=0;
+													__yy__v39.gmlam_clued=0;
+												}
+											}
 										}
-									}
-								}
-								;
-								var gml_letters_str="";
-								var gmll=0;
-								for(;yyfless(gmll,_inst.gmlsecret_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
-								{
-
-																		{
-										gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)],global.gmlletters)]);
-									}
-								}
-								;
-								var gmli=1;
-								for(;yyflessequal(gmli,global.gmlgame_grid_size_sqr);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
-								{
-
-																		{
+										;
 
 																				{
-											var __yy__v40=GetWithArray(global.gmltile_letter[__yy_gml_array_check_index(gmli,global.gmltile_letter)]);
+											var __yy__v40=GetWithArray(YYASSET_REF(0x00000005));
 											for(var __yy__v41 in __yy__v40)
 											{
 												if(!__yy__v40.hasOwnProperty(__yy__v41))continue;
@@ -9701,20 +9891,145 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																								{
 													__yy__v42.gmltile_id=yyInst(_inst,_other,__yy__v42.gmltarg_id).gmltile_id;
+													global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+													global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v42.gmltile_id)]=__yy__v42.gmlmy_letter_str;
+													global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+													global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v42.gmltile_id)]=__yy__v42.id;
 												}
 											}
 										}
 										;
+										var gml_letters_str="";
+										var gmll=0;
+										for(;yyfless(gmll,_inst.gmlsecret_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+										{
+
+																						{
+												gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)],global.gmlletters_grid)]);
+											}
+										}
+										;
+										show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
+										gml_Script_scr_update_copy_code(_inst,_other);
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
+										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
+										global.gmlshow_export_prompt=1;
+										global.gmlgame_phase=3;
+										_inst.gmljust_phase_changed=1;
 									}
+									;
 								}
 								;
-								show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
-								gml_Script_scr_update_copy_code(_inst,_other);
-								var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
-								gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
-								global.gmlshow_export_prompt=1;
-								global.gmlgame_phase=3;
-								_inst.gmljust_phase_changed=1;
+								if((yyGetBool(yyfequal(global.gmlgame_mode,2)))&&(yyGetBool(yyfgreaterequal(_inst.gmlselected_word_is_valid,1))))
+								{
+
+																		{
+										var gml_letters_str="";
+										var gmll=0;
+										for(;yyfless(gmll,_inst.gmlselected_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+										{
+
+																						{
+												gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters_grid)]);
+											}
+										}
+										;
+										show_debug_message(yyfplus("SCORING WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
+										global.gmlpoints_total=yyfplus(global.gmlpoints_total,yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length)));
+										show_debug_message(yyfplus("ADD SCORE ",__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))))));
+										show_debug_message(yyfplus("TOTAL SCORE NOW: ",__yy_gml_errCheck(string(global.gmlpoints_total))));
+										_inst.gmlselected_word_length=0;
+										_inst.gmlselected_word_str="";
+										_inst.gmlselected_word_array=0;
+										_inst.gmlselected_word_array_id=0;
+
+																				{
+											var __yy__v43=GetWithArray(YYASSET_REF(0x00000005));
+											for(var __yy__v44 in __yy__v43)
+											{
+												if(!__yy__v43.hasOwnProperty(__yy__v44))continue;
+												var __yy__v45=__yy__v43[__yy__v44];
+
+																								{
+													if(yyfequal(__yy__v45.gmlam_part_of_secret_word,1))
+													{
+
+																												{
+
+																														{
+																var __yy__v46=GetWithArray(instance_create_depth(__yy__v45.x,__yy__v45.y,__yy__v45.depth,YYASSET_REF(0x00000005)));
+																for(var __yy__v47 in __yy__v46)
+																{
+																	if(!__yy__v46.hasOwnProperty(__yy__v47))continue;
+																	var __yy__v48=__yy__v46[__yy__v47];
+
+																																		{
+																		__yy__v48.gmltile_id=__yy__v45.gmltile_id;
+																		__yy__v48.gmltile_col=__yy__v45.gmltile_col;
+																		__yy__v48.gmltile_row=__yy__v45.gmltile_row;
+																		__yy__v48.gmltarg_id=__yy__v45.gmltarg_id;
+																		global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+																		global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v48.gmltile_id)]=__yy__v48.id;
+																		__yy__v48.gmlspawn_slam=yyfplus(yyfplus(2,__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v48.gmltile_col)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size)))))),__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v48.gmltile_row)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size))))));
+																		__yy__v48.image_angle=yyfplus((-20),__yy_gml_errCheck(random(40)));
+																		__yy__v48.gmlmy_letter_str=array_shift(global.gmlletters_bag);
+																		array_push(global.gmlletters_bag,__yy__v48.gmlmy_letter_str);
+																		__yy__v48.gmlam_set=1;
+																		var gmll=1;
+																		for(;yyflessequal(gmll,array_length(global.gmlletter_data));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+																		{
+
+																																						{
+																				if(yyfequal(__yy__v48.gmlmy_letter_str,global.gmlletter_data[__yy_gml_array_check_index(gmll,global.gmlletter_data)][__yy_gml_array_check_index(1,global.gmlletter_data[~~gmll])]))
+																				{
+
+																																										{
+																						__yy__v48.gmlmy_letter_num=gmll;
+																						gmll=array_length(global.gmlletter_data);
+																					}
+																					;
+																				}
+																				;
+																			}
+																		}
+																		;
+																	}
+																}
+															}
+															;
+															instance_destroy(__yy__v45);
+														}
+														;
+													}
+													;
+												}
+											}
+										}
+										;
+
+																				{
+											var __yy__v49=GetWithArray(YYASSET_REF(0x00000005));
+											for(var __yy__v50 in __yy__v49)
+											{
+												if(!__yy__v49.hasOwnProperty(__yy__v50))continue;
+												var __yy__v51=__yy__v49[__yy__v50];
+
+																								{
+													__yy__v51.gmltile_id=yyInst(_inst,_other,__yy__v51.gmltarg_id).gmltile_id;
+													global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+													global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v51.gmltile_id)]=__yy__v51.gmlmy_letter_str;
+													global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+													global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v51.gmltile_id)]=__yy__v51.id;
+												}
+											}
+										}
+										;
+										gml_Script_scr_update_copy_code(_inst,_other);
+										_inst.gmlselected_word_is_valid=0;
+									}
+									;
+								}
+								;
 							}
 							;
 						}
@@ -9728,14 +10043,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 								_inst.gmlselected_word_str="";
 
 																{
-									var __yy__v43=GetWithArray(YYASSET_REF(0x00000005));
-									for(var __yy__v44 in __yy__v43)
+									var __yy__v52=GetWithArray(YYASSET_REF(0x00000005));
+									for(var __yy__v53 in __yy__v52)
 									{
-										if(!__yy__v43.hasOwnProperty(__yy__v44))continue;
-										var __yy__v45=__yy__v43[__yy__v44];
+										if(!__yy__v52.hasOwnProperty(__yy__v53))continue;
+										var __yy__v54=__yy__v52[__yy__v53];
 
 																				{
-											__yy__v45.gmlam_part_of_secret_word=0;
+											__yy__v54.gmlam_part_of_secret_word=0;
 										}
 									}
 								}
@@ -9760,15 +10075,15 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 									global.gmlgame_phase=2;
 
 																		{
-										var __yy__v46=GetWithArray(YYASSET_REF(0x00000005));
-										for(var __yy__v47 in __yy__v46)
+										var __yy__v55=GetWithArray(YYASSET_REF(0x00000005));
+										for(var __yy__v56 in __yy__v55)
 										{
-											if(!__yy__v46.hasOwnProperty(__yy__v47))continue;
-											var __yy__v48=__yy__v46[__yy__v47];
+											if(!__yy__v55.hasOwnProperty(__yy__v56))continue;
+											var __yy__v57=__yy__v55[__yy__v56];
 
 																						{
-												__yy__v48.gmlam_exed=0;
-												__yy__v48.gmlam_clued=0;
+												__yy__v57.gmlam_exed=0;
+												__yy__v57.gmlam_clued=0;
 											}
 										}
 									}
@@ -9899,11 +10214,11 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 															gml_Script_GoogHit(_inst,_other,"post_score",gml_event_struct);
 
 																														{
-																var __yy__v49=GetWithArray(YYASSET_REF(0x00000005));
-																for(var __yy__v50 in __yy__v49)
+																var __yy__v58=GetWithArray(YYASSET_REF(0x00000005));
+																for(var __yy__v59 in __yy__v58)
 																{
-																	if(!__yy__v49.hasOwnProperty(__yy__v50))continue;
-																	var __yy__v51=__yy__v49[__yy__v50];
+																	if(!__yy__v58.hasOwnProperty(__yy__v59))continue;
+																	var __yy__v60=__yy__v58[__yy__v59];
 
 																																		{
 
@@ -9913,14 +10228,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																			{
 
 																																								{
-																					if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v51.gmltile_id))
+																					if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v60.gmltile_id))
 																					{
 
 																																												{
-																							__yy__v51.gmlam_clued=1;
-																							__yy__v51.gmlam_clued_flash=1;
-																							__yy__v51.gmlam_clued_won=1;
-																							__yy__v51.gmlam_exed=0;
+																							__yy__v60.gmlam_clued=1;
+																							__yy__v60.gmlam_clued_flash=1;
+																							__yy__v60.gmlam_clued_won=1;
+																							__yy__v60.gmlam_exed=0;
 																						}
 																						;
 																					}
@@ -9928,11 +10243,11 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																				}
 																			}
 																			;
-																			if(yyfequal(__yy__v51.gmlam_clued,0))
+																			if(yyfequal(__yy__v60.gmlam_clued,0))
 																			{
 
 																																								{
-																					__yy__v51.gmlam_samelettered=0;
+																					__yy__v60.gmlam_samelettered=0;
 																				}
 																				;
 																			}
@@ -9955,14 +10270,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																show_debug_message("no match!");
 
 																																{
-																	var __yy__v52=GetWithArray(YYASSET_REF(0x00000005));
-																	for(var __yy__v53 in __yy__v52)
+																	var __yy__v61=GetWithArray(YYASSET_REF(0x00000005));
+																	for(var __yy__v62 in __yy__v61)
 																	{
-																		if(!__yy__v52.hasOwnProperty(__yy__v53))continue;
-																		var __yy__v54=__yy__v52[__yy__v53];
+																		if(!__yy__v61.hasOwnProperty(__yy__v62))continue;
+																		var __yy__v63=__yy__v61[__yy__v62];
 
 																																				{
-																			if(yyfequal(__yy__v54.gmlam_selected,1))
+																			if(yyfequal(__yy__v63.gmlam_selected,1))
 																			{
 
 																																								{
@@ -9971,7 +10286,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																					{
 
 																																												{
-																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v54.gmltile_id))
+																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v63.gmltile_id))
 																							{
 
 																																																{
@@ -9982,12 +10297,12 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																							{
 
 																																																{
-																									__yy__v54.gmlam_exed=1;
-																									if(yyfequal(global.gmlletters[__yy_gml_array_check_index(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],global.gmlletters)],__yy__v54.gmlmy_letter_str))
+																									__yy__v63.gmlam_exed=1;
+																									if(yyfequal(global.gmlletters_bag[__yy_gml_array_check_index(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],global.gmlletters_bag)],__yy__v63.gmlmy_letter_str))
 																									{
 
 																																																				{
-																											__yy__v54.gmlam_samelettered=1;
+																											__yy__v63.gmlam_samelettered=1;
 																										}
 																										;
 																									}
@@ -10004,21 +10319,21 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																					{
 
 																																												{
-																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v54.gmltile_id))
+																							if(yyfequal(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)],__yy__v63.gmltile_id))
 																							{
 
 																																																{
-																									if(yyflessequal(__yy__v54.gmlam_clued,0))
+																									if(yyflessequal(__yy__v63.gmlam_clued,0))
 																									{
 
 																																																				{
-																											__yy__v54.gmlam_clued=1;
-																											__yy__v54.gmlam_clued_flash=1;
+																											__yy__v63.gmlam_clued=1;
+																											__yy__v63.gmlam_clued_flash=1;
 																										}
 																										;
 																									}
 																									;
-																									__yy__v54.gmlam_exed=0;
+																									__yy__v63.gmlam_exed=0;
 																								}
 																								;
 																							}
@@ -10065,26 +10380,26 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							_inst.gmlselected_word_latest_tile_id=(-1);
 
 														{
-								var __yy__v55=GetWithArray(YYASSET_REF(0x00000005));
-								for(var __yy__v56 in __yy__v55)
+								var __yy__v64=GetWithArray(YYASSET_REF(0x00000005));
+								for(var __yy__v65 in __yy__v64)
 								{
-									if(!__yy__v55.hasOwnProperty(__yy__v56))continue;
-									var __yy__v57=__yy__v55[__yy__v56];
+									if(!__yy__v64.hasOwnProperty(__yy__v65))continue;
+									var __yy__v66=__yy__v64[__yy__v65];
 
 																		{
-										if(yyfgreaterequal(__yy__v57.gmlam_selected,1))
+										if(yyfgreaterequal(__yy__v66.gmlam_selected,1))
 										{
 
 																						{
-												__yy__v57.gmlam_selected=0;
-												__yy__v57.gmlam_selected_start=0;
-												__yy__v57.gmlam_selected_end=0;
-												__yy__v57.gmlam_selected_num=0;
+												__yy__v66.gmlam_selected=0;
+												__yy__v66.gmlam_selected_start=0;
+												__yy__v66.gmlam_selected_end=0;
+												__yy__v66.gmlam_selected_num=0;
 												if((yyGetBool(yyfequal(global.gmlgame_phase,2)))&&(yyGetBool(yyfequal(gml_valid_guess,1))))
 												{
 
 																										{
-														__yy__v57.gmlam_part_of_secret_word=1;
+														__yy__v66.gmlam_part_of_secret_word=1;
 													}
 													;
 												}
@@ -10512,10 +10827,36 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"drag to rearrange the letters",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 				draw_set_font(YYASSET_REF(0x06000001));
 				draw_set_alpha(0.7);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-				draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"NEW LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-				draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"TYPE LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+				if(yyfequal(global.gmlgame_mode,1))
+				{
+
+										{
+						draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"NEW LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"TYPE LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					}
+					;
+				}
+				;
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+				if(yyfequal(global.gmlgame_mode,1))
+				{
+
+										{
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"point mode: OFF",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					}
+					;
+				}
+				else 
+				{
+
+										{
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"point mode: ON",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					}
+					;
+				}
+				;
 				if(yyfequal(_inst.gmlready_for_phase2,0))
 				{
 
@@ -10550,8 +10891,10 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					draw_set_font(YYASSET_REF(0x06000000));
 					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"swipe to select your SECRET WORD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
-					draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"BACK",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_alpha(0.7);
+					draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.18),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.18),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"REARRANGE",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_color(16777215);
 					if(yyfequal(_inst.gmlready_for_phase3,1))
 					{
 
@@ -10574,7 +10917,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					{
 
 												{
-							gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters)]);
+							gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters_grid)]);
 						}
 					}
 					;
@@ -10656,7 +10999,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						{
 
 														{
-								gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters)]);
+								gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters_grid)]);
 							}
 						}
 						;
@@ -10772,7 +11115,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							{
 
 																{
-									gml_letters_str=yyfplus(gml_letters_str,global.gmlletters[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters)]);
+									gml_letters_str=yyfplus(gml_letters_str,global.gmlletters_grid[__yy_gml_array_check_index(_inst.gmlselected_word_array[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array)],global.gmlletters_grid)]);
 								}
 							}
 							;
@@ -10821,6 +11164,40 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						;
 					}
 					;
+				}
+				;
+			}
+			;
+		}
+		;
+	}
+	;
+	if((yyGetBool(yyfequal(global.gmlgame_phase,1)))||(yyGetBool(yyfequal(global.gmlgame_phase,2))))
+	{
+
+				{
+			if(yyfequal(global.gmlgame_mode,2))
+			{
+
+								{
+					draw_set_alpha(0.3);
+					draw_set_color(255);
+					if(yyfgreater(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points,0))
+					{
+
+												{
+							draw_set_alpha(0.7);
+							draw_set_color(65535);
+						}
+						;
+					}
+					;
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.85),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points)),"x"),__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))),"="),__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))))),"\n\n"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_color(65535);
+					draw_set_alpha(0.7);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.85),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("\n\nTOTAL: ",__yy_gml_errCheck(string(global.gmlpoints_total))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_alpha(1);
+					draw_set_color(16777215);
 				}
 				;
 			}
@@ -10997,7 +11374,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(yyftime(0.2,__yy_gml_errCheck(gml_version_scl)));
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.30777260091))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.50660328656))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -11084,35 +11461,45 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 	gpu_set_blendmode(0);
 
 		{
-		var __yy__v58=GetWithArray(YYASSET_REF(0x00000005));
-		for(var __yy__v59 in __yy__v58)
+		var __yy__v67=GetWithArray(YYASSET_REF(0x00000005));
+		for(var __yy__v68 in __yy__v67)
 		{
-			if(!__yy__v58.hasOwnProperty(__yy__v59))continue;
-			var __yy__v60=__yy__v58[__yy__v59];
+			if(!__yy__v67.hasOwnProperty(__yy__v68))continue;
+			var __yy__v69=__yy__v67[__yy__v68];
 
 						{
 				var gml_tile_ht=0;
-				var gml_spawn_slam=yyftime(__yy_gml_errCheck(sqr(__yy__v60.gmlspawn_slam)),(-1000));
+				var gml_spawn_slam=yyftime(__yy_gml_errCheck(sqr(__yy__v69.gmlspawn_slam)),(-1000));
 				if(yyfgreaterequal(global.gmlgame_phase,2))
 				{
 
 										{
-						draw_set_alpha(lerp(0.6,1,clamp(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v60.gmlam_selected_fd),__yy_gml_errCheck(__yy__v60.gmlam_clued_fd)),__yy_gml_errCheck(__yy__v60.gmlam_part_of_secret_word_fd)),__yy_gml_errCheck(yyftime(1,__yy_gml_errCheck(__yy__v60.gmlam_exed_fd)))),0,1)));
-						draw_set_color(__yy__v60.gmlletter_col);
-						draw_set_color(merge_color(__yy__v60.gmlletter_col,16777215,__yy__v60.gmlam_selected_fd));
+						draw_set_alpha(lerp(0.6,1,clamp(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.gmlam_selected_fd),__yy_gml_errCheck(__yy__v69.gmlam_clued_fd)),__yy_gml_errCheck(__yy__v69.gmlam_part_of_secret_word_fd)),__yy_gml_errCheck(yyftime(1,__yy_gml_errCheck(__yy__v69.gmlam_exed_fd)))),0,1)));
+						draw_set_color(__yy__v69.gmlletter_col);
+						draw_set_color(merge_color(__yy__v69.gmlletter_col,16777215,__yy__v69.gmlam_selected_fd));
 						var gml_text_offset_y=-0;
-						var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(__yy__v60.gmlscl));
-						draw_text_transformed(yyfplus(__yy_gml_errCheck(__yy__v60.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v60.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v60.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v60.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(__yy__v60.gmlmy_letter_str),gml_text_scl,gml_text_scl,__yy__v60.image_angle);
+						var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(__yy__v69.gmlscl));
+						draw_text_transformed(yyfplus(__yy_gml_errCheck(__yy__v69.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(__yy__v69.gmlmy_letter_str),gml_text_scl,gml_text_scl,__yy__v69.image_angle);
+						if((yyGetBool(yyfequal(global.gmlgame_mode,2)))&&(yyGetBool(yyfgreaterequal(__yy__v69.gmlmy_letter_num,1))))
+						{
+
+														{
+								draw_set_color(merge_color(__yy__v69.gmlletter_col,65535,clamp(yyfplus(__yy_gml_errCheck(__yy__v69.gmlam_selected_fd),__yy_gml_errCheck(__yy__v69.gmlam_part_of_secret_word_fd)),0,yyftime(1,__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_is_valid)))));
+								draw_text_transformed(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),0),yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),22),global.gmlletter_data[__yy_gml_array_check_index(__yy__v69.gmlmy_letter_num,global.gmlletter_data)][__yy_gml_array_check_index(2,global.gmlletter_data[~~__yy__v69.gmlmy_letter_num])],yyftime(__yy_gml_errCheck(gml_text_scl),0.25),yyftime(__yy_gml_errCheck(gml_text_scl),0.25),__yy__v69.image_angle);
+							}
+							;
+						}
+						;
 						draw_set_color(16777215);
 					}
 					;
 				}
 				;
-				if(yyfgreater(__yy__v60.gmlam_set_flash,0))
+				if(yyfgreater(__yy__v69.gmlam_set_flash,0))
 				{
 
 										{
-						draw_sprite_ext(__yy__v60,YYASSET_REF(0x01000003),1,yyfplus(__yy_gml_errCheck(__yy__v60.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v60.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),__yy__v60.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_alpha),2),__yy_gml_errCheck(__yy__v60.gmlam_set_flash)));
+						draw_sprite_ext(__yy__v69,YYASSET_REF(0x01000003),1,yyfplus(__yy_gml_errCheck(__yy__v69.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v69.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v69.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v69.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v69.gmlam_set_flash))))),__yy__v69.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v69.image_alpha),2),__yy_gml_errCheck(__yy__v69.gmlam_set_flash)));
 					}
 					;
 				}
@@ -11534,14 +11921,14 @@ function gml_Object_obj_tile_letter_Mouse_4(_inst,_other)
 				{
 
 						{
-				var __yy__v61=GetWithArray(YYASSET_REF(0x00000005));
-				for(var __yy__v62 in __yy__v61)
+				var __yy__v70=GetWithArray(YYASSET_REF(0x00000005));
+				for(var __yy__v71 in __yy__v70)
 				{
-					if(!__yy__v61.hasOwnProperty(__yy__v62))continue;
-					var __yy__v63=__yy__v61[__yy__v62];
+					if(!__yy__v70.hasOwnProperty(__yy__v71))continue;
+					var __yy__v72=__yy__v70[__yy__v71];
 
 										{
-						__yy__v63.gmlam_part_of_secret_word=0;
+						__yy__v72.gmlam_part_of_secret_word=0;
 					}
 				}
 			}
@@ -11555,7 +11942,7 @@ function gml_Object_obj_tile_letter_Mouse_4(_inst,_other)
 					yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length=0;
 					yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array=0;
 					yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array_id=0;
-					yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_is_valid=1;
+					yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_is_valid=0;
 					_inst.gmlam_selected=1;
 					_inst.gmlam_selected_flash=1;
 					_inst.gmlam_selected_start=1;
@@ -11605,23 +11992,23 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 												{
 
 														{
-								var __yy__v64=GetWithArray(gml_conflicting_tile);
-								for(var __yy__v65 in __yy__v64)
+								var __yy__v73=GetWithArray(gml_conflicting_tile);
+								for(var __yy__v74 in __yy__v73)
 								{
-									if(!__yy__v64.hasOwnProperty(__yy__v65))continue;
-									var __yy__v66=__yy__v64[__yy__v65];
+									if(!__yy__v73.hasOwnProperty(__yy__v74))continue;
+									var __yy__v75=__yy__v73[__yy__v74];
 
 																		{
 										if(yyfequal(_inst.gmlam_set,1))
 										{
 
 																						{
-												__yy__v66.gmlam_set=1;
-												__yy__v66.gmltarg_id=_inst.gmlprev_targ_id;
-												__yy__v66.gmlprev_targ_id=__yy__v66.gmltarg_id;
-												__yy__v66.gmlx_targ=yyInst(_inst,_other,__yy__v66.gmltarg_id).x;
-												__yy__v66.gmly_targ=yyInst(_inst,_other,__yy__v66.gmltarg_id).y;
-												__yy__v66.gmltile_id=yyInst(_inst,_other,__yy__v66.gmltarg_id).gmltile_id;
+												__yy__v75.gmlam_set=1;
+												__yy__v75.gmltarg_id=_inst.gmlprev_targ_id;
+												__yy__v75.gmlprev_targ_id=__yy__v75.gmltarg_id;
+												__yy__v75.gmlx_targ=yyInst(_inst,_other,__yy__v75.gmltarg_id).x;
+												__yy__v75.gmly_targ=yyInst(_inst,_other,__yy__v75.gmltarg_id).y;
+												__yy__v75.gmltile_id=yyInst(_inst,_other,__yy__v75.gmltarg_id).gmltile_id;
 											}
 											;
 										}
@@ -11629,11 +12016,11 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 										{
 
 																						{
-												__yy__v66.gmlam_set=0;
-												__yy__v66.gmltarg_id=__yy__v66;
-												__yy__v66.gmlprev_targ_id=__yy__v66;
-												__yy__v66.gmlx_targ=__yy__v66.xstart;
-												__yy__v66.gmly_targ=__yy__v66.ystart;
+												__yy__v75.gmlam_set=0;
+												__yy__v75.gmltarg_id=__yy__v75;
+												__yy__v75.gmlprev_targ_id=__yy__v75;
+												__yy__v75.gmlx_targ=__yy__v75.xstart;
+												__yy__v75.gmly_targ=__yy__v75.ystart;
 											}
 											;
 										}
@@ -11673,6 +12060,24 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 					_inst.gmlam_set=0;
 				}
 				;
+			}
+			;
+
+						{
+				var __yy__v76=GetWithArray(YYASSET_REF(0x00000005));
+				for(var __yy__v77 in __yy__v76)
+				{
+					if(!__yy__v76.hasOwnProperty(__yy__v77))continue;
+					var __yy__v78=__yy__v76[__yy__v77];
+
+										{
+						__yy__v78.gmltile_id=yyInst(_inst,_other,__yy__v78.gmltarg_id).gmltile_id;
+						global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+						global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v78.gmltile_id)]=__yy__v78.gmlmy_letter_str;
+						global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+						global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v78.gmltile_id)]=__yy__v78.id;
+					}
+				}
 			}
 			;
 		}
@@ -11717,14 +12122,14 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 									yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array_id[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length),1))]=_inst.id;
 
 																		{
-										var __yy__v67=GetWithArray(YYASSET_REF(0x00000001));
-										for(var __yy__v68 in __yy__v67)
+										var __yy__v79=GetWithArray(YYASSET_REF(0x00000001));
+										for(var __yy__v80 in __yy__v79)
 										{
-											if(!__yy__v67.hasOwnProperty(__yy__v68))continue;
-											var __yy__v69=__yy__v67[__yy__v68];
+											if(!__yy__v79.hasOwnProperty(__yy__v80))continue;
+											var __yy__v81=__yy__v79[__yy__v80];
 
 																						{
-												gml_Script_scr_validate_word(__yy__v69,_inst);
+												gml_Script_scr_validate_word(__yy__v81,_inst);
 											}
 										}
 									}
@@ -11748,19 +12153,19 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 																		{
 
 																				{
-											var __yy__v70=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v71 in __yy__v70)
+											var __yy__v82=GetWithArray(YYASSET_REF(0x00000005));
+											for(var __yy__v83 in __yy__v82)
 											{
-												if(!__yy__v70.hasOwnProperty(__yy__v71))continue;
-												var __yy__v72=__yy__v70[__yy__v71];
+												if(!__yy__v82.hasOwnProperty(__yy__v83))continue;
+												var __yy__v84=__yy__v82[__yy__v83];
 
 																								{
-													if(yyfgreater(__yy__v72.gmlam_selected_num,_inst.gmlam_selected_num))
+													if(yyfgreater(__yy__v84.gmlam_selected_num,_inst.gmlam_selected_num))
 													{
 
 																												{
-															__yy__v72.gmlam_selected=0;
-															__yy__v72.gmlam_selected_num=0;
+															__yy__v84.gmlam_selected=0;
+															__yy__v84.gmlam_selected_num=0;
 														}
 														;
 													}
@@ -11797,14 +12202,14 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 										yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array_id[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length),1))]=_inst.id;
 
 																				{
-											var __yy__v73=GetWithArray(YYASSET_REF(0x00000001));
-											for(var __yy__v74 in __yy__v73)
+											var __yy__v85=GetWithArray(YYASSET_REF(0x00000001));
+											for(var __yy__v86 in __yy__v85)
 											{
-												if(!__yy__v73.hasOwnProperty(__yy__v74))continue;
-												var __yy__v75=__yy__v73[__yy__v74];
+												if(!__yy__v85.hasOwnProperty(__yy__v86))continue;
+												var __yy__v87=__yy__v85[__yy__v86];
 
 																								{
-													gml_Script_scr_validate_word(__yy__v75,_inst);
+													gml_Script_scr_validate_word(__yy__v87,_inst);
 												}
 											}
 										}
@@ -11956,6 +12361,15 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 				var gml_text_offset_y=-0;
 				var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(_inst.gmlscl));
 				draw_text_transformed(yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(_inst.gmlscl)))),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(_inst.gmlscl)))),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(_inst.gmlmy_letter_str),gml_text_scl,gml_text_scl,_inst.image_angle);
+				if((yyGetBool(yyfequal(global.gmlgame_mode,2)))&&(yyGetBool(yyfgreaterequal(_inst.gmlmy_letter_num,1))))
+				{
+
+										{
+						draw_text_transformed(yyfplus(yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(_inst.gmlscl)))),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),0),yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(_inst.gmlscl)))),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),22),global.gmlletter_data[__yy_gml_array_check_index(_inst.gmlmy_letter_num,global.gmlletter_data)][__yy_gml_array_check_index(2,global.gmlletter_data[~~_inst.gmlmy_letter_num])],yyftime(__yy_gml_errCheck(gml_text_scl),0.25),yyftime(__yy_gml_errCheck(gml_text_scl),0.25),_inst.image_angle);
+					}
+					;
+				}
+				;
 			}
 			;
 		}
@@ -12403,6 +12817,7 @@ function gmlInitGlobal()
 	gml_GlobalScript_INIT_HTML(global,global);
 	gml_GlobalScript_parse_query(global,global);
 	gml_GlobalScript_scr_board_init(global,global);
+	gml_GlobalScript_scr_letter_data_init(global,global);
 	gml_GlobalScript_scr_update_copy_code(global,global);
 	gml_GlobalScript_scr_update_room_dimensions(global,global);
 	gml_GlobalScript_scr_validate_word(global,global);
@@ -12574,8 +12989,8 @@ IDToTagList=[
 {
 	key:83986193,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0"];
-JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0];
+JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_letter_data_init","gml_Script_scr_letter_data_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0"];
+JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_letter_data_init,gml_Script_scr_letter_data_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0];
 const kgml_GlobalScript___GoogConfig=100000;
 const kgml_GlobalScript___GoogSystem=100001;
 const kgml_Script____struct___0=100002;
@@ -12720,23 +13135,25 @@ const kgml_Script_parse_query=100140;
 const kgml_GlobalScript_scr_board_init=100141;
 const kgml_Script____struct___125_scr_board_init_scr_board_init=100142;
 const kgml_Script_scr_board_init=100143;
-const kgml_GlobalScript_scr_update_copy_code=100144;
-const kgml_Script_scr_update_copy_code=100145;
-const kgml_GlobalScript_scr_update_room_dimensions=100146;
-const kgml_Script_scr_update_room_dimensions=100147;
-const kgml_GlobalScript_scr_validate_word=100148;
-const kgml_Script_scr_validate_word=100149;
-const kgml_Script_browser_stretch_canvas=100150;
-const kgml_Script____struct___126_gml_Object_obj_ctrl_Create_0=100151;
-const kgml_Script____struct___127_gml_Object_obj_ctrl_Step_0=100152;
-const kgml_Script____struct___128_gml_Object_obj_ctrl_Step_0=100153;
-const kgml_Script____struct___129_gml_Object_obj_ctrl_Step_0=100154;
-const kgml_Script____struct___130_gml_Object_obj_ctrl_Step_0=100155;
-const kgml_Script____struct___131_gml_Object_obj_ctrl_Step_0=100156;
-const kgml_Script____struct___132_gml_Object_obj_ctrl_Step_0=100157;
-const kgml_Script____struct___133_gml_Object_obj_ctrl_Step_0=100158;
-const kgml_Script____struct___134_gml_Object_obj_ctrl_Step_0=100159;
-const kgml_Script____struct___135_gml_Object_obj_ctrl_Step_0=100160;
+const kgml_GlobalScript_scr_letter_data_init=100144;
+const kgml_Script_scr_letter_data_init=100145;
+const kgml_GlobalScript_scr_update_copy_code=100146;
+const kgml_Script_scr_update_copy_code=100147;
+const kgml_GlobalScript_scr_update_room_dimensions=100148;
+const kgml_Script_scr_update_room_dimensions=100149;
+const kgml_GlobalScript_scr_validate_word=100150;
+const kgml_Script_scr_validate_word=100151;
+const kgml_Script_browser_stretch_canvas=100152;
+const kgml_Script____struct___126_gml_Object_obj_ctrl_Create_0=100153;
+const kgml_Script____struct___127_gml_Object_obj_ctrl_Step_0=100154;
+const kgml_Script____struct___128_gml_Object_obj_ctrl_Step_0=100155;
+const kgml_Script____struct___129_gml_Object_obj_ctrl_Step_0=100156;
+const kgml_Script____struct___130_gml_Object_obj_ctrl_Step_0=100157;
+const kgml_Script____struct___131_gml_Object_obj_ctrl_Step_0=100158;
+const kgml_Script____struct___132_gml_Object_obj_ctrl_Step_0=100159;
+const kgml_Script____struct___133_gml_Object_obj_ctrl_Step_0=100160;
+const kgml_Script____struct___134_gml_Object_obj_ctrl_Step_0=100161;
+const kgml_Script____struct___135_gml_Object_obj_ctrl_Step_0=100162;
 var __yyg__SetImageIndexGML=
 function(frame)
 {

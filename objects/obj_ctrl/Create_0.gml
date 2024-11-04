@@ -7,8 +7,8 @@ draw_set_font(fnt_main)
 //	device_mouse_dbclick_enable(true);
 //}
 
-var _letter_hue = 170
-global.background_col = make_color_hsv(_letter_hue,20,10)
+var _letter_hue = 160
+global.background_col = make_color_hsv(_letter_hue,110,30)
 var background = layer_background_get_id(layer_get_id("Background"));
 layer_background_blend(background, global.background_col)
 
@@ -22,10 +22,16 @@ global.sh = browser_height
 global.cam_zoom = 1
 global.cam_zoom_fd = 1
 
+global.letters_grid = ""
+global.letters_bag = ""
+
 global.am_creating_fd = 1
 global.am_creating_fd2 = 1
 
 global.am_creating = 0
+
+global.game_mode = 1
+global.points_total = 0
 
 global.game_grid_size = 4
 global.game_grid_size_sqr = sqr(global.game_grid_size)
@@ -34,15 +40,18 @@ global.pad_size = 0
 
 global.loadBoard = ""
 global.loadSecret = ""
+global.show_any_menu = 0
+global.show_any_menu_fd = 0
 global.show_input_prompt = 0
 global.show_export_prompt = 0
+global.show_archives = 0
 
 global.current_copy_code = "ABCD_1-2-3-4"
 global.current_copy_url = "https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4"
 
 global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
 
-
+scr_letter_data_init()
 
 //am_screenshotting = 0
 //am_screenshotting_fd = 0
@@ -100,6 +109,7 @@ selected_word_latest_tile = -1
 selected_word_latest_tile_id = -1
 selected_word_not_in_dictionary = 0
 selected_word_is_valid = 0
+selected_word_base_points = 0
 
 secret_word_length = 0
 secret_word_str = ""

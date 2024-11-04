@@ -18,6 +18,12 @@ if global.is_landscape = 1 {
 }
 var _tscl = clamp(_scl*1,0.5*global.pr,2*global.pr)//0.5
 
+
+
+
+scr_letter_data_init()
+
+
 if global.game_phase > 0 {
 	
 	
@@ -30,8 +36,13 @@ if global.game_phase > 0 {
 		for (var i = 1; i <= global.game_grid_size_sqr; ++i) {
 			
 			
-			if global.tile_letter[i].am_set = 0 {
+			if instance_exists(global.tile_letter[i]) {
+				if global.tile_letter[i].am_set = 0 {
+					_unplaced_tile_count += 1
+				}
+			} else {
 				_unplaced_tile_count += 1
+				show_debug_message("global.tile_letter["+string(i)+"] missing")
 			}
 			
 			if global.tile_space[i].tile_filled = 0 {
@@ -78,9 +89,17 @@ if keyboard_check_pressed(vk_space) {
 	//useParentQueryString()
 }
 
+if global.show_input_prompt >= 1 || global.show_export_prompt >= 1 || global.show_archives >= 1 {
+	global.show_any_menu = 1
+} else {
+	global.show_any_menu = 0
+}
+
+global.show_any_menu_fd = lerp(global.show_any_menu_fd,global.show_any_menu,0.1)
+
 if global.is_browser = 0 {
 	if keyboard_check_pressed(vk_escape) {
-		if global.show_input_prompt >= 1 || global.show_export_prompt >= 1 {
+		if global.show_any_menu >= 1 {
 			html_submit_closebtn()
 		}
 	}
@@ -102,7 +121,7 @@ if mouse_check_button_pressed(mb_left) {
 	if global.game_phase = 0 {
 		
 		
-		if global.show_input_prompt = 0 {
+		if global.show_any_menu = 0  {
 			
 			
 			if device_mouse_y_to_gui(0)*global.pr > display_get_gui_height()*0.3 && device_mouse_y_to_gui(0)*global.pr < display_get_gui_height()*0.5 {
@@ -139,9 +158,12 @@ if mouse_check_button_pressed(mb_left) {
 				   //};
 					//GoogHit("screen_view",_event_struct)
 					//global.show_input_prompt = 1
+					global.show_archives = 1
 					
-					generatePuzzleList()
-					addClassElemID("puzzleMenuWrapper","show")
+					alarm[0] = 2
+					
+					//generatePuzzleList()
+					//addClassElemID("puzzleMenuWrapper","show")
 				
 				} else {
 					//
@@ -237,7 +259,7 @@ if mouse_check_button_pressed(mb_left) {
 					
 									tile_id = targ_id.tile_id
 								
-									global.letters[tile_id] = my_letter_str
+									global.letters_grid[tile_id] = my_letter_str
 						
 								}
 							}
@@ -251,11 +273,13 @@ if mouse_check_button_pressed(mb_left) {
 					selected_word_not_in_dictionary = 0
 					selected_word_is_valid = 0
 					selected_word_str = ""
+					selected_word_array = 0
+					selected_word_array_id = 0
 					ready_for_phase3 = 0
 					
 			
 				}
-			} else if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.3)-(256*0.3*_tscl),(global.sh+(-70*global.pr))-(256*0.08*_tscl),(global.sw*0.3)+(256*0.3*_tscl),(global.sh+(-70*global.pr))+(256*0.08*_tscl)) {
+			} else if global.game_mode = 1 && point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.3)-(256*0.3*_tscl),(global.sh+(-70*global.pr))-(256*0.08*_tscl),(global.sw*0.3)+(256*0.3*_tscl),(global.sh+(-70*global.pr))+(256*0.08*_tscl)) {
 				
 				show_debug_message("NEW LETTERS")
 				
@@ -294,7 +318,7 @@ if mouse_check_button_pressed(mb_left) {
 					y = y_targ
 				}
 				
-			} else if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.7)-(256*0.3*_tscl),(global.sh+(-70*global.pr))-(256*0.08*_tscl),(global.sw*0.7)+(256*0.3*_tscl),(global.sh+(-70*global.pr))+(256*0.08*_tscl)) {
+			} else if global.game_mode = 1 && point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.7)-(256*0.3*_tscl),(global.sh+(-70*global.pr))-(256*0.08*_tscl),(global.sw*0.7)+(256*0.3*_tscl),(global.sh+(-70*global.pr))+(256*0.08*_tscl)) {
 				show_debug_message("TYPE LETTERS")
 				
 				var _event_struct = { //
@@ -303,55 +327,159 @@ if mouse_check_button_pressed(mb_left) {
 				GoogHit("screen_view",_event_struct)
 				global.show_input_prompt = 1
 				
+			} else if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.5)-(256*0.3*_tscl),(global.sh+(-10*global.pr))-(256*0.08*_tscl),(global.sw*0.5)+(256*0.3*_tscl),(global.sh+(-10*global.pr))+(256*0.08*_tscl)) {
+				if global.game_mode = 1 {
+					global.game_mode = 2	
+				} else {
+					global.game_mode = 1
+				}
+				
 			}
+			
+			
 		}
 		
 	} else if global.game_phase = 2 { //
 		
 		//proceed
 		if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.5)-(256*0.65*_tscl),(global.sh+(-100*global.pr))-(256*0.15*_tscl),(global.sw*0.5)+(256*0.65*_tscl),(global.sh+(-100*global.pr))+(256*0.15*_tscl)) {
-			//proceed, lock in word
+			
+			
+			if global.game_mode = 1 && selected_word_is_valid >= 1 {
+				//proceed, lock in word
 				
-			secret_word_length = selected_word_length
-			secret_word_str = selected_word_str
-			secret_word_array = selected_word_array
-			secret_word_array_id = selected_word_array_id
-			guesses_count = 0
+				secret_word_length = selected_word_length
+				secret_word_str = selected_word_str
+				secret_word_array = selected_word_array
+				secret_word_array_id = selected_word_array_id
+				guesses_count = 0
 				
-			selected_word_length = 0
-			selected_word_str = ""
-			selected_word_array = 0
+				selected_word_length = 0
+				selected_word_str = ""
+				selected_word_array = 0
 				
-			with (obj_tile_letter) {
-				am_exed = 0
-				am_clued = 0	
-			}
-				
-			var _letters_str = ""
-			for (var l = 0; l < secret_word_length; ++l) {
-				_letters_str += global.letters[secret_word_array[l]]
-			}
-				
-			//assign all tiles to corresponding space
-			for (var i = 1; i <= global.game_grid_size_sqr; ++i) {
-				with (global.tile_letter[i]) {	
-					tile_id = targ_id.tile_id
+				with (obj_tile_letter) {
+					am_exed = 0
+					am_clued = 0	
 				}
+				
+				
+				
+				//assign all tiles to corresponding space
+				//for (var i = 1; i <= global.game_grid_size_sqr; ++i) {
+					with (obj_tile_letter) {
+						tile_id = targ_id.tile_id
+						global.letters_grid[tile_id] = my_letter_str
+						global.tile_letter[tile_id] = id
+					}
+				//}
+				
+				
+				
+				var _letters_str = ""
+				for (var l = 0; l < secret_word_length; ++l) {
+					_letters_str += global.letters_grid[secret_word_array[l]]
+				}
+			
+			
+				
+				show_debug_message("SECRET WORD CHOSEN: "+string(_letters_str))
+				
+				scr_update_copy_code()
+				
+				var _event_struct = { //
+					screen_name: "CREATE_"+string(global.game_grid_size)+"_"+string(global.current_copy_code),
+				};
+				GoogHit("screen_view",_event_struct)
+				
+				global.show_export_prompt = 1
+				
+				global.game_phase = 3
+				just_phase_changed = 1
+			
 			}
+			
+			if global.game_mode = 2 && selected_word_is_valid >= 1 {
 				
-			show_debug_message("SECRET WORD CHOSEN: "+string(_letters_str))
+				//secret_word_length = selected_word_length
+				//secret_word_str = selected_word_str
+				//secret_word_array = selected_word_array
+				//secret_word_array_id = selected_word_array_id
+				//guesses_count = 0
 				
-			scr_update_copy_code()
+				var _letters_str = ""
+				for (var l = 0; l < selected_word_length; ++l) {
+					_letters_str += global.letters_grid[selected_word_array[l]]
+				}
 				
-			var _event_struct = { //
-				screen_name: "CREATE_"+string(global.game_grid_size)+"_"+string(global.current_copy_code),
-			};
-			GoogHit("screen_view",_event_struct)
+				show_debug_message("SCORING WORD CHOSEN: "+string(_letters_str))
+				//global.points_total = 0
+				global.points_total += obj_ctrl.selected_word_base_points*obj_ctrl.selected_word_length
+				show_debug_message("ADD SCORE "+string(obj_ctrl.selected_word_base_points*obj_ctrl.selected_word_length))
+				show_debug_message("TOTAL SCORE NOW: "+string(global.points_total))
 				
-			global.show_export_prompt = 1
 				
-			global.game_phase = 3
-			just_phase_changed = 1
+				selected_word_length = 0
+				selected_word_str = ""
+				selected_word_array = 0
+				selected_word_array_id = 0
+				
+				
+				
+				
+				
+				
+				
+				with (obj_tile_letter) {
+					if am_part_of_secret_word = 1 { //replace only selected word
+						
+						with (instance_create_depth(x,y,depth,obj_tile_letter)) {
+							tile_id = other.tile_id
+							tile_col = other.tile_col
+							tile_row = other.tile_row
+							targ_id = other.targ_id
+							global.tile_letter[tile_id] = id
+							
+
+							spawn_slam = 2+(-0.5*tile_col*(1/global.game_grid_size))+(-0.5*tile_row*(1/global.game_grid_size))
+				
+							image_angle = (-20+random(40))		
+							//my_letter_str = string_upper(global.letters_bag[tile_id])
+							//take first array entry
+							my_letter_str = array_shift(global.letters_bag)
+							//replace letters array end
+							array_push(global.letters_bag,my_letter_str)
+							
+							am_set = 1
+				
+							for (var l = 1; l <= array_length(global.letter_data); ++l) {
+							   if my_letter_str = global.letter_data[l,1] {
+									my_letter_num = l
+									l = array_length(global.letter_data)
+								}
+							}
+						}
+						
+						//now destroy the original one
+						instance_destroy()
+					}
+				}
+				
+				//assign all tiles to corresponding space
+				//for (var i = 1; i <= global.game_grid_size_sqr; ++i) {
+					with (obj_tile_letter) {	
+						tile_id = targ_id.tile_id
+						global.letters_grid[tile_id] = my_letter_str
+						global.tile_letter[tile_id] = id
+					}
+				//}
+				
+				scr_update_copy_code()
+				
+				selected_word_is_valid = 0//reset
+				
+			
+			}
 		}
 		
 		//back
@@ -498,7 +626,7 @@ if mouse_check_button_released(mb_left) || _too_far_trigger_release = 1 {
 										} else {
 											am_exed = 1	
 								
-											if global.letters[obj_ctrl.secret_word_array[l]] = my_letter_str {
+											if global.letters_bag[obj_ctrl.secret_word_array[l]] = my_letter_str {
 												am_samelettered = 1
 											}
 								

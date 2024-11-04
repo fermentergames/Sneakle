@@ -267,63 +267,69 @@ function generatePuzzleList() {
         }
     });
 
-    menuContainer.innerHTML = "";
 
-    puzzles.forEach(puzzle => {
+    if (menuContainer) {
+        menuContainer.innerHTML = "";
 
-    	// Convert puzzle date to Date object for comparison
-        const puzzleDate = new Date(puzzle.date);
+        puzzles.forEach(puzzle => {
 
-        // Check if the puzzle's date is on or before today's date
-        if (puzzleDate <= today) {
+        	// Convert puzzle date to Date object for comparison
+            const puzzleDate = new Date(puzzle.date);
 
-        	
-        	puzzle.title = "#"+puzzleListCount;
-        	puzzleListCount -= 1;
+            // Check if the puzzle's date is on or before today's date
+            if (puzzleDate <= today) {
 
-        	puzzle.letters = getStringBetweenChars(puzzle.link, "=", "&");
+            	
+            	puzzle.title = "#"+puzzleListCount;
+            	puzzleListCount -= 1;
 
-        	let puzSz = Math.floor(Math.sqrt(puzzle.letters.length))
+            	puzzle.letters = getStringBetweenChars(puzzle.link, "=", "&");
 
-        	//console.log("puzSz ="+puzSz)
+            	let puzSz = Math.floor(Math.sqrt(puzzle.letters.length))
 
-        	puzzle.size = puzSz+"x"+puzSz
+            	//console.log("puzSz ="+puzSz)
 
-        	puzzle.lettersFormatted = addStringEveryNthChar(puzzle.letters, "<br>", puzSz);
+            	puzzle.size = puzSz+"x"+puzSz
 
-	    	const puzzleItem = document.createElement("a");
-	        puzzleItem.classList.add("menu-item");
-	        puzzleItem.href = puzzle.link
-	        puzzleItem.target = "_self"
-	        //puzzleItem.textContent = puzzle.date
-	        // puzzleItem.innerHTML = `<a href="${puzzle.link}" target="_self" class="puzzle-link">${puzzle.date}</a>`;
+            	puzzle.lettersFormatted = addStringEveryNthChar(puzzle.letters, "<br>", puzSz);
 
-
-	        // Create details container for each puzzle
-	        const detailsList = document.createElement("ul");
-	        detailsList.classList.add("puzzle-details");
-
-	        // Add puzzle link, size, author, and date to details
-	        detailsList.innerHTML = `
-	        	
-	        	<li class="puzzle-item puzzle-title">${puzzle.title}</li>
-	        	<li class="puzzle-item puzzle-letters">${puzzle.lettersFormatted}</li>
-	        	
-	        	<li class="puzzle-item puzzle-date">${formatDate(puzzle.date)}</li>
-	            <li class="puzzle-item puzzle-author">by ${puzzle.author}</li>
-	        `;
-
-	        // Append details to puzzle item and puzzle item to menu
-	        puzzleItem.appendChild(detailsList);
-	        menuContainer.appendChild(puzzleItem);
-
-    	}
-    });
+    	    	const puzzleItem = document.createElement("a");
+    	        puzzleItem.classList.add("menu-item");
+    	        puzzleItem.href = puzzle.link
+    	        puzzleItem.target = "_self"
+    	        //puzzleItem.textContent = puzzle.date
+    	        // puzzleItem.innerHTML = `<a href="${puzzle.link}" target="_self" class="puzzle-link">${puzzle.date}</a>`;
 
 
-    let thething = document.querySelector(".puzzleMenuWrapper");
-	//thething.style.visibility = "hidden";
-	thething.classList.add("show");
+    	        // Create details container for each puzzle
+    	        const detailsList = document.createElement("ul");
+    	        detailsList.classList.add("puzzle-details");
+
+    	        // Add puzzle link, size, author, and date to details
+    	        detailsList.innerHTML = `
+    	        	
+    	        	<li class="puzzle-item puzzle-title">${puzzle.title}</li>
+    	        	<li class="puzzle-item puzzle-letters">${puzzle.lettersFormatted}</li>
+    	        	
+    	        	<li class="puzzle-item puzzle-date">${formatDate(puzzle.date)}</li>
+    	            <li class="puzzle-item puzzle-author">by ${puzzle.author}</li>
+    	        `;
+
+    	        // Append details to puzzle item and puzzle item to menu
+    	        puzzleItem.appendChild(detailsList);
+    	        menuContainer.appendChild(puzzleItem);
+
+        	}
+        });
+
+
+        let thething = document.querySelector(".puzzleMenuWrapper");
+        if (thething) {
+        	//thething.style.visibility = "hidden";
+        	thething.classList.add("show");
+        }
+
+    }
 
 
 }
@@ -381,8 +387,10 @@ function addStringEveryNthChar(originalString, stringToAdd, n) {
 
 function funcCloseArchiveMenu() {
 	let thething = document.querySelector(".puzzleMenuWrapper");
-	//thething.style.visibility = "hidden";
-	thething.classList.remove("show");
-	console.log("REMOVE "+"show"+" from "+"puzzleMenuWrapper");
+    if (thething) {
+    	//thething.style.visibility = "hidden";
+    	thething.classList.remove("show");
+    	console.log("REMOVE "+"show"+" from "+"puzzleMenuWrapper");
+    }
 }
 

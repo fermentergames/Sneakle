@@ -30,6 +30,7 @@
         {"$GMExtensionFunction":"","%Name":"reloadPage","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"reloadPage","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"focus_window","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"focus_window","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"generatePuzzleList","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"generatePuzzleList","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
+        {"$GMExtensionFunction":"","%Name":"funcCloseArchiveMenu","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":5,"name":"funcCloseArchiveMenu","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
       ],"init":"","kind":5,"name":"","order":[
         {"name":"showElemID","path":"extensions/myHTML5Extension/myHTML5Extension.yy",},
         {"name":"hideElemID","path":"extensions/myHTML5Extension/myHTML5Extension.yy",},
