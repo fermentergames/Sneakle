@@ -21,6 +21,7 @@ if (live_call()) return live_result;
 	}
 	*/
 	
+	global.letters_grid = 0//reset
 	
 	
 	if global.loadBoard = "" {
@@ -30,14 +31,14 @@ if (live_call()) return live_result;
 		//global.letter_set_default = "AAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 	
 	
-		for (var l = 1; l <= string_length(global.letter_set_default); ++l) {
-			global.letters[l] = string_char_at(global.letter_set_default,l)
-			//show_debug_message(global.letters[l])
+		for (var l = 0; l <= string_length(global.letter_set_default)-1; ++l) {
+			global.letters_bag[l] = string_char_at(global.letter_set_default,l)
+			//show_debug_message(global.letters_bag[l])
 		}
 				
-		global.letters[0] = "R"	//to avoid undefined in array	
+		//global.letters_bag[0] = "R"	//to avoid undefined in array	
 				
-		global.letters = array_shuffle(global.letters)
+		global.letters_bag = array_shuffle(global.letters_bag)
 		//show_debug_message("/////////////")
 		//show_debug_message("//SHUFFLING//")
 		//show_debug_message("/////////////")
@@ -45,9 +46,11 @@ if (live_call()) return live_result;
 		global.skip_create = 1 //0
 		global.game_phase = 1
 				
-		for (var l = 1; l <= 144; ++l) {
-			//show_debug_message(global.letters[l])
+		for (var l = 0; l <= string_length(global.letter_set_default)-1; ++l) {
+			//show_debug_message(global.letters_bag[l])
 		}
+		
+		show_debug_message(global.letters_bag)
 		
 		var _grid_sz = global.game_grid_size
 	
@@ -63,9 +66,9 @@ if (live_call()) return live_result;
 				
 				//show_debug_message("checking letters["+string(i))
 				
-				if global.letters[i] = "U" {
+				if global.letters_bag[i] = "U" {
 					_letters_have_U = i
-				} else if global.letters[i] = "Q" {
+				} else if global.letters_bag[i] = "Q" {
 					_letters_have_Q = i
 					//show_debug_message("Q on board! "+string(i))
 				}
@@ -77,9 +80,9 @@ if (live_call()) return live_result;
 				//show_debug_message("Q on board without U!")
 		
 				if _letters_have_Q < sqr(_grid_sz) {
-					global.letters[_letters_have_Q+1] = "U"
+					global.letters_bag[_letters_have_Q+1] = "U"
 				} else { //Q is last letter in set
-					global.letters[_letters_have_Q-1] = "U"
+					global.letters_bag[_letters_have_Q-1] = "U"
 				}
 		
 			}
@@ -93,13 +96,13 @@ if (live_call()) return live_result;
 	
 		global.letter_set = global.loadBoard
 		for (var l = 1; l <= string_length(global.letter_set); ++l) {
-			global.letters[l] = string_char_at(global.letter_set,l)
-			//show_debug_message(global.letters[l])
+			global.letters_bag[l] = string_char_at(global.letter_set,l)
+			//show_debug_message(global.letters_bag[l])
 		}
 		
 		global.skip_create = 1
 	
-		//global.letters = array_shuffle(global.letters)
+		//global.letters_bag = array_shuffle(global.letters_bag)
 		
 		global.game_grid_size = floor(sqrt(string_length(global.letter_set)))
 		global.game_grid_size_sqr = string_length(global.letter_set)
@@ -166,8 +169,25 @@ if (live_call()) return live_result;
 				
 				spawn_slam = 2+(-0.5*tile_col*(1/global.game_grid_size))+(-0.5*tile_row*(1/global.game_grid_size))
 				
-				image_angle = (-20+random(40))		
-				my_letter_str = global.letters[tile_id]
+				image_angle = (-20+random(40))
+				
+				if global.loadBoard != "" {
+					my_letter_str = string_upper(global.letters_bag[tile_id])
+				} else {
+					//take first array entry
+					my_letter_str = array_shift(global.letters_bag)
+					//replace letters array end
+					array_push(global.letters_bag,my_letter_str)
+				}
+				
+				
+				for (var l = 1; l <= array_length(global.letter_data); ++l) {
+					show_debug_message(string(l)+": "+string(my_letter_str))
+				   if my_letter_str = global.letter_data[l,1] {
+						my_letter_num = l
+						l = array_length(global.letter_data)
+					}
+				}
 				
 			}
 		} 
@@ -191,6 +211,8 @@ if (live_call()) return live_result;
 				am_set = 1
 				prev_targ_id = targ_id
 				am_set_flash = 1
+				
+				global.letters_grid[i] = my_letter_str
 				
 			}
 		}
@@ -253,7 +275,7 @@ if (live_call()) return live_result;
 				
 				var _letters_str = ""
 				for (var l = 0; l < secret_word_length; ++l) {
-					_letters_str += global.letters[secret_word_array[l]]
+					_letters_str += global.letters_grid[secret_word_array[l]]
 				}
 				
 				show_debug_message("SECRET WORD SET FROM LOAD: "+string(_letters_str))

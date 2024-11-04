@@ -5,6 +5,7 @@ function scr_validate_word() {
 	var _valid_guess = 1
 	selected_word_not_in_dictionary = 0 //reset
 	selected_word_is_valid = 1 //reset
+	selected_word_base_points = 0 //reset
 	
 	if selected_word_length <= 3 {
 		_valid_guess = 0
@@ -16,13 +17,14 @@ function scr_validate_word() {
 
 		var _letters_str = ""
 		for (var l = 0; l < selected_word_length; ++l) {
-			_letters_str += global.letters[selected_word_array[l]]
+			_letters_str += global.letters_grid[selected_word_array[l]]
+			selected_word_base_points += global.letter_data[selected_word_array_id[l].my_letter_num,LETTER_POINTS]
 		}
 		selected_word_str = _letters_str
 				
 		show_debug_message("selected word is: "+string(selected_word_str))
 		show_debug_message("length: "+string(selected_word_length))
-				
+		show_debug_message("points: "+string(selected_word_base_points)+" x "+string(selected_word_length)+" = "+string(selected_word_base_points*selected_word_length))	
 
 		//show_debug_message(global.dictionary)
 				
@@ -34,8 +36,14 @@ function scr_validate_word() {
 			_valid_guess = 0
 			selected_word_not_in_dictionary = 1
 			selected_word_is_valid = 0
+			selected_word_base_points = 0
 		}
 				
+	}
+	
+	if _valid_guess = 1 {
+		//
+		
 	}
 	
 	return _valid_guess;

@@ -6,7 +6,7 @@ function html_submit_code(argument0) {
 
 	loadCode = values[? "loadCode"];
 	form_is_loading = true
-	alarm[0] = 90;
+	alarm[1] = 90;
 	
 	show_debug_message("SUBMITTED!")
 	show_debug_message(loadCode)

@@ -15,10 +15,10 @@ function scr_update_copy_code(){
 
 	
 	for (var l = 1; l <= global.game_grid_size_sqr; ++l) {
-		global.current_copy_code += global.letters[l]
-		global.current_copy_url += global.letters[l]
-		queryStr[0] += global.letters[l]
-		//show_debug_message(global.letters[l])
+		global.current_copy_code += global.letters_grid[l]
+		global.current_copy_url += global.letters_grid[l]
+		queryStr[0] += global.letters_grid[l]
+		show_debug_message(global.letters_grid[l])
 	}
 	
 

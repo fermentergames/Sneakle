@@ -25,7 +25,7 @@ if global.game_phase = 2 || global.game_phase = 3 {
 		obj_ctrl.selected_word_length = 0 //reset
 		obj_ctrl.selected_word_array = 0//reset
 		obj_ctrl.selected_word_array_id = 0 //reset
-		obj_ctrl.selected_word_is_valid = 1 //reset
+		obj_ctrl.selected_word_is_valid = 0 //reset
 		
 		am_selected = 1
 		am_selected_flash = 1

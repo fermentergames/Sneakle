@@ -10,6 +10,8 @@ if am_dragging >= 1 {
 	prev_targ_id = targ_id
 	targ_id = instance_nearest(x,y,obj_tile_space)
 	tile_id = targ_id.tile_id
+	//global.tile_letter[tile_id] = id
+	
 	
 	obj_ctrl.dragging = 0
 	
@@ -30,7 +32,7 @@ if am_dragging >= 1 {
 					y_targ = targ_id.y
 					
 					tile_id = targ_id.tile_id
-					
+					//global.tile_letter[tile_id] = id
 					
 				} else { //conflict with a tile that hasn't been set yet, so just reset
 				
@@ -66,6 +68,15 @@ if am_dragging >= 1 {
 		prev_targ_id = targ_id
 		am_set = 0
 	}
+	
+	
+	//assign all tiles to corresponding space
+	with (obj_tile_letter) {
+		tile_id = targ_id.tile_id
+		global.letters_grid[tile_id] = my_letter_str
+		global.tile_letter[tile_id] = id
+	}
+	
 	
 }
 
