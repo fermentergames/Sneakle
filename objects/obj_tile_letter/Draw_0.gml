@@ -18,7 +18,8 @@ if 1=1 {
 
 
 	image_alpha = 1
-	image_blend = make_color_hsv(lerp(_letter_hue,145,am_selected_fd),lerp(60,180,am_selected_fd),clamp(80+(80*am_set_flash2)+(150*am_selected_flash2)+(60*am_selected_fd)+(20*am_dragging_fd)+(-20*tile_going_to_replace),0,255))
+	//image_blend = make_color_hsv(lerp(_letter_hue,145,am_selected_fd),lerp(60,180,am_selected_fd),clamp(80+(80*am_set_flash2)+(150*am_selected_flash2)+(60*am_selected_fd)+(20*am_dragging_fd)+(-20*tile_going_to_replace),0,255))
+	image_blend = make_color_hsv(lerp(_letter_hue,150,am_selected_fd),lerp(90,180,am_selected_fd),clamp(100+(80*am_set_flash2)+(130*am_selected_flash2)+(60*am_selected_fd)+(20*am_dragging_fd)+(-20*tile_going_to_replace),0,255))
 	image_blend_base = image_blend
 	border_col = merge_color(image_blend,c_white,0.3)
 	letter_col = c_white//merge_color(image_blend,c_white,0.7)

@@ -190,6 +190,7 @@
     {"id":{"name":"scr_update_copy_code","path":"scripts/scr_update_copy_code/scr_update_copy_code.yy",},},
     {"id":{"name":"scr_update_room_dimensions","path":"scripts/scr_update_room_dimensions/scr_update_room_dimensions.yy",},},
     {"id":{"name":"scr_validate_word","path":"scripts/scr_validate_word/scr_validate_word.yy",},},
+    {"id":{"name":"spr_checkmark","path":"sprites/spr_checkmark/spr_checkmark.yy",},},
     {"id":{"name":"spr_circ512","path":"sprites/spr_circ512/spr_circ512.yy",},},
     {"id":{"name":"spr_sqr512_tile_dotted","path":"sprites/spr_sqr512_tile_dotted/spr_sqr512_tile_dotted.yy",},},
     {"id":{"name":"spr_sqr512","path":"sprites/spr_sqr512/spr_sqr512.yy",},},

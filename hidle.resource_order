@@ -56,7 +56,8 @@
     {"name":"scr_update_copy_code","order":6,"path":"scripts/scr_update_copy_code/scr_update_copy_code.yy",},
     {"name":"scr_update_room_dimensions","order":1,"path":"scripts/scr_update_room_dimensions/scr_update_room_dimensions.yy",},
     {"name":"scr_validate_word","order":9,"path":"scripts/scr_validate_word/scr_validate_word.yy",},
-    {"name":"spr_circ512","order":2,"path":"sprites/spr_circ512/spr_circ512.yy",},
-    {"name":"spr_sqr512_tile_dotted","order":4,"path":"sprites/spr_sqr512_tile_dotted/spr_sqr512_tile_dotted.yy",},
+    {"name":"spr_checkmark","order":3,"path":"sprites/spr_checkmark/spr_checkmark.yy",},
+    {"name":"spr_circ512","order":1,"path":"sprites/spr_circ512/spr_circ512.yy",},
+    {"name":"spr_sqr512_tile_dotted","order":2,"path":"sprites/spr_sqr512_tile_dotted/spr_sqr512_tile_dotted.yy",},
   ],
 }

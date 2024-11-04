@@ -34,6 +34,24 @@ var JSON_game=
 		name:"audiogroup_default",enabled:true,	}
 	],Sprites:[
 	{
+		pName:"spr_checkmark",width:161,height:161,transparent:false,smooth:false,preload:false,xOrigin:80,yOrigin:80,bboxLeft:26,bboxRight:134,bboxTop:44,bboxBottom:125,playbackspeed:30,TPEntryIndex:[10],sequence:
+		{
+			pName:"spr_checkmark",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:80,yorigin:80,volume:1,keyframeStore:[],tracks:[
+			{
+				modelName:"GMSpriteFramesTrack",pName:"frames",builtinName:0,traits:0,creationTrack:0,tags:[],ownedResourceModels:[],tracks:[],keyframeStore:[
+				{
+					key:0,length:1,stretch:false,disabled:false,channels:
+					{
+						0:
+						{
+							imageIndex:0						}
+					}
+				}
+				]			}
+			],sequenceEvents:[],momentsKeystore:[]		}
+	}
+	,
+	{
 		pName:"spr_circ512",width:512,height:512,transparent:false,smooth:false,preload:false,xOrigin:256,yOrigin:256,bboxRight:511,bboxBottom:511,playbackspeed:30,TPEntryIndex:[4],sequence:
 		{
 			pName:"spr_circ512",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:256,yorigin:256,volume:1,keyframeStore:[],tracks:[
@@ -124,7 +142,7 @@ var JSON_game=
 	}
 	,
 	{
-		pName:"_filter_heathaze_noise_sprite",width:64,height:64,transparent:false,smooth:false,preload:false,bboxRight:63,bboxBottom:63,playbackspeed:30,TPEntryIndex:[10],sequence:
+		pName:"_filter_heathaze_noise_sprite",width:64,height:64,transparent:false,smooth:false,preload:false,bboxRight:63,bboxBottom:63,playbackspeed:30,TPEntryIndex:[11],sequence:
 		{
 			pName:"_filter_heathaze_noise_sprite",playback:1,playbackSpeed:30,playbackSpeedType:0,length:1,xorigin:0,yorigin:0,volume:1,keyframeStore:[],tracks:[
 			{
@@ -748,7 +766,7 @@ var JSON_game=
 		pName:"obj_blank",spriteIndex:-1,visible:true,parent:-100,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
-		pName:"obj_ctrl",spriteIndex:-1,visible:true,parent:-100,CreateEvent:gml_Object_obj_ctrl_Create_0,StepNormalEvent:gml_Object_obj_ctrl_Step_0,UserEvent0:gml_Object_obj_ctrl_Other_10,DrawGUI:gml_Object_obj_ctrl_Draw_64,DrawEvent:gml_Object_obj_ctrl_Draw_0,DrawEventEnd:gml_Object_obj_ctrl_Draw_73,DrawGUIEnd:gml_Object_obj_ctrl_Draw_75,TriggerEvents:[],CollisionEvents:[]	}
+		pName:"obj_ctrl",spriteIndex:-1,visible:true,parent:-100,CreateEvent:gml_Object_obj_ctrl_Create_0,ObjAlarm0:gml_Object_obj_ctrl_Alarm_0,StepNormalEvent:gml_Object_obj_ctrl_Step_0,UserEvent0:gml_Object_obj_ctrl_Other_10,DrawGUI:gml_Object_obj_ctrl_Draw_64,DrawEvent:gml_Object_obj_ctrl_Draw_0,DrawEventEnd:gml_Object_obj_ctrl_Draw_73,DrawGUIEnd:gml_Object_obj_ctrl_Draw_75,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
 		pName:"obj_ctrlp",spriteIndex:-1,visible:true,persistent:true,parent:-100,StepBeginEvent:gml_Object_obj_ctrlp_Step_1,WebAsyncEvent:gml_Object_obj_ctrlp_Other_62,TriggerEvents:[],CollisionEvents:[]	}
@@ -760,10 +778,10 @@ var JSON_game=
 		pName:"obj_gmlive",spriteIndex:-1,visible:true,persistent:true,parent:-100,CreateEvent:gml_Object_obj_gmlive_Create_0,StepNormalEvent:gml_Object_obj_gmlive_Step_0,WebAsyncEvent:gml_Object_obj_gmlive_Other_62,DrawEvent:gml_Object_obj_gmlive_Draw_0,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
-		pName:"obj_tile_letter",spriteIndex:2,visible:true,parent:-100,CreateEvent:gml_Object_obj_tile_letter_Create_0,StepNormalEvent:gml_Object_obj_tile_letter_Step_0,LeftButtonPressed:gml_Object_obj_tile_letter_Mouse_4,GlobalLeftButtonReleased:gml_Object_obj_tile_letter_Mouse_56,LeftButtonDown:gml_Object_obj_tile_letter_Mouse_0,DrawEvent:gml_Object_obj_tile_letter_Draw_0,TriggerEvents:[],CollisionEvents:[]	}
+		pName:"obj_tile_letter",spriteIndex:3,visible:true,parent:-100,CreateEvent:gml_Object_obj_tile_letter_Create_0,StepNormalEvent:gml_Object_obj_tile_letter_Step_0,LeftButtonPressed:gml_Object_obj_tile_letter_Mouse_4,GlobalLeftButtonReleased:gml_Object_obj_tile_letter_Mouse_56,LeftButtonDown:gml_Object_obj_tile_letter_Mouse_0,DrawEvent:gml_Object_obj_tile_letter_Draw_0,TriggerEvents:[],CollisionEvents:[]	}
 	,
 	{
-		pName:"obj_tile_space",spriteIndex:2,visible:true,parent:-100,CreateEvent:gml_Object_obj_tile_space_Create_0,StepNormalEvent:gml_Object_obj_tile_space_Step_0,DrawEvent:gml_Object_obj_tile_space_Draw_0,TriggerEvents:[],CollisionEvents:[]	}
+		pName:"obj_tile_space",spriteIndex:3,visible:true,parent:-100,CreateEvent:gml_Object_obj_tile_space_Create_0,StepNormalEvent:gml_Object_obj_tile_space_Step_0,DrawEvent:gml_Object_obj_tile_space_Draw_0,TriggerEvents:[],CollisionEvents:[]	}
 	],AnimCurves:[],Sequences:[],FiltersAndEffectDefs:[
 	{
 		name:"_filter_heathaze",json:"{     \"name\": \"_filter_heathaze\",     \"displayname\": \"filter_heathaze\",     \"type\": \"filter\",     \"parameters\": [         		{             \"name\": \"g_Distort1Speed\",             \"displayname\": \"Distort 1 Speed\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 0.01,             \"min\": 0.0,             \"max\": 0.1, 			\"convertValueToTimeModulated\": 1.0         }, 		{             \"name\": \"g_Distort2Speed\",             \"displayname\": \"Distort 2 Speed\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 0.025,             \"min\": 0.0,             \"max\": 0.1, 			\"convertValueToTimeModulated\": 1.0         }, 		{             \"name\": \"g_Distort1Scale\",             \"displayname\": \"Distort 1 Scale\",             \"type\": \"float\", 						\"fields\": [\"1\",\"2\"],             \"elements\": 2, 			\"defaults\": [13.3,1.3],             \"min\": [0.0001,0.0001],             \"max\": [100.0,100.0]         }, 		{             \"name\": \"g_Distort2Scale\",             \"displayname\": \"Distort 2 Scale\",             \"type\": \"float\", 						\"fields\": [\"1\",\"2\"],             \"elements\": 2, 			\"defaults\": [33.3,3.3],             \"min\": [0.0001,0.0001],             \"max\": [100.0,100.0]         }, 		{             \"name\": \"g_Distort1Amount\",             \"displayname\": \"Distort 1 Amount\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 2.0,             \"min\": 0.0,             \"max\": 100.0         }, 		{             \"name\": \"g_Distort2Amount\",             \"displayname\": \"Distort 2 Amount\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 4.0,             \"min\": 0.0,             \"max\": 100.0         }, 		{             \"name\": \"g_ChromaSpreadAmount\",             \"displayname\": \"Chroma Spread\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 0.5,             \"min\": 0.0,             \"max\": 10.0         },         {             \"name\": \"g_CamOffsetScale\",             \"displayname\": \"Camera Offset Scale\",             \"type\": \"float\",             \"elements\": 1, 			\"default\": 1.0,             \"min\": 0.0,             \"max\": 10.0         }, 		{             \"name\": \"g_DistortTexture\",             \"displayname\": \"Distort Texture\",             \"type\": \"sampler\",             \"elements\": 1, 			\"default\": \"_filter_heathaze_noise_sprite\", 			\"options\": \"repeat|filter\"         }     ] }"	}
@@ -955,6 +973,9 @@ var JSON_game=
 		x:1059,y:2574,w:480,h:480,XOffset:16,YOffset:16,CropWidth:480,CropHeight:480,ow:512,oh:512,tp:1	}
 	,
 	{
+		x:1543,y:2574,w:109,h:82,XOffset:26,YOffset:44,CropWidth:109,CropHeight:82,ow:161,oh:161,tp:1	}
+	,
+	{
 		x:0,y:0,w:64,h:64,XOffset:0,YOffset:0,CropWidth:64,CropHeight:64,ow:64,oh:64,tp:2	}
 	],Textures:["hidle_texture_0.png","hidle_texture_1.png","hidle_texture_2.png"],TexturesBlocks:[
 	{
@@ -970,13 +991,13 @@ var JSON_game=
 		pName:"__YY__0fallbacktexture.png_YYG_AUTO_GEN_TEX_GROUP_NAME_",TextureIDs:[0],SpriteIDs:[],SpineSpriteIDs:[],FontIDs:[],TilesetIDs:[]	}
 	,
 	{
-		pName:"Default",TextureIDs:[1,2],SpriteIDs:[0,1,2],SpineSpriteIDs:[],FontIDs:[0,1],TilesetIDs:[]	}
+		pName:"Default",TextureIDs:[1,2],SpriteIDs:[0,1,2,3],SpineSpriteIDs:[],FontIDs:[0,1],TilesetIDs:[]	}
 	],FeatureFlags:
 	{
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730690786,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730704993,AllowStatistics:"True"	}
 }
 ;
 
@@ -8121,7 +8142,8 @@ function gml_Script_html_submit_closebtn(_inst,_other)
 		{
 		global.gmlshow_input_prompt=0;
 		global.gmlshow_export_prompt=0;
-		removeClassElemID("puzzleMenuWrapper","show");
+		global.gmlshow_archives=0;
+		funcCloseArchiveMenu();
 	}
 }
 
@@ -8953,8 +8975,8 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	}
 	;
 	draw_set_font(YYASSET_REF(0x06000001));
-	var gml_letter_hue=170;
-	global.gmlbackground_col=make_color_hsv(gml_letter_hue,20,10);
+	var gml_letter_hue=160;
+	global.gmlbackground_col=make_color_hsv(gml_letter_hue,110,30);
 	var gmlbackground=layer_background_get_id(layer_get_id("Background"));
 	layer_background_blend(gmlbackground,global.gmlbackground_col);
 	device_mouse_dbclick_enable(false);
@@ -8973,8 +8995,11 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlpad_size=0;
 	global.gmlloadBoard="";
 	global.gmlloadSecret="";
+	global.gmlshow_any_menu=0;
+	global.gmlshow_any_menu_fd=0;
 	global.gmlshow_input_prompt=0;
 	global.gmlshow_export_prompt=0;
+	global.gmlshow_archives=0;
 	global.gmlcurrent_copy_code="ABCD_1-2-3-4";
 	global.gmlcurrent_copy_url="https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4";
 	global.gmldictionary=__yy_gml_object_create(_inst,gml_Script_CheckWordDictionary,yyfplus(__yy_gml_errCheck(g_pBuiltIn.working_directory),"dictionaries/full/full.txt"));
@@ -9089,6 +9114,16 @@ function gml_Script____struct___126_gml_Object_obj_ctrl_Create_0(_inst,_other)
 			}
 		}
 	}
+}
+
+function gml_Object_obj_ctrl_Alarm_0(_inst,_other)
+{
+	if(yyGetBool(gml_Script_live_call(_inst,_other)))
+	{
+		return global.gmllive_result;
+	}
+	;
+	generatePuzzleList();
 }
 
 function gml_Object_obj_ctrl_Step_0(_inst,_other)
@@ -9212,6 +9247,24 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 		;
 	}
 	;
+	if((yyGetBool(yyfgreaterequal(global.gmlshow_input_prompt,1)))||(yyGetBool(yyfgreaterequal(global.gmlshow_export_prompt,1)))||(yyGetBool(yyfgreaterequal(global.gmlshow_archives,1))))
+	{
+
+				{
+			global.gmlshow_any_menu=1;
+		}
+		;
+	}
+	else 
+	{
+
+				{
+			global.gmlshow_any_menu=0;
+		}
+		;
+	}
+	;
+	global.gmlshow_any_menu_fd=lerp(global.gmlshow_any_menu_fd,global.gmlshow_any_menu,0.1);
 	if(yyfequal(global.gmlis_browser,0))
 	{
 
@@ -9220,7 +9273,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 			{
 
 								{
-					if((yyGetBool(yyfgreaterequal(global.gmlshow_input_prompt,1)))||(yyGetBool(yyfgreaterequal(global.gmlshow_export_prompt,1))))
+					if(yyfgreaterequal(global.gmlshow_any_menu,1))
 					{
 
 												{
@@ -9271,7 +9324,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 			{
 
 								{
-					if(yyfequal(global.gmlshow_input_prompt,0))
+					if(yyfequal(global.gmlshow_any_menu,0))
 					{
 
 												{
@@ -9299,8 +9352,9 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												generatePuzzleList();
-												addClassElemID("puzzleMenuWrapper","show");
+												global.gmlshow_archives=1;
+												_inst.alarm=__yy_gml_array_check(_inst.alarm,1584050178);
+												_inst.alarm[__yy_gml_array_check_index_set(0)]=2;
 											}
 											;
 										}
@@ -10409,6 +10463,8 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	}
 	;
 	var gml_tscl=clamp(yyftime(__yy_gml_errCheck(gml_scl),1),yyftime(0.5,__yy_gml_errCheck(global.gmlpr)),yyftime(2,__yy_gml_errCheck(global.gmlpr)));
+	var gml_highlight_blue=make_color_hsv(145,180,140);
+	var gml_overlay_blue=make_color_hsv(145,120,20);
 	gpu_set_tex_filter(true);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
@@ -10427,17 +10483,17 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 
 				{
 			draw_set_alpha(0.7);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,make_color_hsv(145,180,140),1);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.02);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,gml_highlight_blue,1);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.02);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"DAILY",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"ARCHIVE",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.1);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"HOW TO",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.7);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n4x4",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n5x5",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n7x7",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
@@ -10456,15 +10512,15 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"drag to rearrange the letters",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 				draw_set_font(YYASSET_REF(0x06000001));
 				draw_set_alpha(0.7);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 				draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.3),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"NEW LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 				draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.7),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(70,__yy_gml_errCheck(gml_pos_scl)))),"TYPE LETTERS",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 				if(yyfequal(_inst.gmlready_for_phase2,0))
 				{
 
 										{
-						draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(130,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+						draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(130,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(130,__yy_gml_errCheck(gml_pos_scl)))),"AUTOFILL",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					}
 					;
@@ -10473,7 +10529,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				{
 
 										{
-						draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(150,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.65,__yy_gml_errCheck(gml_tscl)),yyftime(0.14,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+						draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(150,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.65,__yy_gml_errCheck(gml_tscl)),yyftime(0.14,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 						draw_set_alpha(yyfplus(0.7,__yy_gml_errCheck(yyftime((-0.6),__yy_gml_errCheck(_inst.gmldragging_fd)))));
 						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(150,__yy_gml_errCheck(gml_pos_scl)))),"CONFIRM GRID",yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),0);
 						draw_set_alpha(0.7);
@@ -10494,14 +10550,14 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					draw_set_font(YYASSET_REF(0x06000000));
 					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"swipe to select your SECRET WORD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
-					draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+					draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.15),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"BACK",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					if(yyfequal(_inst.gmlready_for_phase3,1))
 					{
 
 												{
 							draw_set_alpha(1);
-							draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.65,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+							draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.65,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),"CONFIRM SECRET WORD?",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_alpha(0.3);
 						}
@@ -10699,6 +10755,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 
 												{
 							draw_set_font(YYASSET_REF(0x06000000));
+							draw_sprite_ext(_inst,YYASSET_REF(0x01000000),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.1)),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(1,__yy_gml_errCheck(gml_tscl)),yyftime(1,__yy_gml_errCheck(gml_tscl)),0,16777215,0.04);
 							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.1)),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),"complete!",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyfplus(0,__yy_gml_errCheck(yyftime(5,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.06)))))));
 							draw_set_font(YYASSET_REF(0x06000001));
 							if(yyfequal(_inst.gmlready_for_phase3,1))
@@ -10724,7 +10781,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),"SECRET WORD found!",yyftime(0.2,__yy_gml_errCheck(gml_tscl)),yyftime(0.2,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_font(YYASSET_REF(0x06000001));
 							draw_set_alpha(1);
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime((-10),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("\n",__yy_gml_errCheck(string(gml_letters_str))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.7)),__yy_gml_errCheck(yyftime(35,__yy_gml_errCheck(gml_pos_scl)))),string(gml_letters_str),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_font(YYASSET_REF(0x06000000));
 							draw_set_alpha(0.3);
 							var gml_guesses_str=" guesses";
@@ -10796,7 +10853,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 								{
 					draw_set_alpha(yyftime(0.8,__yy_gml_errCheck(yyfplus(0.8,__yy_gml_errCheck(yyftime(0.4,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.08)))))))));
 					gml_sscl=yyftime(0.12,__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.1,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.08))))))));
-					draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.9),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),yyftime(yyftime(1.2,__yy_gml_errCheck(gml_sscl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.6,__yy_gml_errCheck(gml_sscl)),__yy_gml_errCheck(gml_tscl)),0,make_color_hsv(100,255,210),yyftime(__yy_gml_errCheck(draw_get_alpha()),1.2));
+					draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.9),yyftime(25,__yy_gml_errCheck(gml_pos_scl)),yyftime(yyftime(1.2,__yy_gml_errCheck(gml_sscl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.6,__yy_gml_errCheck(gml_sscl)),__yy_gml_errCheck(gml_tscl)),0,make_color_hsv(100,255,210),yyftime(__yy_gml_errCheck(draw_get_alpha()),1.2));
 				}
 				;
 			}
@@ -10837,17 +10894,12 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 		;
 	}
 	;
-	gpu_set_blendmode(1);
-	draw_set_alpha(0.05);
-	draw_rectangle_color(0,yyftime(__yy_gml_errCheck(global.gmlsh),0.7),global.gmlsw,global.gmlsh,0,0,16777215,16777215,0);
-	draw_set_alpha(1);
-	gpu_set_blendmode(0);
 	if(yyfequal(global.gmlshow_input_prompt,1))
 	{
 
 				{
-			draw_set_alpha(0.5);
-			draw_rectangle_color(0,0,global.gmlsw,global.gmlsh,0,0,16777215,16777215,0);
+			draw_set_alpha(yyftime(0.7,__yy_gml_errCheck(global.gmlshow_any_menu_fd)));
+			draw_rectangle_color(0,0,global.gmlsw,global.gmlsh,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,0);
 			draw_set_alpha(1);
 			draw_set_color(16777215);
 			var gmlform_container=gml_Script_html_div(_inst,_other,g_pBuiltIn.undefined,"form-container","Forms","form-container");
@@ -10875,8 +10927,8 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	{
 
 				{
-			draw_set_alpha(0.5);
-			draw_rectangle_color(0,0,global.gmlsw,global.gmlsh,0,0,16777215,16777215,0);
+			draw_set_alpha(yyftime(0.7,__yy_gml_errCheck(global.gmlshow_any_menu_fd)));
+			draw_rectangle_color(0,0,global.gmlsw,global.gmlsh,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,0);
 			draw_set_alpha(1);
 			draw_set_color(16777215);
 			var gmlform_container=gml_Script_html_div(_inst,_other,g_pBuiltIn.undefined,"form-container","Forms","form-container");
@@ -10896,6 +10948,29 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				gml_Script_html_submit_export_link(_inst,_other,gmlform3);
 			}
 			;
+		}
+		;
+	}
+	;
+	if(yyfequal(global.gmlshow_archives,1))
+	{
+
+				{
+			draw_set_alpha(yyftime(0.7,__yy_gml_errCheck(global.gmlshow_any_menu_fd)));
+			draw_rectangle_color(0,0,global.gmlsw,global.gmlsh,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,gml_overlay_blue,0);
+			draw_set_alpha(1);
+			draw_set_color(16777215);
+			var gmlarchives_container=gml_Script_html_div(_inst,_other,g_pBuiltIn.undefined,"puzzleMenuWrapper","","archives-container");
+			var gmlpuzzleMenuHeader=gml_Script_html_div(_inst,_other,gmlarchives_container,"puzzleMenuHeader","Archives","puzzleMenuHeader");
+			gml_Script_html_h2(_inst,_other,gmlpuzzleMenuHeader,"puzzleMenuH2","Archives","puzzleMenuH2");
+			var gmlclosebtn=gml_Script_html_form(_inst,_other,gmlpuzzleMenuHeader,"closebtn-form");
+			gml_Script_html_submit(_inst,_other,gmlclosebtn,"closebtn","Close",!yyGetBool(_inst.gmlform_is_loading),(yyGetBool(_inst.gmlform_is_loading)?"loading":""));
+			if(yyGetBool(gml_Script_html_element_interaction(_inst,_other,gmlclosebtn)))
+			{
+				gml_Script_html_submit_closebtn(_inst,_other);
+			}
+			;
+			var gmlpuzzleMenu=gml_Script_html_div(_inst,_other,gmlarchives_container,"puzzleMenu","i'm the ul","puzzleMenu");
 		}
 		;
 	}
@@ -10922,7 +10997,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(yyftime(0.2,__yy_gml_errCheck(gml_version_scl)));
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.14333502065))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.30777260091))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -10972,7 +11047,7 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 			draw_set_color(gml_line_col);
 			var gml_lx1=yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(0,_inst.gmlselected_word_array_id)]).x;
 			var gml_ly1=yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(0,_inst.gmlselected_word_array_id)]).y;
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000000),0,gml_lx1,gml_ly1,0.09375,0.09375,0,gml_line_col,1);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,gml_lx1,gml_ly1,0.09375,0.09375,0,gml_line_col,1);
 			if(yyfgreaterequal(_inst.gmlselected_word_length,2))
 			{
 
@@ -10993,7 +11068,7 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 							var gml_lx2=lerp(yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(yyfminus(__yy_gml_errCheck(gmll),1),_inst.gmlselected_word_array_id)]).x,yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array_id)]).x,gml_l_fd);
 							var gml_ly2=lerp(yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(yyfminus(__yy_gml_errCheck(gmll),1),_inst.gmlselected_word_array_id)]).y,yyInst(_inst,_other,_inst.gmlselected_word_array_id[__yy_gml_array_check_index(gmll,_inst.gmlselected_word_array_id)]).y,gml_l_fd);
 							draw_line_width_color(gml_lx1,gml_ly1,gml_lx2,gml_ly2,16,gml_line_col,gml_line_col2);
-							draw_sprite_ext(_inst,YYASSET_REF(0x01000000),0,gml_lx2,gml_ly2,0.03125,0.03125,0,gml_line_col2,1);
+							draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,gml_lx2,gml_ly2,0.03125,0.03125,0,gml_line_col2,1);
 						}
 					}
 					;
@@ -11037,7 +11112,7 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 				{
 
 										{
-						draw_sprite_ext(__yy__v60,YYASSET_REF(0x01000002),1,yyfplus(__yy_gml_errCheck(__yy__v60.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v60.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),__yy__v60.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_alpha),2),__yy_gml_errCheck(__yy__v60.gmlam_set_flash)));
+						draw_sprite_ext(__yy__v60,YYASSET_REF(0x01000003),1,yyfplus(__yy_gml_errCheck(__yy__v60.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v60.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(__yy__v60.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_xscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_yscale),2),__yy_gml_errCheck(sqr(yyfminus(1,__yy_gml_errCheck(__yy__v60.gmlam_set_flash))))),__yy__v60.image_angle,16777215,yyftime(yyftime(__yy_gml_errCheck(__yy__v60.image_alpha),2),__yy_gml_errCheck(__yy__v60.gmlam_set_flash)));
 					}
 					;
 				}
@@ -11774,7 +11849,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 		}
 		;
 		_inst.image_alpha=1;
-		_inst.image_blend=make_color_hsv(lerp(gml_letter_hue,145,_inst.gmlam_selected_fd),lerp(60,180,_inst.gmlam_selected_fd),clamp(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(80,__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(_inst.gmlam_set_flash2)))),__yy_gml_errCheck(yyftime(150,__yy_gml_errCheck(_inst.gmlam_selected_flash2)))),__yy_gml_errCheck(yyftime(60,__yy_gml_errCheck(_inst.gmlam_selected_fd)))),__yy_gml_errCheck(yyftime(20,__yy_gml_errCheck(_inst.gmlam_dragging_fd)))),__yy_gml_errCheck(yyftime((-20),__yy_gml_errCheck(_inst.gmltile_going_to_replace)))),0,255));
+		_inst.image_blend=make_color_hsv(lerp(gml_letter_hue,150,_inst.gmlam_selected_fd),lerp(90,180,_inst.gmlam_selected_fd),clamp(yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(100,__yy_gml_errCheck(yyftime(80,__yy_gml_errCheck(_inst.gmlam_set_flash2)))),__yy_gml_errCheck(yyftime(130,__yy_gml_errCheck(_inst.gmlam_selected_flash2)))),__yy_gml_errCheck(yyftime(60,__yy_gml_errCheck(_inst.gmlam_selected_fd)))),__yy_gml_errCheck(yyftime(20,__yy_gml_errCheck(_inst.gmlam_dragging_fd)))),__yy_gml_errCheck(yyftime((-20),__yy_gml_errCheck(_inst.gmltile_going_to_replace)))),0,255));
 		_inst.gmlimage_blend_base=_inst.image_blend;
 		_inst.gmlborder_col=merge_color(_inst.image_blend,16777215,0.3);
 		_inst.gmlletter_col=16777215;
@@ -11812,21 +11887,21 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 		{
 
 						{
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),3,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(yyftime(__yy_gml_errCheck(gml_shad_ht),__yy_gml_errCheck(gmlshad_fd)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(yyftime(__yy_gml_errCheck(gml_shad_ht),__yy_gml_errCheck(gmlshad_fd)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.2,__yy_gml_errCheck(gmlshad_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.2,__yy_gml_errCheck(gmlshad_fd)))))),_inst.image_angle,0,yyftime(0.3,__yy_gml_errCheck(gmlshad_fd)));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),3,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(yyftime(__yy_gml_errCheck(gml_shad_ht),__yy_gml_errCheck(gmlshad_fd)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(yyftime(__yy_gml_errCheck(gml_shad_ht),__yy_gml_errCheck(gmlshad_fd)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.2,__yy_gml_errCheck(gmlshad_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0.2,__yy_gml_errCheck(gmlshad_fd)))))),_inst.image_angle,0,yyftime(0.3,__yy_gml_errCheck(gmlshad_fd)));
 			}
 			;
 		}
 		;
 		var gml_tile_scl=1;
-		draw_sprite_ext(_inst,YYASSET_REF(0x01000002),gml_tile_shape,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(gml_tile_scl)),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(gml_tile_scl)),_inst.image_angle,_inst.image_blend,_inst.image_alpha);
+		draw_sprite_ext(_inst,YYASSET_REF(0x01000003),gml_tile_shape,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(gml_tile_scl)),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(gml_tile_scl)),_inst.image_angle,_inst.image_blend,_inst.image_alpha);
 		gml_tile_scl=yyfplus(1,__yy_gml_errCheck(yyftime((-0.05),__yy_gml_errCheck(gmlshad_fd))));
-		draw_sprite_ext(_inst,YYASSET_REF(0x01000001),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(gml_tile_scl)),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(gml_tile_scl)),_inst.image_angle,merge_color(_inst.image_blend,global.gmlbackground_col,0.2),yyftime(1,__yy_gml_errCheck(global.gmlam_creating_fd2)));
+		draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(gml_tile_scl)),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(gml_tile_scl)),_inst.image_angle,merge_color(_inst.image_blend,global.gmlbackground_col,0.2),yyftime(1,__yy_gml_errCheck(global.gmlam_creating_fd2)));
 		if(yyfgreater(_inst.gmlam_selected_flash2,0))
 		{
 
 						{
 				gpu_set_blendmode(1);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(_inst.gmlam_selected_flash2)));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(_inst.gmlam_selected_flash2)));
 			}
 			;
 		}
@@ -11836,7 +11911,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 
 						{
 				gpu_set_blendmode(1);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,16777215,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_part_of_secret_word_fd),__yy_gml_errCheck(yyfplus(0.12,__yy_gml_errCheck(yyftime(0.03,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.1)))))))))));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,16777215,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_part_of_secret_word_fd),__yy_gml_errCheck(yyfplus(0.12,__yy_gml_errCheck(yyftime(0.03,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.1)))))))))));
 			}
 			;
 		}
@@ -11846,7 +11921,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 
 						{
 				gpu_set_blendmode(1);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_clued_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_clued_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_flash2),3))));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_clued_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_clued_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_flash2),3))));
 			}
 			;
 		}
@@ -11856,7 +11931,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 
 						{
 				gpu_set_blendmode(1);
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_won_fd),__yy_gml_errCheck(yyfplus(0.15,__yy_gml_errCheck(yyftime(0.15,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.07)))))))))));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(__yy_gml_errCheck(_inst.image_xscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),yyftime(__yy_gml_errCheck(_inst.image_yscale),__yy_gml_errCheck(yyfplus(1,__yy_gml_errCheck(yyftime(0,__yy_gml_errCheck(_inst.gmlam_selected_fd)))))),_inst.image_angle,_inst.image_blend,yyftime(__yy_gml_errCheck(_inst.image_alpha),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(_inst.gmlam_clued_won_fd),__yy_gml_errCheck(yyfplus(0.15,__yy_gml_errCheck(yyftime(0.15,__yy_gml_errCheck(sin(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmltimey),0.07)))))))))));
 			}
 			;
 		}
@@ -11866,7 +11941,7 @@ function gml_Object_obj_tile_letter_Draw_0(_inst,_other)
 		{
 
 						{
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000002),4,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(_inst.image_xscale),0.7),__yy_gml_errCheck(sqr(_inst.gmlam_exed_fd))),yyftime(yyftime(__yy_gml_errCheck(_inst.image_yscale),0.7),__yy_gml_errCheck(sqr(_inst.gmlam_exed_fd))),yyfplus(__yy_gml_errCheck(_inst.image_angle),45),0,yyftime(__yy_gml_errCheck(_inst.image_alpha),0.6));
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),4,yyfplus(__yy_gml_errCheck(_inst.x),__yy_gml_errCheck(lengthdir_x(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(_inst.y),__yy_gml_errCheck(lengthdir_y(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht)),yyfminus(__yy_gml_errCheck(_inst.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),yyftime(yyftime(__yy_gml_errCheck(_inst.image_xscale),0.7),__yy_gml_errCheck(sqr(_inst.gmlam_exed_fd))),yyftime(yyftime(__yy_gml_errCheck(_inst.image_yscale),0.7),__yy_gml_errCheck(sqr(_inst.gmlam_exed_fd))),yyfplus(__yy_gml_errCheck(_inst.image_angle),45),0,yyftime(__yy_gml_errCheck(_inst.image_alpha),0.6));
 			}
 			;
 		}
@@ -11968,7 +12043,7 @@ function gml_Object_obj_tile_space_Draw_0(_inst,_other)
 		;
 	}
 	;
-	draw_sprite_ext(_inst,YYASSET_REF(0x01000002),2,_inst.x,yyfplus(__yy_gml_errCheck(_inst.y),0),yyftime(__yy_gml_errCheck(_inst.image_xscale),0.9),yyftime(__yy_gml_errCheck(_inst.image_yscale),0.9),_inst.image_angle,16777215,_inst.image_alpha);
+	draw_sprite_ext(_inst,YYASSET_REF(0x01000003),2,_inst.x,yyfplus(__yy_gml_errCheck(_inst.y),0),yyftime(__yy_gml_errCheck(_inst.image_xscale),0.9),yyftime(__yy_gml_errCheck(_inst.image_yscale),0.9),_inst.image_angle,16777215,_inst.image_alpha);
 }
 
 function compile_if_weak_ref()
