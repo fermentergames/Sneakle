@@ -68,7 +68,7 @@ if global.game_phase = 0 {
 	draw_sprite_ext(spr_sqr512,0,global.sw*0.8,global.sh*0.4,0.18*_tscl,0.18*_tscl,0,c_white,0.02)
 	
 	draw_text_transformed(global.sw*0.2,global.sh*0.4,"DAILY",0.15*_tscl,0.15*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.4,"LOAD",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.4,"ARCHIVE",0.13*_tscl,0.13*_tscl,0)
 	
 	draw_set_alpha(0.1)
 	

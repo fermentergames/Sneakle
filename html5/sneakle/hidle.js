@@ -976,7 +976,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730627349,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730690786,AllowStatistics:"True"	}
 }
 ;
 
@@ -8121,6 +8121,7 @@ function gml_Script_html_submit_closebtn(_inst,_other)
 		{
 		global.gmlshow_input_prompt=0;
 		global.gmlshow_export_prompt=0;
+		removeClassElemID("puzzleMenuWrapper","show");
 	}
 }
 
@@ -8677,6 +8678,7 @@ function gml_Script_scr_board_init(_inst,_other)
 				{
 
 										{
+						gml_Script_scr_update_copy_code(_inst,_other);
 					}
 					;
 				}
@@ -8692,6 +8694,7 @@ function gml_Script_scr_board_init(_inst,_other)
 								_inst.gmlselected_word_str="";
 								_inst.gmlselected_word_array=0;
 								global.gmlgame_phase=1;
+								gml_Script_scr_update_copy_code(_inst,_other);
 							}
 							;
 						}
@@ -9296,9 +9299,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										{
 
 																						{
-												var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___128=__yy_method(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0)));
-												gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
-												global.gmlshow_input_prompt=1;
+												generatePuzzleList();
+												addClassElemID("puzzleMenuWrapper","show");
 											}
 											;
 										}
@@ -9328,7 +9330,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 												global.gmlgame_grid_size=4;
 												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 												global.gmlam_creating=1;
-												var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___129=__yy_method(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0)));
+												var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___128=__yy_method(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0)));
 												gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 												gml_Script_scr_board_init(_inst,_other);
 											}
@@ -9343,7 +9345,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 													global.gmlgame_grid_size=5;
 													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 													global.gmlam_creating=1;
-													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___130=__yy_method(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0)));
+													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___129=__yy_method(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0)));
 													gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 													gml_Script_scr_board_init(_inst,_other);
 												}
@@ -9356,7 +9358,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 													global.gmlgame_grid_size=7;
 													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 													global.gmlam_creating=1;
-													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___131=__yy_method(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0)));
+													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___130=__yy_method(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0)));
 													gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 													gml_Script_scr_board_init(_inst,_other);
 												}
@@ -9530,8 +9532,13 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										}
 										;
 										global.gmlam_creating=1;
-										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)),yyfplus("NewLetters",__yy_gml_errCheck(string(global.gmlgame_grid_size))));
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___131=__yy_method(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0)),yyfplus("NewLetters",__yy_gml_errCheck(string(global.gmlgame_grid_size))));
 										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
+										global.gmlloadSecret="";
+										global.gmlloadBoard="";
+										global.gmlcurrent_copy_code="";
+										global.gmlcurrent_copy_link="";
+										gml_Script_scr_update_copy_code(_inst,_other);
 										gml_Script_scr_board_init(_inst,_other);
 
 																				{
@@ -9564,7 +9571,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																				{
 											show_debug_message("TYPE LETTERS");
-											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)));
+											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)));
 											gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 											global.gmlshow_input_prompt=1;
 										}
@@ -9649,7 +9656,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 								;
 								show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
 								gml_Script_scr_update_copy_code(_inst,_other);
-								var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___134=__yy_method(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
+								var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
 								gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 								global.gmlshow_export_prompt=1;
 								global.gmlgame_phase=3;
@@ -9741,7 +9748,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																{
 									global.gmlshow_export_prompt=1;
-									var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___135=__yy_method(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0)));
+									var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___134=__yy_method(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0)));
 									gml_Script_GoogHit(_inst,_other,"share",gml_event_struct);
 								}
 								;
@@ -9834,7 +9841,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																												{
 															show_debug_message("match!");
 															global.gmlgame_phase=4;
-															var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___136=__yy_method(_inst,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0)),_inst.gmlguesses_count);
+															var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___135=__yy_method(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0)),_inst.gmlguesses_count);
 															gml_Script_GoogHit(_inst,_other,"post_score",gml_event_struct);
 
 																														{
@@ -10146,7 +10153,7 @@ function gml_Script____struct___128_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="LoadFromMainMenu";
+			_inst.gmlscreen_name="Create4";
 		}
 	}
 }
@@ -10166,7 +10173,7 @@ function gml_Script____struct___129_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create4";
+			_inst.gmlscreen_name="Create5";
 		}
 	}
 }
@@ -10186,7 +10193,7 @@ function gml_Script____struct___130_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create5";
+			_inst.gmlscreen_name="Create7";
 		}
 	}
 }
@@ -10206,7 +10213,11 @@ function gml_Script____struct___131_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create7";
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
 		}
 	}
 }
@@ -10226,11 +10237,7 @@ function gml_Script____struct___132_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			var $$args=Array.prototype.slice.call(arguments);
-
-						{
-				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
-			}
+			_inst.gmlscreen_name="LoadFromCreate";
 		}
 	}
 }
@@ -10250,7 +10257,11 @@ function gml_Script____struct___133_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="LoadFromCreate";
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
 		}
 	}
 }
@@ -10270,11 +10281,7 @@ function gml_Script____struct___134_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			var $$args=Array.prototype.slice.call(arguments);
-
-						{
-				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
-			}
+			_inst.gmlcontent_type="SharePuzzleLink";
 		}
 	}
 }
@@ -10292,26 +10299,6 @@ function gml_Script____struct___135_gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 		{
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.prototype);
-
-				{
-			_inst.gmlcontent_type="SharePuzzleLink";
-		}
-	}
-}
-
-function gml_Script____struct___136_gml_Object_obj_ctrl_Step_0(_inst,_other)
-{
-	if(_inst.__yyIsGMLObject)
-	{
-		_inst.__type="gml_Script____struct___136@gml_Object_obj_ctrl_Step_0";
-	}
-	if(gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.__type===undefined)
-	{
-		gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.__type="gml_Script____struct___136@gml_Object_obj_ctrl_Step_0";
-	}
-
-		{
-		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
 			var $$args=Array.prototype.slice.call(arguments);
@@ -10444,7 +10431,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.02);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"DAILY",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"LOAD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"ARCHIVE",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.1);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"HOW TO",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.7);
@@ -10935,7 +10922,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(yyftime(0.2,__yy_gml_errCheck(gml_version_scl)));
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45599.409118798416))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.14333502065))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -12318,7 +12305,6 @@ function gmlInitGlobal()
 	global.gml___struct___133=0;
 	global.gml___struct___134=0;
 	global.gml___struct___135=0;
-	global.gml___struct___136=0;
 	gml_GlobalScript___GoogConfig(global,global);
 	gml_GlobalScript___GoogSystem(global,global);
 	gml_GlobalScript_GMDictionary_classes(global,global);
@@ -12513,8 +12499,8 @@ IDToTagList=[
 {
 	key:83986193,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0","gml_Script____struct___136@gml_Object_obj_ctrl_Step_0"];
-JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0];
+JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0"];
+JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0];
 const kgml_GlobalScript___GoogConfig=100000;
 const kgml_GlobalScript___GoogSystem=100001;
 const kgml_Script____struct___0=100002;
@@ -12676,7 +12662,6 @@ const kgml_Script____struct___132_gml_Object_obj_ctrl_Step_0=100157;
 const kgml_Script____struct___133_gml_Object_obj_ctrl_Step_0=100158;
 const kgml_Script____struct___134_gml_Object_obj_ctrl_Step_0=100159;
 const kgml_Script____struct___135_gml_Object_obj_ctrl_Step_0=100160;
-const kgml_Script____struct___136_gml_Object_obj_ctrl_Step_0=100161;
 var __yyg__SetImageIndexGML=
 function(frame)
 {
@@ -12729,8 +12714,6 @@ gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true
 gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true;
 gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
-gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true;
-gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 var g_instance_names=
 {
 	"x":[true,true,true,null,null],"y":[true,true,true,null,null],"xprevious":[true,true,true,null,null],"yprevious":[true,true,true,null,null],"xstart":[true,true,true,null,null],"ystart":[true,true,true,null,null],"hspeed":[true,true,true,null,null],"vspeed":[true,true,true,null,null],"direction":[true,true,true,null,null],"speed":[true,true,true,null,null],"friction":[true,true,true,null,null],"gravity":[true,true,true,null,null],"gravity_direction":[true,true,true,null,null],"in_collision_tree":[true,false,true,null,null],"object_index":[true,false,false,null,null],"id":[true,false,false,null,null],"alarm":[true,true,true,null,null],"solid":[true,true,true,null,null],"visible":[true,true,true,null,null],"persistent":[true,true,true,null,null],"managed":[true,false,true,null,null],"depth":[true,true,true,null,null],"bbox_left":[true,false,false,null,null],"bbox_right":[true,false,false,null,null],"bbox_top":[true,false,false,null,null],"bbox_bottom":[true,false,false,null,null],"sprite_index":[true,true,true,null,null],"image_index":[true,true,true,null,"SetImageIndexGML"],"image_single":[true,true,true,null,null],"image_number":[true,false,false,null,null],"sprite_width":[true,false,false,null,null],"sprite_height":[true,false,false,null,null],"sprite_xoffset":[true,false,false,null,null],"sprite_yoffset":[true,false,false,null,null],"image_xscale":[true,true,true,null,null],"image_yscale":[true,true,true,null,null],"image_angle":[true,true,true,null,null],"image_alpha":[true,true,true,null,null],"image_blend":[true,true,true,null,null],"image_speed":[true,true,true,null,null],"mask_index":[true,true,true,null,null],"path_index":[true,false,false,null,null],"path_position":[true,true,true,null,null],"path_positionprevious":[true,true,true,null,null],"path_speed":[true,true,true,null,null],"path_scale":[true,true,true,null,null],"path_orientation":[true,true,true,null,null],"path_endaction":[true,true,true,null,null],"timeline_index":[true,true,true,null,null],"timeline_position":[true,true,true,null,null],"timeline_speed":[true,true,true,null,null],"timeline_running":[true,true,true,null,null],"timeline_loop":[true,true,true,null,null],"phy_rotation":[true,true,true,null,null],"phy_position_x":[true,true,true,null,null],"phy_position_y":[true,true,true,null,null],"phy_angular_velocity":[true,true,true,null,null],"phy_linear_velocity_x":[true,true,true,null,null],"phy_linear_velocity_y":[true,true,true,null,null],"phy_speed_x":[true,true,true,null,null],"phy_speed_y":[true,true,true,null,null],"phy_speed":[true,false,true,null,null],"phy_angular_damping":[true,true,true,null,null],"phy_linear_damping":[true,true,true,null,null],"phy_bullet":[true,true,true,null,null],"phy_fixed_rotation":[true,true,true,null,null],"phy_active":[true,true,true,null,null],"phy_mass":[true,false,true,null,null],"phy_inertia":[true,false,true,null,null],"phy_com_x":[true,false,true,null,null],"phy_com_y":[true,false,true,null,null],"phy_dynamic":[true,false,true,null,null],"phy_kinematic":[true,false,true,null,null],"phy_sleeping":[true,false,true,null,null],"phy_position_xprevious":[true,true,true,null,null],"phy_position_yprevious":[true,true,true,null,null],"phy_collision_points":[true,false,true,null,null],"layer":[true,true,true,null,null],"in_sequence":[true,false,true,null,null],"sequence_instance":[true,false,true,null,null],"drawn_by_sequence":[true,false,true,null,null],"phy_collision_x":[true,false,true,null,null],"phy_collision_y":[true,false,true,null,null],"phy_col_normal_x":[true,false,true,null,null],"phy_col_normal_y":[true,false,true,null,null]}

@@ -134,14 +134,14 @@ if mouse_check_button_pressed(mb_left) {
 					
 				} else if device_mouse_x_to_gui(0)*global.pr > display_get_gui_width()*0.3 && device_mouse_x_to_gui(0)*global.pr < display_get_gui_width()*0.7 {
 					//load
-					//show_question("paste load code:")
-				
-					//instance_create_layer(x,y,layer,obj_example_controller)
-					var _event_struct = { //
-				      screen_name: "LoadFromMainMenu",
-				   };
-					GoogHit("screen_view",_event_struct)
-					global.show_input_prompt = 1
+					//var _event_struct = { //
+				   //   screen_name: "LoadFromMainMenu",
+				   //};
+					//GoogHit("screen_view",_event_struct)
+					//global.show_input_prompt = 1
+					
+					generatePuzzleList()
+					addClassElemID("puzzleMenuWrapper","show")
 				
 				} else {
 					//
@@ -256,6 +256,7 @@ if mouse_check_button_pressed(mb_left) {
 			
 				}
 			} else if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.3)-(256*0.3*_tscl),(global.sh+(-70*global.pr))-(256*0.08*_tscl),(global.sw*0.3)+(256*0.3*_tscl),(global.sh+(-70*global.pr))+(256*0.08*_tscl)) {
+				
 				show_debug_message("NEW LETTERS")
 				
 				with (obj_tile_letter) {
@@ -270,7 +271,16 @@ if mouse_check_button_pressed(mb_left) {
 				   screen_name: "NewLetters"+string(global.game_grid_size),
 				};
 				GoogHit("screen_view",_event_struct)
+				
+				global.loadSecret = ""
+				global.loadBoard = ""
+				global.current_copy_code = ""
+				global.current_copy_link = ""
+				scr_update_copy_code()
+				
 				scr_board_init()
+				
+				
 				
 				with (obj_tile_letter) {
 					//instance_destroy()

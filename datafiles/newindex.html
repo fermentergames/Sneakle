@@ -50,13 +50,13 @@
         
         
 
-        <!--
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-        <script src="https://kit.fontawesome.com/9c177a67c1.js" crossorigin="anonymous"></script>
-        -->
+        
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,800&display=swap" rel="stylesheet"> -->
 
         <!-- Builtin injector for disabling cache -->
         ${GM_HTML5_InjectDisableCache}
@@ -69,24 +69,40 @@
 
         <!-- Set the background colour of the document -->
         <style>
+
+            
+            @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
             body {
-              background: #000000;
-              color:#cccccc;
-              margin: 0px;
-              padding: 0px;
-              border: 0px;
-              -webkit-touch-callout: none; /* Safari */
-              -webkit-user-select: none; /* Chrome */     
-              -moz-user-select: none; /* Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; 
-              font-family: 'Poppins', sans-serif;
-              font-weight: 400;
-              overflow: hidden;
+                background: #000000;
+                color:#cccccc;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+                -webkit-touch-callout: none; /* Safari */
+                -webkit-user-select: none; /* Chrome */     
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; 
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 300;
+                font-optical-sizing: auto;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
             }
+            strong {
+                font-weight: 800;
+            }
+            a {
+                color: #42b1ff;
+            }
+            
             canvas {
-              image-rendering: optimizeSpeed;
-              -webkit-interpolation-mode: nearest-neighbor;
+              image-rendering: crisp-edges;
+/*              -webkit-interpolation-mode: nearest-neighbor;*/
               -ms-touch-action: none;
               margin: 0px;
               padding: 0px;
@@ -413,6 +429,134 @@
 
 
 
+
+            #puzzleMenuWrapper {
+                display: flex;
+                position: absolute;
+                top: 0px;
+                /* height: 0px; */
+                max-height: 0;
+                background: rgb(23, 23, 24);
+                width: calc(80vw - 60px);
+                max-width: calc(400px - 60px);
+                padding-inline: 30px;
+                padding-block: 0px;
+                overflow: hidden;
+                transition: all 0.4s ease-in-out;
+                flex-direction: column;
+            }
+
+            #puzzleMenuWrapper.show {
+                max-height: min(80vh, 500px);
+                /* height: fit-content; */
+                padding-top: 30px;
+                top: 60px;
+            }
+
+            ul#puzzleMenu {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-top: 30px;
+                flex-direction: column-reverse;
+                align-content: center;
+                align-items: center;
+                height: 100%;
+                overflow-y: scroll;
+            }
+
+            a.menu-item ul.puzzle-details {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            a.menu-item {
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                align-content: center;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 15px;
+                background: #29638c;
+                color: #fff;
+                text-decoration: none;
+                padding-block: 10px;
+            }
+
+            a.menu-item:hover {
+                background: #4b90c1;
+            }
+
+            .puzzle-items-main {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                flex-direction: column;
+                /* gap: 10px; */
+            }
+
+
+            .puzzle-item {
+                font-size: 10px;
+                font-weight: 300;
+                opacity: 0.5;
+            }
+
+            .puzzle-item.puzzle-date {
+                font-weight: 300;
+            }
+
+
+            .puzzle-item.puzzle-title {
+                font-size: 20px;
+                font-weight: 800;
+                opacity: 1;
+            }
+
+            .puzzle-item.puzzle-letters {
+                    font-family: "DM Mono", monospace;
+                    font-weight: 500;
+                    font-size: 12px;
+                    font-style: normal;
+                    width: fit-content;
+                    padding: 2px;
+                    background: rgba(0, 0, 0, 0.2);
+                    /* aspect-ratio: 1; */
+                    opacity: 1;
+                    /* transform: scale(0.8); */
+                    letter-spacing: 8px;
+                    padding: 7px 2px 5px 10px;
+            }
+
+            .puzzleMenuHeader {
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .puzzleMenuHeader h2 {
+                margin: 0;
+            }
+
+            a#closeArchiveMenu {
+                color: #fff;
+                opacity: 0.5;
+            }
+
+
+
+
         </style>
 
         <!-- Custom PostStyle code is injected here -->
@@ -430,7 +574,7 @@
 
           gtag('config', 'G-QXT06CTHEX');
         </script>
-        
+
     </head>
 
     <!-- Custom PostHead code is injected here -->
@@ -450,6 +594,19 @@
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
+
+        <div id="puzzleMenuWrapper" class="menuWrapper" >
+            <div class="puzzleMenuHeader">
+                <h2>Archive</h2>
+                <a id="closeArchiveMenu" title="Close" href="#" onclick="funcCloseArchiveMenu();return false;">Close</a>
+            </div>
+
+            <ul id="puzzleMenu" class="menu"></ul>
+        </div>
+
+        <script>
+        
+        </script>
 
         <!-- Run the game code -->
         <script type="text/javascript" src="${GM_HTML5_GameFolder}/${GM_HTML5_GameFilename}?cachebust=${GM_HTML5_CacheBust}"></script>

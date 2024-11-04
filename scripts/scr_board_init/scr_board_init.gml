@@ -198,6 +198,7 @@ if (live_call()) return live_result;
 		if global.am_creating = 1 {
 			
 			//keep defaults
+			scr_update_copy_code()
 			
 		} else {
 			if global.loadSecret = "" {
@@ -207,6 +208,7 @@ if (live_call()) return live_result;
 				selected_word_str = ""
 				selected_word_array = 0
 				global.game_phase = 1
+				scr_update_copy_code()
 			
 			} else {
 			
