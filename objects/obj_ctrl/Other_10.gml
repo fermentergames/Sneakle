@@ -40,7 +40,8 @@ global.is_landscape = 0	//reset
 
 var _tile_sz_and_pad = global.tile_size+global.pad_size
 
-global.cam_zoom = (((_tile_sz_and_pad*global.game_grid_size)+90)/w)*1.5
+global.cam_zoom = (((_tile_sz_and_pad*global.game_grid_size)+100)/w)*1.5
+
 if global.sw >= global.sh*0.65 {
 	global.is_landscape = 1
 	global.cam_zoom = (((_tile_sz_and_pad*global.game_grid_size)+50)/h)*2.8

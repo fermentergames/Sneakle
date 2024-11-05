@@ -5,7 +5,7 @@ var _pos_scl = global.pr //*(min(global.sw,720)/375)
 var _scl = (global.sw/450)
 
 if global.is_landscape = 1 {
-	_scl = (global.sh/800)
+	_scl = (global.sh/850)
 }
 
 //if keyboard_check(vk_shift) {
@@ -78,13 +78,17 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.7)
 	
-	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.2,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.5,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
-	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.8,global.sh*0.6,0.18*_tscl,0.18*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.2,global.sh*0.6,0.12*_tscl,0.12*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.35,global.sh*0.6,0.12*_tscl,0.12*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.5,global.sh*0.6,0.12*_tscl,0.12*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.65,global.sh*0.6,0.12*_tscl,0.12*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512_tile_dotted,0,global.sw*0.8,global.sh*0.6,0.12*_tscl,0.12*_tscl,0,c_white,0.06)
 	
-	draw_text_transformed(global.sw*0.2,global.sh*0.6,"CREATE\n4x4",0.13*_tscl,0.13*_tscl,0)
-	draw_text_transformed(global.sw*0.5,global.sh*0.6,"CREATE\n5x5",0.13*_tscl,0.13*_tscl,0)
-	draw_text_transformed(global.sw*0.8,global.sh*0.6,"CREATE\n7x7",0.13*_tscl,0.13*_tscl,0)
+	draw_text_transformed(global.sw*0.2,global.sh*0.6,"CREATE\n3x3",0.1*_tscl,0.1*_tscl,0)
+	draw_text_transformed(global.sw*0.35,global.sh*0.6,"CREATE\n4x4",0.1*_tscl,0.1*_tscl,0)
+	draw_text_transformed(global.sw*0.5,global.sh*0.6,"CREATE\n5x5",0.1*_tscl,0.1*_tscl,0)
+	draw_text_transformed(global.sw*0.65,global.sh*0.6,"CREATE\n6x6",0.1*_tscl,0.1*_tscl,0)
+	draw_text_transformed(global.sw*0.8,global.sh*0.6,"CREATE\n7x7",0.1*_tscl,0.1*_tscl,0)
 	
 	
 	draw_set_alpha(0.3)
@@ -93,7 +97,7 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,90*_pos_scl,"drag to rearrange the letters",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw/2,75*_pos_scl,"drag to rearrange the letters",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	draw_set_alpha(0.7)
@@ -106,12 +110,12 @@ if global.game_phase = 0 {
 	draw_text_transformed(global.sw*0.7,global.sh-70*_pos_scl,"TYPE LETTERS",0.12*_tscl,0.12*_tscl,0)
 	}
 	
-	draw_sprite_ext(spr_sqr512,0,global.sw*0.5,global.sh-10*_pos_scl,0.3*_tscl,0.08*_tscl,0,c_white,0.06)
+	draw_sprite_ext(spr_sqr512,0,global.sw*0.5,global.sh-10*_pos_scl,0.4*_tscl,0.08*_tscl,0,c_white,0.06)
 	
 	if global.game_mode = 1 {
-		draw_text_transformed(global.sw*0.5,global.sh-10*_pos_scl,"point mode: OFF",0.12*_tscl,0.12*_tscl,0)
+		draw_text_transformed(global.sw*0.5,global.sh-10*_pos_scl,"activate points mode",0.12*_tscl,0.12*_tscl,0)
 	} else {
-		draw_text_transformed(global.sw*0.5,global.sh-10*_pos_scl,"point mode: ON",0.12*_tscl,0.12*_tscl,0)
+		draw_text_transformed(global.sw*0.5,global.sh-10*_pos_scl,"exit points mode",0.12*_tscl,0.12*_tscl,0)
 	}
 	
 	if ready_for_phase2 = 0 {
@@ -136,7 +140,7 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,90*_pos_scl,"swipe to select your SECRET WORD",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw/2,75*_pos_scl,"swipe to select your SECRET WORD",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	draw_set_alpha(0.7)
@@ -150,13 +154,20 @@ if global.game_phase = 0 {
 	if ready_for_phase3 = 1 {
 		draw_set_alpha(1)
 		draw_sprite_ext(spr_sqr512,0,global.sw/2,(global.sh*1)+(-110*_pos_scl),0.65*_tscl,0.15*_tscl,0,c_white,0.06)
-		draw_text_transformed(global.sw/2,(global.sh*1)+(-110*_pos_scl),"CONFIRM SECRET WORD?",0.15*_tscl,0.15*_tscl,0)
+		
+		var _confirm_word_str = "CONFIRM SECRET WORD?"
+		if global.game_mode = 2 {
+			_confirm_word_str = "SUBMIT"
+		}
+		
+		draw_text_transformed(global.sw/2,(global.sh*1)+(-110*_pos_scl),_confirm_word_str,0.15*_tscl,0.15*_tscl,0)
 		draw_set_alpha(0.3)
 	}
 	
 	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,(global.sh*1)+(-240*_pos_scl),"your SECRET WORD is",0.12*_tscl,0.12*_tscl,0)
+	//draw_text_transformed(global.sw/2,(global.sh*1)+(-240*_pos_scl),"your SECRET WORD is",0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*0)+(500*_scl),"your SECRET WORD is",0.12*_tscl,0.12*_tscl,0)
 	draw_set_font(fnt_main)
 
 	
@@ -167,11 +178,12 @@ if global.game_phase = 0 {
 	
 	draw_set_alpha(0.3)
 	
-	if selected_word_length >= 4 {
+	if selected_word_is_valid >= 1 {
 		draw_set_alpha(0.7)
 	}
 	
-	draw_text_transformed(global.sw/2,(global.sh*1)+(-200*_pos_scl),string(_letters_str),0.3*_tscl,0.3*_tscl,0)
+	//draw_text_transformed(global.sw/2,(global.sh*1)+(-200*_pos_scl),string(_letters_str),0.3*_tscl,0.3*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*0)+(540*_scl),string(_letters_str),0.3*_tscl,0.3*_tscl,0)
 	
 	draw_set_alpha(0.3)
 	
@@ -179,9 +191,9 @@ if global.game_phase = 0 {
 	
 	if selected_word_length > 0 {
 		if selected_word_length <= 3 {
-			draw_text_transformed(global.sw/2,(global.sh*1)+(-140*_pos_scl),"too short",0.15*_tscl,0.15*_tscl,0)
+			draw_text_transformed(global.sw/2,(global.sh*0)+(590*_scl),"too short",0.15*_tscl,0.15*_tscl,0)
 		} else if selected_word_not_in_dictionary >= 1 {
-			draw_text_transformed(global.sw/2,(global.sh*1)+(-140*_pos_scl),"not a valid word",0.15*_tscl,0.15*_tscl,0)
+			draw_text_transformed(global.sw/2,(global.sh*0)+(590*_scl),"not a valid word",0.15*_tscl,0.15*_tscl,0)
 		} else {
 			//draw_text_transformed(global.sw/2,(global.sh*0.7)+(80*_pos_scl),selected_word_not_in_dictionary,0.15*_tscl,0.15*_tscl,0)
 		}
@@ -199,7 +211,7 @@ if global.game_phase = 0 {
 	draw_set_alpha(0.3)
 	
 	draw_set_font(fnt_main_r)
-	draw_text_transformed(global.sw/2,90*_pos_scl,"can you guess the SECRET WORD?",0.15*_tscl,0.15*_tscl,0)
+	draw_text_transformed(global.sw/2,75*_pos_scl,"can you guess the SECRET WORD?",0.15*_tscl,0.15*_tscl,0)
 	draw_set_font(fnt_main)
 	
 	
@@ -223,16 +235,16 @@ if global.game_phase = 0 {
 	}
 	
 	if _letters_str != "" {
-		draw_text_transformed(global.sw/2,global.sh*0.7,string(_letters_str)+"?",0.3*_tscl,0.3*_tscl,0)
+		draw_text_transformed(global.sw/2,(global.sh*0)+(540*_scl),string(_letters_str)+"?",0.3*_tscl,0.3*_tscl,0)
 	}
 	
 	draw_set_alpha(0.3)
 	draw_set_font(fnt_main_r)
 	if selected_word_length > 0 {
 		if selected_word_length <= 3 {
-			draw_text_transformed(global.sw/2,global.sh*0.75,"too short",0.15*_tscl,0.15*_tscl,0)
+			draw_text_transformed(global.sw/2,(global.sh*0)+(590*_scl),"too short",0.15*_tscl,0.15*_tscl,0)
 		} else if selected_word_not_in_dictionary >= 1 {
-			draw_text_transformed(global.sw/2,global.sh*0.75,"not a valid word",0.15*_tscl,0.15*_tscl,0)
+			draw_text_transformed(global.sw/2,(global.sh*0)+(590*_scl),"not a valid word",0.15*_tscl,0.15*_tscl,0)
 		}
 	}
 	//draw_text_transformed(global.sw/2,global.sh*0.8,"array:\n"+string(selected_word_array),0.12*_tscl,0.12*_tscl,0)
@@ -241,7 +253,7 @@ if global.game_phase = 0 {
 	draw_set_font(fnt_main_r)
 	var _guesses_str = " guesses"
 	if guesses_count = 1 {_guesses_str = " guess"}
-	draw_text_transformed(global.sw/2,global.sh*0.8,string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
+	draw_text_transformed(global.sw/2,(global.sh*0)+(620*_scl),string(guesses_count)+string(_guesses_str),0.12*_tscl,0.12*_tscl,0)
 	
 	var _guess_list_str = ""
 	for (var i = 1; i < array_length(guesses_list); ++i) {
@@ -251,7 +263,7 @@ if global.game_phase = 0 {
 		}
 	}
 	
-	draw_text_ext_transformed(global.sw/2,(global.sh*0.8)+(30*_pos_scl),string(_guess_list_str),150,global.sw*0.45*10,0.1*_tscl,0.1*_tscl,0)
+	draw_text_ext_transformed(global.sw/2,(global.sh*0)+(650*_scl),string(_guess_list_str),150,global.sw*0.45*10,0.1*_tscl,0.1*_tscl,0)
 	
 	
 	draw_set_valign(fa_middle)
@@ -326,17 +338,38 @@ if global.game_phase = 0 {
 if global.game_phase = 1 || global.game_phase = 2 {
 	if global.game_mode = 2 {
 		
+		
+		
+		
 		draw_set_alpha(0.3)
 		draw_set_color(c_red)
 		if obj_ctrl.selected_word_base_points > 0 {
 			draw_set_alpha(0.7)
 			draw_set_color(c_yellow)
 		}
-		draw_text_transformed(global.sw*0.85,global.sh-40*_pos_scl,string(obj_ctrl.selected_word_base_points)+"x"+string(obj_ctrl.selected_word_length)+"="+string(obj_ctrl.selected_word_base_points*obj_ctrl.selected_word_length)+"\n\n",0.12*_tscl,0.12*_tscl,0)
+		draw_text_transformed(global.sw*0.82,global.sh-40*_pos_scl,string(obj_ctrl.selected_word_base_points)+"x"+string(obj_ctrl.selected_word_length)+"="+string(obj_ctrl.selected_word_base_points*obj_ctrl.selected_word_length),0.12*_tscl,0.12*_tscl,0)
+		
+		//global.points_total = 0
+		//global.words_made = 0
+		//global.rearranges_used = 0
+		//global.discards_used = 0
+		
+		draw_set_alpha(0.7)
+		draw_set_color(c_white)
+		
+		var _next_letters = ""
+		for (var i = 0; i < 5; ++i) {
+		   _next_letters += global.letters_bag[i]
+		}
+		
+		draw_text_transformed(global.sw*0.82,global.sh-105*_pos_scl,"next letters: "+string(_next_letters),0.1*_tscl,0.1*_tscl,0)
+		draw_text_transformed(global.sw*0.82,global.sh-90*_pos_scl,"words_made: "+string(global.words_made),0.1*_tscl,0.1*_tscl,0)
+		draw_text_transformed(global.sw*0.82,global.sh-75*_pos_scl,"rearranges_used: "+string(global.rearranges_used),0.1*_tscl,0.1*_tscl,0)
+		draw_text_transformed(global.sw*0.82,global.sh-60*_pos_scl,"discards_used: "+string(global.discards_used),0.1*_tscl,0.1*_tscl,0)
 		
 		draw_set_color(c_yellow)
 		draw_set_alpha(0.7)
-		draw_text_transformed(global.sw*0.85,global.sh-40*_pos_scl,"\n\nTOTAL: "+string(global.points_total),0.12*_tscl,0.12*_tscl,0)
+		draw_text_transformed(global.sw*0.82,global.sh-20*_pos_scl,"TOTAL: "+string(global.points_total),0.12*_tscl,0.12*_tscl,0)
 	
 	
 		draw_set_alpha(1)

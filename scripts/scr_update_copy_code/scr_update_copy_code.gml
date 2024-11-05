@@ -1,5 +1,6 @@
 ///
 function scr_update_copy_code(){
+	if (live_call()) return live_result;
 	
 	global.current_copy_code = ""
 	//global.current_copy_url = "https://fermentergames.github.io/Sneakle/?loadBoard=ABCD&loadSecret=1-2-3-4"
@@ -26,12 +27,12 @@ function scr_update_copy_code(){
 	global.current_copy_code += "_"
 	global.current_copy_url += "&loadSecret="
 	
-	for (var l = 0; l < secret_word_length; ++l) {
-		global.current_copy_code += string(secret_word_array[l])
-		global.current_copy_url += string(secret_word_array[l])
-		queryStr[1] += string(secret_word_array[l])
+	for (var l = 0; l < obj_ctrl.secret_word_length; ++l) {
+		global.current_copy_code += string(obj_ctrl.secret_word_array[l])
+		global.current_copy_url += string(obj_ctrl.secret_word_array[l])
+		queryStr[1] += string(obj_ctrl.secret_word_array[l])
 		
-		if l < secret_word_length-1 {
+		if l < obj_ctrl.secret_word_length-1 {
 			global.current_copy_code += "-"
 			global.current_copy_url += "-"
 			queryStr[1] += "-"

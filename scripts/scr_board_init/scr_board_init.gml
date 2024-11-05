@@ -136,7 +136,7 @@ if (live_call()) return live_result;
 	
 	
 	
-	_grid_y -= _grid_dim+(_grid_pad*0.5)
+	//_grid_y -= _grid_dim+(_grid_pad*0.5)
 	
 	
 	for (var i = 1; i <= _grid_sz; ++i) {

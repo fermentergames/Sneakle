@@ -997,7 +997,7 @@ var JSON_game=
 		"filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","nullish":"nullish","login_sso":"login_sso","operagx-yyc":"operagx-yyc","mqtt":"mqtt","audio-fx":"audio-fx","intellisense":"intellisense","test":"test","custom_env":"custom_env","filt+fx":"filt+fx","gx_mod_wallpaper":"gx_mod_wallpaper","gx_mod_gamestrip":"gx_mod_gamestrip","live_wallpaper_subscription":"live_wallpaper_subscription"	}
 	,Options:
 	{
-		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:4,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730722173,AllowStatistics:"True"	}
+		debugMode:false,AssetCompilerMajorVersion:2,AssetCompilerMinorVersion:0,AssetCompilerBuildVersion:0,GameSpeed:60,DrawColour:4294967295,xscreensize:450,yscreensize:800,gameId:0,gameGuid:"61adac4e-b19a-4e47-9d99-50f7ff70b8cb",fullScreen:false,interpolatePixels:true,showCursor:true,scale:0,allowFullScreenKey:true,freezeOnLostFocus:false,showLoadingBar:false,displayErrors:false,writeErrors:false,abortErrors:false,variableErrors:true,outputDebugToConsole:true,WebGL:2,WebGLPreserveDrawingBuffer:1,CollisionCompatibility:false,UseNewAudio:true,GameDir:"sneakle",Config:"Default",ViewColour:0,CreateEventOrder:false,UseParticles:false,UseBuiltinFont:false,LocalRunAlert:true,crc:0,ProjectName:"hidle",md5:[213,247,0,0,0,0,0,0,0,0,0,0,0,0,0,0],MajorVersion:1,MinorVersion:0,BuildVersion:0,RevisionVersion:5,DisplayName:"sneakle",TrackingID:"g-qxt06cthex",UseFBExtension:false,tm:1730776119,AllowStatistics:"True"	}
 }
 ;
 
@@ -8582,7 +8582,6 @@ function gml_Script_scr_board_init(_inst,_other)
 		global.gmlgrid_y_origin=0;
 		var gml_grid_x=global.gmlgrid_x_origin;
 		var gml_grid_y=global.gmlgrid_y_origin;
-		gml_grid_y=yyfminus(gml_grid_y,yyfplus(__yy_gml_errCheck(gml_grid_dim),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_grid_pad),0.5))));
 		var gmli=1;
 		for(;yyflessequal(gmli,gml_grid_sz);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
 		{
@@ -8948,6 +8947,48 @@ function gml_Script_scr_letter_data_init(_inst,_other)
 	}
 }
 
+function gml_GlobalScript_scr_mouse_over_button(_inst,_other,argument0,argument1,argument2,argument3)
+{
+	(_inst.gmlscr_mouse_over_button=__yy_method(_inst,gml_Script_scr_mouse_over_button));
+}
+
+function gml_Script_scr_mouse_over_button(_inst,_other,argument0,argument1,argument2,argument3)
+{
+
+		{
+		var $$args=Array.prototype.slice.call(arguments);
+		$$args[2]=argument0;
+		$$args[3]=argument1;
+		$$args[4]=argument2;
+		$$args[5]=argument3;
+
+				{
+			if(yyGetBool(gml_Script_live_call(_inst,_other,$$args[2+0],$$args[2+1],$$args[2+2],$$args[2+3])))
+			{
+				return global.gmllive_result;
+			}
+			;
+			if(yyGetBool(point_in_rectangle(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyfminus(__yy_gml_errCheck(argument0),__yy_gml_errCheck(yyftime(256,__yy_gml_errCheck(argument2)))),yyfminus(__yy_gml_errCheck(argument1),__yy_gml_errCheck(yyftime(256,__yy_gml_errCheck(argument3)))),yyfplus(__yy_gml_errCheck(argument0),__yy_gml_errCheck(yyftime(256,__yy_gml_errCheck(argument2)))),yyfplus(__yy_gml_errCheck(argument1),__yy_gml_errCheck(yyftime(256,__yy_gml_errCheck(argument3)))))))
+			{
+
+								{
+					return true;
+				}
+				;
+			}
+			else 
+			{
+
+								{
+					return false;
+				}
+				;
+			}
+			;
+		}
+	}
+}
+
 function gml_GlobalScript_scr_update_copy_code(_inst,_other)
 {
 	(_inst.gmlscr_update_copy_code=__yy_method(_inst,gml_Script_scr_update_copy_code));
@@ -8957,6 +8998,11 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 {
 
 		{
+		if(yyGetBool(gml_Script_live_call(_inst,_other)))
+		{
+			return global.gmllive_result;
+		}
+		;
 		global.gmlcurrent_copy_code="";
 		show_debug_message("get_window_host()");
 		show_debug_message(get_window_host());
@@ -8981,14 +9027,14 @@ function gml_Script_scr_update_copy_code(_inst,_other)
 		global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,"_");
 		global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,"&loadSecret=");
 		var gmll=0;
-		for(;yyfless(gmll,_inst.gmlsecret_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+		for(;yyfless(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_length);(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
 		{
 
 						{
-				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
-				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
-				gmlqueryStr[__yy_gml_array_check_index_set(1)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(1)],string(_inst.gmlsecret_word_array[__yy_gml_array_check_index(gmll,_inst.gmlsecret_word_array)]));
-				if(yyfless(gmll,yyfminus(__yy_gml_errCheck(_inst.gmlsecret_word_length),1)))
+				global.gmlcurrent_copy_code=yyfplus(global.gmlcurrent_copy_code,string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)]));
+				global.gmlcurrent_copy_url=yyfplus(global.gmlcurrent_copy_url,string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)]));
+				gmlqueryStr[__yy_gml_array_check_index_set(1)]=yyfplus(gmlqueryStr[__yy_gml_array_check_index_set(1)],string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array[__yy_gml_array_check_index(gmll,yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_array)]));
+				if(yyfless(gmll,yyfminus(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlsecret_word_length),1)))
 				{
 
 										{
@@ -9140,6 +9186,9 @@ function gml_Object_obj_ctrl_Create_0(_inst,_other)
 	global.gmlam_creating=0;
 	global.gmlgame_mode=1;
 	global.gmlpoints_total=0;
+	global.gmlwords_made=0;
+	global.gmlrearranges_used=0;
+	global.gmldiscards_used=0;
 	global.gmlgame_grid_size=4;
 	global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 	global.gmltile_size=64;
@@ -9346,7 +9395,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 														{
 								gml_empty_tile_count=yyfplus(gml_empty_tile_count,1);
-								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-232);
+								gml_empty_tile=__yy_gml_array_check(gml_empty_tile,-233);
 								gml_empty_tile[__yy_gml_array_check_index_set(gml_empty_tile_count)]=yyInst(_inst,_other,global.gmltile_space[__yy_gml_array_check_index(gmli,global.gmltile_space)]).id;
 							}
 							;
@@ -9544,18 +9593,44 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 							}
 							else 
 							{
-								if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.5))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_y_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_height()),0.7)))))
+								if(yyGetBool(gml_Script_scr_mouse_over_button(_inst,_other,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)))))
 								{
 
 																		{
-										if(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3)))
+										global.gmlgame_grid_size=3;
+										global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+										global.gmlam_creating=1;
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___128=__yy_method(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0)));
+										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
+										gml_Script_scr_board_init(_inst,_other);
+									}
+									;
+								}
+								else 
+								{
+									if(yyGetBool(gml_Script_scr_mouse_over_button(_inst,_other,yyftime(__yy_gml_errCheck(global.gmlsw),0.35),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)))))
+									{
+
+																				{
+											global.gmlgame_grid_size=4;
+											global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+											global.gmlam_creating=1;
+											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___129=__yy_method(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0)));
+											gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
+											gml_Script_scr_board_init(_inst,_other);
+										}
+										;
+									}
+									else 
+									{
+										if(yyGetBool(gml_Script_scr_mouse_over_button(_inst,_other,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)))))
 										{
 
 																						{
-												global.gmlgame_grid_size=4;
+												global.gmlgame_grid_size=5;
 												global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 												global.gmlam_creating=1;
-												var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___128=__yy_method(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0)));
+												var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___130=__yy_method(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0)));
 												gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 												gml_Script_scr_board_init(_inst,_other);
 											}
@@ -9563,14 +9638,14 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										}
 										else 
 										{
-											if((yyGetBool(yyfgreater(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.3))))&&(yyGetBool(yyfless(yyftime(__yy_gml_errCheck(device_mouse_x_to_gui(0)),__yy_gml_errCheck(global.gmlpr)),yyftime(__yy_gml_errCheck(display_get_gui_width()),0.7)))))
+											if(yyGetBool(gml_Script_scr_mouse_over_button(_inst,_other,yyftime(__yy_gml_errCheck(global.gmlsw),0.65),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)))))
 											{
 
 																								{
-													global.gmlgame_grid_size=5;
+													global.gmlgame_grid_size=6;
 													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
 													global.gmlam_creating=1;
-													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___129=__yy_method(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0)));
+													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___131=__yy_method(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0)));
 													gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 													gml_Script_scr_board_init(_inst,_other);
 												}
@@ -9578,14 +9653,18 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 											}
 											else 
 											{
+												if(yyGetBool(gml_Script_scr_mouse_over_button(_inst,_other,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)))))
+												{
 
-																								{
-													global.gmlgame_grid_size=7;
-													global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
-													global.gmlam_creating=1;
-													var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___130=__yy_method(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0)));
-													gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
-													gml_Script_scr_board_init(_inst,_other);
+																										{
+														global.gmlgame_grid_size=7;
+														global.gmlgame_grid_size_sqr=sqr(global.gmlgame_grid_size);
+														global.gmlam_creating=1;
+														var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)));
+														gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
+														gml_Script_scr_board_init(_inst,_other);
+													}
+													;
 												}
 												;
 											}
@@ -9759,7 +9838,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										}
 										;
 										global.gmlam_creating=1;
-										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___131=__yy_method(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0)),yyfplus("NewLetters",__yy_gml_errCheck(string(global.gmlgame_grid_size))));
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)),yyfplus("NewLetters",__yy_gml_errCheck(string(global.gmlgame_grid_size))));
 										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 										global.gmlloadSecret="";
 										global.gmlloadBoard="";
@@ -9798,7 +9877,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																				{
 											show_debug_message("TYPE LETTERS");
-											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___132=__yy_method(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0)));
+											var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___134=__yy_method(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0)));
 											gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 											global.gmlshow_input_prompt=1;
 										}
@@ -9815,6 +9894,10 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																										{
 														global.gmlgame_mode=2;
+														global.gmlpoints_total=0;
+														global.gmlwords_made=0;
+														global.gmlrearranges_used=0;
+														global.gmldiscards_used=0;
 													}
 													;
 												}
@@ -9911,7 +9994,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										;
 										show_debug_message(yyfplus("SECRET WORD CHOSEN: ",__yy_gml_errCheck(string(gml_letters_str))));
 										gml_Script_scr_update_copy_code(_inst,_other);
-										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___133=__yy_method(_inst,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
+										var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___135=__yy_method(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0)),yyfplus(yyfplus(yyfplus("CREATE_",__yy_gml_errCheck(string(global.gmlgame_grid_size))),"_"),__yy_gml_errCheck(string(global.gmlcurrent_copy_code))));
 										gml_Script_GoogHit(_inst,_other,"screen_view",gml_event_struct);
 										global.gmlshow_export_prompt=1;
 										global.gmlgame_phase=3;
@@ -9938,6 +10021,8 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 										global.gmlpoints_total=yyfplus(global.gmlpoints_total,yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length)));
 										show_debug_message(yyfplus("ADD SCORE ",__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))))));
 										show_debug_message(yyfplus("TOTAL SCORE NOW: ",__yy_gml_errCheck(string(global.gmlpoints_total))));
+										global.gmlwords_made=yyfplus(global.gmlwords_made,1);
+										show_debug_message(yyfplus("words_made: ",__yy_gml_errCheck(string(global.gmlwords_made))));
 										_inst.gmlselected_word_length=0;
 										_inst.gmlselected_word_str="";
 										_inst.gmlselected_word_array=0;
@@ -10117,7 +10202,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 																{
 									global.gmlshow_export_prompt=1;
-									var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___134=__yy_method(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0)));
+									var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___136=__yy_method(_inst,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0)));
 									gml_Script_GoogHit(_inst,_other,"share",gml_event_struct);
 								}
 								;
@@ -10210,7 +10295,7 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 																												{
 															show_debug_message("match!");
 															global.gmlgame_phase=4;
-															var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___135=__yy_method(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0)),_inst.gmlguesses_count);
+															var gml_event_struct=__yy_gml_object_create(_inst,(global.gml___struct___137=__yy_method(_inst,gml_Script____struct___137_gml_Object_obj_ctrl_Step_0)),_inst.gmlguesses_count);
 															gml_Script_GoogHit(_inst,_other,"post_score",gml_event_struct);
 
 																														{
@@ -10480,11 +10565,23 @@ function gml_Object_obj_ctrl_Step_0(_inst,_other)
 		;
 	}
 	;
-	global.gmlcam_zoom_fd=lerp(global.gmlcam_zoom_fd,yyfplus(__yy_gml_errCheck(global.gmlcam_zoom),__yy_gml_errCheck(yyftime((-0.35),__yy_gml_errCheck(yyfminus(1,__yy_gml_errCheck(global.gmlam_creating_fd)))))),0.05);
 	var gmlw=g_pBuiltIn.get_browser_width();
 	var gmlh=g_pBuiltIn.get_browser_height();
+	var gml_tile_sz_and_pad=yyfplus(__yy_gml_errCheck(global.gmltile_size),__yy_gml_errCheck(global.gmlpad_size));
+	global.gmlcam_zoom=yyftime(__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_sz_and_pad),__yy_gml_errCheck(global.gmlgame_grid_size))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gmlw),0.1)))),__yy_gml_errCheck(gmlw))),1.7);
+	if(yyfgreaterequal(global.gmlsw,yyftime(__yy_gml_errCheck(global.gmlsh),0.65)))
+	{
+
+				{
+			global.gmlis_landscape=1;
+			global.gmlcam_zoom=yyftime(__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_sz_and_pad),__yy_gml_errCheck(global.gmlgame_grid_size))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gmlh),0.1)))),__yy_gml_errCheck(gmlh))),2.8);
+		}
+		;
+	}
+	;
+	global.gmlcam_zoom_fd=lerp(global.gmlcam_zoom_fd,yyfplus(__yy_gml_errCheck(global.gmlcam_zoom),__yy_gml_errCheck(yyftime((-0.35),__yy_gml_errCheck(yyfminus(1,__yy_gml_errCheck(global.gmlam_creating_fd)))))),0.05);
 	camera_set_view_size(g_pBuiltIn.view_camera[__yy_gml_array_check_index(0,g_pBuiltIn.view_camera)],yyftime(__yy_gml_errCheck(gmlw),__yy_gml_errCheck(global.gmlcam_zoom_fd)),yyftime(__yy_gml_errCheck(gmlh),__yy_gml_errCheck(global.gmlcam_zoom_fd)));
-	camera_set_view_pos(g_pBuiltIn.view_camera[__yy_gml_array_check_index(0,g_pBuiltIn.view_camera)],__yy_gml_errCheck(-__yy_gml_errCheck(yyfdivide(yyftime(__yy_gml_errCheck(gmlw),__yy_gml_errCheck(global.gmlcam_zoom_fd)),2))),yyfplus(__yy_gml_errCheck(yyfdivide(yyftime(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gmlh))),__yy_gml_errCheck(global.gmlcam_zoom_fd)),2)),__yy_gml_errCheck(yyftime((-120),__yy_gml_errCheck(yyfminus(1,__yy_gml_errCheck(global.gmlam_creating_fd)))))));
+	camera_set_view_pos(g_pBuiltIn.view_camera[__yy_gml_array_check_index(0,g_pBuiltIn.view_camera)],__yy_gml_errCheck(-__yy_gml_errCheck(yyfdivide(yyftime(__yy_gml_errCheck(gmlw),__yy_gml_errCheck(global.gmlcam_zoom_fd)),2))),yyfplus(yyfplus(__yy_gml_errCheck(yyftime(yyftime(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gmlh))),__yy_gml_errCheck(global.gmlcam_zoom_fd)),0)),__yy_gml_errCheck(yyftime(yyftime(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_sz_and_pad))),__yy_gml_errCheck(global.gmlgame_grid_size)),0.5))),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(global.gmlcam_zoom_fd)))));
 }
 
 function gml_Script____struct___127_gml_Object_obj_ctrl_Step_0(_inst,_other)
@@ -10522,7 +10619,7 @@ function gml_Script____struct___128_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create4";
+			_inst.gmlscreen_name="Create3";
 		}
 	}
 }
@@ -10542,7 +10639,7 @@ function gml_Script____struct___129_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create5";
+			_inst.gmlscreen_name="Create4";
 		}
 	}
 }
@@ -10562,7 +10659,7 @@ function gml_Script____struct___130_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="Create7";
+			_inst.gmlscreen_name="Create5";
 		}
 	}
 }
@@ -10582,11 +10679,7 @@ function gml_Script____struct___131_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			var $$args=Array.prototype.slice.call(arguments);
-
-						{
-				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
-			}
+			_inst.gmlscreen_name="Create6";
 		}
 	}
 }
@@ -10606,7 +10699,7 @@ function gml_Script____struct___132_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlscreen_name="LoadFromCreate";
+			_inst.gmlscreen_name="Create7";
 		}
 	}
 }
@@ -10650,7 +10743,7 @@ function gml_Script____struct___134_gml_Object_obj_ctrl_Step_0(_inst,_other)
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
-			_inst.gmlcontent_type="SharePuzzleLink";
+			_inst.gmlscreen_name="LoadFromCreate";
 		}
 	}
 }
@@ -10668,6 +10761,50 @@ function gml_Script____struct___135_gml_Object_obj_ctrl_Step_0(_inst,_other)
 
 		{
 		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.prototype);
+
+				{
+			var $$args=Array.prototype.slice.call(arguments);
+
+						{
+				_inst.gmlscreen_name=$$args[__yy_gml_array_check_index(2+(0),$$args)];
+			}
+		}
+	}
+}
+
+function gml_Script____struct___136_gml_Object_obj_ctrl_Step_0(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___136@gml_Object_obj_ctrl_Step_0";
+	}
+	if(gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.__type===undefined)
+	{
+		gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.__type="gml_Script____struct___136@gml_Object_obj_ctrl_Step_0";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype);
+
+				{
+			_inst.gmlcontent_type="SharePuzzleLink";
+		}
+	}
+}
+
+function gml_Script____struct___137_gml_Object_obj_ctrl_Step_0(_inst,_other)
+{
+	if(_inst.__yyIsGMLObject)
+	{
+		_inst.__type="gml_Script____struct___137@gml_Object_obj_ctrl_Step_0";
+	}
+	if(gml_Script____struct___137_gml_Object_obj_ctrl_Step_0.prototype.__type===undefined)
+	{
+		gml_Script____struct___137_gml_Object_obj_ctrl_Step_0.prototype.__type="gml_Script____struct___137@gml_Object_obj_ctrl_Step_0";
+	}
+
+		{
+		if(_inst.__yyIsGMLObject)Object.setPrototypeOf(_inst,gml_Script____struct___137_gml_Object_obj_ctrl_Step_0.prototype);
 
 				{
 			var $$args=Array.prototype.slice.call(arguments);
@@ -10714,7 +10851,7 @@ function gml_Object_obj_ctrl_Other_10(_inst,_other)
 	global.gmlsh=gmlrh;
 	global.gmlis_landscape=0;
 	var gml_tile_sz_and_pad=yyfplus(__yy_gml_errCheck(global.gmltile_size),__yy_gml_errCheck(global.gmlpad_size));
-	global.gmlcam_zoom=yyftime(__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_sz_and_pad),__yy_gml_errCheck(global.gmlgame_grid_size))),90)),__yy_gml_errCheck(gmlw))),1.5);
+	global.gmlcam_zoom=yyftime(__yy_gml_errCheck(yyfdivide(__yy_gml_errCheck(yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_tile_sz_and_pad),__yy_gml_errCheck(global.gmlgame_grid_size))),100)),__yy_gml_errCheck(gmlw))),1.5);
 	if(yyfgreaterequal(global.gmlsw,yyftime(__yy_gml_errCheck(global.gmlsh),0.65)))
 	{
 
@@ -10772,7 +10909,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	{
 
 				{
-			gml_scl=yyfdivide(__yy_gml_errCheck(global.gmlsh),800);
+			gml_scl=yyfdivide(__yy_gml_errCheck(global.gmlsh),850);
 		}
 		;
 	}
@@ -10806,12 +10943,16 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 			draw_set_alpha(0.1);
 			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.4),"HOW TO",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.7);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),yyftime(0.18,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n4x4",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n5x5",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
-			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n7x7",yyftime(0.13,__yy_gml_errCheck(gml_tscl)),yyftime(0.13,__yy_gml_errCheck(gml_tscl)),0);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.35),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.65),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_sprite_ext(_inst,YYASSET_REF(0x01000002),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.2),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n3x3",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.35),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n4x4",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n5x5",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.65),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n6x6",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+			draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.8),yyftime(__yy_gml_errCheck(global.gmlsh),0.6),"CREATE\n7x7",yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
 			draw_set_alpha(0.3);
 		}
 		;
@@ -10824,7 +10965,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						{
 				draw_set_alpha(0.3);
 				draw_set_font(YYASSET_REF(0x06000000));
-				draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"drag to rearrange the letters",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+				draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(75,__yy_gml_errCheck(gml_pos_scl)),"drag to rearrange the letters",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 				draw_set_font(YYASSET_REF(0x06000001));
 				draw_set_alpha(0.7);
 				if(yyfequal(global.gmlgame_mode,1))
@@ -10839,12 +10980,12 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					;
 				}
 				;
-				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
+				draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.4,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
 				if(yyfequal(global.gmlgame_mode,1))
 				{
 
 										{
-						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"point mode: OFF",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"activate points mode",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					}
 					;
 				}
@@ -10852,7 +10993,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 				{
 
 										{
-						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"point mode: ON",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(10,__yy_gml_errCheck(gml_pos_scl)))),"exit points mode",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					}
 					;
 				}
@@ -10889,7 +11030,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 								{
 					draw_set_alpha(0.3);
 					draw_set_font(YYASSET_REF(0x06000000));
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"swipe to select your SECRET WORD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(75,__yy_gml_errCheck(gml_pos_scl)),"swipe to select your SECRET WORD",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
 					draw_set_alpha(0.7);
 					draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyftime(__yy_gml_errCheck(global.gmlsw),0.18),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.25,__yy_gml_errCheck(gml_tscl)),yyftime(0.08,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
@@ -10901,7 +11042,17 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 												{
 							draw_set_alpha(1);
 							draw_sprite_ext(_inst,YYASSET_REF(0x01000003),0,yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),yyftime(0.65,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0,16777215,0.06);
-							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),"CONFIRM SECRET WORD?",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+							var gml_confirm_word_str="CONFIRM SECRET WORD?";
+							if(yyfequal(global.gmlgame_mode,2))
+							{
+
+																{
+									gml_confirm_word_str="SUBMIT";
+								}
+								;
+							}
+							;
+							draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-110),__yy_gml_errCheck(gml_pos_scl)))),gml_confirm_word_str,yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 							draw_set_alpha(0.3);
 						}
 						;
@@ -10909,7 +11060,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					;
 					draw_set_alpha(0.3);
 					draw_set_font(YYASSET_REF(0x06000000));
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-240),__yy_gml_errCheck(gml_pos_scl)))),"your SECRET WORD is",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(500,__yy_gml_errCheck(gml_scl)))),"your SECRET WORD is",yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_font(YYASSET_REF(0x06000001));
 					var gml_letters_str="";
 					var gmll=0;
@@ -10922,7 +11073,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 					}
 					;
 					draw_set_alpha(0.3);
-					if(yyfgreaterequal(_inst.gmlselected_word_length,4))
+					if(yyfgreaterequal(_inst.gmlselected_word_is_valid,1))
 					{
 
 												{
@@ -10931,7 +11082,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						;
 					}
 					;
-					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-200),__yy_gml_errCheck(gml_pos_scl)))),string(gml_letters_str),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(540,__yy_gml_errCheck(gml_scl)))),string(gml_letters_str),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_alpha(0.3);
 					draw_set_font(YYASSET_REF(0x06000000));
 					if(yyfgreater(_inst.gmlselected_word_length,0))
@@ -10942,7 +11093,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							{
 
 																{
-									draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-140),__yy_gml_errCheck(gml_pos_scl)))),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+									draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(590,__yy_gml_errCheck(gml_scl)))),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 								}
 								;
 							}
@@ -10952,7 +11103,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 								{
 
 																		{
-										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime((-140),__yy_gml_errCheck(gml_pos_scl)))),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(590,__yy_gml_errCheck(gml_scl)))),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 									}
 									;
 								}
@@ -10983,7 +11134,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 										{
 						draw_set_alpha(0.3);
 						draw_set_font(YYASSET_REF(0x06000000));
-						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(90,__yy_gml_errCheck(gml_pos_scl)),"can you guess the SECRET WORD?",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(75,__yy_gml_errCheck(gml_pos_scl)),"can you guess the SECRET WORD?",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 						draw_set_font(YYASSET_REF(0x06000001));
 						if(yyfequal(_inst.gmlready_for_phase3,1))
 						{
@@ -11017,7 +11168,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						{
 
 														{
-								draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.7),yyfplus(__yy_gml_errCheck(string(gml_letters_str)),"?"),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
+								draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(540,__yy_gml_errCheck(gml_scl)))),yyfplus(__yy_gml_errCheck(string(gml_letters_str)),"?"),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),yyftime(0.3,__yy_gml_errCheck(gml_tscl)),0);
 							}
 							;
 						}
@@ -11032,7 +11183,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 								{
 
 																		{
-										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.75),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+										draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(590,__yy_gml_errCheck(gml_scl)))),"too short",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 									}
 									;
 								}
@@ -11042,7 +11193,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 									{
 
 																				{
-											draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.75),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
+											draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(590,__yy_gml_errCheck(gml_scl)))),"not a valid word",yyftime(0.15,__yy_gml_errCheck(gml_tscl)),yyftime(0.15,__yy_gml_errCheck(gml_tscl)),0);
 										}
 										;
 									}
@@ -11065,7 +11216,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							;
 						}
 						;
-						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyftime(__yy_gml_errCheck(global.gmlsh),0.8),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count)),__yy_gml_errCheck(string(gml_guesses_str))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(620,__yy_gml_errCheck(gml_scl)))),yyfplus(__yy_gml_errCheck(string(_inst.gmlguesses_count)),__yy_gml_errCheck(string(gml_guesses_str))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 						var gml_guess_list_str="";
 						var gmli=1;
 						for(;yyfless(gmli,array_length(_inst.gmlguesses_list));(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
@@ -11085,7 +11236,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 							}
 						}
 						;
-						draw_text_ext_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0.8)),__yy_gml_errCheck(yyftime(30,__yy_gml_errCheck(gml_pos_scl)))),string(gml_guess_list_str),150,yyftime(yyftime(__yy_gml_errCheck(global.gmlsw),0.45),10),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+						draw_text_ext_transformed(yyfdivide(__yy_gml_errCheck(global.gmlsw),2),yyfplus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),0)),__yy_gml_errCheck(yyftime(650,__yy_gml_errCheck(gml_scl)))),string(gml_guess_list_str),150,yyftime(yyftime(__yy_gml_errCheck(global.gmlsw),0.45),10),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
 						draw_set_valign(1);
 						draw_set_font(YYASSET_REF(0x06000001));
 					}
@@ -11192,10 +11343,26 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 						;
 					}
 					;
-					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.85),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(yyfplus(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points)),"x"),__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))),"="),__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))))),"\n\n"),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),yyfplus(yyfplus(yyfplus(yyfplus(__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points)),"x"),__yy_gml_errCheck(string(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))),"="),__yy_gml_errCheck(string(yyftime(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_base_points),__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length))))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_set_alpha(0.7);
+					draw_set_color(16777215);
+					var gml_next_letters="";
+					var gmli=0;
+					for(;yyfless(gmli,5);(gmli=(gmli instanceof Long?gmli.add(1):++gmli),gmli))
+					{
+
+												{
+							gml_next_letters=yyfplus(gml_next_letters,global.gmlletters_bag[__yy_gml_array_check_index(gmli,global.gmlletters_bag)]);
+						}
+					}
+					;
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(105,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("next letters: ",__yy_gml_errCheck(string(gml_next_letters))),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(90,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("words_made: ",__yy_gml_errCheck(string(global.gmlwords_made))),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(75,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("rearranges_used: ",__yy_gml_errCheck(string(global.gmlrearranges_used))),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(60,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("discards_used: ",__yy_gml_errCheck(string(global.gmldiscards_used))),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),yyftime(0.1,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_color(65535);
 					draw_set_alpha(0.7);
-					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.85),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(40,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("\n\nTOTAL: ",__yy_gml_errCheck(string(global.gmlpoints_total))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
+					draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.82),yyfminus(__yy_gml_errCheck(global.gmlsh),__yy_gml_errCheck(yyftime(20,__yy_gml_errCheck(gml_pos_scl)))),yyfplus("TOTAL: ",__yy_gml_errCheck(string(global.gmlpoints_total))),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),yyftime(0.12,__yy_gml_errCheck(gml_tscl)),0);
 					draw_set_alpha(1);
 					draw_set_color(16777215);
 				}
@@ -11374,7 +11541,7 @@ function gml_Object_obj_ctrl_Draw_64(_inst,_other)
 	;
 	draw_set_font(YYASSET_REF(0x06000000));
 	draw_set_alpha(yyftime(0.2,__yy_gml_errCheck(gml_version_scl)));
-	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45600.50660328656))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
+	draw_text_transformed(yyftime(__yy_gml_errCheck(global.gmlsw),0.5),yyfminus(__yy_gml_errCheck(yyftime(__yy_gml_errCheck(global.gmlsh),1)),__yy_gml_errCheck(yyftime(yyftime(25,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_pos_scl)))),yyfplus("<3 @FermenterGames\n",__yy_gml_errCheck(date_datetime_string(45601.13098329096))),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),yyftime(yyftime(0.07,__yy_gml_errCheck(gml_version_scl)),__yy_gml_errCheck(gml_tscl)),0);
 	draw_set_font(YYASSET_REF(0x06000001));
 	draw_set_alpha(1);
 }
@@ -11479,6 +11646,15 @@ function gml_Object_obj_ctrl_Draw_73(_inst,_other)
 						draw_set_color(merge_color(__yy__v69.gmlletter_col,16777215,__yy__v69.gmlam_selected_fd));
 						var gml_text_offset_y=-0;
 						var gml_text_scl=yyftime(2.2,__yy_gml_errCheck(__yy__v69.gmlscl));
+						if((yyGetBool(yyfequal(global.gmlgame_mode,2)))&&(yyGetBool(yyfgreaterequal(__yy__v69.gmlmy_letter_num,1))))
+						{
+
+														{
+								draw_set_color(merge_color(__yy__v69.gmlletter_col,65535,clamp(yyfplus(__yy_gml_errCheck(__yy__v69.gmlam_selected_fd),__yy_gml_errCheck(__yy__v69.gmlam_part_of_secret_word_fd)),0,yyftime(1,__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_is_valid)))));
+							}
+							;
+						}
+						;
 						draw_text_transformed(yyfplus(__yy_gml_errCheck(__yy__v69.x),__yy_gml_errCheck(lengthdir_x(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),yyfplus(yyfplus(__yy_gml_errCheck(__yy__v69.y),__yy_gml_errCheck(lengthdir_y(yyfplus(__yy_gml_errCheck(__yy_gml_errCheck(-__yy_gml_errCheck(gml_tile_ht))),__yy_gml_errCheck(yyftime(__yy_gml_errCheck(gml_text_offset_y),__yy_gml_errCheck(__yy__v69.gmlscl)))),yyfminus(__yy_gml_errCheck(__yy__v69.image_angle),90)))),__yy_gml_errCheck(gml_spawn_slam)),string_upper(__yy__v69.gmlmy_letter_str),gml_text_scl,gml_text_scl,__yy__v69.image_angle);
 						if((yyGetBool(yyfequal(global.gmlgame_mode,2)))&&(yyGetBool(yyfgreaterequal(__yy__v69.gmlmy_letter_num,1))))
 						{
@@ -11978,6 +12154,7 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 				{
 			_inst.gmlam_dragging=0;
 			_inst.gmlprev_targ_id=_inst.gmltarg_id;
+			_inst.gmlprev_tile_id=_inst.gmltile_id;
 			_inst.gmltarg_id=instance_nearest(_inst,_inst.x,_inst.y,YYASSET_REF(0x00000006));
 			_inst.gmltile_id=yyInst(_inst,_other,_inst.gmltarg_id).gmltile_id;
 			yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmldragging=0;
@@ -11985,6 +12162,16 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 			{
 
 								{
+					if((yyGetBool(yyfnotequal(_inst.gmlprev_targ_id,_inst.gmltarg_id)))&&(yyGetBool(yyfnotequal(_inst.gmlprev_targ_id,_inst))))
+					{
+
+												{
+							global.gmlrearranges_used=yyfplus(global.gmlrearranges_used,1);
+							show_debug_message(yyfplus("rearranges_used: ",__yy_gml_errCheck(string(global.gmlrearranges_used))));
+						}
+						;
+					}
+					;
 					var gml_conflicting_tile=collision_point(_inst,yyInst(_inst,_other,_inst.gmltarg_id).x,yyInst(_inst,_other,_inst.gmltarg_id).y,YYASSET_REF(0x00000005),true,true);
 					if(yyfnotequal(gml_conflicting_tile,(-4)))
 					{
@@ -12045,37 +12232,117 @@ function gml_Object_obj_tile_letter_Mouse_56(_inst,_other)
 			{
 
 								{
-					if(yyflessequal(point_distance(_inst.x,_inst.y,_inst.xstart,_inst.ystart),40))
+					if((yyGetBool(1))&&(yyGetBool(yyfequal(global.gmlgame_mode,2))))
 					{
 
 												{
-							_inst.gmlx_targ=_inst.xstart;
-							_inst.gmly_targ=_inst.ystart;
+
+														{
+								var __yy__v76=GetWithArray(instance_create_depth(yyInst(_inst,_other,_inst.gmlprev_targ_id).x,yyInst(_inst,_other,_inst.gmlprev_targ_id).y,_inst.depth,YYASSET_REF(0x00000005)));
+								for(var __yy__v77 in __yy__v76)
+								{
+									if(!__yy__v76.hasOwnProperty(__yy__v77))continue;
+									var __yy__v78=__yy__v76[__yy__v77];
+
+																		{
+										__yy__v78.gmltile_id=_inst.gmlprev_tile_id;
+										__yy__v78.gmltile_col=_inst.gmltile_col;
+										__yy__v78.gmltile_row=_inst.gmltile_row;
+										__yy__v78.gmltarg_id=_inst.gmlprev_targ_id;
+										global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+										global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v78.gmltile_id)]=__yy__v78.id;
+										__yy__v78.gmlspawn_slam=yyfplus(yyfplus(2,__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v78.gmltile_col)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size)))))),__yy_gml_errCheck(yyftime(yyftime((-0.5),__yy_gml_errCheck(__yy__v78.gmltile_row)),__yy_gml_errCheck(yyfdivide(1,__yy_gml_errCheck(global.gmlgame_grid_size))))));
+										__yy__v78.image_angle=yyfplus((-20),__yy_gml_errCheck(random(40)));
+										__yy__v78.gmlmy_letter_str=array_shift(global.gmlletters_bag);
+										array_push(global.gmlletters_bag,__yy__v78.gmlmy_letter_str);
+										__yy__v78.gmlam_set=1;
+										var gmll=1;
+										for(;yyflessequal(gmll,array_length(global.gmlletter_data));(gmll=(gmll instanceof Long?gmll.add(1):++gmll),gmll))
+										{
+
+																						{
+												if(yyfequal(__yy__v78.gmlmy_letter_str,global.gmlletter_data[__yy_gml_array_check_index(gmll,global.gmlletter_data)][__yy_gml_array_check_index(1,global.gmlletter_data[~~gmll])]))
+												{
+
+																										{
+														__yy__v78.gmlmy_letter_num=gmll;
+														gmll=array_length(global.gmlletter_data);
+													}
+													;
+												}
+												;
+											}
+										}
+										;
+									}
+								}
+							}
+							;
+
+														{
+								var __yy__v79=GetWithArray(YYASSET_REF(0x00000005));
+								for(var __yy__v80 in __yy__v79)
+								{
+									if(!__yy__v79.hasOwnProperty(__yy__v80))continue;
+									var __yy__v81=__yy__v79[__yy__v80];
+
+																		{
+										__yy__v81.gmltile_id=yyInst(_inst,_other,__yy__v81.gmltarg_id).gmltile_id;
+										global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
+										global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v81.gmltile_id)]=__yy__v81.gmlmy_letter_str;
+										global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
+										global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v81.gmltile_id)]=__yy__v81.id;
+									}
+								}
+							}
+							;
+							gml_Script_scr_update_copy_code(_inst,_other);
+							yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_is_valid=0;
+							global.gmldiscards_used=yyfplus(global.gmldiscards_used,1);
+							show_debug_message(yyfplus("discards_used: ",__yy_gml_errCheck(string(global.gmldiscards_used))));
+							instance_destroy(_inst);
+						}
+						;
+					}
+					else 
+					{
+
+												{
+							if(yyflessequal(point_distance(_inst.x,_inst.y,_inst.xstart,_inst.ystart),40))
+							{
+
+																{
+									_inst.gmlx_targ=_inst.xstart;
+									_inst.gmly_targ=_inst.ystart;
+								}
+								;
+							}
+							;
+							_inst.gmltarg_id=_inst;
+							_inst.gmlprev_targ_id=_inst.gmltarg_id;
+							_inst.gmlam_set=0;
 						}
 						;
 					}
 					;
-					_inst.gmltarg_id=_inst;
-					_inst.gmlprev_targ_id=_inst.gmltarg_id;
-					_inst.gmlam_set=0;
 				}
 				;
 			}
 			;
 
 						{
-				var __yy__v76=GetWithArray(YYASSET_REF(0x00000005));
-				for(var __yy__v77 in __yy__v76)
+				var __yy__v82=GetWithArray(YYASSET_REF(0x00000005));
+				for(var __yy__v83 in __yy__v82)
 				{
-					if(!__yy__v76.hasOwnProperty(__yy__v77))continue;
-					var __yy__v78=__yy__v76[__yy__v77];
+					if(!__yy__v82.hasOwnProperty(__yy__v83))continue;
+					var __yy__v84=__yy__v82[__yy__v83];
 
 										{
-						__yy__v78.gmltile_id=yyInst(_inst,_other,__yy__v78.gmltarg_id).gmltile_id;
+						__yy__v84.gmltile_id=yyInst(_inst,_other,__yy__v84.gmltarg_id).gmltile_id;
 						global.gmlletters_grid=__yy_gml_array_check(global.gmlletters_grid,3838047477);
-						global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v78.gmltile_id)]=__yy__v78.gmlmy_letter_str;
+						global.gmlletters_grid[__yy_gml_array_check_index_set(__yy__v84.gmltile_id)]=__yy__v84.gmlmy_letter_str;
 						global.gmltile_letter=__yy_gml_array_check(global.gmltile_letter,2904156363);
-						global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v78.gmltile_id)]=__yy__v78.id;
+						global.gmltile_letter[__yy_gml_array_check_index_set(__yy__v84.gmltile_id)]=__yy__v84.id;
 					}
 				}
 			}
@@ -12122,14 +12389,14 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 									yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array_id[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length),1))]=_inst.id;
 
 																		{
-										var __yy__v79=GetWithArray(YYASSET_REF(0x00000001));
-										for(var __yy__v80 in __yy__v79)
+										var __yy__v85=GetWithArray(YYASSET_REF(0x00000001));
+										for(var __yy__v86 in __yy__v85)
 										{
-											if(!__yy__v79.hasOwnProperty(__yy__v80))continue;
-											var __yy__v81=__yy__v79[__yy__v80];
+											if(!__yy__v85.hasOwnProperty(__yy__v86))continue;
+											var __yy__v87=__yy__v85[__yy__v86];
 
 																						{
-												gml_Script_scr_validate_word(__yy__v81,_inst);
+												gml_Script_scr_validate_word(__yy__v87,_inst);
 											}
 										}
 									}
@@ -12153,19 +12420,19 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 																		{
 
 																				{
-											var __yy__v82=GetWithArray(YYASSET_REF(0x00000005));
-											for(var __yy__v83 in __yy__v82)
+											var __yy__v88=GetWithArray(YYASSET_REF(0x00000005));
+											for(var __yy__v89 in __yy__v88)
 											{
-												if(!__yy__v82.hasOwnProperty(__yy__v83))continue;
-												var __yy__v84=__yy__v82[__yy__v83];
+												if(!__yy__v88.hasOwnProperty(__yy__v89))continue;
+												var __yy__v90=__yy__v88[__yy__v89];
 
 																								{
-													if(yyfgreater(__yy__v84.gmlam_selected_num,_inst.gmlam_selected_num))
+													if(yyfgreater(__yy__v90.gmlam_selected_num,_inst.gmlam_selected_num))
 													{
 
 																												{
-															__yy__v84.gmlam_selected=0;
-															__yy__v84.gmlam_selected_num=0;
+															__yy__v90.gmlam_selected=0;
+															__yy__v90.gmlam_selected_num=0;
 														}
 														;
 													}
@@ -12202,14 +12469,14 @@ function gml_Object_obj_tile_letter_Mouse_0(_inst,_other)
 										yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_array_id[__yy_gml_array_check_index_set(yyfminus(__yy_gml_errCheck(yyInst(_inst,_other,YYASSET_REF(0x00000001)).gmlselected_word_length),1))]=_inst.id;
 
 																				{
-											var __yy__v85=GetWithArray(YYASSET_REF(0x00000001));
-											for(var __yy__v86 in __yy__v85)
+											var __yy__v91=GetWithArray(YYASSET_REF(0x00000001));
+											for(var __yy__v92 in __yy__v91)
 											{
-												if(!__yy__v85.hasOwnProperty(__yy__v86))continue;
-												var __yy__v87=__yy__v85[__yy__v86];
+												if(!__yy__v91.hasOwnProperty(__yy__v92))continue;
+												var __yy__v93=__yy__v91[__yy__v92];
 
 																								{
-													gml_Script_scr_validate_word(__yy__v87,_inst);
+													gml_Script_scr_validate_word(__yy__v93,_inst);
 												}
 											}
 										}
@@ -12794,6 +13061,8 @@ function gmlInitGlobal()
 	global.gml___struct___133=0;
 	global.gml___struct___134=0;
 	global.gml___struct___135=0;
+	global.gml___struct___136=0;
+	global.gml___struct___137=0;
 	gml_GlobalScript___GoogConfig(global,global);
 	gml_GlobalScript___GoogSystem(global,global);
 	gml_GlobalScript_GMDictionary_classes(global,global);
@@ -12818,6 +13087,7 @@ function gmlInitGlobal()
 	gml_GlobalScript_parse_query(global,global);
 	gml_GlobalScript_scr_board_init(global,global);
 	gml_GlobalScript_scr_letter_data_init(global,global);
+	gml_GlobalScript_scr_mouse_over_button(global,global);
 	gml_GlobalScript_scr_update_copy_code(global,global);
 	gml_GlobalScript_scr_update_room_dimensions(global,global);
 	gml_GlobalScript_scr_validate_word(global,global);
@@ -12989,8 +13259,8 @@ IDToTagList=[
 {
 	key:83986193,ids:[0]}
 ];
-JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_letter_data_init","gml_Script_scr_letter_data_init","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0"];
-JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_letter_data_init,gml_Script_scr_letter_data_init,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0];
+JSON_game.ScriptNames=["gml_GlobalScript___GoogConfig","gml_GlobalScript___GoogSystem","gml_Script____struct___0","gml_Script____struct___1","gml_Script___GoogUnixTimeMicroseconds","gml_Script___GoogGenerateUUID4String","gml_Script___GoogXORShift32Random","gml_Script___GoogXORShift32Choose","gml_Script___GoogTrace","gml_GlobalScript_GMDictionary_classes","gml_Script_anon@706@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@1754@CheckWordDictionary@GMDictionary_classes","gml_Script_anon@2187@CheckWordDictionary@GMDictionary_classes","gml_Script____struct___2@CheckWordDictionary@GMDictionary_classes","gml_Script_CheckWordDictionary","gml_Script_anon@3141@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4195@PickWordDictionary@GMDictionary_classes","gml_Script_anon@4530@PickWordDictionary@GMDictionary_classes","gml_Script____struct___3@anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_anon@5084@PickWordDictionary@GMDictionary_classes","gml_Script_PickWordDictionary","gml_GlobalScript_GMDictionary_exceptions","gml_Script_anon@437@DictionaryTooSmallException@GMDictionary_exceptions","gml_Script_DictionaryTooSmallException","gml_GlobalScript_GMLive_noDeactivate","gml_Script_instance_deactivate_all_hook","gml_Script_instance_deactivate_layer_hook","gml_Script_instance_deactivate_object_hook","gml_Script_instance_deactivate_region_hook","gml_GlobalScript_GMLive_notOnce","gml_GlobalScript_GMLive","gml_Script_gml_macro","gml_Script_sprite_set_live","gml_Script_path_set_live","gml_Script_animcurve_set_live","gml_Script_file_set_live","gml_Script_room_set_live","gml_Script_room_goto_live","gml_Script_live_call","gml_Script_live_defcall","gml_Script_live_call_ext","gml_Script_live_defcall_ext","gml_Script_live_auto_call_1","gml_Script_live_auto_call_2","gml_Script_live_async_http","gml_Script_shader_set_live","gml_Script_live_validate_scripts","gml_Script_live_method","gml_Script_live_method_get_self","gml_Script_gml_thread_method_script","gml_Script_live_update_script_impl","gml_Script_live_constant_add","gml_Script_live_constant_delete","gml_Script_live_variable_add","gml_Script_live_variable_delete","gml_Script_live_function_add","gml_Script_live_function_delete","gml_Script_live_throw_error","gml_Script_live_execute_string","gml_Script_live_snippet_create","gml_Script_live_snippet_destroy","gml_Script_live_snippet_call","gml_Script_live_update","gml_Script_live_init","gml_Script_live_room_start","gml_Script_vm_v2_GmlStructBase","gml_GlobalScript_GMLiveAPI_js","gml_Script_live_preinit_js_dummy","gml_GlobalScript_GMLiveAPI","gml_Script_live_preinit_api","gml_GlobalScript_GoogAsyncHTTPEvent","gml_Script_GoogAsyncHTTPEvent","gml_GlobalScript_GoogClientIDForce","gml_Script_GoogClientIDForce","gml_GlobalScript_GoogClientIDGet","gml_Script_GoogClientIDGet","gml_GlobalScript_GoogHit","gml_Script____struct___123@GoogHit@GoogHit","gml_Script____struct___124@GoogHit@GoogHit","gml_Script_GoogHit","gml_GlobalScript_GoogUserIDForce","gml_Script_GoogUserIDForce","gml_GlobalScript_GoogUserIDGet","gml_Script_GoogUserIDGet","gml_GlobalScript_html_elements_scripts","gml_Script_html_init","gml_Script_html_sync","gml_Script_html_style","gml_Script_html_cell","gml_Script_html_button","gml_Script_html_div","gml_Script_html_field","gml_Script_html_form","gml_Script_html_h1","gml_Script_html_h2","gml_Script_html_h3","gml_Script_html_icon","gml_Script_html_image","gml_Script_html_link","gml_Script_html_p","gml_Script_html_radio","gml_Script_html_row","gml_Script_html_span","gml_Script_html_sprite","gml_Script_html_submit","gml_Script_html_table","gml_Script_html_form_values","gml_Script_html_element_hover","gml_Script_html_element_interaction","gml_Script_html_element_x","gml_Script_html_element_y","gml_Script_html_mouse_x","gml_Script_html_mouse_y","gml_Script_HtmlElement","gml_Script_html_element","gml_Script_html_element_by_id","gml_Script_html_element_by_identifier","gml_Script_html_element_cleanup","gml_Script_html_element_cleanup_children","gml_Script_html_element_id","gml_Script_html_element_set_property","gml_Script_html_element_sync","gml_Script_html_form_add_values_from_children","gml_Script_gmcallback_lose_focus","gml_Script_gmcallback_on_input","gml_Script_gmcallback_on_interaction","gml_Script_gmcallback_on_mouseover","gml_Script_gmcallback_on_mouseout","gml_Script_gmcallback_set_focus","gml_GlobalScript_html_submit_closebtn","gml_Script_html_submit_closebtn","gml_GlobalScript_html_submit_code","gml_Script_html_submit_code","gml_GlobalScript_html_submit_export_link","gml_Script_html_submit_export_link","gml_GlobalScript_html_submit_export","gml_Script_html_submit_export","gml_GlobalScript_INIT_HTML","gml_GlobalScript_parse_query","gml_Script_get_query","gml_Script_parse_query","gml_GlobalScript_scr_board_init","gml_Script____struct___125@scr_board_init@scr_board_init","gml_Script_scr_board_init","gml_GlobalScript_scr_letter_data_init","gml_Script_scr_letter_data_init","gml_GlobalScript_scr_mouse_over_button","gml_Script_scr_mouse_over_button","gml_GlobalScript_scr_update_copy_code","gml_Script_scr_update_copy_code","gml_GlobalScript_scr_update_room_dimensions","gml_Script_scr_update_room_dimensions","gml_GlobalScript_scr_validate_word","gml_Script_scr_validate_word","gml_Script_browser_stretch_canvas","gml_Script____struct___126@gml_Object_obj_ctrl_Create_0","gml_Script____struct___127@gml_Object_obj_ctrl_Step_0","gml_Script____struct___128@gml_Object_obj_ctrl_Step_0","gml_Script____struct___129@gml_Object_obj_ctrl_Step_0","gml_Script____struct___130@gml_Object_obj_ctrl_Step_0","gml_Script____struct___131@gml_Object_obj_ctrl_Step_0","gml_Script____struct___132@gml_Object_obj_ctrl_Step_0","gml_Script____struct___133@gml_Object_obj_ctrl_Step_0","gml_Script____struct___134@gml_Object_obj_ctrl_Step_0","gml_Script____struct___135@gml_Object_obj_ctrl_Step_0","gml_Script____struct___136@gml_Object_obj_ctrl_Step_0","gml_Script____struct___137@gml_Object_obj_ctrl_Step_0"];
+JSON_game.Scripts=[gml_GlobalScript___GoogConfig,gml_GlobalScript___GoogSystem,gml_Script____struct___0,gml_Script____struct___1,gml_Script___GoogUnixTimeMicroseconds,gml_Script___GoogGenerateUUID4String,gml_Script___GoogXORShift32Random,gml_Script___GoogXORShift32Choose,gml_Script___GoogTrace,gml_GlobalScript_GMDictionary_classes,gml_Script_anon_706_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_1754_CheckWordDictionary_GMDictionary_classes,gml_Script_anon_2187_CheckWordDictionary_GMDictionary_classes,gml_Script____struct___2_CheckWordDictionary_GMDictionary_classes,gml_Script_CheckWordDictionary,gml_Script_anon_3141_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4195_PickWordDictionary_GMDictionary_classes,gml_Script_anon_4530_PickWordDictionary_GMDictionary_classes,gml_Script____struct___3_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_anon_5084_PickWordDictionary_GMDictionary_classes,gml_Script_PickWordDictionary,gml_GlobalScript_GMDictionary_exceptions,gml_Script_anon_437_DictionaryTooSmallException_GMDictionary_exceptions,gml_Script_DictionaryTooSmallException,gml_GlobalScript_GMLive_noDeactivate,gml_Script_instance_deactivate_all_hook,gml_Script_instance_deactivate_layer_hook,gml_Script_instance_deactivate_object_hook,gml_Script_instance_deactivate_region_hook,gml_GlobalScript_GMLive_notOnce,gml_GlobalScript_GMLive,gml_Script_gml_macro,gml_Script_sprite_set_live,gml_Script_path_set_live,gml_Script_animcurve_set_live,gml_Script_file_set_live,gml_Script_room_set_live,gml_Script_room_goto_live,gml_Script_live_call,gml_Script_live_defcall,gml_Script_live_call_ext,gml_Script_live_defcall_ext,gml_Script_live_auto_call_1,gml_Script_live_auto_call_2,gml_Script_live_async_http,gml_Script_shader_set_live,gml_Script_live_validate_scripts,gml_Script_live_method,gml_Script_live_method_get_self,gml_Script_gml_thread_method_script,gml_Script_live_update_script_impl,gml_Script_live_constant_add,gml_Script_live_constant_delete,gml_Script_live_variable_add,gml_Script_live_variable_delete,gml_Script_live_function_add,gml_Script_live_function_delete,gml_Script_live_throw_error,gml_Script_live_execute_string,gml_Script_live_snippet_create,gml_Script_live_snippet_destroy,gml_Script_live_snippet_call,gml_Script_live_update,gml_Script_live_init,gml_Script_live_room_start,gml_Script_vm_v2_GmlStructBase,gml_GlobalScript_GMLiveAPI_js,gml_Script_live_preinit_js_dummy,gml_GlobalScript_GMLiveAPI,gml_Script_live_preinit_api,gml_GlobalScript_GoogAsyncHTTPEvent,gml_Script_GoogAsyncHTTPEvent,gml_GlobalScript_GoogClientIDForce,gml_Script_GoogClientIDForce,gml_GlobalScript_GoogClientIDGet,gml_Script_GoogClientIDGet,gml_GlobalScript_GoogHit,gml_Script____struct___123_GoogHit_GoogHit,gml_Script____struct___124_GoogHit_GoogHit,gml_Script_GoogHit,gml_GlobalScript_GoogUserIDForce,gml_Script_GoogUserIDForce,gml_GlobalScript_GoogUserIDGet,gml_Script_GoogUserIDGet,gml_GlobalScript_html_elements_scripts,gml_Script_html_init,gml_Script_html_sync,gml_Script_html_style,gml_Script_html_cell,gml_Script_html_button,gml_Script_html_div,gml_Script_html_field,gml_Script_html_form,gml_Script_html_h1,gml_Script_html_h2,gml_Script_html_h3,gml_Script_html_icon,gml_Script_html_image,gml_Script_html_link,gml_Script_html_p,gml_Script_html_radio,gml_Script_html_row,gml_Script_html_span,gml_Script_html_sprite,gml_Script_html_submit,gml_Script_html_table,gml_Script_html_form_values,gml_Script_html_element_hover,gml_Script_html_element_interaction,gml_Script_html_element_x,gml_Script_html_element_y,gml_Script_html_mouse_x,gml_Script_html_mouse_y,gml_Script_HtmlElement,gml_Script_html_element,gml_Script_html_element_by_id,gml_Script_html_element_by_identifier,gml_Script_html_element_cleanup,gml_Script_html_element_cleanup_children,gml_Script_html_element_id,gml_Script_html_element_set_property,gml_Script_html_element_sync,gml_Script_html_form_add_values_from_children,gml_Script_gmcallback_lose_focus,gml_Script_gmcallback_on_input,gml_Script_gmcallback_on_interaction,gml_Script_gmcallback_on_mouseover,gml_Script_gmcallback_on_mouseout,gml_Script_gmcallback_set_focus,gml_GlobalScript_html_submit_closebtn,gml_Script_html_submit_closebtn,gml_GlobalScript_html_submit_code,gml_Script_html_submit_code,gml_GlobalScript_html_submit_export_link,gml_Script_html_submit_export_link,gml_GlobalScript_html_submit_export,gml_Script_html_submit_export,gml_GlobalScript_INIT_HTML,gml_GlobalScript_parse_query,gml_Script_get_query,gml_Script_parse_query,gml_GlobalScript_scr_board_init,gml_Script____struct___125_scr_board_init_scr_board_init,gml_Script_scr_board_init,gml_GlobalScript_scr_letter_data_init,gml_Script_scr_letter_data_init,gml_GlobalScript_scr_mouse_over_button,gml_Script_scr_mouse_over_button,gml_GlobalScript_scr_update_copy_code,gml_Script_scr_update_copy_code,gml_GlobalScript_scr_update_room_dimensions,gml_Script_scr_update_room_dimensions,gml_GlobalScript_scr_validate_word,gml_Script_scr_validate_word,gml_Script_browser_stretch_canvas,gml_Script____struct___126_gml_Object_obj_ctrl_Create_0,gml_Script____struct___127_gml_Object_obj_ctrl_Step_0,gml_Script____struct___128_gml_Object_obj_ctrl_Step_0,gml_Script____struct___129_gml_Object_obj_ctrl_Step_0,gml_Script____struct___130_gml_Object_obj_ctrl_Step_0,gml_Script____struct___131_gml_Object_obj_ctrl_Step_0,gml_Script____struct___132_gml_Object_obj_ctrl_Step_0,gml_Script____struct___133_gml_Object_obj_ctrl_Step_0,gml_Script____struct___134_gml_Object_obj_ctrl_Step_0,gml_Script____struct___135_gml_Object_obj_ctrl_Step_0,gml_Script____struct___136_gml_Object_obj_ctrl_Step_0,gml_Script____struct___137_gml_Object_obj_ctrl_Step_0];
 const kgml_GlobalScript___GoogConfig=100000;
 const kgml_GlobalScript___GoogSystem=100001;
 const kgml_Script____struct___0=100002;
@@ -13137,23 +13407,27 @@ const kgml_Script____struct___125_scr_board_init_scr_board_init=100142;
 const kgml_Script_scr_board_init=100143;
 const kgml_GlobalScript_scr_letter_data_init=100144;
 const kgml_Script_scr_letter_data_init=100145;
-const kgml_GlobalScript_scr_update_copy_code=100146;
-const kgml_Script_scr_update_copy_code=100147;
-const kgml_GlobalScript_scr_update_room_dimensions=100148;
-const kgml_Script_scr_update_room_dimensions=100149;
-const kgml_GlobalScript_scr_validate_word=100150;
-const kgml_Script_scr_validate_word=100151;
-const kgml_Script_browser_stretch_canvas=100152;
-const kgml_Script____struct___126_gml_Object_obj_ctrl_Create_0=100153;
-const kgml_Script____struct___127_gml_Object_obj_ctrl_Step_0=100154;
-const kgml_Script____struct___128_gml_Object_obj_ctrl_Step_0=100155;
-const kgml_Script____struct___129_gml_Object_obj_ctrl_Step_0=100156;
-const kgml_Script____struct___130_gml_Object_obj_ctrl_Step_0=100157;
-const kgml_Script____struct___131_gml_Object_obj_ctrl_Step_0=100158;
-const kgml_Script____struct___132_gml_Object_obj_ctrl_Step_0=100159;
-const kgml_Script____struct___133_gml_Object_obj_ctrl_Step_0=100160;
-const kgml_Script____struct___134_gml_Object_obj_ctrl_Step_0=100161;
-const kgml_Script____struct___135_gml_Object_obj_ctrl_Step_0=100162;
+const kgml_GlobalScript_scr_mouse_over_button=100146;
+const kgml_Script_scr_mouse_over_button=100147;
+const kgml_GlobalScript_scr_update_copy_code=100148;
+const kgml_Script_scr_update_copy_code=100149;
+const kgml_GlobalScript_scr_update_room_dimensions=100150;
+const kgml_Script_scr_update_room_dimensions=100151;
+const kgml_GlobalScript_scr_validate_word=100152;
+const kgml_Script_scr_validate_word=100153;
+const kgml_Script_browser_stretch_canvas=100154;
+const kgml_Script____struct___126_gml_Object_obj_ctrl_Create_0=100155;
+const kgml_Script____struct___127_gml_Object_obj_ctrl_Step_0=100156;
+const kgml_Script____struct___128_gml_Object_obj_ctrl_Step_0=100157;
+const kgml_Script____struct___129_gml_Object_obj_ctrl_Step_0=100158;
+const kgml_Script____struct___130_gml_Object_obj_ctrl_Step_0=100159;
+const kgml_Script____struct___131_gml_Object_obj_ctrl_Step_0=100160;
+const kgml_Script____struct___132_gml_Object_obj_ctrl_Step_0=100161;
+const kgml_Script____struct___133_gml_Object_obj_ctrl_Step_0=100162;
+const kgml_Script____struct___134_gml_Object_obj_ctrl_Step_0=100163;
+const kgml_Script____struct___135_gml_Object_obj_ctrl_Step_0=100164;
+const kgml_Script____struct___136_gml_Object_obj_ctrl_Step_0=100165;
+const kgml_Script____struct___137_gml_Object_obj_ctrl_Step_0=100166;
 var __yyg__SetImageIndexGML=
 function(frame)
 {
@@ -13206,6 +13480,10 @@ gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true
 gml_Script____struct___134_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true;
 gml_Script____struct___135_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true;
+gml_Script____struct___136_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
+gml_Script____struct___137_gml_Object_obj_ctrl_Step_0.__yyg__is_constructor=true;
+gml_Script____struct___137_gml_Object_obj_ctrl_Step_0.prototype.SetImageIndexGML=__yyg__SetImageIndexGML;
 var g_instance_names=
 {
 	"x":[true,true,true,null,null],"y":[true,true,true,null,null],"xprevious":[true,true,true,null,null],"yprevious":[true,true,true,null,null],"xstart":[true,true,true,null,null],"ystart":[true,true,true,null,null],"hspeed":[true,true,true,null,null],"vspeed":[true,true,true,null,null],"direction":[true,true,true,null,null],"speed":[true,true,true,null,null],"friction":[true,true,true,null,null],"gravity":[true,true,true,null,null],"gravity_direction":[true,true,true,null,null],"in_collision_tree":[true,false,true,null,null],"object_index":[true,false,false,null,null],"id":[true,false,false,null,null],"alarm":[true,true,true,null,null],"solid":[true,true,true,null,null],"visible":[true,true,true,null,null],"persistent":[true,true,true,null,null],"managed":[true,false,true,null,null],"depth":[true,true,true,null,null],"bbox_left":[true,false,false,null,null],"bbox_right":[true,false,false,null,null],"bbox_top":[true,false,false,null,null],"bbox_bottom":[true,false,false,null,null],"sprite_index":[true,true,true,null,null],"image_index":[true,true,true,null,"SetImageIndexGML"],"image_single":[true,true,true,null,null],"image_number":[true,false,false,null,null],"sprite_width":[true,false,false,null,null],"sprite_height":[true,false,false,null,null],"sprite_xoffset":[true,false,false,null,null],"sprite_yoffset":[true,false,false,null,null],"image_xscale":[true,true,true,null,null],"image_yscale":[true,true,true,null,null],"image_angle":[true,true,true,null,null],"image_alpha":[true,true,true,null,null],"image_blend":[true,true,true,null,null],"image_speed":[true,true,true,null,null],"mask_index":[true,true,true,null,null],"path_index":[true,false,false,null,null],"path_position":[true,true,true,null,null],"path_positionprevious":[true,true,true,null,null],"path_speed":[true,true,true,null,null],"path_scale":[true,true,true,null,null],"path_orientation":[true,true,true,null,null],"path_endaction":[true,true,true,null,null],"timeline_index":[true,true,true,null,null],"timeline_position":[true,true,true,null,null],"timeline_speed":[true,true,true,null,null],"timeline_running":[true,true,true,null,null],"timeline_loop":[true,true,true,null,null],"phy_rotation":[true,true,true,null,null],"phy_position_x":[true,true,true,null,null],"phy_position_y":[true,true,true,null,null],"phy_angular_velocity":[true,true,true,null,null],"phy_linear_velocity_x":[true,true,true,null,null],"phy_linear_velocity_y":[true,true,true,null,null],"phy_speed_x":[true,true,true,null,null],"phy_speed_y":[true,true,true,null,null],"phy_speed":[true,false,true,null,null],"phy_angular_damping":[true,true,true,null,null],"phy_linear_damping":[true,true,true,null,null],"phy_bullet":[true,true,true,null,null],"phy_fixed_rotation":[true,true,true,null,null],"phy_active":[true,true,true,null,null],"phy_mass":[true,false,true,null,null],"phy_inertia":[true,false,true,null,null],"phy_com_x":[true,false,true,null,null],"phy_com_y":[true,false,true,null,null],"phy_dynamic":[true,false,true,null,null],"phy_kinematic":[true,false,true,null,null],"phy_sleeping":[true,false,true,null,null],"phy_position_xprevious":[true,true,true,null,null],"phy_position_yprevious":[true,true,true,null,null],"phy_collision_points":[true,false,true,null,null],"layer":[true,true,true,null,null],"in_sequence":[true,false,true,null,null],"sequence_instance":[true,false,true,null,null],"drawn_by_sequence":[true,false,true,null,null],"phy_collision_x":[true,false,true,null,null],"phy_collision_y":[true,false,true,null,null],"phy_col_normal_x":[true,false,true,null,null],"phy_col_normal_y":[true,false,true,null,null]}

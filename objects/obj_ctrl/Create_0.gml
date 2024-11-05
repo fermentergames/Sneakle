@@ -32,6 +32,9 @@ global.am_creating = 0
 
 global.game_mode = 1
 global.points_total = 0
+global.words_made = 0
+global.rearranges_used = 0
+global.discards_used = 0
 
 global.game_grid_size = 4
 global.game_grid_size_sqr = sqr(global.game_grid_size)

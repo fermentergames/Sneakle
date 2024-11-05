@@ -76,7 +76,9 @@ with (obj_tile_letter) {
 	var _text_scl = 2.2*scl //20
 	
 	
-	
+	if global.game_mode = 2 && my_letter_num >= 1 {
+	draw_set_color(merge_color(letter_col,c_yellow,clamp(am_selected_fd+am_part_of_secret_word_fd,0,1*obj_ctrl.selected_word_is_valid)))
+	}
 
 	draw_text_transformed(x+lengthdir_x(-_tile_ht+(_text_offset_y*scl),image_angle-90),y+lengthdir_y(-_tile_ht+(_text_offset_y*scl),image_angle-90)+_spawn_slam,string_upper(my_letter_str),_text_scl,_text_scl,image_angle)
 
