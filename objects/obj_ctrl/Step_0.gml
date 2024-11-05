@@ -379,7 +379,7 @@ if mouse_check_button_pressed(mb_left) {
 	} else if global.game_phase = 2 { //
 		
 		//proceed
-		if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.5)-(256*0.65*_tscl),(global.sh+(-100*global.pr))-(256*0.15*_tscl),(global.sw*0.5)+(256*0.65*_tscl),(global.sh+(-100*global.pr))+(256*0.15*_tscl)) {
+		if point_in_rectangle(device_mouse_x_to_gui(0)*global.pr,device_mouse_y_to_gui(0)*global.pr,(global.sw*0.5)-(256*0.65*_tscl),(global.sh+(-110*global.pr))-(256*0.15*_tscl),(global.sw*0.5)+(256*0.65*_tscl),(global.sh+(-110*global.pr))+(256*0.15*_tscl)) {
 			
 			
 			if global.game_mode = 1 && selected_word_is_valid >= 1 {
